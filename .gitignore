@@ -1,0 +1,15 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local logs and caches
+*.log
+*.log.*
+logs/
+.cache/
+
+# Dependency/build folders if the site is later tooled up
+node_modules/
+dist/

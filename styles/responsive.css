@@ -1,0 +1,147 @@
+/* ============================================
+   Responsive Styles
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .layout {
+    padding: 16px 12px 32px;
+  }
+
+  .content-card {
+    padding: 28px 24px;
+  }
+
+  .sidebar {
+    width: 220px;
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 46vh;
+    padding: 40px 20px 36px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+
+  .hero-btn {
+    padding: 10px 28px;
+    font-size: 14px;
+  }
+
+  .sidebar-toggle {
+    display: flex;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 270px;
+    min-width: 270px;
+    height: 100vh;
+    max-height: 100vh;
+    z-index: 160;
+    border-radius: 0;
+    transition: left var(--transition-normal);
+    box-shadow: var(--shadow-float);
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar-overlay.visible {
+    display: block;
+  }
+
+  .layout {
+    flex-direction: column;
+    padding: 12px 8px 24px;
+    gap: 0;
+  }
+
+  .content-card {
+    padding: 20px 16px;
+  }
+
+  .md-body h1 {
+    font-size: 22px;
+  }
+
+  .md-body h2 {
+    font-size: 19px;
+  }
+
+  .md-body h3 {
+    font-size: 16px;
+  }
+
+  .md-body table {
+    font-size: 12.5px;
+  }
+
+  .md-body thead th,
+  .md-body tbody td {
+    padding: 8px 10px;
+  }
+
+  .back-to-top {
+    right: 12px;
+    bottom: 20px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .jieyun-lookup {
+    padding: 14px;
+  }
+
+  .jieyun-lookup-row {
+    grid-template-columns: 1fr;
+  }
+
+  .jieyun-lookup-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .hero-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+
+  .content-card {
+    padding: 16px 12px;
+  }
+
+  .md-body table {
+    font-size: 12px;
+  }
+
+  .copy-btn {
+    opacity: 1;
+  }
+}

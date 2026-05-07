@@ -1,0 +1,379 @@
+/* ============================================
+   UI Components
+   ============================================ */
+
+/* --- Back to Top --- */
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 32px;
+  width: 44px;
+  height: 44px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-normal);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--accent-fire);
+}
+
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--text-secondary);
+  transition: fill var(--transition-fast);
+}
+
+.back-to-top:hover svg {
+  fill: var(--accent-fire);
+}
+
+/* --- Mobile Sidebar Toggle --- */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 200;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.sidebar-toggle:hover {
+  border-color: var(--accent-fire);
+}
+
+.sidebar-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--text-primary);
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 150;
+}
+
+/* --- Loading --- */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 0;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.loading-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--border-light);
+  border-top-color: var(--accent-fire);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- Search Box --- */
+.sidebar-search {
+  padding: 0 16px 12px;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 8px;
+}
+
+.sidebar-search input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  font-size: 13px;
+  outline: none;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.sidebar-search input::placeholder {
+  color: var(--text-secondary);
+}
+
+.sidebar-search input:focus {
+  border-color: var(--accent-fire);
+}
+
+.toc-item.hidden {
+  display: none;
+}
+
+/* --- 搜索无结果提示 --- */
+.toc-no-results {
+  padding: 16px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+  display: none;
+}
+
+.toc-no-results.visible {
+  display: block;
+}
+
+/* --- 版本更新摘要 --- */
+.update-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+  margin: 16px 0 18px;
+}
+
+.update-summary-item {
+  padding: 12px 14px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: var(--bg-page);
+}
+
+.update-summary-item h4 {
+  margin: 0 0 6px;
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.update-summary-item p {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+
+.update-summary-item span {
+  display: block;
+  margin-top: 8px;
+  color: var(--accent-gold);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+/* --- 35重劫运单条查询器 --- */
+.jieyun-lookup {
+  margin: 18px 0 24px;
+  padding: 18px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--bg-page);
+}
+
+.jieyun-lookup-controls {
+  display: grid;
+  gap: 10px;
+}
+
+.jieyun-lookup-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.jieyun-lookup-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.jieyun-lookup-input {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.jieyun-lookup-input:focus {
+  border-color: var(--accent-fire);
+  box-shadow: 0 0 0 3px rgba(var(--accent-fire-rgb), 0.12);
+}
+
+.jieyun-lookup-button {
+  padding: 10px 18px;
+  border: 1px solid var(--accent-fire);
+  border-radius: var(--radius-sm);
+  background: var(--accent-fire);
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.jieyun-lookup-button:hover {
+  background: var(--accent-fire-hover);
+  border-color: var(--accent-fire-hover);
+}
+
+.jieyun-lookup-result {
+  margin-top: 14px;
+}
+
+.jieyun-lookup-empty {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.jieyun-card {
+  padding: 14px 16px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+}
+
+.jieyun-card-kicker {
+  color: var(--accent-gold);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.jieyun-card h2 {
+  margin: 6px 0 10px;
+  padding: 0;
+  border: 0;
+  font-size: 20px;
+}
+
+.jieyun-card blockquote {
+  margin: 10px 0;
+}
+
+.jieyun-card p {
+  margin-bottom: 0;
+}
+
+.jieyun-lookup-index {
+  display: none;
+}
+
+/* --- 阅读进度条 --- */
+.read-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-fire), var(--accent-gold));
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* --- 代码复制按钮 --- */
+.copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-sm);
+  color: #abb2bf;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.md-body pre:hover .copy-btn,
+.copy-btn:focus {
+  opacity: 1;
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.copy-btn.copied {
+  color: #98c379;
+  border-color: rgba(152, 195, 121, 0.4);
+}
+
+/* --- 主题切换按钮 --- */
+.theme-toggle {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  z-index: 200;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  color: var(--text-primary);
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent-fire);
+  transform: scale(1.05);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* 移动端适配主题按钮位置 */
+@media (max-width: 768px) {
+  .theme-toggle {
+    top: 12px;
+    right: 12px;
+  }
+}

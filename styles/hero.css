@@ -1,0 +1,241 @@
+/* ============================================
+   Hero Section - "融雪见阳" 意境
+   ============================================ */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 62vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #0f0f13;
+  /* 视差变量 */
+  --parallax-x: 0px;
+  --parallax-y: 0px;
+}
+
+/* --- 双背景层 --- */
+.hero-bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: opacity, transform, filter;
+}
+
+/* 积雪图（默认）：常态清冽 */
+.hero-bg-default {
+  opacity: 1;
+  transform: scale(1.05) translate(var(--parallax-x), var(--parallax-y));
+  filter: brightness(0.95);
+  z-index: 0;
+  transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 阳光图（悬停）：常态隐匿 */
+.hero-bg-hover {
+  opacity: 0;
+  transform: scale(1.05) translate(calc(var(--parallax-x) * 0.5), calc(var(--parallax-y) * 0.5));
+  filter: brightness(0.75);
+  z-index: 1;
+  transition: opacity 3.5s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 3.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 意境切换：积雪自然淡出过曝，阳光温柔浮现 */
+.hero.is-hover .hero-bg-default {
+  opacity: 0.12;
+  filter: brightness(1.25) blur(1.5px);
+}
+
+.hero.is-hover .hero-bg-hover {
+  opacity: 1;
+  filter: brightness(1);
+}
+
+/* --- 阳光光晕：从画面上方洒落 --- */
+.hero-sun-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 25%,
+    rgba(255, 230, 180, 0.35) 0%,
+    rgba(255, 210, 140, 0.15) 35%,
+    transparent 70%
+  );
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  transition: opacity 2.5s ease-out 0.3s;
+}
+
+.hero.is-hover .hero-sun-glow {
+  opacity: 1;
+}
+
+/* --- 暗角：聚焦中心 --- */
+.hero-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  z-index: 3;
+  pointer-events: none;
+  transition: opacity 2.5s ease;
+}
+
+/* 阳光出现时暗角减弱，画面更开阔 */
+.hero.is-hover .hero-vignette {
+  opacity: 0.55;
+}
+
+/* --- 渐变遮罩：确保文字可读 --- */
+.hero-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 15, 19, 0.55) 0%,
+    rgba(15, 15, 19, 0.2) 50%,
+    rgba(15, 15, 19, 0.65) 100%
+  );
+  z-index: 4;
+  pointer-events: none;
+  transition: background 2.5s ease;
+}
+
+/* 阳光模式下遮罩变亮、变暖 */
+.hero.is-hover .hero-gradient-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 15, 19, 0.35) 0%,
+    rgba(15, 15, 19, 0.1) 50%,
+    rgba(15, 15, 19, 0.45) 100%
+  );
+}
+
+/* --- 饥荒风格颗粒感纹理 --- */
+.hero-grain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.03;
+  z-index: 5;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* --- 内容层 --- */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 12px 36px;
+  background: #fff;
+  color: var(--accent-fire);
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease 0.4s forwards;
+  transition: all var(--transition-normal);
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  background: var(--accent-fire);
+  color: #fff;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- 移动端无 hover 时的兜底展示 --- */
+@media (hover: none) and (pointer: coarse) {
+  .hero-bg-default {
+    opacity: 0.12;
+    filter: brightness(1.25) blur(1.5px);
+    transform: scale(1.05);
+  }
+  .hero-bg-hover {
+    opacity: 1;
+    filter: brightness(1);
+    transform: scale(1.05);
+  }
+  .hero-sun-glow {
+    opacity: 1;
+  }
+  .hero-vignette {
+    opacity: 0.55;
+  }
+  .hero-gradient-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(15, 15, 19, 0.35) 0%,
+      rgba(15, 15, 19, 0.1) 50%,
+      rgba(15, 15, 19, 0.45) 100%
+    );
+  }
+}

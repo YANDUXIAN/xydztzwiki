@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="《腌笃鲜》官方维基 - 饥荒神话书说兼容修复与玩法拓展模组完全指南，涵盖元辰劫运系统、盘丝娘娘四象三合局、火元淬炼、角色机制增强等完整攻略。" />
+    <meta name="keywords" content="腌笃鲜,XYDZTZ,饥荒,神话书说,模组,元辰劫运,盘丝娘娘,wiki,攻略" />
+    <meta name="author" content="《腌笃鲜》" />
+    <meta name="theme-color" content="#faf8f3" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#15110e" media="(prefers-color-scheme: dark)" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="《腌笃鲜》官方维基" />
+    <meta property="og:description" content="饥荒神话书说兼容修复与玩法拓展模组完全指南" />
+    <meta property="og:site_name" content="腌笃鲜官方维基" />
+    <meta property="og:locale" content="zh_CN" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="《腌笃鲜》官方维基" />
+    <meta name="twitter:description" content="饥荒神话书说兼容修复与玩法拓展模组完全指南" />
+
+    <title>《腌笃鲜》官方维基</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/hero.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/markdown.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+    <link rel="stylesheet" href="./styles/responsive.css" />
+
+    <!-- Libs -->
+    <link rel="stylesheet" href="./libs/atom-one-dark.min.css" />
+  </head>
+  <body>
+    <!-- 阅读进度条 -->
+    <div class="read-progress" id="read-progress" aria-hidden="true"></div>
+
+    <!-- 主题切换 -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2c-1.05 0-2.05.16-3 .46 1.69 1.24 2.79 3.26 2.79 5.54 0 3.87-3.13 7-7 7-.57 0-1.13-.08-1.67-.22C2.52 18.49 6.45 22 11 22c5.52 0 10-4.48 10-10S16.52 2 11 2c-.66 0-1.3.07-1.92.19C9.23 2.06 9.12 2 9 2z"/></svg>
+    </button>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero" role="banner">
+      <div class="hero-bg-layer hero-bg-default" style="background-image: url('./images/hero-default.jpg')" aria-hidden="true"></div>
+      <div class="hero-bg-layer hero-bg-hover" style="background-image: url('./images/hero-hover.jpg')" aria-hidden="true"></div>
+      <div class="hero-sun-glow" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-gradient-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <h1 class="hero-title">《腌笃鲜》官方维基</h1>
+        <p class="hero-subtitle">三十五劫运交织，十二元辰下凡，灵台方寸显真心</nav></p>
+        <p class="hero-subtitle">须弥纳万象，神游辟虚空——三大法宝登场！</nav></p>
+        <button class="hero-btn" id="hero-btn" type="button">开始查阅</button>
+      </div>
+    </header>
+
+    <!-- Noscript Warning -->
+    <noscript>
+      <div class="noscript-warning" role="alert">
+        <strong>提示：</strong>您的浏览器已禁用 JavaScript。本维基需要 JavaScript 来加载文档内容。请启用 JavaScript 以获得最佳体验。
+      </div>
+    </noscript>
+
+    <!-- Mobile Sidebar Toggle -->
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+    <!-- Main Layout -->
+    <div class="layout">
+      <!-- Sidebar Navigation -->
+      <nav class="sidebar" id="sidebar" aria-label="目录导航">
+        <div class="sidebar-header">
+          <h3>目录导航</h3>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="toc-search" placeholder="搜索目录或正文…" aria-label="搜索目录或正文" />
+        </div>
+        <ul class="toc-list" id="toc-list">
+          <li style="padding:20px;text-align:center;color:#99a2aa;font-size:13px;">加载中…</li>
+        </ul>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <article class="content-card">
+          <div class="md-body" id="main-content">
+            <div class="loading">
+              <div class="loading-spinner" aria-hidden="true"></div>
+              <p style="color:#99a2aa;font-size:14px;margin-top:12px;">正在加载文档…</p>
+            </div>
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer-divider" aria-hidden="true"></div>
+      <p>&copy; 2026 《腌笃鲜》</p>
+      <p>加入反馈交流 QQ 群：<a href="https://qm.qq.com/q/iFeDTMf6Io" target="_blank" rel="noopener noreferrer">1046023996</a></p>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <!-- Libs: marked.js + highlight.js (local) -->
+    <script src="./libs/marked.min.js"></script>
+    <script src="./libs/highlight.min.js"></script>
+
+    <!-- App Modules -->
+    <script src="./scripts/utils.js"></script>
+    <script src="./scripts/renderer.js"></script>
+    <script src="./scripts/toc.js"></script>
+    <script src="./scripts/scroll.js"></script>
+    <script src="./scripts/theme.js"></script>
+    <script src="./scripts/ui.js"></script>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>

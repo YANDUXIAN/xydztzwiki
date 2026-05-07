@@ -1,0 +1,306 @@
+/* ============================================
+   Markdown Rendered Styles
+   ============================================ */
+
+.md-body h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 40px 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--accent-fire);
+  line-height: 1.4;
+}
+
+.md-body h1:first-child {
+  margin-top: 0;
+}
+
+.md-body h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 36px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-light);
+  line-height: 1.4;
+}
+
+.md-body h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 28px 0 12px;
+  padding-left: 10px;
+  border-left: 3px solid var(--accent-gold);
+  line-height: 1.4;
+}
+
+.md-body > p,
+.md-body > ul,
+.md-body > ol,
+.md-body > blockquote,
+.md-body > h1,
+.md-body > h2,
+.md-body > h3,
+.md-body > h4,
+.md-body > pre,
+.md-body > .update-summary,
+.md-body > .jieyun-lookup {
+  max-width: 82ch;
+}
+
+.md-body h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 24px 0 10px;
+}
+
+.md-body p {
+  margin: 12px 0;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.md-body strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.md-body ul,
+.md-body ol {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.md-body li {
+  margin: 6px 0;
+  line-height: 1.8;
+}
+
+.md-body hr {
+  border: none;
+  border-top: 1px solid var(--border-light);
+  margin: 32px 0;
+}
+
+/* --- Table Outer（横向滚动容器） --- */
+.table-outer {
+  position: relative;
+  margin: 16px 0;
+  overflow-x: auto;
+  overflow-y: visible;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  scrollbar-gutter: stable;
+}
+
+/* 左右滚动阴影提示 */
+.table-outer::before,
+.table-outer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 24px;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.table-outer::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.06), transparent);
+}
+
+.table-outer::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(0,0,0,0.06), transparent);
+}
+
+.table-outer.scroll-left::before,
+.table-outer.scroll-right::after {
+  opacity: 1;
+}
+
+html[data-theme="dark"] .table-outer::before {
+  background: linear-gradient(to right, rgba(0,0,0,0.3), transparent);
+}
+
+html[data-theme="dark"] .table-outer::after {
+  background: linear-gradient(to left, rgba(0,0,0,0.3), transparent);
+}
+
+/* --- Table Wrapper（内部不设置 overflow，确保 sticky 生效） --- */
+.table-wrapper {
+  position: relative;
+}
+
+/* --- Table --- */
+.md-body table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+  border: none;
+}
+
+.md-body thead th {
+  background: #f0e0e0;
+  color: var(--accent-fire);
+  font-weight: 600;
+  padding: 10px 14px;
+  text-align: left;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+html[data-theme="dark"] .md-body thead th {
+  background: #2d241e;
+  color: var(--accent-gold);
+}
+
+.md-body tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: top;
+}
+
+.md-body tbody td:first-child {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.md-body tbody tr:hover {
+  background: var(--bg-hover);
+}
+
+.md-body tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+.md-body tbody tr:nth-child(even):hover {
+  background: var(--bg-hover);
+}
+
+html[data-theme="dark"] .md-body tbody tr:nth-child(even) {
+  background: rgba(199, 170, 112, 0.035);
+}
+
+/* --- Blockquote Layering --- */
+.md-body blockquote {
+  position: relative;
+  margin: 16px 0;
+  padding: 14px 18px 14px 20px;
+  border-left: 4px solid var(--accent-fire);
+  background: var(--accent-fire-bg);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.md-body blockquote p {
+  margin: 4px 0;
+  color: inherit;
+}
+
+.md-body blockquote strong {
+  color: var(--accent-fire-hover);
+}
+
+/* 检索标签仅作为站内搜索索引，不在正文中展示给玩家 */
+.md-body blockquote.bq-search-tags {
+  display: none;
+}
+
+/* 引用块分层变体 */
+.md-body blockquote.bq-info {
+  border-left-color: var(--color-info);
+  background: var(--color-info-bg);
+}
+
+.md-body blockquote.bq-info strong {
+  color: var(--color-info);
+}
+
+.md-body blockquote.bq-warning {
+  border-left-color: var(--color-warning);
+  background: var(--color-warning-bg);
+}
+
+.md-body blockquote.bq-warning strong {
+  color: var(--color-warning);
+}
+
+.md-body blockquote.bq-success {
+  border-left-color: var(--color-success);
+  background: var(--color-success-bg);
+}
+
+.md-body blockquote.bq-success strong {
+  color: var(--color-success);
+}
+
+.md-body blockquote.bq-danger {
+  border-left-color: var(--color-danger);
+  background: var(--color-danger-bg);
+}
+
+.md-body blockquote.bq-danger strong {
+  color: var(--color-danger);
+}
+
+/* --- Inline Code --- */
+.md-body code {
+  font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", Menlo, Monaco,
+    Consolas, monospace;
+  background: var(--bg-code);
+  color: var(--accent-fire);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* --- Code Block --- */
+.md-body pre {
+  margin: 16px 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+}
+
+.md-body pre code {
+  display: block;
+  padding: 18px 20px;
+  background: #282c34;
+  color: #abb2bf;
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+  line-height: 1.6;
+  overflow-x: auto;
+  font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", Menlo, Monaco,
+    Consolas, monospace;
+}
+
+/* 复制按钮在 pre 上的定位基准 */
+.md-body pre {
+  position: relative;
+}
+
+/* highlight.js 自定义颜色（适配 Atom One Dark） */
+.md-body pre code .hljs-keyword { color: #c678dd; }
+.md-body pre code .hljs-string { color: #98c379; }
+.md-body pre code .hljs-comment { color: #5c6370; font-style: italic; }
+.md-body pre code .hljs-function { color: #61afef; }
+.md-body pre code .hljs-number { color: #d19a66; }
+.md-body pre code .hljs-built_in { color: #e5c07b; }
+.md-body pre code .hljs-variable { color: #e06c75; }
+.md-body pre code .hljs-attr { color: #d19a66; }
+.md-body pre code .hljs-literal { color: #56b6c2; }
+.md-body pre code .hljs-params { color: #abb2bf; }
+.md-body pre code .hljs-title { color: #61afef; }
