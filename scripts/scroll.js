@@ -1,5 +1,5 @@
 // ============================================
-// 腌笃鲜 (XYDZTZ) 官方维基 - Scroll Features
+// 《腌笃鲜》官方维基 - Scroll Features
 // ============================================
 
 window.XYDZTZ = window.XYDZTZ || {};
@@ -80,7 +80,7 @@ window.XYDZTZ.scroll = {
 
       // 更新页面标题
       const sectionTitle = newHeading.el.textContent.trim();
-      const baseTitle = '腌笃鲜 (XYDZTZ) 官方维基';
+      const baseTitle = '《腌笃鲜》官方维基';
       if (sectionTitle) {
         const newTitle = `${sectionTitle} | ${baseTitle}`;
         if (document.title !== newTitle) {

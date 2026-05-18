@@ -1,5 +1,5 @@
 // ============================================
-// 腌笃鲜 (XYDZTZ) 官方维基 - Table of Contents
+// 《腌笃鲜》官方维基 - Table of Contents
 // ============================================
 
 window.XYDZTZ = window.XYDZTZ || {};

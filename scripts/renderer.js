@@ -1,5 +1,5 @@
 // ============================================
-// 腌笃鲜 (XYDZTZ) 官方维基 - Markdown Renderer
+// 《腌笃鲜》官方维基 - Markdown Renderer
 // ============================================
 
 window.XYDZTZ = window.XYDZTZ || {};
@@ -115,7 +115,7 @@ window.XYDZTZ.renderer = {
     node.replaceWith(summary);
   },
 
-  /* 劫运表改造成单条查询器，避免一次性展示全部答案 */
+  /* 劫运表改造成单条查询器 */
   initJieyunLookup(main) {
     const headings = Array.from(main.querySelectorAll('h1'));
     const appendix = headings.find((heading) => heading.textContent.trim() === '附录：劫运解密查询');

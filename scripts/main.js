@@ -1,5 +1,5 @@
 // ============================================
-// 腌笃鲜 (XYDZTZ) 官方维基 - Main Entry
+// 《腌笃鲜》官方维基 - Main Entry
 // ============================================
 
 window.XYDZTZ = window.XYDZTZ || {};
@@ -35,7 +35,7 @@ window.XYDZTZ = window.XYDZTZ || {};
       throw new Error(`HTTP ${resp.status}`);
     } catch (err) {
       if (cached) {
-        console.warn('[XYDZTZ] 网络请求失败，使用缓存内容', err);
+        console.warn('《腌笃鲜》网络请求失败，使用缓存内容', err);
         return cached;
       }
       throw err;
@@ -74,7 +74,7 @@ window.XYDZTZ = window.XYDZTZ || {};
         }
       }
     } catch (err) {
-      console.error('[XYDZTZ] 初始化失败:', err);
+      console.error('《腌笃鲜》初始化失败:', err);
       if (main) {
         main.innerHTML = `
           <div class="loading">
