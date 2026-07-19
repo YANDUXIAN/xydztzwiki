@@ -5,6 +5,7 @@
 window.XYDZTZ = window.XYDZTZ || {};
 window.XYDZTZ.toc = {
   headingsData: [],
+  searchIndex: [],
 
   generate() {
     const main = document.getElementById('main-content');
@@ -21,13 +22,12 @@ window.XYDZTZ.toc = {
       const level = heading.tagName.toLowerCase();
       const text = heading.textContent.trim();
 
-      // 跳过第一个 h1（与 Hero 标题重复）
+      // Hero 已展示站点标题，目录不再重复第一项。
       if (level === 'h1' && index === 0) return;
 
       items.push({ id, level, text });
     });
 
-    // 构建层级结构
     let currentH1 = null;
     const structure = [];
 
@@ -42,7 +42,6 @@ window.XYDZTZ.toc = {
       }
     });
 
-    // 渲染
     let html = '';
     structure.forEach((section, index) => {
       const hasChildren = section.children && section.children.length > 0;
@@ -65,7 +64,6 @@ window.XYDZTZ.toc = {
 
     tocList.innerHTML = html;
 
-    // 绑定点击平滑滚动
     tocList.querySelectorAll('.toc-link').forEach((link) => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -73,13 +71,14 @@ window.XYDZTZ.toc = {
         const target = document.getElementById(targetId);
         if (target) {
           this.openForLink(link);
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           window.XYDZTZ.ui?.closeMobileSidebar();
+          requestAnimationFrame(() => {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
         }
       });
     });
 
-    // 保存数据用于搜索
     this.headingsData = items;
   },
 
@@ -94,84 +93,100 @@ window.XYDZTZ.toc = {
     const tocList = document.getElementById('toc-list');
     if (!input || !tocList) return;
 
-    const noResults = document.createElement('div');
-    noResults.className = 'toc-no-results';
-    noResults.textContent = '无匹配结果';
-    tocList.parentNode.insertBefore(noResults, tocList.nextSibling);
+    this.searchIndex = this.buildSearchIndex();
+    const results = document.createElement('div');
+    results.className = 'toc-search-results';
+    results.setAttribute('aria-live', 'polite');
+    results.hidden = true;
+    tocList.before(results);
 
     input.addEventListener('input', window.XYDZTZ.utils.debounce((e) => {
       const query = e.target.value.toLowerCase().trim();
-      this.filterTOC(query, noResults);
-    }, 150));
+      this.renderSearch(query, results, tocList);
+    }, 120));
+
+    input.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || !input.value) return;
+      event.stopPropagation();
+      input.value = '';
+      this.renderSearch('', results, tocList);
+    });
+
+    if (!this._searchShortcutBound) {
+      document.addEventListener('keydown', (event) => {
+        if (!(event.ctrlKey || event.metaKey) || event.key.toLowerCase() !== 'k') return;
+        event.preventDefault();
+        if (window.matchMedia('(max-width: 768px)').matches) {
+          window.XYDZTZ.ui?.openMobileSidebar();
+        }
+        requestAnimationFrame(() => {
+          input.focus();
+          input.select();
+        });
+      });
+      this._searchShortcutBound = true;
+    }
   },
 
-  filterTOC(query, noResultsEl) {
-    const tocList = document.getElementById('toc-list');
-    const items = tocList.querySelectorAll('.toc-item');
-
-    // 空查询：全部显示
-    if (query === '') {
-      items.forEach((item) => item.classList.remove('hidden'));
+  renderSearch(query, results, tocList) {
+    if (!query) {
+      results.hidden = true;
+      results.innerHTML = '';
+      tocList.hidden = false;
       tocList.classList.remove('searching');
       this.syncOpenState();
-      noResultsEl.classList.remove('visible');
       return;
     }
 
-    tocList.classList.add('searching');
+    const matches = this.searchIndex
+      .map((item) => {
+        const headingIndex = item.headingLower.indexOf(query);
+        const bodyIndex = item.bodyLower.indexOf(query);
+        if (headingIndex < 0 && bodyIndex < 0) return null;
+        return {
+          ...item,
+          score: headingIndex === 0 ? 0 : headingIndex > 0 ? 1 : 2,
+          excerpt: this.createExcerpt(item.body || item.heading, query),
+        };
+      })
+      .filter(Boolean)
+      .sort((a, b) => a.score - b.score || a.order - b.order)
+      .slice(0, 10);
 
-    // 第一轮：收集自身匹配的项
-    const matched = new Set();
-    items.forEach((item) => {
-      const text = item.getAttribute('data-text') || '';
-      if (text.includes(query)) {
-        matched.add(item);
-      }
-    });
+    tocList.hidden = true;
+    results.hidden = false;
 
-    // 第二轮：确保子项匹配时，其祖先父项也显示
-    matched.forEach((item) => {
-      let parent = item.parentElement?.closest('.toc-item');
-      while (parent) {
-        matched.add(parent);
-        parent.classList.add('open');
-        parent = parent.parentElement?.closest('.toc-item');
-      }
-    });
-
-    // 应用显示/隐藏
-    let hasVisible = false;
-    items.forEach((item) => {
-      if (matched.has(item)) {
-        item.classList.remove('hidden');
-        hasVisible = true;
-      } else {
-        item.classList.add('hidden');
-      }
-    });
-
-    // 如果目录无结果，尝试在正文中搜索并提示
-    if (!hasVisible) {
-      const contentMatch = this.searchInContent(query);
-      if (contentMatch) {
-        noResultsEl.innerHTML = `找到相关章节：<a href="#${contentMatch.id}" style="color:var(--accent-fire)">${this.escapeHtml(contentMatch.text)}</a>`;
-        noResultsEl.classList.add('visible');
-        const link = noResultsEl.querySelector('a');
-        if (link) {
-          link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = document.getElementById(contentMatch.id);
-            if (target) {
-              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              window.XYDZTZ.ui?.closeMobileSidebar();
-            }
-          });
-        }
-        return;
-      }
+    if (matches.length === 0) {
+      results.innerHTML = '<p class="toc-search-empty">没有找到相关内容</p>';
+      return;
     }
 
-    noResultsEl.classList.remove('visible');
+    results.innerHTML = `
+      <p class="toc-search-count">相关章节 ${matches.length} 项</p>
+      <ul>
+        ${matches.map((item) => `
+          <li>
+            <a class="toc-search-result" href="#${item.id}" data-id="${item.id}">
+              <strong>${this.highlightText(item.heading, query)}</strong>
+              <span>${this.highlightText(item.excerpt, query)}</span>
+            </a>
+          </li>
+        `).join('')}
+      </ul>
+    `;
+
+    results.querySelectorAll('.toc-search-result').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const target = document.getElementById(link.dataset.id);
+        if (!target) return;
+        window.XYDZTZ.ui?.closeMobileSidebar();
+        requestAnimationFrame(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', `#${link.dataset.id}`);
+        });
+      });
+    });
   },
 
   openForLink(link) {
@@ -198,29 +213,57 @@ window.XYDZTZ.toc = {
     if (first) first.classList.add('open');
   },
 
-  /* 在正文 heading 及其后续段落中搜索 */
-  searchInContent(query) {
+  buildSearchIndex() {
     const main = document.getElementById('main-content');
-    if (!main) return null;
+    if (!main) return [];
 
-    const headings = main.querySelectorAll('h1, h2, h3, h4');
-    for (const h of headings) {
-      if (h.textContent.toLowerCase().includes(query)) {
-        return { id: h.id, text: h.textContent.trim() };
-      }
-
-      // 检查 heading 后面的段落
-      let sibling = h.nextElementSibling;
-      let count = 0;
-      while (sibling && count < 10) {
-        if (/^H[1-6]$/i.test(sibling.tagName)) break;
-        if (sibling.textContent.toLowerCase().includes(query)) {
-          return { id: h.id, text: h.textContent.trim() };
-        }
+    return Array.from(main.querySelectorAll('h1, h2, h3, h4')).map((heading, order) => {
+      const chunks = [];
+      let sibling = heading.nextElementSibling;
+      while (sibling && !sibling.matches('h1, h2, h3, h4')) {
+        chunks.push(sibling.textContent);
         sibling = sibling.nextElementSibling;
-        count++;
       }
+
+      const headingText = heading.textContent.trim();
+      const body = chunks.join(' ').replace(/\s+/g, ' ').trim();
+      return {
+        id: heading.id,
+        heading: headingText,
+        headingLower: headingText.toLowerCase(),
+        body,
+        bodyLower: body.toLowerCase(),
+        order,
+      };
+    });
+  },
+
+  createExcerpt(text, query) {
+    const normalized = text.replace(/\s+/g, ' ').trim();
+    const index = normalized.toLowerCase().indexOf(query);
+    if (index < 0) return normalized.slice(0, 76);
+
+    const start = Math.max(0, index - 24);
+    const end = Math.min(normalized.length, index + query.length + 48);
+    return `${start > 0 ? '…' : ''}${normalized.slice(start, end)}${end < normalized.length ? '…' : ''}`;
+  },
+
+  highlightText(text, query) {
+    if (!query) return this.escapeHtml(text);
+    const pattern = new RegExp(this.escapeRegExp(query), 'ig');
+    let html = '';
+    let lastIndex = 0;
+    let match;
+    while ((match = pattern.exec(text)) !== null) {
+      html += this.escapeHtml(text.slice(lastIndex, match.index));
+      html += `<mark>${this.escapeHtml(match[0])}</mark>`;
+      lastIndex = match.index + match[0].length;
+      if (match[0].length === 0) pattern.lastIndex++;
     }
-    return null;
+    return html + this.escapeHtml(text.slice(lastIndex));
+  },
+
+  escapeRegExp(text) {
+    return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 };

@@ -15,13 +15,11 @@ window.XYDZTZ.renderer = {
       const renderer = new marked.Renderer();
       const { slugify, inferBlockquoteType } = window.XYDZTZ.utils;
 
-      // Heading: 添加锚点 ID
       renderer.heading = function (text, depth, raw) {
         const id = slugify(text);
         return `<h${depth} id="${id}">${text}</h${depth}>`;
       };
 
-      // Table: 包裹可滚动容器 + 阴影提示
       renderer.table = function (header, body) {
         let html = '<div class="table-outer"><div class="table-wrapper"><table>';
         if (header) html += header;
@@ -30,7 +28,6 @@ window.XYDZTZ.renderer = {
         return html;
       };
 
-      // Blockquote: 根据内容自动分层着色
       renderer.blockquote = function (quote) {
         const temp = document.createElement('div');
         temp.innerHTML = quote;
@@ -54,18 +51,17 @@ window.XYDZTZ.renderer = {
       main.innerHTML = html;
       this.initUpdateSummary(main);
       this.initJieyunLookup(main);
+      this.initFaq(main);
+      this.decorateContent(main);
 
-      // 代码高亮
       if (typeof hljs !== 'undefined') {
         main.querySelectorAll('pre code').forEach((block) => {
           hljs.highlightElement(block);
         });
       }
 
-      // 表格滚动阴影提示初始化
       this.initTableScrollHints();
 
-      // 代码复制按钮
       window.XYDZTZ.ui?.initCodeBlocks();
     } catch (err) {
       console.error('[XYDZTZ] Markdown 渲染失败:', err);
@@ -78,10 +74,9 @@ window.XYDZTZ.renderer = {
     }
   },
 
-  /* 将版本速览表转换为更轻的更新摘要块 */
   initUpdateSummary(main) {
-    const heading = Array.from(main.querySelectorAll('h3'))
-      .find((item) => item.textContent.trim() === 'V2.4新增内容速览');
+    const heading = Array.from(main.querySelectorAll('h2, h3'))
+      .find((item) => /新增内容速览$/.test(item.textContent.trim()));
     if (!heading) return;
 
     let node = heading.nextElementSibling;
@@ -106,16 +101,18 @@ window.XYDZTZ.renderer = {
     summary.className = 'update-summary';
     summary.innerHTML = entries.map((entry) => `
       <article class="update-summary-item">
-        <h4>${this.escapeHtml(entry.title)}</h4>
+        <div class="update-summary-head">
+          <h4>${this.escapeHtml(entry.title)}</h4>
+          <span class="update-kind update-kind-new">新增</span>
+        </div>
         <p>${this.escapeHtml(entry.summary)}</p>
-        <span>${this.escapeHtml(entry.tags || '')}</span>
+        <div class="keyword-tags">${this.renderKeywordTags(entry.tags)}</div>
       </article>
     `).join('');
 
     node.replaceWith(summary);
   },
 
-  /* 劫运表改造成单条查询器 */
   initJieyunLookup(main) {
     const headings = Array.from(main.querySelectorAll('h1'));
     const appendix = headings.find((heading) => heading.textContent.trim() === '附录：劫运解密查询');
@@ -220,13 +217,123 @@ window.XYDZTZ.renderer = {
     tableOuter.replaceWith(lookup);
   },
 
+  initFaq(main) {
+    const heading = Array.from(main.querySelectorAll('h1'))
+      .find((item) => item.textContent.trim() === '高频Q&A');
+    if (!heading) return;
+
+    const questions = [];
+    let node = heading.nextElementSibling;
+    while (node && !node.matches('h1')) {
+      const strong = node.matches('p') ? node.querySelector(':scope > strong:first-child') : null;
+      if (strong && /^Q\d+[：:]/i.test(strong.textContent.trim())) questions.push(node);
+      node = node.nextElementSibling;
+    }
+    if (questions.length === 0) return;
+
+    const list = document.createElement('section');
+    list.className = 'faq-list';
+    list.setAttribute('aria-label', '高频问题列表');
+    questions[0].before(list);
+
+    questions.forEach((questionNode) => {
+      const questionStrong = questionNode.querySelector(':scope > strong:first-child');
+      const questionText = questionStrong?.textContent.trim() || '';
+      const match = questionText.match(/^Q(\d+)[：:]\s*(.+)$/i);
+      if (!match) return;
+
+      const details = document.createElement('details');
+      details.className = 'faq-item';
+      details.innerHTML = `
+        <summary>
+          <span class="faq-index">Q${this.escapeHtml(match[1])}</span>
+          <span class="faq-question">${this.escapeHtml(match[2])}</span>
+          <span class="faq-chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-answer"></div>
+      `;
+
+      const answer = details.querySelector('.faq-answer');
+      const inlineAnswer = questionNode.cloneNode(true);
+      inlineAnswer.querySelector(':scope > strong:first-child')?.remove();
+      if (inlineAnswer.textContent.trim()) answer.appendChild(inlineAnswer);
+
+      let answerNode = questionNode.nextElementSibling;
+      while (answerNode && !answerNode.matches('h1, hr')) {
+        const nextQuestion = answerNode.matches('p')
+          && /^Q\d+[：:]/i.test(answerNode.querySelector(':scope > strong:first-child')?.textContent.trim() || '');
+        if (nextQuestion) break;
+
+        const next = answerNode.nextElementSibling;
+        answer.appendChild(answerNode);
+        answerNode = next;
+      }
+
+      questionNode.remove();
+      list.appendChild(details);
+    });
+  },
+
+  decorateContent(main) {
+    const rarityMap = {
+      '普通': 'common',
+      '精良': 'fine',
+      '稀有': 'rare',
+      '史诗': 'epic',
+      '传说': 'legendary',
+    };
+    const matchRarity = (text) => rarityMap[text.trim().replace(/层$/, '')] || null;
+
+    main.querySelectorAll('tbody td:first-child').forEach((td) => {
+      const cls = matchRarity(td.textContent);
+      if (cls) td.classList.add(`rarity-${cls}`);
+    });
+
+    main.querySelectorAll('strong').forEach((strong) => {
+      const text = strong.textContent.trim();
+      if (/层$/.test(text)) {
+        const cls = matchRarity(text);
+        if (cls) strong.classList.add(`rarity-${cls}`);
+      }
+    });
+
+    main.querySelectorAll('li, p').forEach((el) => {
+      if (!/配方/.test(el.textContent)) return;
+      el.querySelectorAll('code').forEach((code) => code.classList.add('mat-chip'));
+    });
+
+    main.querySelectorAll('table').forEach((table) => {
+      const headers = Array.from(table.querySelectorAll('thead th'));
+      const versionIndex = headers.findIndex((th) => th.textContent.trim() === '版本');
+      const keywordIndex = headers.findIndex((th) => /^(关键词|标签)$/.test(th.textContent.trim()));
+
+      table.querySelectorAll('tbody tr').forEach((row) => {
+        const cells = Array.from(row.querySelectorAll('td'));
+        if (versionIndex >= 0 && cells[versionIndex]) cells[versionIndex].classList.add('version-cell');
+        if (keywordIndex >= 0 && cells[keywordIndex]) {
+          const cell = cells[keywordIndex];
+          cell.classList.add('keyword-cell');
+          cell.innerHTML = `<div class="keyword-tags">${this.renderKeywordTags(cell.textContent)}</div>`;
+        }
+      });
+    });
+  },
+
+  renderKeywordTags(text = '') {
+    return text
+      .split(/[、,，]/)
+      .map((tag) => tag.trim())
+      .filter(Boolean)
+      .map((tag) => `<span class="keyword-tag">${this.escapeHtml(tag)}</span>`)
+      .join('');
+  },
+
   escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
   },
 
-  /* 表格横向滚动时显示左右阴影 */
   initTableScrollHints() {
     const outers = document.querySelectorAll('.table-outer');
     outers.forEach((outer) => {

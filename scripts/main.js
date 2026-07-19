@@ -48,23 +48,17 @@ window.XYDZTZ = window.XYDZTZ || {};
     try {
       const mdText = await fetchContent();
 
-      // 1. 渲染 Markdown
       window.XYDZTZ.renderer?.render(mdText);
 
-      // 2. 生成目录
       window.XYDZTZ.toc?.generate();
       window.XYDZTZ.toc?.setupSearch();
 
-      // 3. 滚动相关
       window.XYDZTZ.scroll?.init();
 
-      // 4. UI 交互
       window.XYDZTZ.ui?.init();
 
-      // 5. 主题
       window.XYDZTZ.theme?.init();
 
-      // 6. 处理页面初始 hash 跳转
       if (location.hash) {
         const target = document.getElementById(location.hash.slice(1));
         if (target) {

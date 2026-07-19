@@ -10,9 +10,37 @@ window.XYDZTZ.scroll = {
     this.setupScrollSpy();
     this.setupBackToTop();
     this.setupReadProgress();
+    this.setupReveal();
   },
 
-  /* --- IntersectionObserver ScrollSpy + Anchor Sync --- */
+  setupReveal() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!('IntersectionObserver' in window)) return;
+
+    const main = document.getElementById('main-content');
+    if (!main) return;
+
+    const children = Array.from(main.children);
+    if (children.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -8% 0px', threshold: 0.01 }
+    );
+
+    children.forEach((el) => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+  },
+
   setupScrollSpy() {
     const tocLinks = document.querySelectorAll('.toc-link');
     if (tocLinks.length === 0) return;
@@ -28,10 +56,8 @@ window.XYDZTZ.scroll = {
 
     if (headings.length === 0) return;
 
-    // 默认激活第一个
-    this.setActive(headings[0].id, headings);
-
-    let lastHash = '';
+    let lastHash = location.hash.slice(1);
+    const hero = document.getElementById('hero');
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -40,36 +66,50 @@ window.XYDZTZ.scroll = {
           else visible.delete(entry.target.id);
         });
 
-        // ScrollSpy：按 DOM 顺序取第一个可见 heading
+        let activeId = null;
         for (const h of headings) {
           if (visible.has(h.id)) {
-            this.setActive(h.id, headings);
+            activeId = h.id;
             break;
           }
         }
 
-        // Anchor Sync：同步更新 URL hash（不污染历史记录）
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
-            if (id && id !== lastHash) {
-              lastHash = id;
-              history.replaceState(null, null, `#${id}`);
-            }
-          }
-        });
+        if (!activeId) return;
+        this.setActive(activeId, headings);
+
+        // Hero 可见时保留首页地址，避免首次加载立即写入锚点。
+        const syncStart = Math.max(0, (hero?.offsetHeight || 0) - 80);
+        if (window.scrollY >= syncStart && activeId !== lastHash) {
+          lastHash = activeId;
+          history.replaceState(null, '', `#${activeId}`);
+        }
       },
       { rootMargin: '0px 0px -55% 0px', threshold: 0.05 }
     );
 
     headings.forEach((h) => observer.observe(h.el));
+
+    const resetAtTop = window.XYDZTZ.utils.throttle(() => {
+      if (!hero || window.scrollY >= hero.offsetHeight * 0.45) return;
+
+      const active = document.querySelector('.toc-link.active');
+      if (active) active.classList.remove('active');
+      this._currentActiveId = null;
+      document.title = '《腌笃鲜》官方维基';
+
+      if (location.hash) {
+        lastHash = '';
+        history.replaceState(null, '', `${location.pathname}${location.search}`);
+      }
+    });
+
+    window.addEventListener('scroll', resetAtTop, { passive: true });
   },
 
   setActive(activeId, headings) {
     if (activeId === this._currentActiveId) return;
     this._currentActiveId = activeId;
 
-    // 只更新真正变化的链接
     const oldLink = document.querySelector('.toc-link.active');
     if (oldLink) oldLink.classList.remove('active');
 
@@ -78,7 +118,6 @@ window.XYDZTZ.scroll = {
       newHeading.link.classList.add('active');
       window.XYDZTZ.toc?.openForLink(newHeading.link);
 
-      // 更新页面标题
       const sectionTitle = newHeading.el.textContent.trim();
       const baseTitle = '《腌笃鲜》官方维基';
       if (sectionTitle) {
@@ -90,7 +129,6 @@ window.XYDZTZ.scroll = {
     }
   },
 
-  /* --- Back to Top --- */
   setupBackToTop() {
     const btn = document.getElementById('back-to-top');
     if (!btn) return;
@@ -106,7 +144,6 @@ window.XYDZTZ.scroll = {
     });
   },
 
-  /* --- Reading Progress Bar --- */
   setupReadProgress() {
     const bar = document.getElementById('read-progress');
     if (!bar) return;

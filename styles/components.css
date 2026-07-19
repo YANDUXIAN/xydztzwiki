@@ -1,8 +1,7 @@
 /* ============================================
-   UI Components
+   《腌笃鲜》官方维基 - Components
    ============================================ */
 
-/* --- Back to Top --- */
 .back-to-top {
   position: fixed;
   right: 24px;
@@ -17,7 +16,11 @@
   justify-content: center;
   cursor: pointer;
   box-shadow: var(--shadow-card);
-  transition: all var(--transition-normal);
+  transition: opacity var(--transition-normal),
+              visibility var(--transition-normal),
+              transform var(--transition-normal),
+              box-shadow var(--transition-normal),
+              border-color var(--transition-normal);
   opacity: 0;
   visibility: hidden;
   z-index: 100;
@@ -45,7 +48,6 @@
   fill: var(--accent-fire);
 }
 
-/* --- Mobile Sidebar Toggle --- */
 .sidebar-toggle {
   display: none;
   position: fixed;
@@ -61,7 +63,8 @@
   box-shadow: var(--shadow-card);
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-fast);
+  transition: border-color var(--transition-fast),
+              box-shadow var(--transition-fast);
 }
 
 .sidebar-toggle:hover {
@@ -85,7 +88,6 @@
   z-index: 150;
 }
 
-/* --- Loading --- */
 .loading {
   display: flex;
   align-items: center;
@@ -108,7 +110,6 @@
   to { transform: rotate(360deg); }
 }
 
-/* --- Search Box --- */
 .sidebar-search {
   padding: 0 16px 12px;
   border-bottom: 1px solid var(--border-light);
@@ -139,25 +140,84 @@
   display: none;
 }
 
-/* --- 搜索无结果提示 --- */
-.toc-no-results {
-  padding: 16px;
-  text-align: center;
-  color: var(--text-secondary);
-  font-size: 13px;
+.toc-search-results {
+  padding: 0 10px 10px;
+}
+
+.toc-search-results[hidden] {
   display: none;
 }
 
-.toc-no-results.visible {
+.toc-search-results ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc-search-count,
+.toc-search-empty {
+  margin: 0;
+  padding: 8px 10px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.toc-search-empty {
+  padding-top: 18px;
+  text-align: center;
+}
+
+.toc-search-result {
+  display: block;
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.toc-search-result:hover,
+.toc-search-result:focus-visible {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.toc-search-result strong,
+.toc-search-result span {
   display: block;
 }
 
-/* --- 版本更新摘要 --- */
+.toc-search-result strong {
+  margin-bottom: 3px;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.toc-search-result span {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--text-secondary);
+  font-size: 11.5px;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.toc-search-result mark {
+  padding: 0 1px;
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+
 .update-summary {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
   gap: 10px;
   margin: 16px 0 18px;
+}
+
+body.sidebar-open {
+  overflow: hidden;
 }
 
 .update-summary-item {
@@ -165,6 +225,22 @@
   border: 1px solid var(--border-light);
   border-radius: var(--radius-sm);
   background: var(--bg-page);
+  transition: transform var(--transition-fast),
+              border-color var(--transition-fast),
+              box-shadow var(--transition-fast);
+}
+
+.update-summary-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(var(--accent-gold-rgb), 0.45);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.update-summary-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .update-summary-item h4 {
@@ -181,15 +257,140 @@
   line-height: 1.65;
 }
 
-.update-summary-item span {
-  display: block;
-  margin-top: 8px;
-  color: var(--accent-gold);
-  font-size: 12.5px;
+.update-kind {
+  flex: none;
+  padding: 2px 7px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 11px;
   font-weight: 600;
+  line-height: 1.35;
 }
 
-/* --- 35重劫运单条查询器 --- */
+.update-kind-new {
+  background: var(--color-new-bg);
+  color: var(--color-new);
+}
+
+.keyword-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 9px;
+}
+
+.keyword-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 2px 8px;
+  border: 1px solid rgba(var(--accent-gold-rgb), 0.42);
+  border-radius: 999px;
+  color: var(--accent-gold);
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.version-cell {
+  color: var(--color-adjust);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.version-cell strong {
+  display: inline-flex;
+  padding: 2px 7px;
+  border: 1px solid rgba(var(--accent-gold-rgb), 0.42);
+  border-radius: 999px;
+  color: inherit;
+  background: var(--color-adjust-bg);
+  font-size: 12px;
+}
+
+.keyword-cell .keyword-tags {
+  margin-top: 0;
+  min-width: 150px;
+}
+
+.faq-list {
+  margin: 16px 0 28px;
+  border-top: 1px solid var(--border-light);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.faq-item summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 58px;
+  padding: 10px 4px;
+  color: var(--text-primary);
+  cursor: pointer;
+  list-style: none;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary:hover {
+  color: var(--accent-fire);
+  background: var(--bg-hover);
+}
+
+.faq-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 26px;
+  padding: 0 6px;
+  border: 1px solid var(--accent-fire);
+  border-radius: 999px;
+  color: var(--accent-fire);
+  font-size: 11px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.faq-question {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.faq-chevron {
+  width: 9px;
+  height: 9px;
+  margin-right: 6px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform var(--transition-fast);
+}
+
+.faq-item[open] .faq-chevron {
+  transform: rotate(225deg);
+}
+
+.faq-answer {
+  padding: 0 46px 14px;
+  color: var(--text-secondary);
+}
+
+.faq-answer p {
+  margin: 0;
+  color: inherit;
+}
+
 .jieyun-lookup {
   margin: 18px 0 24px;
   padding: 18px;
@@ -294,7 +495,6 @@
   display: none;
 }
 
-/* --- 阅读进度条 --- */
 .read-progress {
   position: fixed;
   top: 0;
@@ -306,7 +506,6 @@
   transition: width 0.1s linear;
 }
 
-/* --- 代码复制按钮 --- */
 .copy-btn {
   position: absolute;
   top: 8px;
@@ -339,7 +538,6 @@
   border-color: rgba(152, 195, 121, 0.4);
 }
 
-/* --- 主题切换按钮 --- */
 .theme-toggle {
   position: fixed;
   top: 12px;
@@ -355,7 +553,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-fast);
+  transition: transform var(--transition-fast),
+              border-color var(--transition-fast),
+              box-shadow var(--transition-fast);
   color: var(--text-primary);
 }
 
@@ -370,7 +570,6 @@
   fill: currentColor;
 }
 
-/* 移动端适配主题按钮位置 */
 @media (max-width: 768px) {
   .theme-toggle {
     top: 12px;

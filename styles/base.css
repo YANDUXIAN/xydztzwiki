@@ -1,5 +1,5 @@
 /* ============================================
-   Base & Reset
+   《腌笃鲜》官方维基 - Base Styles
    ============================================ */
 
 *,
@@ -12,6 +12,7 @@
 
 html {
   scroll-padding-top: 80px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -19,6 +20,7 @@ body {
     "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
   background: var(--bg-page);
+  background-image: var(--texture-paper);
   color: var(--text-primary);
   line-height: 1.8;
   font-size: 15px;
@@ -37,17 +39,21 @@ a:hover {
   color: var(--accent-gold-hover);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 html[data-theme="dark"] a:hover {
   color: var(--accent-gold-hover);
 }
 
-/* 无障碍：焦点环 */
 *:focus-visible {
   outline: 2px solid var(--accent-fire);
   outline-offset: 2px;
 }
 
-/* 减少动画偏好 */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -1,15 +1,25 @@
 /* ============================================
-   Markdown Rendered Styles
+   《腌笃鲜》官方维基 - Markdown Styles
    ============================================ */
 
 .md-body h1 {
+  font-family: var(--font-serif);
   font-size: 28px;
   font-weight: 700;
+  letter-spacing: 0;
   color: var(--text-primary);
   margin: 40px 0 20px;
-  padding-bottom: 12px;
-  border-bottom: 2px solid var(--accent-fire);
+  padding-bottom: 14px;
+  border-bottom: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 8' preserveAspectRatio='none'%3E%3Cpath d='M2 5 C 30 2, 60 6.5, 90 4 S 150 2.5, 180 4.5 S 220 6, 238 3.5' fill='none' stroke='%23b83a3a' stroke-width='2.4' stroke-linecap='round' opacity='0.8'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 180px 7px;
   line-height: 1.4;
+}
+
+html[data-theme="dark"] .md-body h1 {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 8' preserveAspectRatio='none'%3E%3Cpath d='M2 5 C 30 2, 60 6.5, 90 4 S 150 2.5, 180 4.5 S 220 6, 238 3.5' fill='none' stroke='%23e06666' stroke-width='2.4' stroke-linecap='round' opacity='0.8'/%3E%3C/svg%3E");
 }
 
 .md-body h1:first-child {
@@ -17,8 +27,10 @@
 }
 
 .md-body h2 {
+  font-family: var(--font-serif);
   font-size: 22px;
   font-weight: 700;
+  letter-spacing: 0;
   color: var(--text-primary);
   margin: 36px 0 16px;
   padding-bottom: 8px;
@@ -27,8 +39,10 @@
 }
 
 .md-body h3 {
+  font-family: var(--font-serif);
   font-size: 18px;
   font-weight: 600;
+  letter-spacing: 0;
   color: var(--text-primary);
   margin: 28px 0 12px;
   padding-left: 10px;
@@ -51,8 +65,10 @@
 }
 
 .md-body h4 {
+  font-family: var(--font-serif);
   font-size: 16px;
   font-weight: 600;
+  letter-spacing: 0;
   color: var(--text-primary);
   margin: 24px 0 10px;
 }
@@ -74,6 +90,35 @@
   padding-left: 24px;
 }
 
+.md-body ul {
+  list-style: none;
+  padding-left: 22px;
+}
+
+.md-body ul li {
+  position: relative;
+}
+
+.md-body ul li::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 0.92em;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-gold);
+  opacity: 0.8;
+  transform: rotate(45deg) translateY(-50%);
+}
+
+.md-body ul ul li::before {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  border: 1.5px solid var(--accent-gold);
+  opacity: 0.9;
+}
+
 .md-body li {
   margin: 6px 0;
   line-height: 1.8;
@@ -85,9 +130,9 @@
   margin: 32px 0;
 }
 
-/* --- Table Outer（横向滚动容器） --- */
 .table-outer {
   position: relative;
+  max-width: 100%;
   margin: 16px 0;
   overflow-x: auto;
   overflow-y: visible;
@@ -96,7 +141,6 @@
   scrollbar-gutter: stable;
 }
 
-/* 左右滚动阴影提示 */
 .table-outer::before,
 .table-outer::after {
   content: '';
@@ -133,17 +177,17 @@ html[data-theme="dark"] .table-outer::after {
   background: linear-gradient(to left, rgba(0,0,0,0.3), transparent);
 }
 
-/* --- Table Wrapper（内部不设置 overflow，确保 sticky 生效） --- */
+/* 此层不能设置 overflow，否则 sticky 表头失效。 */
 .table-wrapper {
   position: relative;
 }
 
-/* --- Table --- */
 .md-body table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
   font-size: 14px;
+  font-variant-numeric: tabular-nums;
   border: none;
 }
 
@@ -191,7 +235,6 @@ html[data-theme="dark"] .md-body tbody tr:nth-child(even) {
   background: rgba(199, 170, 112, 0.035);
 }
 
-/* --- Blockquote Layering --- */
 .md-body blockquote {
   position: relative;
   margin: 16px 0;
@@ -213,12 +256,11 @@ html[data-theme="dark"] .md-body tbody tr:nth-child(even) {
   color: var(--accent-fire-hover);
 }
 
-/* 检索标签仅作为站内搜索索引，不在正文中展示给玩家 */
+/* 检索标签参与全文搜索，但不向玩家展示。 */
 .md-body blockquote.bq-search-tags {
   display: none;
 }
 
-/* 引用块分层变体 */
 .md-body blockquote.bq-info {
   border-left-color: var(--color-info);
   background: var(--color-info-bg);
@@ -255,7 +297,57 @@ html[data-theme="dark"] .md-body tbody tr:nth-child(even) {
   color: var(--color-danger);
 }
 
-/* --- Inline Code --- */
+.md-body blockquote.bq-info,
+.md-body blockquote.bq-warning,
+.md-body blockquote.bq-success,
+.md-body blockquote.bq-danger {
+  padding-left: 46px;
+}
+
+.md-body blockquote.bq-info::before,
+.md-body blockquote.bq-warning::before,
+.md-body blockquote.bq-success::before,
+.md-body blockquote.bq-danger::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 21px;
+  width: 18px;
+  height: 18px;
+  mask-mode: alpha;
+  -webkit-mask-mode: alpha;
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+}
+
+.md-body blockquote.bq-info::before {
+  background-color: var(--color-info);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M12 2a10 10 0 100 20 10 10 0 000-20zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M12 2a10 10 0 100 20 10 10 0 000-20zM11 7h2v2h-2V7zm0 4h2v6h-2v-6z'/%3E%3C/svg%3E");
+}
+
+.md-body blockquote.bq-warning::before {
+  background-color: var(--color-warning);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M12 2l10 18H2L12 2zm-0.8 6.5h1.6v5.2h-1.6V8.5zm0 7.3h1.6v1.7h-1.6v-1.7z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M12 2l10 18H2L12 2zm-0.8 6.5h1.6v5.2h-1.6V8.5zm0 7.3h1.6v1.7h-1.6v-1.7z'/%3E%3C/svg%3E");
+}
+
+.md-body blockquote.bq-success::before {
+  background-color: var(--color-success);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M12 2a10 10 0 100 20 10 10 0 000-20zm-1.6 12.6l-3-3 1.4-1.4 1.6 1.6 4.2-4.2 1.4 1.4-5.6 5.6z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M12 2a10 10 0 100 20 10 10 0 000-20zm-1.6 12.6l-3-3 1.4-1.4 1.6 1.6 4.2-4.2 1.4 1.4-5.6 5.6z'/%3E%3C/svg%3E");
+}
+
+.md-body blockquote.bq-danger::before {
+  background-color: var(--color-danger);
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M12 2a10 10 0 100 20 10 10 0 000-20zM9.1 7.7L12 10.6l2.9-2.9 1.4 1.4L13.4 12l2.9 2.9-1.4 1.4L12 13.4l-2.9 2.9-1.4-1.4 2.9-2.9-2.9-2.9z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill-rule='evenodd' d='M12 2a10 10 0 100 20 10 10 0 000-20zM9.1 7.7L12 10.6l2.9-2.9 1.4 1.4L13.4 12l2.9 2.9-1.4 1.4L12 13.4l-2.9 2.9-1.4-1.4 2.9-2.9-2.9-2.9z'/%3E%3C/svg%3E");
+}
+
 .md-body code {
   font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", Menlo, Monaco,
     Consolas, monospace;
@@ -266,7 +358,6 @@ html[data-theme="dark"] .md-body tbody tr:nth-child(even) {
   font-size: 0.9em;
 }
 
-/* --- Code Block --- */
 .md-body pre {
   margin: 16px 0;
   border-radius: var(--radius-md);
@@ -287,12 +378,10 @@ html[data-theme="dark"] .md-body tbody tr:nth-child(even) {
     Consolas, monospace;
 }
 
-/* 复制按钮在 pre 上的定位基准 */
 .md-body pre {
   position: relative;
 }
 
-/* highlight.js 自定义颜色（适配 Atom One Dark） */
 .md-body pre code .hljs-keyword { color: #c678dd; }
 .md-body pre code .hljs-string { color: #98c379; }
 .md-body pre code .hljs-comment { color: #5c6370; font-style: italic; }
@@ -304,3 +393,40 @@ html[data-theme="dark"] .md-body tbody tr:nth-child(even) {
 .md-body pre code .hljs-literal { color: #56b6c2; }
 .md-body pre code .hljs-params { color: #abb2bf; }
 .md-body pre code .hljs-title { color: #61afef; }
+
+.md-body tbody td.rarity-common, .md-body strong.rarity-common { color: var(--rarity-common); }
+.md-body tbody td.rarity-fine, .md-body strong.rarity-fine { color: var(--rarity-fine); }
+.md-body tbody td.rarity-rare, .md-body strong.rarity-rare { color: var(--rarity-rare); }
+.md-body tbody td.rarity-epic, .md-body strong.rarity-epic { color: var(--rarity-epic); }
+.md-body tbody td.rarity-legendary, .md-body strong.rarity-legendary { color: var(--rarity-legendary); }
+
+.md-body code.mat-chip {
+  background: var(--color-info-bg);
+  color: var(--accent-gold);
+  border: 1px solid rgba(var(--accent-gold-rgb), 0.35);
+  border-radius: 999px;
+  padding: 1px 10px;
+  font-size: 0.85em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.md-body > .reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.55s var(--ease-standard),
+              transform 0.55s var(--ease-standard);
+}
+
+.md-body > .reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-body > .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

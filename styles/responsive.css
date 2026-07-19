@@ -1,5 +1,5 @@
 /* ============================================
-   Responsive Styles
+   《腌笃鲜》官方维基 - Responsive Styles
    ============================================ */
 
 @media (max-width: 1024px) {
@@ -25,16 +25,41 @@
 
   .hero-title {
     font-size: 1.8rem;
+    letter-spacing: 0;
+  }
+
+  .hero-title-row {
+    gap: 10px;
+  }
+
+  .hero-seal {
+    width: 46px;
+    height: 46px;
+    border-radius: 3px;
+  }
+
+  .hero-subtitles {
+    right: 12px;
+    gap: 10px;
   }
 
   .hero-subtitle {
-    font-size: 1rem;
-    letter-spacing: 1px;
+    font-size: 0.9rem;
+    letter-spacing: 0;
+  }
+
+  .hero-torn-edge {
+    height: 26px;
   }
 
   .hero-btn {
     padding: 10px 28px;
-    font-size: 14px;
+    font-size: 15px;
+    letter-spacing: 0;
+  }
+
+  .hero-actions {
+    gap: 8px;
   }
 
   .sidebar-toggle {
@@ -51,12 +76,23 @@
     max-height: 100vh;
     z-index: 160;
     border-radius: 0;
-    transition: left var(--transition-normal);
+    visibility: hidden;
+    pointer-events: none;
+    transition: left var(--transition-normal), visibility 0s linear 0.3s;
     box-shadow: var(--shadow-float);
+  }
+
+  .sidebar-header {
+    min-height: 40px;
+    padding-left: 64px;
+    align-items: center;
   }
 
   .sidebar.open {
     left: 0;
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;
   }
 
   .sidebar-overlay.visible {
@@ -65,8 +101,17 @@
 
   .layout {
     flex-direction: column;
+    align-items: stretch;
+    width: 100%;
     padding: 12px 8px 24px;
     gap: 0;
+  }
+
+  .main-content,
+  .content-card,
+  .md-body {
+    width: 100%;
+    min-width: 0;
   }
 
   .content-card {
@@ -93,6 +138,16 @@
   .md-body tbody td {
     padding: 8px 10px;
   }
+
+  .faq-item summary {
+    gap: 9px;
+    min-height: 54px;
+  }
+
+  .faq-answer {
+    padding: 0 4px 14px 44px;
+  }
+
 
   .back-to-top {
     right: 12px;
@@ -124,13 +179,23 @@
     font-size: 1.5rem;
   }
 
+  /* 超小屏仅保留一联竖排副标题，避免溢出 */
   .hero-subtitle {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    letter-spacing: 0;
+  }
+
+  .hero-subtitle + .hero-subtitle {
+    display: none;
   }
 
   .hero-btn {
     padding: 10px 24px;
     font-size: 14px;
+  }
+
+  .hero-actions {
+    width: min(100%, 300px);
   }
 
   .content-card {
@@ -143,5 +208,21 @@
 
   .copy-btn {
     opacity: 1;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-content {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.35rem;
+  }
+
+  .hero-seal,
+  .hero-subtitles {
+    display: none;
   }
 }
