@@ -1,108 +1,130 @@
 // ============================================
-// 《腌笃鲜》官方维基 - Table of Contents
+// 《腌笃鲜》维基百科 - Current Chapter TOC & Global Search
 // ============================================
 
 window.XYDZTZ = window.XYDZTZ || {};
 window.XYDZTZ.toc = {
   headingsData: [],
   searchIndex: [],
+  _searchPromise: null,
+  _searchBound: false,
+  _searchShortcutBound: false,
+  _searchRenderId: 0,
 
   generate() {
     const main = document.getElementById('main-content');
     const tocList = document.getElementById('toc-list');
     if (!main || !tocList) return;
 
-    const headings = main.querySelectorAll('h1, h2, h3');
-    const items = [];
+    const items = Array.from(main.querySelectorAll('h3, h4')).map((heading) => ({
+      id: heading.id,
+      level: heading.tagName.toLowerCase(),
+      text: window.XYDZTZ.utils.headingText(heading),
+    }));
 
-    headings.forEach((heading, index) => {
-      const id = heading.id || window.XYDZTZ.utils.slugify(heading.textContent);
-      if (!heading.id) heading.id = id;
-
-      const level = heading.tagName.toLowerCase();
-      const text = heading.textContent.trim();
-
-      // Hero 已展示站点标题，目录不再重复第一项。
-      if (level === 'h1' && index === 0) return;
-
-      items.push({ id, level, text });
-    });
-
-    let currentH1 = null;
     const structure = [];
-
+    let currentH3 = null;
     items.forEach((item) => {
-      if (item.level === 'h1') {
-        currentH1 = { ...item, children: [] };
-        structure.push(currentH1);
-      } else if (currentH1) {
-        currentH1.children.push(item);
+      if (item.level === 'h3') {
+        currentH3 = { ...item, children: [] };
+        structure.push(currentH3);
+      } else if (currentH3) {
+        currentH3.children.push(item);
       } else {
-        structure.push(item);
+        structure.push({ ...item, children: [] });
       }
     });
 
-    let html = '';
-    structure.forEach((section, index) => {
-      const hasChildren = section.children && section.children.length > 0;
-      const itemClass = `toc-item toc-section${hasChildren ? ' has-children' : ''}${index === 0 ? ' open' : ''}`;
-      html += `<li class="${itemClass}" data-text="${section.text.toLowerCase()}">`;
-      html += `<a class="toc-link" href="#${section.id}" data-id="${section.id}">${this.escapeHtml(section.text)}</a>`;
-
-      if (hasChildren) {
-        html += '<ul class="toc-sublist">';
-        section.children.forEach((child) => {
-          html += `<li class="toc-item" data-text="${child.text.toLowerCase()}">`;
-          html += `<a class="toc-link ${child.level === 'h3' ? 'h3' : ''}" href="#${child.id}" data-id="${child.id}">${this.escapeHtml(child.text)}</a>`;
-          html += '</li>';
-        });
-        html += '</ul>';
-      }
-
-      html += '</li>';
-    });
-
-    tocList.innerHTML = html;
+    /* 章序：与正文 H3 的 data-num 保持一致，章级目录项注入序号 */
+    const TOC_NUMERALS = ['壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖', '拾', '拾壹', '拾贰', '拾叁', '拾肆', '拾伍'];
+    let h3Count = 0;
+    tocList.innerHTML = structure.map((section, index) => {
+      const hasChildren = section.children.length > 0;
+      const num = section.level === 'h3' ? ` data-num="${TOC_NUMERALS[h3Count] || h3Count + 1}"` : '';
+      if (section.level === 'h3') h3Count += 1;
+      return `
+        <li class="toc-item toc-section${hasChildren ? ' has-children' : ''}${index === 0 ? ' open' : ''}">
+          <a class="toc-link" href="#${encodeURIComponent(section.id)}" data-id="${this.escapeHtml(section.id)}"${num}>${this.escapeHtml(section.text)}</a>
+          ${hasChildren ? `
+            <ul class="toc-sublist">
+              ${section.children.map((child) => `
+                <li class="toc-item">
+                  <a class="toc-link h4" href="#${encodeURIComponent(child.id)}" data-id="${this.escapeHtml(child.id)}">${this.escapeHtml(child.text)}</a>
+                </li>
+              `).join('')}
+            </ul>
+          ` : ''}
+        </li>
+      `;
+    }).join('');
 
     tocList.querySelectorAll('.toc-link').forEach((link) => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('data-id');
-        const target = document.getElementById(targetId);
-        if (target) {
-          this.openForLink(link);
-          window.XYDZTZ.ui?.closeMobileSidebar();
-          requestAnimationFrame(() => {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          });
-        }
+      link.addEventListener('click', (event) => {
+        const target = document.getElementById(link.dataset.id);
+        if (!target) return;
+        event.preventDefault();
+        this.openForLink(link);
+        window.XYDZTZ.ui?.closeMobileSidebar();
+        history.pushState(null, '', `#${encodeURIComponent(target.id)}`);
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
 
     this.headingsData = items;
   },
 
-  escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
+  async ensureSearchIndex() {
+    if (this.searchIndex.length > 0) return this.searchIndex;
+    if (this._searchPromise) return this._searchPromise;
+
+    const url = document.body.dataset.searchIndex || '/search-index.json';
+    this._searchPromise = fetch(url)
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((payload) => {
+        this.searchIndex = (payload.entries || []).map((item) => {
+          const breadcrumb = [item.book, item.chapter, item.parent]
+            .filter((part, index, list) => part && list.indexOf(part) === index)
+            .join(' › ');
+          return {
+            ...item,
+            breadcrumb,
+            headingLower: item.heading.toLowerCase(),
+            bodyLower: item.body.toLowerCase(),
+            breadcrumbLower: breadcrumb.toLowerCase(),
+          };
+        });
+        return this.searchIndex;
+      })
+      .catch((err) => {
+        this._searchPromise = null;
+        console.warn('全站搜索索引加载失败', err);
+        throw err;
+      });
+
+    return this._searchPromise;
   },
 
   setupSearch() {
+    if (this._searchBound) return;
     const input = document.getElementById('toc-search');
     const tocList = document.getElementById('toc-list');
     if (!input || !tocList) return;
 
-    this.searchIndex = this.buildSearchIndex();
     const results = document.createElement('div');
     results.className = 'toc-search-results';
     results.setAttribute('aria-live', 'polite');
     results.hidden = true;
     tocList.before(results);
 
-    input.addEventListener('input', window.XYDZTZ.utils.debounce((e) => {
-      const query = e.target.value.toLowerCase().trim();
-      this.renderSearch(query, results, tocList);
+    input.addEventListener('focus', () => {
+      this.ensureSearchIndex().catch(() => {});
+    }, { once: true });
+
+    input.addEventListener('input', window.XYDZTZ.utils.debounce((event) => {
+      this.renderSearch(event.target.value.toLowerCase().trim(), results, tocList);
     }, 120));
 
     input.addEventListener('keydown', (event) => {
@@ -126,9 +148,12 @@ window.XYDZTZ.toc = {
       });
       this._searchShortcutBound = true;
     }
+
+    this._searchBound = true;
   },
 
-  renderSearch(query, results, tocList) {
+  async renderSearch(query, results, tocList) {
+    const renderId = ++this._searchRenderId;
     if (!query) {
       results.hidden = true;
       results.innerHTML = '';
@@ -138,23 +163,36 @@ window.XYDZTZ.toc = {
       return;
     }
 
+    tocList.hidden = true;
+    tocList.classList.add('searching');
+    results.hidden = false;
+    results.innerHTML = '<p class="toc-search-count">正在搜索全站…</p>';
+
+    try {
+      await this.ensureSearchIndex();
+    } catch (err) {
+      if (renderId !== this._searchRenderId) return;
+      results.innerHTML = '<p class="toc-search-empty">全站搜索暂时不可用</p>';
+      return;
+    }
+
+    if (renderId !== this._searchRenderId) return;
+
     const matches = this.searchIndex
       .map((item) => {
         const headingIndex = item.headingLower.indexOf(query);
+        const breadcrumbIndex = item.breadcrumbLower.indexOf(query);
         const bodyIndex = item.bodyLower.indexOf(query);
-        if (headingIndex < 0 && bodyIndex < 0) return null;
+        if (headingIndex < 0 && breadcrumbIndex < 0 && bodyIndex < 0) return null;
         return {
           ...item,
-          score: headingIndex === 0 ? 0 : headingIndex > 0 ? 1 : 2,
+          score: headingIndex === 0 ? 0 : headingIndex > 0 ? 1 : breadcrumbIndex >= 0 ? 2 : 3,
           excerpt: this.createExcerpt(item.body || item.heading, query),
         };
       })
       .filter(Boolean)
       .sort((a, b) => a.score - b.score || a.order - b.order)
-      .slice(0, 10);
-
-    tocList.hidden = true;
-    results.hidden = false;
+      .slice(0, 12);
 
     if (matches.length === 0) {
       results.innerHTML = '<p class="toc-search-empty">没有找到相关内容</p>';
@@ -162,11 +200,12 @@ window.XYDZTZ.toc = {
     }
 
     results.innerHTML = `
-      <p class="toc-search-count">相关章节 ${matches.length} 项</p>
+      <p class="toc-search-count">全站相关章节 ${matches.length} 项</p>
       <ul>
         ${matches.map((item) => `
           <li>
-            <a class="toc-search-result" href="#${item.id}" data-id="${item.id}">
+            <a class="toc-search-result" href="${this.escapeHtml(item.url)}" data-id="${this.escapeHtml(item.id)}">
+              <small>${this.escapeHtml(item.breadcrumb)}</small>
               <strong>${this.highlightText(item.heading, query)}</strong>
               <span>${this.highlightText(item.excerpt, query)}</span>
             </a>
@@ -177,24 +216,32 @@ window.XYDZTZ.toc = {
 
     results.querySelectorAll('.toc-search-result').forEach((link) => {
       link.addEventListener('click', (event) => {
-        event.preventDefault();
-        const target = document.getElementById(link.dataset.id);
-        if (!target) return;
         window.XYDZTZ.ui?.closeMobileSidebar();
-        requestAnimationFrame(() => {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          history.replaceState(null, '', `#${link.dataset.id}`);
-        });
+        const destination = new URL(link.href, location.href);
+        const samePage = destination.pathname.replace(/index\.html$/, '') === location.pathname.replace(/index\.html$/, '');
+        const target = samePage ? document.getElementById(link.dataset.id) : null;
+        if (!target) return;
+
+        event.preventDefault();
+        history.pushState(null, '', destination.hash || `#${encodeURIComponent(target.id)}`);
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
+  },
+
+  async resolveAnchor(hash) {
+    try {
+      const index = await this.ensureSearchIndex();
+      const match = index.find((item) => item.id === hash || item.legacyId === hash);
+      return match?.url || '';
+    } catch (err) {
+      return '';
+    }
   },
 
   openForLink(link) {
     const section = link.closest('.toc-section');
     if (!section) return;
-
-    const tocList = document.getElementById('toc-list');
-    if (tocList?.classList.contains('searching')) return;
 
     document.querySelectorAll('.toc-section.open').forEach((item) => {
       if (item !== section) item.classList.remove('open');
@@ -208,34 +255,7 @@ window.XYDZTZ.toc = {
       this.openForLink(active);
       return;
     }
-
-    const first = document.querySelector('.toc-section');
-    if (first) first.classList.add('open');
-  },
-
-  buildSearchIndex() {
-    const main = document.getElementById('main-content');
-    if (!main) return [];
-
-    return Array.from(main.querySelectorAll('h1, h2, h3, h4')).map((heading, order) => {
-      const chunks = [];
-      let sibling = heading.nextElementSibling;
-      while (sibling && !sibling.matches('h1, h2, h3, h4')) {
-        chunks.push(sibling.textContent);
-        sibling = sibling.nextElementSibling;
-      }
-
-      const headingText = heading.textContent.trim();
-      const body = chunks.join(' ').replace(/\s+/g, ' ').trim();
-      return {
-        id: heading.id,
-        heading: headingText,
-        headingLower: headingText.toLowerCase(),
-        body,
-        bodyLower: body.toLowerCase(),
-        order,
-      };
-    });
+    document.querySelector('.toc-section')?.classList.add('open');
   },
 
   createExcerpt(text, query) {
@@ -258,12 +278,16 @@ window.XYDZTZ.toc = {
       html += this.escapeHtml(text.slice(lastIndex, match.index));
       html += `<mark>${this.escapeHtml(match[0])}</mark>`;
       lastIndex = match.index + match[0].length;
-      if (match[0].length === 0) pattern.lastIndex++;
+      if (match[0].length === 0) pattern.lastIndex += 1;
     }
     return html + this.escapeHtml(text.slice(lastIndex));
   },
 
   escapeRegExp(text) {
     return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  }
+  },
+
+  escapeHtml(text) {
+    return window.XYDZTZ.utils.escapeHtml(text);
+  },
 };

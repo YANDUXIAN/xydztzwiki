@@ -1,27 +1,233 @@
 /* ============================================
-   《腌笃鲜》官方维基 - Layout
+   《腌笃鲜》维基百科 - Layout
    ============================================ */
+
+.chapter-nav {
+  position: sticky;
+  top: 0;
+  z-index: 130;
+  background: var(--bg-card);
+  background: color-mix(in srgb, var(--bg-card) 94%, transparent);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 5px 16px rgba(37, 29, 22, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.chapter-nav-inner {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.chapter-nav-pages {
+  display: flex;
+  align-items: stretch;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.chapter-nav-pages::-webkit-scrollbar {
+  display: none;
+}
+
+.book-switcher {
+  position: relative;
+  flex: 0 0 auto;
+  align-self: center;
+}
+
+.book-switcher summary {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  min-height: 48px;
+  padding: 12px 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.book-switcher summary::-webkit-details-marker {
+  display: none;
+}
+
+.book-switcher summary strong {
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+  font-size: 15px;
+}
+
+.book-switcher summary::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  margin: 0 2px 3px 1px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform var(--transition-fast);
+}
+
+.book-switcher[open] summary::after {
+  transform: translateY(3px) rotate(225deg);
+}
+
+.book-switcher summary:hover,
+.book-switcher summary:focus-visible {
+  color: var(--accent-fire);
+  background: var(--accent-fire-bg);
+}
+
+.book-switcher-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 180;
+  display: grid;
+  min-width: 174px;
+  padding: 7px;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-float);
+}
+
+.book-switcher-link {
+  padding: 9px 11px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.book-switcher-link:hover,
+.book-switcher-link:focus-visible {
+  color: var(--accent-fire);
+  background: var(--accent-fire-bg);
+}
+
+.book-switcher-link.active {
+  color: var(--text-primary);
+  font-weight: 700;
+  background: var(--bg-hover);
+}
+
+.chapter-nav-divider {
+  align-self: center;
+  flex: 0 0 1px;
+  width: 1px;
+  height: 22px;
+  margin: 0 7px 0 2px;
+  background: var(--border-light);
+}
+
+/* 当前阅读位置：sticky 导航内的超薄指示行，滚入正文后展开 */
+.reading-position {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height var(--transition-normal), opacity var(--transition-fast);
+}
+
+.reading-position.visible {
+  max-height: 34px;
+  opacity: 1;
+  border-top: 1px solid var(--border-light);
+}
+
+.reading-position-text {
+  display: block;
+  max-width: 1460px;
+  margin: 0 auto;
+  padding: 7px 20px 8px calc(308px + clamp(28px, 4vw, 64px));
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reading-position .rp-num {
+  margin-right: 8px;
+  color: var(--accent-gold);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reading-position {
+    transition: none;
+  }
+}
+
+.chapter-nav-link {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 14px 18px 13px;
+  color: var(--text-secondary);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  white-space: nowrap;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.chapter-nav-link::after {
+  content: '';
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 0;
+  height: 2px;
+  background: var(--accent-fire);
+  transform: scaleX(0);
+  transition: transform var(--transition-fast);
+}
+
+.chapter-nav-link:hover,
+.chapter-nav-link:focus-visible {
+  color: var(--accent-fire);
+  background: var(--accent-fire-bg);
+}
+
+.chapter-nav-link.active,
+.chapter-nav-link[aria-current="page"] {
+  color: var(--accent-fire);
+}
+
+.chapter-nav-link.active::after,
+.chapter-nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
 
 .layout {
   display: flex;
-  max-width: 1400px;
+  max-width: 1460px;
   margin: 0 auto;
-  padding: 24px 20px 40px;
-  gap: 24px;
+  padding: 24px 20px 48px;
+  gap: 28px;
   align-items: flex-start;
 }
 
 .sidebar {
   position: sticky;
-  top: 20px;
+  top: 70px;
   width: var(--sidebar-width);
   min-width: var(--sidebar-width);
   background: var(--bg-sidebar);
   background-image: var(--texture-paper);
-  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-card);
   padding: 20px 0;
-  max-height: calc(100vh - 40px);
+  max-height: calc(100vh - 90px);
   overflow-y: auto;
   transition: box-shadow var(--transition-normal), background var(--transition-normal);
 }
@@ -105,6 +311,15 @@ html[data-theme="dark"] .sidebar::-webkit-scrollbar-thumb:hover {
   cursor: pointer;
 }
 
+/* 章序序号：构建期/运行时给章级目录项注入 data-num */
+.toc-section > .toc-link[data-num]::before {
+  content: attr(data-num);
+  margin-right: 7px;
+  color: var(--accent-gold);
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .toc-section.has-children > .toc-link::after {
   content: '›';
   float: right;
@@ -132,18 +347,18 @@ html[data-theme="dark"] .sidebar::-webkit-scrollbar-thumb:hover {
   margin-right: 10px;
 }
 
-.toc-link.h3 {
+.toc-link.h4 {
   padding-left: 36px;
   font-size: 13px;
   font-weight: 400;
   color: var(--text-secondary);
 }
 
-.toc-link.h3:hover {
+.toc-link.h4:hover {
   color: var(--accent-fire);
 }
 
-.toc-link.h3.active {
+.toc-link.h4.active {
   color: var(--accent-fire);
   font-weight: 500;
 }
@@ -156,18 +371,47 @@ html[data-theme="dark"] .sidebar::-webkit-scrollbar-thumb:hover {
 .content-card {
   background: var(--bg-card);
   background-image: var(--texture-paper);
-  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
   box-shadow: var(--shadow-card);
-  padding: 40px 48px;
+  padding: 32px clamp(28px, 4vw, 64px) 64px;
   transition: box-shadow var(--transition-normal), background var(--transition-normal);
 }
 
 .footer {
   text-align: center;
-  padding: 32px 20px;
+  padding: 36px 20px 32px;
   color: var(--text-secondary);
   font-size: 13px;
   line-height: 2;
+}
+
+.footer-message {
+  max-width: 960px;
+  margin: 0 auto 20px;
+}
+
+.footer-message p {
+  margin: 0;
+}
+
+.footer-message-text {
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.9;
+}
+
+.footer-signature {
+  margin-top: 7px !important;
+  color: var(--accent-gold);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.8;
 }
 
 .footer a {
@@ -197,10 +441,10 @@ html[data-theme="dark"] .sidebar::-webkit-scrollbar-thumb:hover {
   position: relative;
   width: 120px;
   height: 1px;
-  background: var(--accent-gold);
+  background: var(--gold-foil);
   margin: 0 auto 18px;
   border-radius: 0;
-  opacity: 0.65;
+  opacity: 0.75;
 }
 
 .footer-divider::after {
@@ -223,4 +467,9 @@ noscript .noscript-warning {
   max-width: 1400px;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   color: var(--text-primary);
+}
+
+/* V1.1: 页脚分隔线回归发丝线 */
+.footer-divider {
+  background: var(--border-light);
 }

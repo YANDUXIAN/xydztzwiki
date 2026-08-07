@@ -1,0 +1,545 @@
+<!doctype html>
+<!-- ============================================
+     《腌笃鲜》维基百科 - Main Page
+     ============================================ -->
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="查阅白骨夫人的双形态、尸体处理、骨衣、骨宠与复活规则。" />
+    <meta name="keywords" content="腌笃鲜,饥荒,神话书说,模组,元辰劫运,盘丝娘娘,wiki,攻略" />
+    <meta name="author" content="《腌笃鲜》资料整理" />
+    <meta name="theme-color" content="#faf8f3" />
+    <script>
+      (() => {
+        let theme = 'light';
+        try {
+          const saved = localStorage.getItem('xydztz-theme') || localStorage.getItem('xdyztz-theme');
+          theme = saved === 'dark' || saved === 'light'
+            ? saved
+            : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch (err) {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', theme === 'dark' ? '#15110e' : '#faf8f3');
+      })();
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="白骨夫人 | 神话人物 | 《腌笃鲜》" />
+    <meta property="og:description" content="查阅白骨夫人的双形态、尸体处理、骨衣、骨宠与复活规则。" />
+    <meta property="og:site_name" content="《腌笃鲜》" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:url" content="https://yanduxian.cn/myth-characters/white-bone/" />
+    <meta property="og:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1021" />
+    <meta property="og:image:alt" content="《腌笃鲜》雪景封面" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="白骨夫人 | 神话人物 | 《腌笃鲜》" />
+    <meta name="twitter:description" content="查阅白骨夫人的双形态、尸体处理、骨衣、骨宠与复活规则。" />
+    <meta name="twitter:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+
+    <title>白骨夫人 | 神话人物 | 《腌笃鲜》</title>
+    <link rel="canonical" href="https://yanduxian.cn/myth-characters/white-bone/" />
+
+    <link rel="preload" href="/images/hero-default-1200.webp" imagesrcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" imagesizes="100vw" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/fonts/MaShanZheng-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/png" href="/images/mod-icon.png?v=20260719" />
+
+    <link rel="stylesheet" href="/styles/fonts.css?v=20260804o" />
+    <link rel="stylesheet" href="/styles/variables.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/base.css?v=20260804g" />
+    <link rel="stylesheet" href="/styles/hero.css?v=20260804r" />
+    <link rel="stylesheet" href="/styles/layout.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/markdown.css?v=20260805u" />
+    <link rel="stylesheet" href="/styles/components.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/media.css?v=20260806b" />
+    <link rel="stylesheet" href="/styles/responsive.css?v=20260805m" />
+  </head>
+  <body data-book-id="myth-characters" data-book-title="神话人物" data-chapter-slug="white-bone" data-chapter-title="白骨夫人" data-search-index="/search-index.json?v=ca6182164b96">
+    <div class="read-progress" id="read-progress" aria-hidden="true"></div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2c-1.05 0-2.05.16-3 .46 1.69 1.24 2.79 3.26 2.79 5.54 0 3.87-3.13 7-7 7-.57 0-1.13-.08-1.67-.22C2.52 18.49 6.45 22 11 22c5.52 0 10-4.48 10-10S16.52 2 11 2c-.66 0-1.3.07-1.92.19C9.23 2.06 9.12 2 9 2z"/></svg>
+    </button>
+
+    <header class="hero" id="hero" role="banner">
+      <picture class="hero-bg-layer hero-bg-default" aria-hidden="true">
+        <source type="image/webp" srcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" sizes="100vw" />
+        <img src="/images/hero-default.jpg" srcset="/images/hero-default-1200.jpg 1200w, /images/hero-default.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" fetchpriority="high" />
+      </picture>
+      <picture class="hero-bg-layer hero-bg-hover" id="hero-hover-picture" aria-hidden="true">
+        <source type="image/webp" data-srcset="/images/hero-hover-1200.webp 1200w, /images/hero-hover.webp 2400w" sizes="100vw" />
+        <img data-src="/images/hero-hover.jpg" data-srcset="/images/hero-hover-1200.jpg 1200w, /images/hero-hover.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" />
+      </picture>
+      <div class="hero-sun-glow" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-gradient-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-title-row">
+          <h1 class="hero-title">《腌笃鲜》</h1>
+          <img class="hero-seal" src="/images/mod-icon.png?v=20260719" alt="《腌笃鲜》模组图标" width="68" height="68" />
+        </div>
+        <div class="hero-actions" aria-label="主要操作">
+          <a
+            class="hero-btn hero-btn-primary"
+            href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="在 Steam 创意工坊订阅《腌笃鲜》（新窗口）"
+          >订阅模组</a>
+          <button class="hero-btn hero-btn-secondary" id="hero-btn" type="button">开始查阅</button>
+        </div>
+      </div>
+
+      <div class="hero-subtitles">
+        <p class="hero-subtitle">三十五劫运交织，十二元辰下凡，灵台方寸显真心</p>
+        <p class="hero-subtitle">玉兔拨弦，黑风倒卷——人物精怪双篇登场</p>
+      </div>
+
+      <svg class="hero-torn-edge" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 48 L0 28 L36 32 L72 22 L120 30 L168 20 L216 28 L264 18 L312 30 L360 22 L408 28 L456 18 L504 26 L552 16 L600 26 L648 32 L696 22 L744 28 L792 18 L840 28 L888 22 L936 30 L984 20 L1032 28 L1080 22 L1128 30 L1176 18 L1224 26 L1272 30 L1320 22 L1368 28 L1404 24 L1440 28 L1440 48 Z" />
+      </svg>
+    </header>
+
+    <noscript>
+      <div class="noscript-warning" role="alert">
+        <strong>提示：</strong>正文仍可阅读；启用 JavaScript 后可使用目录搜索、劫运查询和媒体灯箱。
+      </div>
+    </noscript>
+
+    <nav class="chapter-nav" aria-label="神话人物篇章导航">
+      <div class="chapter-nav-inner" id="chapter-nav-inner">
+        <!-- CHAPTER_NAV_START -->
+        <details class="book-switcher">
+          <summary><strong>神话人物</strong></summary>
+          <div class="book-switcher-menu">
+            <a class="book-switcher-link" href="/">腌笃鲜</a>
+            <a class="book-switcher-link" href="/myth-theme/">神话主题</a>
+            <a class="book-switcher-link active" href="/myth-characters/">神话人物<span class="sr-only">（当前）</span></a>
+          </div>
+        </details>
+        <span class="chapter-nav-divider" aria-hidden="true"></span>
+        <div class="chapter-nav-pages">
+          <a class="chapter-nav-link" href="/myth-characters/">人物总览</a>
+        <a class="chapter-nav-link" href="/myth-characters/sun-wukong/">孙悟空</a>
+        <a class="chapter-nav-link" href="/myth-characters/nezha/">哪吒</a>
+        <a class="chapter-nav-link active" href="/myth-characters/white-bone/" aria-current="page">白骨夫人</a>
+        <a class="chapter-nav-link" href="/myth-characters/pigsy/">猪八戒</a>
+        <a class="chapter-nav-link" href="/myth-characters/yangjian/">杨戬</a>
+        <a class="chapter-nav-link" href="/myth-characters/yutu/">玉兔</a>
+        <a class="chapter-nav-link" href="/myth-characters/yama-commissioners/">黑白无常</a>
+        <a class="chapter-nav-link" href="/myth-characters/madameweb/">盘丝娘娘</a>
+        </div>
+        <!-- CHAPTER_NAV_END -->
+      </div>
+      <div class="reading-position" id="reading-position">
+        <span class="reading-position-text"><span class="rp-num"></span><span class="rp-title"></span></span>
+      </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar" aria-label="目录导航">
+        <div class="sidebar-header">
+          <h3 id="sidebar-title">白骨夫人目录</h3>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="toc-search" placeholder="搜索三本资料…" aria-label="搜索全部资料" />
+        </div>
+        <ul class="toc-list" id="toc-list">
+          <!-- SIDEBAR_TOC_START -->
+          <li class="toc-item toc-section has-children open">
+            <a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%B1%9E%E6%80%A7-%E9%A5%AE%E9%A3%9F%E4%B8%8E%E7%94%9F%E5%AD%98%E8%BE%B9%E7%95%8C" data-id="基础属性-饮食与生存边界" data-num="壹">基础属性、饮食与生存边界</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%89%B9%E6%AE%8A%E9%A3%9F%E7%89%A9%E4%B8%8E%E9%AA%A8%E7%89%87%E6%B2%BB%E7%96%97" data-id="特殊食物与骨片治疗">特殊食物与骨片治疗</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E7%BE%8E%E4%BA%BA%E4%B8%8E%E5%A6%96%E8%BA%AB" data-id="美人与妖身" data-num="贰">美人与妖身</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%A6%96%E8%BA%AB%E7%9A%84%E8%A3%85%E5%A4%87%E9%99%90%E5%88%B6" data-id="妖身的装备限制">妖身的装备限制</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E5%B0%B8%E4%BD%93%E5%A4%84%E7%90%86" data-id="尸体处理" data-num="叁">尸体处理</a>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E9%AA%A8%E9%95%9C%E4%B8%8E%E5%85%AD%E4%BB%B6%E9%AA%A8%E8%A1%A3" data-id="骨镜与六件骨衣" data-num="肆">骨镜与六件骨衣</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E9%AA%A8%E9%95%9C-%E9%AA%A8%E8%A1%A3%E4%B8%8E%E6%B6%88%E8%80%97%E5%93%81%E9%85%8D%E6%96%B9" data-id="骨镜-骨衣与消耗品配方">骨镜、骨衣与消耗品配方</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E6%AD%A6%E5%99%A8-%E9%AA%A8%E5%AE%A0%E4%B8%8E%E9%AA%A8%E9%9B%BE" data-id="武器-骨宠与骨雾" data-num="伍">武器、骨宠与骨雾</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E4%B8%89%E4%BB%B6%E9%AA%A8%E7%B3%BB%E6%AD%A6%E5%99%A8" data-id="三件骨系武器">三件骨系武器</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%99%BD%E9%AA%A8%E5%96%BD%E5%96%BD-%E9%AA%A8%E5%AE%A0" data-id="白骨喽喽-骨宠">白骨喽喽（骨宠）</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E9%9B%BE%E9%9A%90%E8%A3%B3%E4%B8%8E%E9%98%B4%E9%A3%8E%E9%A3%9E%E8%A1%8C" data-id="雾隐裳与阴风飞行">雾隐裳与阴风飞行</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E6%BF%92%E6%AD%BB%E4%BF%9D%E5%91%BD-%E6%AD%BB%E4%BA%A1%E4%B8%8E%E5%A4%8D%E6%B4%BB" data-id="濒死保命-死亡与复活" data-num="陆">濒死保命、死亡与复活</a>
+          </li>
+          <!-- SIDEBAR_TOC_END -->
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <article class="content-card">
+          <div class="md-body" id="main-content" data-static-snapshot="ready" data-content-hash="ca6182164b96" data-chapter="white-bone">
+            <!-- STATIC_CONTENT_START -->
+<h2 id="白骨夫人" data-legacy-id="sec-白骨夫人-fl3gmy-2" data-eyebrow="第肆篇">白骨夫人</h2><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话人物] [数据类型：可选人物] [内容归属：神话人物原生] [腌笃鲜状态：原生基线] [核心关联：美人形态、骨宠、骨刃、骨镜、阴风]</p>
+</blockquote><p class="lede"><strong>机制概览</strong>：美人/妖身形态、尸体处理、骨镜衣装、骨宠与骨系武器。</p>
+<h3 id="基础属性-饮食与生存边界" data-legacy-id="sec-基础属性-饮食与生存边界-172iyx" data-num="壹">基础属性、饮食与生存边界</h3><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">项目</th>
+<th align="left">规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">三维</td>
+<td align="left"><strong>150 生命 / 150 饥饿 / 250 理智</strong></td>
+</tr>
+<tr>
+<td align="left">最爱食物</td>
+<td align="left">告密的心；饥饿收益 ×1.2，实际获得 60 饥饿</td>
+</tr>
+<tr>
+<td align="left">夜晚理智</td>
+<td align="left">夜晚理智消耗为 0</td>
+</tr>
+<tr>
+<td align="left">常规治疗物品</td>
+<td align="left">常规直接治疗类物品对她无效，<strong>蚊子血袋</strong>治疗量翻倍</td>
+</tr>
+<tr>
+<td align="left">生肉</td>
+<td align="left">生的肉类饥饿收益 ×1.2；生命、理智收益至少会被抬到该食物饥饿值的一半</td>
+</tr>
+<tr>
+<td align="left">熟肉料理</td>
+<td align="left">肉类料理和肉干的生命收益会被改为 0</td>
+</tr>
+<tr>
+<td align="left">蔬果、种子与多数非肉食</td>
+<td align="left">生命、理智正收益会被压到不高于 0；蔬果/种子饥饿收益只保留 20%</td>
+</tr>
+<tr>
+<td align="left">骨宠食量</td>
+<td align="left">每有 1 个骨宠，进食时额外扣除 5 点饥饿收益</td>
+</tr>
+</tbody></table></div></div><h4 id="特殊食物与骨片治疗" data-legacy-id="sec-特殊食物与骨片治疗-idscku">特殊食物与骨片治疗</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">物品</th>
+<th align="left">白骨夫人的实际结算</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">噩梦燃料</td>
+<td align="left">可直接食用，0 生命 / 25 饥饿 / 0 理智</td>
+</tr>
+<tr>
+<td align="left">告密的心</td>
+<td align="left">可直接食用，50 生命 / 60 饥饿 / 0 理智；其中饥饿已计入最爱食物加成</td>
+</tr>
+<tr>
+<td align="left">暗影心房</td>
+<td align="left">可直接食用，0 生命 / 50 饥饿 / 0 理智；随后 240 秒内伤害变为 2 倍，并每秒恢复约 0.33 理智</td>
+</tr>
+<tr>
+<td align="left">骨片</td>
+<td align="left">对自己使用可消耗 1 片恢复 20 生命；同一骨片也可用于修复骨系武器</td>
+</tr>
+<tr>
+<td align="left">辟暑心脏</td>
+<td align="left">50 生命 / 50 饥饿 / 50 理智；持续 4800 秒，免受通常火焰伤害并阻止体温进入过热区</td>
+</tr>
+<tr>
+<td align="left">辟寒心脏</td>
+<td align="left">50 生命 / 50 饥饿 / 50 理智；持续 4800 秒，停止继续受潮、加快干燥，并把最低体温限制在 10</td>
+</tr>
+<tr>
+<td align="left">辟尘心脏</td>
+<td align="left">50 生命 / 50 饥饿 / 50 理智；持续 4800 秒，获得沙尘护目效果</td>
+</tr>
+</tbody></table></div></div><p>三颗犀牛心的持续时间都是 <strong>10 个游戏日</strong>；它们也仍是炼丹与犀牛武器材料，食用会直接消耗这件稀有素材。</p>
+<h3 id="美人与妖身" data-legacy-id="sec-美人与妖身-bs1t6f" data-num="贰">美人与妖身</h3><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">状态</th>
+<th align="left">效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">美人形态</td>
+<td align="left">不被视为怪物，不产生理智光环；可正常装备常规装备</td>
+</tr>
+<tr>
+<td align="left">妖身</td>
+<td align="left">移速 ×<strong>1.083</strong>；系统把她视为怪物；对附近他人施加 <strong>-10 理智/分钟</strong> 光环</td>
+</tr>
+<tr>
+<td align="left">触发转妖身</td>
+<td align="left">美人形态下攻击命中目标，或饥饿降到 <strong>50</strong> 及以下</td>
+</tr>
+<tr>
+<td align="left">受击时美人形态</td>
+<td align="left">会让周围合格的中立生物协助攻击来袭者</td>
+</tr>
+<tr>
+<td align="left">鬼魂</td>
+<td align="left">鬼魂移速 ×<strong>1.3</strong>，对附近他人施加 <strong>-20 理智/分钟</strong> 光环</td>
+</tr>
+</tbody></table></div></div><h4 id="妖身的装备限制" data-legacy-id="sec-妖身的装备限制-imbguv">妖身的装备限制</h4><p>妖身下常规可用装备槽只有<strong>手部</strong>；不在白骨豁免名单里的常规头、身、背装备都受限制。由美人形态转入妖身时，已装备的非手部物品会直接掉在地上。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：默认开启扩展装备栏兼容，使白骨夫人能正确适配 5 格、6 格等装备栏模组；这项兼容不等于取消本节所述的妖身装备限制。详见<a href="/optimizations/">神话优化</a>。</p>
+</blockquote><h3 id="尸体处理" data-legacy-id="sec-尸体处理-bysc7x" data-num="叁">尸体处理</h3><p>白骨夫人亲手击杀满足条件的目标后，尸体会被暂时保留供她处理。目标须具备至少 50 最大生命，且不属于墙、玩家、影怪、棋子、植物等排除类别；尸体默认保留 <strong>10 秒</strong>，穿戴不餍衣时延长为 <strong>60 秒</strong>。离尸体超过 16 格、尸体计时结束或击杀者失效，都会使窗口结束。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">操作</th>
+<th align="left">结果</th>
+<th align="left">代价与结果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">左键“解剖”</td>
+<td align="left">正常掉落照常结算；大型生物固定额外 1 骨片，另有额外骨片概率；白骨夫人 <strong>+5 理智</strong></td>
+<td align="left">缺骨片、希望保留原掉落时选它；不餍衣会提高额外骨片概率</td>
+</tr>
+<tr>
+<td align="left">右键“化尸”</td>
+<td align="left">该尸体原本产生的每一份掉落均替换为噩梦燃料</td>
+<td align="left">白骨夫人 <strong>-5 理智</strong>；需要噩梦燃料且不在意原战利品时使用</td>
+</tr>
+<tr>
+<td align="left">不处理</td>
+<td align="left">尸体会在时限后消失并按默认流程结算</td>
+<td align="left">—</td>
+</tr>
+</tbody></table></div></div><blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：白骨夫人击杀亮茄植物时不掉战利品的问题会自动修复；尸体处理的对象筛选与“解剖 / 化尸”规则仍按本节结算。详见<a href="/compatibility/">兼容修复</a>。</p>
+</blockquote><h3 id="骨镜与六件骨衣" data-legacy-id="sec-骨镜与六件骨衣-xasjnm" data-num="肆">骨镜与六件骨衣</h3><p>骨镜是白骨夫人保存、切换专属衣装的装置，不是普通装备栏。必须在<strong>妖身</strong>使用；把骨衣交给骨镜后才能纳入可选列表。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">骨镜等级</th>
+<th align="left">可保存衣装数</th>
+<th align="left">升级材料</th>
+<th align="left">额外效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">1 级</td>
+<td align="left">2 件</td>
+<td align="left">初始骨镜即为 1 级</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">2 级</td>
+<td align="left">4 件</td>
+<td align="left">3 红宝石 + 6 骨片</td>
+<td align="left">—</td>
+</tr>
+<tr>
+<td align="left">3 级</td>
+<td align="left">6 件</td>
+<td align="left">4 紫宝石 + 8 骨片</td>
+<td align="left">自动解锁雾隐裳的可选项</td>
+</tr>
+</tbody></table></div></div><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">骨衣</th>
+<th align="left">效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">盈风绸</td>
+<td align="left">妖身移速 ×<strong>1.2</strong>；夏季隔热 120</td>
+</tr>
+<tr>
+<td align="left">坚骨披</td>
+<td align="left">伤害吸收 <strong>75%</strong>；夏季隔热 120</td>
+</tr>
+<tr>
+<td align="left">血色霓</td>
+<td align="left">骨刃吸血提高至 <strong>20%</strong>，骨鞭获得 <strong>5%</strong> 吸血；夏季隔热 120</td>
+</tr>
+<tr>
+<td align="left">蕴玄袍</td>
+<td align="left">生成专属背包储物位；冬季保温 120</td>
+</tr>
+<tr>
+<td align="left">不餍衣</td>
+<td align="left">冬季保温 120；尸体保留 60 秒并提高解剖的额外骨片机会</td>
+</tr>
+<tr>
+<td align="left">雾隐裳</td>
+<td align="left">冬季保温 120；开启骨雾体系</td>
+</tr>
+</tbody></table></div></div><h4 id="骨镜-骨衣与消耗品配方" data-legacy-id="sec-骨镜-骨衣与消耗品配方-6528bc">骨镜、骨衣与消耗品配方</h4><p>白骨夫人的专属制作不需要八卦炉；材料满足后由她本人在专属制作栏完成。骨镜等级只决定可收录衣装数量，不替代衣装本身的制作。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">产物</th>
+<th align="left">材料</th>
+<th align="left">效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">白骨妖镜</td>
+<td align="left">骨片×6、蜘蛛丝×6、蓝宝石×2</td>
+<td align="left">初始镜遗失后的重制入口；新镜仍从 1 级开始</td>
+</tr>
+<tr>
+<td align="left">盈风绸</td>
+<td align="left">骨片×4、蜘蛛丝×12</td>
+<td align="left">机动衣装</td>
+</tr>
+<tr>
+<td align="left">坚骨披</td>
+<td align="left">骨片×8、噩梦燃料×4</td>
+<td align="left">正面防护衣装</td>
+</tr>
+<tr>
+<td align="left">血色霓</td>
+<td align="left">骨片×4、蚊子血袋×4</td>
+<td align="left">强化骨刃吸血，并使骨鞭获得吸血</td>
+</tr>
+<tr>
+<td align="left">蕴玄袍</td>
+<td align="left">骨片×4、猪皮×2</td>
+<td align="left">储物衣装</td>
+</tr>
+<tr>
+<td align="left">不餍衣</td>
+<td align="left">骨片×4、啜食者皮×2</td>
+<td align="left">延长尸体处理窗口并提高骨片收益</td>
+</tr>
+<tr>
+<td align="left">阴森之心</td>
+<td align="left">骨片×2、蜘蛛腺体×2、20 生命</td>
+<td align="left">0 生命 / 25 饥饿 / -30 理智；除沃姆伍德外，玩家食用后会立即死亡。白骨夫人和黑白无常因此死亡时会留下可供后续利用的骨架</td>
+</tr>
+<tr>
+<td align="left">骨架道具</td>
+<td align="left">骨片×4</td>
+<td align="left">转化骨宠的基础载体；也可以利用世界已有骨架</td>
+</tr>
+</tbody></table></div></div><p>雾隐裳不是单独投入材料制作的第六件衣装：白骨妖镜升到 3 级后，它会自动进入可选衣装列表。</p>
+<h3 id="武器-骨宠与骨雾" data-legacy-id="sec-武器-骨宠与骨雾-4kwsvn" data-num="伍">武器、骨宠与骨雾</h3><h4 id="三件骨系武器" data-legacy-id="sec-三件骨系武器-eww7j2">三件骨系武器</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">武器</th>
+<th align="left">数据与机制</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">骨刃</td>
+<td align="left">68 伤害、100 次使用；对可吸血目标造成伤害时默认回复本次伤害的 <strong>2.5%</strong>。穿雾隐裳且身处骨雾时可位移，冷却 15 秒，每次消耗 10 饥饿和 5 次耐久</td>
+</tr>
+<tr>
+<td align="left">骨鞭</td>
+<td align="left">41 伤害、100 次使用，攻击距离长于骨刃。命中时有概率触发范围震慑，并可能从目标的战利品池中提前抽出 1 件额外掉落物</td>
+</tr>
+<tr>
+<td align="left">骨杖</td>
+<td align="left">10 基础伤害、25 次使用；主动冷却 10 秒，在至多 32 格内寻找合格目标并在其周围召唤骨刺；普通目标 6 根，大型目标 12 根</td>
+</tr>
+</tbody></table></div></div><h5 id="骨刃吸血" data-legacy-id="sec-骨刃吸血-junzc3">骨刃吸血</h5><p>骨刃默认吸血率为 <strong>2.5%</strong>；穿血色霓时提高到 <strong>20%</strong>，穿雾隐裳且自身处于骨雾中时为 <strong>10%</strong>，穿坚骨披时为 0。玩家、墙体、幽灵、暗影生物、建筑和友方单位等对象不提供骨刃吸血。</p>
+<h5 id="骨鞭震慑与额外掉落" data-legacy-id="sec-骨鞭震慑与额外掉落-q8817w">骨鞭震慑与额外掉落</h5><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">目标类别</th>
+<th align="left">范围震慑概率</th>
+<th align="left">抽取额外掉落概率</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">首领</td>
+<td align="left">5%</td>
+<td align="left">5%</td>
+</tr>
+<tr>
+<td align="left">普通怪物</td>
+<td align="left">20%</td>
+<td align="left">通常 10%；穿不餍衣时 15%</td>
+</tr>
+<tr>
+<td align="left">其他普通生物</td>
+<td align="left">25%</td>
+<td align="left">通常 10%；穿不餍衣时 15%</td>
+</tr>
+</tbody></table></div></div><p>范围震慑触发时，会让 14 格内符合条件的非首领战斗目标丢失当前攻击目标，并尝试进入受击状态。额外掉落从目标当次可生成的战利品中随机抽取 1 件，不会杀死目标，也不会替代它死亡时的正常掉落；化石类目标不触发。骨鞭本身没有基础吸血，穿血色霓或在骨雾中穿雾隐裳时吸血率均为 <strong>5%</strong>。</p>
+<h5 id="骨杖施法代价" data-legacy-id="sec-骨杖施法代价-f8qmg6">骨杖施法代价</h5><p>骨杖每成功困住 1 个目标，白骨夫人恢复 <strong>2 生命</strong>，同时损失 <strong>2 饥饿和 2 理智</strong>；只要本次至少成功困住 1 个目标，就消耗 1 次耐久并进入冷却。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：骨刃可参与<a href="/systems/#%E7%81%AB%E5%85%83%E6%B7%AC%E7%82%BC">火元淬炼系统</a>：每阶增加 6 点位面伤害，耐久上限在 0 / 1 / 2 / 3 阶时依次为 100 / 200 / 300 / 400。达到当前淬炼上限后，耐久归零会进入枯竭状态而非消失，基础伤害暂时关闭，但位面伤害与吸血仍然保留。</p>
+</blockquote><p>三件武器的制作与现场维护如下：</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">武器</th>
+<th align="left">制作材料</th>
+<th align="left">每个骨片的修复量</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">骨刃</td>
+<td align="left">骨片×4、活木×1、噩梦燃料×1</td>
+<td align="left">100 次使用，等于从空耐久修满</td>
+</tr>
+<tr>
+<td align="left">骨鞭</td>
+<td align="left">骨片×4、活木×1、噩梦燃料×2</td>
+<td align="left">50 次使用</td>
+</tr>
+<tr>
+<td align="left">骨杖</td>
+<td align="left">骨片×4、活木×2、紫宝石×2</td>
+<td align="left">10 次使用</td>
+</tr>
+</tbody></table></div></div><p>修复是把骨片直接用于仍存在的武器，不经过八卦炉。</p>
+<h4 id="白骨喽喽-骨宠" data-legacy-id="sec-白骨喽喽-骨宠-fbz3g4">白骨喽喽（骨宠）</h4><ul>
+<li>对<strong>骨架</strong>交付 1 个噩梦燃料，可将骨架转为骨宠；上限 <strong>5</strong> 只。</li><li>每只骨宠有 75 生命、30 攻击、0.5 秒攻击间隔，存活上限 <strong>960 秒（16 分钟）</strong>；死亡通常掉 2 骨片。</li><li>骨宠会保护主人，也能接收斧、镐、铲等工具协助工作；第一次交付手部工具会使其剩余寿命减半。</li><li>角色死亡时全部骨宠会被清除。它们是短期战力和工具，不是可以跨死亡永久积累的资产。</li><li>每只白骨喽喽会让白骨夫人每次进食少获得 5 点饥饿；满 5 只时，每次进食合计少获得 25 点饥饿。</li></ul>
+<h4 id="雾隐裳与阴风飞行" data-legacy-id="sec-雾隐裳与阴风飞行-4xsprf">雾隐裳与阴风飞行</h4><p>白骨夫人阅读灵台方寸山的天书后解锁阴风飞行术。发动消耗 <strong>25 理智</strong>并立即起飞；飞行速度为 <strong>11</strong>，飞行中以低透明度隐身，落地后仍保持 <strong>5 秒</strong>隐匿状态。若她攻击尚未建立仇恨的目标，首击伤害倍率为 <strong>1.25</strong>。</p>
+<p>雾隐裳穿戴时可开启骨雾，持续 <strong>120 秒</strong>。在骨雾中手持骨刃，可使用专属位移；雾隐裳会把骨雾有效半径扩展到 40。</p>
+<h3 id="濒死保命-死亡与复活" data-legacy-id="sec-濒死保命-死亡与复活-sznx2a" data-num="陆">濒死保命、死亡与复活</h3><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">情形</th>
+<th align="left">实际规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">被直接战斗攻击打至致死</td>
+<td align="left">若濒死转移未在冷却，会保留 <strong>5 生命</strong>、触发特效并重新定位；随后进入 <strong>240 秒</strong> 冷却</td>
+</tr>
+<tr>
+<td align="left">饥饿、持续环境伤害等非该类攻击</td>
+<td align="left">不保证触发濒死转移</td>
+</tr>
+<tr>
+<td align="left">死亡</td>
+<td align="left">转为妖身状态并清除全部骨宠</td>
+</tr>
+<tr>
+<td align="left">鬼魂复活</td>
+<td align="left">白骨夫人鬼魂可以对普通骨架或玩家骨架作祟复活</td>
+</tr>
+</tbody></table></div></div>
+            <!-- STATIC_CONTENT_END -->
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <footer class="footer" id="site-footer" role="contentinfo">
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-message">
+        <p class="footer-message-text">感谢每一位订阅玩家的支持和鼓励，祝各位在《腌笃鲜》的努力下游戏愉快，武运昌隆，尽享神话之旅！</p>
+        <p class="footer-signature">——咸鱼 &amp; 大猪蹄子 敬上</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357" target="_blank" rel="noopener noreferrer">Steam 创意工坊</a>
+        <a href="https://qm.qq.com/q/iFeDTMf6Io" target="_blank" rel="noopener noreferrer">反馈交流群</a>
+      </div>
+      <p>&copy; 2026 《腌笃鲜》</p>
+      <p>反馈交流 QQ 群：1046023996</p>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <script src="/scripts/utils.js?v=20260804h"></script>
+    <script src="/scripts/renderer.js?v=20260805c"></script>
+    <script src="/scripts/toc.js?v=20260805b"></script>
+    <script src="/scripts/scroll.js?v=20260805a"></script>
+    <script src="/scripts/theme.js?v=20260804f"></script>
+    <script src="/scripts/ui.js?v=20260805b"></script>
+    <script src="/scripts/media.js?v=20260808a"></script>
+    <script src="/scripts/main.js?v=20260805c"></script>
+  </body>
+</html>

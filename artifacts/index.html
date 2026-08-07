@@ -1,0 +1,497 @@
+<!doctype html>
+<!-- ============================================
+     《腌笃鲜》维基百科 - Main Page
+     ============================================ -->
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="查阅《腌笃鲜》的法宝、装备与专属物品资料。" />
+    <meta name="keywords" content="腌笃鲜,饥荒,神话书说,模组,元辰劫运,盘丝娘娘,wiki,攻略" />
+    <meta name="author" content="《腌笃鲜》资料整理" />
+    <meta name="theme-color" content="#faf8f3" />
+    <script>
+      (() => {
+        let theme = 'light';
+        try {
+          const saved = localStorage.getItem('xydztz-theme') || localStorage.getItem('xdyztz-theme');
+          theme = saved === 'dark' || saved === 'light'
+            ? saved
+            : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch (err) {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', theme === 'dark' ? '#15110e' : '#faf8f3');
+      })();
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="法宝装备 | 腌笃鲜 | 《腌笃鲜》" />
+    <meta property="og:description" content="查阅《腌笃鲜》的法宝、装备与专属物品资料。" />
+    <meta property="og:site_name" content="《腌笃鲜》" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:url" content="https://yanduxian.cn/artifacts/" />
+    <meta property="og:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1021" />
+    <meta property="og:image:alt" content="《腌笃鲜》雪景封面" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="法宝装备 | 腌笃鲜 | 《腌笃鲜》" />
+    <meta name="twitter:description" content="查阅《腌笃鲜》的法宝、装备与专属物品资料。" />
+    <meta name="twitter:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+
+    <title>法宝装备 | 腌笃鲜 | 《腌笃鲜》</title>
+    <link rel="canonical" href="https://yanduxian.cn/artifacts/" />
+
+    <link rel="preload" href="/images/hero-default-1200.webp" imagesrcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" imagesizes="100vw" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/fonts/MaShanZheng-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/png" href="/images/mod-icon.png?v=20260719" />
+
+    <link rel="stylesheet" href="/styles/fonts.css?v=20260804o" />
+    <link rel="stylesheet" href="/styles/variables.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/base.css?v=20260804g" />
+    <link rel="stylesheet" href="/styles/hero.css?v=20260804r" />
+    <link rel="stylesheet" href="/styles/layout.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/markdown.css?v=20260805u" />
+    <link rel="stylesheet" href="/styles/components.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/media.css?v=20260806b" />
+    <link rel="stylesheet" href="/styles/responsive.css?v=20260805m" />
+  </head>
+  <body data-book-id="xydztz" data-book-title="腌笃鲜" data-chapter-slug="artifacts" data-chapter-title="法宝装备" data-search-index="/search-index.json?v=ca6182164b96">
+    <div class="read-progress" id="read-progress" aria-hidden="true"></div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2c-1.05 0-2.05.16-3 .46 1.69 1.24 2.79 3.26 2.79 5.54 0 3.87-3.13 7-7 7-.57 0-1.13-.08-1.67-.22C2.52 18.49 6.45 22 11 22c5.52 0 10-4.48 10-10S16.52 2 11 2c-.66 0-1.3.07-1.92.19C9.23 2.06 9.12 2 9 2z"/></svg>
+    </button>
+
+    <header class="hero" id="hero" role="banner">
+      <picture class="hero-bg-layer hero-bg-default" aria-hidden="true">
+        <source type="image/webp" srcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" sizes="100vw" />
+        <img src="/images/hero-default.jpg" srcset="/images/hero-default-1200.jpg 1200w, /images/hero-default.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" fetchpriority="high" />
+      </picture>
+      <picture class="hero-bg-layer hero-bg-hover" id="hero-hover-picture" aria-hidden="true">
+        <source type="image/webp" data-srcset="/images/hero-hover-1200.webp 1200w, /images/hero-hover.webp 2400w" sizes="100vw" />
+        <img data-src="/images/hero-hover.jpg" data-srcset="/images/hero-hover-1200.jpg 1200w, /images/hero-hover.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" />
+      </picture>
+      <div class="hero-sun-glow" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-gradient-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-title-row">
+          <h1 class="hero-title">《腌笃鲜》</h1>
+          <img class="hero-seal" src="/images/mod-icon.png?v=20260719" alt="《腌笃鲜》模组图标" width="68" height="68" />
+        </div>
+        <div class="hero-actions" aria-label="主要操作">
+          <a
+            class="hero-btn hero-btn-primary"
+            href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="在 Steam 创意工坊订阅《腌笃鲜》（新窗口）"
+          >订阅模组</a>
+          <button class="hero-btn hero-btn-secondary" id="hero-btn" type="button">开始查阅</button>
+        </div>
+      </div>
+
+      <div class="hero-subtitles">
+        <p class="hero-subtitle">三十五劫运交织，十二元辰下凡，灵台方寸显真心</p>
+        <p class="hero-subtitle">玉兔拨弦，黑风倒卷——人物精怪双篇登场</p>
+      </div>
+
+      <svg class="hero-torn-edge" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 48 L0 28 L36 32 L72 22 L120 30 L168 20 L216 28 L264 18 L312 30 L360 22 L408 28 L456 18 L504 26 L552 16 L600 26 L648 32 L696 22 L744 28 L792 18 L840 28 L888 22 L936 30 L984 20 L1032 28 L1080 22 L1128 30 L1176 18 L1224 26 L1272 30 L1320 22 L1368 28 L1404 24 L1440 28 L1440 48 Z" />
+      </svg>
+    </header>
+
+    <noscript>
+      <div class="noscript-warning" role="alert">
+        <strong>提示：</strong>正文仍可阅读；启用 JavaScript 后可使用目录搜索、劫运查询和媒体灯箱。
+      </div>
+    </noscript>
+
+    <nav class="chapter-nav" aria-label="腌笃鲜篇章导航">
+      <div class="chapter-nav-inner" id="chapter-nav-inner">
+        <!-- CHAPTER_NAV_START -->
+        <details class="book-switcher">
+          <summary><strong>腌笃鲜</strong></summary>
+          <div class="book-switcher-menu">
+            <a class="book-switcher-link active" href="/">腌笃鲜<span class="sr-only">（当前）</span></a>
+            <a class="book-switcher-link" href="/myth-theme/">神话主题</a>
+            <a class="book-switcher-link" href="/myth-characters/">神话人物</a>
+          </div>
+        </details>
+        <span class="chapter-nav-divider" aria-hidden="true"></span>
+        <div class="chapter-nav-pages">
+          <a class="chapter-nav-link" href="/">模组介绍</a>
+        <a class="chapter-nav-link" href="/systems/">核心系统</a>
+        <a class="chapter-nav-link" href="/characters/">人物精怪</a>
+        <a class="chapter-nav-link active" href="/artifacts/" aria-current="page">法宝装备</a>
+        <a class="chapter-nav-link" href="/optimizations/">神话优化</a>
+        <a class="chapter-nav-link" href="/compatibility/">兼容修复</a>
+        </div>
+        <!-- CHAPTER_NAV_END -->
+      </div>
+      <div class="reading-position" id="reading-position">
+        <span class="reading-position-text"><span class="rp-num"></span><span class="rp-title"></span></span>
+      </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar" aria-label="目录导航">
+        <div class="sidebar-header">
+          <h3 id="sidebar-title">法宝装备目录</h3>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="toc-search" placeholder="搜索三本资料…" aria-label="搜索全部资料" />
+        </div>
+        <ul class="toc-list" id="toc-list">
+          <!-- SIDEBAR_TOC_START -->
+          <li class="toc-item toc-section open">
+            <a class="toc-link" href="#%E8%92%B2%E5%9B%A2" data-id="蒲团" data-num="壹">蒲团</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E5%AF%B8%E5%BF%83%E7%B2%BE%E9%AD%84" data-id="寸心精魄" data-num="贰">寸心精魄</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E5%90%9E%E5%A4%A9%E7%B4%AB%E9%87%91%E8%91%AB%E8%8A%A6" data-id="吞天紫金葫芦" data-num="叁">吞天紫金葫芦</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E5%A4%A9%E5%9C%B0%E5%AE%9D%E9%89%B4" data-id="天地宝鉴" data-num="肆">天地宝鉴</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E9%A1%BB%E5%BC%A5%E7%8E%89%E5%87%80%E7%93%B6" data-id="须弥玉净瓶" data-num="伍">须弥玉净瓶</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E8%BE%9F%E7%81%AB%E7%BD%A9" data-id="辟火罩" data-num="陆">辟火罩</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E5%96%9C%E8%9B%9B%E5%A4%A9%E7%BD%97%E8%A1%A3" data-id="喜蛛天罗衣" data-num="柒">喜蛛天罗衣</a>
+          </li>
+          <!-- SIDEBAR_TOC_END -->
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <article class="content-card">
+          <div class="md-body" id="main-content" data-static-snapshot="ready" data-content-hash="ca6182164b96" data-chapter="artifacts">
+            <!-- STATIC_CONTENT_START -->
+<h2 id="法宝装备" data-legacy-id="sec-法宝装备-e48rbe" data-eyebrow="第肆篇">法宝装备</h2><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：物品系统] [核心关联：蒲团, 寸心精魄, 天罗衣]</p>
+</blockquote><h3 id="蒲团" data-legacy-id="sec-蒲团-n1ps" data-num="壹">蒲团</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：物品] [核心关联：打坐, UI, 竹子]</p>
+</blockquote><ul>
+<li class="term-item"><strong>合成配方</strong>：<span class="recipe-strip recipe-strip-complete" role="group" aria-label="神话竹9加绳子9，制成蒲团1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/myth_bamboo.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×9</span></span>
+    <span class="recipe-item-name">神话竹</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/rope.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×9</span></span>
+    <span class="recipe-item-name">绳子</span>
+  </span></span><span class="recipe-part recipe-part-result"><span class="recipe-operator recipe-arrow" aria-hidden="true">→</span><span class="recipe-token rarity-common is-result">
+    <span class="recipe-icon-frame"><img src="/images/wiki/xydztz/objects/xydztz_futon.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">蒲团</span>
+  </span></span></span></li><li class="term-item"><strong>科技需求</strong>：灵台方寸（阅读天书后解锁）</li><li class="term-item"><strong>核心功能</strong>：右键打坐入定，展开<a class="term-link" href="/systems/#%E5%85%83%E8%BE%B0%E5%8A%AB%E8%BF%90" data-term-id="yuanchen-system" data-term-kind="核心系统" data-term-summary="以三十五重劫运凝结寸心，并在星盘中激活元辰与重楼的核心成长系统。">元辰劫运</a>图UI</li><li class="term-item"><strong>注意事项</strong>：移动或受击会强制退出打坐</li></ul>
+<h3 id="寸心精魄" data-legacy-id="sec-寸心精魄-c08fv5" data-num="贰">寸心精魄</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：物品] [核心关联：凝结, 概率, 保底]</p>
+</blockquote><ul>
+<li class="term-item"><strong>获取方式</strong>：<ul>
+<li>凝结寸心时概率（约5.4%~58%递增）伴生获取</li><li>新手保底：凝结到第7点寸心时若从未获得过，保底获得1枚</li><li>单次凝结说明：攒够26劫运一次性凝结，与分批次凝结，概率期望完全等价</li></ul>
+</li><li class="term-item"><strong>用途</strong>：连接<a class="term-link" href="/systems/#%E5%85%83%E8%BE%B0%E5%8A%AB%E8%BF%90" data-term-id="yuanchen-system" data-term-kind="核心系统" data-term-summary="以三十五重劫运凝结寸心，并在星盘中激活元辰与重楼的核心成长系统。">元辰劫运系统</a>与神话装备铸造的核心灵韵材料</li></ul>
+<h3 id="吞天紫金葫芦" data-legacy-id="sec-吞天紫金葫芦-mt2avo" data-num="叁">吞天紫金葫芦</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：法宝] [核心关联：须弥容器, 范围采收, 控场压制, 莹月轮盘, 月相转换]</p>
+</blockquote><blockquote><p>不借乾坤三尺地，自成无极腹中天。吞天紫金葫芦是一件偏向资源收纳与战场牵引的极致空间法宝。</p>
+</blockquote><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">定位</th>
+<th align="left">容量</th>
+<th align="left">核心能力</th>
+<th align="left">消耗 / 冷却</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">空间收纳与战场控场</td>
+<td align="left">14格须弥容器</td>
+<td align="left">鲸吞采收、吸力压制、莹月轮盘吞月</td>
+<td align="left">采收10饱食+10精神；吞天/吞月20饱食+20精神，共享8分钟冷却</td>
+</tr>
+</tbody></table></div></div><ul>
+<li class="term-item"><strong>炼制配方（神话炼丹炉）</strong>：<span class="recipe-strip recipe-strip-complete" role="group" aria-label="紫金红葫芦1加寸心精魄1加紫宝石3加纯粹恐惧3，制成吞天紫金葫芦1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/myth-theme/catalog/purple_gourd.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">紫金红葫芦</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/xydztz/objects/xydztz_cunxin_jingpo.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">寸心精魄</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/purplegem.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×3</span></span>
+    <span class="recipe-item-name">紫宝石</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/horrorfuel.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×3</span></span>
+    <span class="recipe-item-name">纯粹恐惧</span>
+  </span></span><span class="recipe-part recipe-part-result"><span class="recipe-operator recipe-arrow" aria-hidden="true">→</span><span class="recipe-token rarity-common is-result">
+    <span class="recipe-icon-frame"><img src="/images/wiki/xydztz/objects/xydztz_artifact_ttzjhl.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">吞天紫金葫芦</span>
+  </span></span></span></li><li class="term-item"><strong>炼丹炉放置优化</strong>：空的紫金红葫芦或吞天紫金葫芦可作为炼制材料直接放入炼丹炉格子；若葫芦内仍有物品，则不能作为材料投入</li><li class="term-item"><strong>须弥容器</strong>：自带14格专属弹性储物空间，右键葫芦即可打开容器</li><li class="term-item"><strong>鲸吞采收</strong>：<ul>
+<li>装备在手时，右键地面圈定范围施展鲸吞</li><li>可瞬间吸纳范围内地面物品、小动物与基础可采集资源</li><li>支持草、树枝、浆果等基础资源，优先装入葫芦</li><li>葫芦装满时自动停止</li><li>单次代价：10饱食度 + 10精神值</li></ul>
+</li><li class="term-item"><strong>吞天控场</strong>：<ul>
+<li>装备在手时，右键装备栏中的葫芦释放</li><li>葫芦升空形成持续吸力场，牵引普通怪物并打乱行动节奏</li><li>Boss会抵抗吸力，但抵抗期间仍会受到强行压制</li><li>单次代价：20饱食度 + 20精神值</li><li>冷却时间：8分钟</li></ul>
+</li><li class="term-item"><strong>莹月轮盘·吞月</strong>：<ul>
+<li>葫芦内放有莹月轮盘时，在地表满月夜手持葫芦，原“吞天”会替换为“吞月”</li><li>莹月轮盘只负责承接月华，不会被消耗；葫芦也不会脱手升空</li><li>施法完成后，满月会真实跳到黑月（朔月）；之后继续按官方周期自然变化</li><li>单次代价：20饱食度 + 20精神值，与吞天共享8分钟冷却</li><li>洞穴中或天体剧情锁定月相时无法发动</li></ul>
+</li><li class="term-item"><strong>使用补充</strong>：<ul>
+<li>矮星、极光需手持葫芦后右键采集使用</li><li>葫芦满载时无法吞噬，此时技能不消耗状态</li><li class="term-item"><strong>黑风截遁</strong>：吞天控场的活动场也是挑战“<a class="term-link" href="/characters/#%E9%BB%91%E9%A3%8E%E5%A4%A7%E7%8E%8B-%E7%86%8A%E7%BD%B4%E7%9C%9F%E8%BA%AB" data-term-id="blackbear-trueform" data-term-kind="精怪首领" data-term-summary="通过吞天截住黑风大王战败遁风后触发的多阶段精怪首领。" data-term-image="/images/wiki/xydztz/objects/xydztz_blackbear_trueform.webp">黑风大王·熊罴真身</a>”的必要前置。必须先展开吞天场，再让《神话书说》黑风大王在场内战败，才能截住其战败遁风；详见“人物精怪”栏目</li></ul>
+</li></ul>
+<h3 id="天地宝鉴" data-legacy-id="sec-天地宝鉴-bm2g2m" data-num="肆">天地宝鉴</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：法宝] [核心关联：双向门户, 寻宝联动, 人参果激活]</p>
+</blockquote><blockquote><p>堪破大千辨迷障，一念神游辟虚空。天地宝鉴用于跨越距离、定位宝藏与建立双向通行门户。</p>
+</blockquote><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">定位</th>
+<th align="left">激活</th>
+<th align="left">核心能力</th>
+<th align="left">消耗 / 限制</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">远程传送与寻宝导航</td>
+<td align="left">人参果激活10分钟</td>
+<td align="left">大地图选点、双向门户、藏宝联动</td>
+<td align="left">穿越10精神；每位玩家同时仅一面激活宝鉴</td>
+</tr>
+</tbody></table></div></div><ul>
+<li class="term-item"><strong>炼制配方（神话炼丹炉）</strong>：<span class="recipe-strip recipe-strip-complete" role="group" aria-label="子圭青金3加寸心精魄1加橙宝石3加沙之石3，制成天地宝鉴1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/myth-theme/catalog/siving_stone.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×3</span></span>
+    <span class="recipe-item-name">子圭青金</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/xydztz/objects/xydztz_cunxin_jingpo.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">寸心精魄</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/orangegem.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×3</span></span>
+    <span class="recipe-item-name">橙宝石</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/townportaltalisman.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×3</span></span>
+    <span class="recipe-item-name">沙之石</span>
+  </span></span><span class="recipe-part recipe-part-result"><span class="recipe-operator recipe-arrow" aria-hidden="true">→</span><span class="recipe-token rarity-common is-result">
+    <span class="recipe-icon-frame"><img src="/images/wiki/xydztz/objects/xydztz_artifact_tdbj.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">天地宝鉴</span>
+  </span></span></span></li><li class="term-item"><strong>灵引认主</strong>：<ul>
+<li>需供奉<code>人参果</code>激活，激活持续10分钟</li><li>激活后仅限充能玩家本人操作宝鉴</li><li>其他玩家可以借由宝鉴门户通行</li><li>每位玩家同一时间只能维持一面激活状态的宝鉴</li></ul>
+</li><li class="term-item"><strong>神游八荒</strong>：<ul>
+<li>激活期间使用&quot;神游&quot;展开大地图</li><li>在任意可通行地点选定坐标后，宝鉴会在玩家脚下与目标点同时开启双向门户</li><li>通道旁可回收宝鉴；尚有人神游其中时，需待其完成传送</li><li>穿越代价：10精神值</li><li>门户维持时间受剩余灵机影响</li><li>远古圣殿区域仅支持同级神游；跨越圣殿边界或跨域神游会被拒绝，避免破坏圣殿流程</li></ul>
+</li><li class="term-item"><strong>Insight显示</strong>：开启Insight模组时，可查看宝鉴剩余激活时间；神游传送门会显示剩余时间与宝鉴灵机剩余时间</li><li class="term-item"><strong>地图定位</strong>：<ul>
+<li>天地宝鉴拥有独立地图图标</li><li>神游入口开启后，出发点会生成定位显示；若通道自动关闭并留下待取回宝鉴，定位会随待取宝鉴继续保留</li><li>主动收回或将待取回宝鉴收入物品栏、容器后，返程定位会清除；地图图标不会替玩家揭开尚未探索的区域</li></ul>
+</li><li class="term-item"><strong>万法溯源（跨模组联动）</strong>：<ul>
+<li>将指定寻宝道具喂给宝鉴可开启直达宝藏的传送门，原物品不会被消耗</li><li>【神话】藏宝图：直达当前可显现的神话秘藏</li><li>【勋章】藏宝图：自动解开封印并锁定位置，开门直达</li><li>【原版】星象探测仪：锁定并通达当前存活的星象地点</li><li>【原版】鹿角：新增灵机探寻支持，可追寻鹿角关联的克劳斯背包</li></ul>
+</li><li class="term-item"><strong>天道气机</strong>：<ul>
+<li>宝鉴遭异常打包或跨界转移时，会立即断开虚空链接</li><li>携带宝鉴者获得等同于100块马蹄铁的幸运属性</li></ul>
+</li></ul>
+<h3 id="须弥玉净瓶" data-legacy-id="sec-须弥玉净瓶-uln8wb" data-num="伍">须弥玉净瓶</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：法宝] [核心关联：天象收摄, 农作照料, 毒障净化, 植物点化]</p>
+</blockquote><blockquote><p>瓶敛九霄无根雨，一滴造化点生机。须弥玉净瓶是一件掌控自然生命法则的造化灵宝，拥有独立的200点水量上限。</p>
+</blockquote><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">定位</th>
+<th align="left">水量</th>
+<th align="left">核心能力</th>
+<th align="left">消耗 / 范围</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">天象收摄、农作照料与植物点化</td>
+<td align="left">200点</td>
+<td align="left">收摄或平息天象、范围润物、灭火降温、净化毒障、单体催生</td>
+<td align="left">润物消耗20水量+10理智，作用半径28格</td>
+</tr>
+</tbody></table></div></div><ul>
+<li class="term-item"><strong>炼制配方（神话炼丹炉）</strong>：<span class="recipe-strip recipe-strip-complete" role="group" aria-label="羊脂玉净瓶1加寸心精魄1加月亮碎片3加绿宝石3，制成须弥玉净瓶1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/myth-theme/structures/myth_yjp-idle-000.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">羊脂玉净瓶</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/xydztz/objects/xydztz_cunxin_jingpo.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">寸心精魄</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/moonglass.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×3</span></span>
+    <span class="recipe-item-name">月亮碎片</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/greengem.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×3</span></span>
+    <span class="recipe-item-name">绿宝石</span>
+  </span></span><span class="recipe-part recipe-part-result"><span class="recipe-operator recipe-arrow" aria-hidden="true">→</span><span class="recipe-token rarity-common is-result">
+    <span class="recipe-icon-frame"><img src="/images/wiki/xydztz/objects/xydztz_artifact_xmyjp.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">须弥玉净瓶</span>
+  </span></span></span></li><li class="term-item"><strong>水量机制</strong>：上限200点；普通降雨不再恢复水量，落地净瓶也不会自动吸收天气</li><li class="term-item"><strong>收摄天象</strong>：<ul>
+<li>只有当前水量不高于100点时才会显示“收摄天象”；随身携带时，可在官方降雪、广寒雪域地皮的常年飘雪、洞穴酸雨或月雹期间主动收摄，一次回满200点水量并消耗10点理智</li><li>当前水量高于100点时，随身携带时的默认交互为“润物无声”，不会误扣理智或占用本段天象次数；同一天象中水量降至100点及以下后，仍可进行本次收摄</li><li>每只净瓶在同一段连续天象中只能收摄一次，不会因此停止天气或进入封印；广寒飘雪与官方降雪连续相接时视为同一段雪源，只有离开雪域且外界也未下雪后才会重置</li></ul>
+</li><li class="term-item"><strong>收尽天象</strong>：<ul>
+<li>将净瓶放在地上，可主动平息当前官方降雪、洞穴酸雨或月雹；广寒雪域的常年飘雪不能被平息</li><li>只有天气确实停止后才回满水量并消耗10点理智；失败不会消耗理智，也不会进入封印</li><li>成功后该瓶封印600秒；封印期间不能收摄、润物或点化，但仍可拾取、存放、查看与换肤</li></ul>
+</li><li class="term-item"><strong>润物无声</strong>：<ul>
+<li>水量充足时可主动使用，消耗20水量和10点理智，冷却8秒</li><li>对周围28格范围降温、灭火、解除阴燃并提升湿度</li><li>大范围照料官方农作物，补充水分与三色肥力</li><li>净化范围内现存毒障云，使其在1～2秒内衰减消散；不影响暗影裂隙、毒障喷口</li></ul>
+</li><li class="term-item"><strong>点化命数</strong>：<ul>
+<li>对单个合法目标使用，只消耗下表水量，不额外消耗理智</li></ul>
+</li></ul>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">点化目标</th>
+<th align="left">实际效果</th>
+<th align="left">水量消耗</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">官方农作物</td>
+<td align="left">沿官方成熟阶段推进为巨大作物</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">火荨麻、犁地草、必忘我</td>
+<td align="left">催至可采摘成熟态</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">兼容农作物中的仙果、礼物作物</td>
+<td align="left">沿生长阶段推进为巨大作物</td>
+<td align="left">30</td>
+</tr>
+<tr>
+<td align="left">棱镜子圭控水、控土、全能神器</td>
+<td align="left">注入2000点水分与三色各800点肥力</td>
+<td align="left">50</td>
+</tr>
+<tr>
+<td align="left">神话人参果树幼根</td>
+<td align="left">从幼根推进到中期树株</td>
+<td align="left">50</td>
+</tr>
+<tr>
+<td align="left">已吸收足够日月精华的中期人参果树</td>
+<td align="left">直接推进为成熟人参果树</td>
+<td align="left">100</td>
+</tr>
+<tr>
+<td align="left">成熟人参果树</td>
+<td align="left">催落1枚树内库存；完全枯竭时完成当前结果周期</td>
+<td align="left">100</td>
+</tr>
+<tr>
+<td align="left">桃树、水中木、阴郁之棘幼苗</td>
+<td align="left">推进至各自的成熟、结果或强化状态</td>
+<td align="left">100</td>
+</tr>
+</tbody></table></div></div><h3 id="辟火罩" data-legacy-id="sec-辟火罩-ll4ql" data-num="陆">辟火罩</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：法宝] [核心关联：熊罴真身, 束焰领域, 火焰防护]</p>
+</blockquote><blockquote><p>罩中火有形，却不得逞其凶。辟火罩是击败“<a class="term-link" href="/characters/#%E9%BB%91%E9%A3%8E%E5%A4%A7%E7%8E%8B-%E7%86%8A%E7%BD%B4%E7%9C%9F%E8%BA%AB" data-term-id="blackbear-trueform" data-term-kind="精怪首领" data-term-summary="通过吞天截住黑风大王战败遁风后触发的多阶段精怪首领。" data-term-image="/images/wiki/xydztz/objects/xydztz_blackbear_trueform.webp">黑风大王·熊罴真身</a>”后固定获得的专属法宝。</p>
+</blockquote><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">定位</th>
+<th align="left">领域范围</th>
+<th align="left">耐久续航</th>
+<th align="left">补充方式</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">束焰火阵、燃烧约束与火焰防护</td>
+<td align="left">8格</td>
+<td align="left">600秒（10分钟）</td>
+<td align="left">红宝石每颗恢复25%，即150秒</td>
+</tr>
+</tbody></table></div></div><ul>
+<li class="term-item"><strong>获取方式</strong>：每次击杀熊罴真身固定独立掉落1件辟火罩，不受亥猪等多倍掉落影响</li><li class="term-item"><strong>使用方式</strong>：<ul>
+<li>必须由玩家随身携带，右键选择“束焰”展开领域，再次右键“收起”</li><li>每名玩家同一时间只能展开一重辟火罩领域</li><li>法宝离开持有者物品栏、持有者死亡或耐久耗尽时，领域自动收起</li></ul>
+</li><li class="term-item"><strong>领域效果</strong>：<ul>
+<li>领域内玩家受到的火焰伤害降为0</li><li>已经燃烧的非燃料实体进入领域后，其烧毁倒计时会被暂时束住，并停止向外积热引燃其他实体</li><li>束焰不会直接熄灭所有火焰；受束火焰仍会分别灼伤近处目标</li><li>燃烧体自身发热、解冻与融化等结算仍然保留</li><li>受束焰保护的燃烧目标死亡时，仍按正常战利品处理，不会被火焰烧毁吞掉原有掉落</li><li>目标离开全部领域或领域收起后，会从此前剩余时间继续燃烧</li></ul>
+</li></ul>
+<p><strong>火阵伤害档位</strong>（仅当火源与目标同处一重辟火罩时生效）：</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">目标到该罩中心的距离</th>
+<th align="left">受束火焰持续伤害倍率</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">不超过3格</td>
+<td align="left">2.5倍</td>
+</tr>
+<tr>
+<td align="left">超过3格、不超过6格</td>
+<td align="left">1.5倍</td>
+</tr>
+<tr>
+<td align="left">超过6格、不超过8格</td>
+<td align="left">1倍</td>
+</tr>
+</tbody></table></div></div><ul>
+<li>每处受束火焰仍沿自身原有伤害范围独立结算，多处火源可以共同灼伤同一目标；多重辟火罩重叠时只取符合条件的最高单罩倍率，不按罩数连乘</li><li>8格是领域范围，不会把每团火扩成全罩远程伤害；燃料火源、罩外火源或目标，以及直接火焰攻击不获得火阵增幅</li><li>目标原有火抗与火免仍然生效，领域内玩家的火伤归零</li><li class="term-item"><strong>补充耐久</strong>：将红宝石给予随身携带的辟火罩即可补充；已满时不会消耗红宝石</li></ul>
+<h3 id="喜蛛天罗衣" data-legacy-id="sec-喜蛛天罗衣-318xu2" data-num="柒">喜蛛天罗衣</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：装备] [核心关联：盘丝娘娘, 护甲, 飞针]</p>
+</blockquote><ul>
+<li class="term-item"><strong>专属限制</strong>：仅盘丝娘娘可穿戴</li><li class="term-item"><strong>合成配方（神话炼丹炉）</strong>：<span class="recipe-strip recipe-strip-complete" role="group" aria-label="盘丝披肩1加寸心精魄1加活蝴蝶1加蜘蛛丝9，制成喜蛛天罗衣1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/madameweb_armor.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">盘丝披肩</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/xydztz/objects/xydztz_cunxin_jingpo.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">寸心精魄</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/butterfly.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">活蝴蝶</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/silk.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×9</span></span>
+    <span class="recipe-item-name">蜘蛛丝</span>
+  </span></span><span class="recipe-part recipe-part-result"><span class="recipe-operator recipe-arrow" aria-hidden="true">→</span><span class="recipe-token rarity-common is-result">
+    <span class="recipe-icon-frame"><img src="/images/wiki/xydztz/objects/xydztz_armor_madameweb.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">喜蛛天罗衣</span>
+  </span></span></span></li><li class="term-item"><strong>材料说明</strong>：需要活蝴蝶，不是蝴蝶翅膀</li><li class="term-item"><strong>炼制耗时</strong>：60秒</li></ul>
+<p><strong>基础面板</strong></p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">属性</th>
+<th align="left">数值</th>
+</tr>
+</thead><tbody><tr>
+<td align="left"><strong>物理减伤</strong></td>
+<td align="left">85%</td>
+</tr>
+<tr>
+<td align="left"><strong>耐久度</strong></td>
+<td align="left">2400点（耐久为零不破碎）</td>
+</tr>
+<tr>
+<td align="left"><strong>保暖效果</strong></td>
+<td align="left">120秒</td>
+</tr>
+<tr>
+<td align="left"><strong>防水效果</strong></td>
+<td align="left">50%</td>
+</tr>
+</tbody></table></div></div><p><strong>核心机制</strong></p>
+<ul>
+<li><strong>须弥暗格（专属弹药库）</strong><ul>
+<li>衣服自带1×2储物空间</li><li>绝对纯净：仅允许放入蛛网、蜘蛛腺体、盘丝飞针、毒针</li><li>无底深渊：无限堆叠容量</li></ul>
+</li><li><strong>天衣无缝（永动织补系统）</strong><ul>
+<li>触发条件：将蜘蛛网放入天罗衣专属空间</li><li>自动愈合：战斗中每损失120点耐久（5%），自动消耗1张蜘蛛网补满</li><li>实战中只要蜘蛛网不断，衣服永不磨损</li></ul>
+</li><li><strong>虫群天灾（轻量版蜘蛛帽）</strong><ul>
+<li>自动收编周遭无主蜘蛛为死忠护卫，最多10只</li><li>装备瞬间及招募时，强行驱散身边跟随的猪人等异族</li></ul>
+</li><li><strong>罗袖暗锋（飞针系统）</strong><ul>
+<li>右键点击目标单发飞针</li><li>飞针种类根据格子内放置决定（上格优先、下格备用）</li><li>1根飞针折算15次发射，继承普通针/毒针原有效果</li><li>伤害：26.67/次</li><li>射程：10单位</li></ul>
+</li></ul>
+<hr>
+            <!-- STATIC_CONTENT_END -->
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <footer class="footer" id="site-footer" role="contentinfo">
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-message">
+        <p class="footer-message-text">感谢每一位订阅玩家的支持和鼓励，祝各位在《腌笃鲜》的努力下游戏愉快，武运昌隆，尽享神话之旅！</p>
+        <p class="footer-signature">——咸鱼 &amp; 大猪蹄子 敬上</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357" target="_blank" rel="noopener noreferrer">Steam 创意工坊</a>
+        <a href="https://qm.qq.com/q/iFeDTMf6Io" target="_blank" rel="noopener noreferrer">反馈交流群</a>
+      </div>
+      <p>&copy; 2026 《腌笃鲜》</p>
+      <p>反馈交流 QQ 群：1046023996</p>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <script src="/scripts/utils.js?v=20260804h"></script>
+    <script src="/scripts/renderer.js?v=20260805c"></script>
+    <script src="/scripts/toc.js?v=20260805b"></script>
+    <script src="/scripts/scroll.js?v=20260805a"></script>
+    <script src="/scripts/theme.js?v=20260804f"></script>
+    <script src="/scripts/ui.js?v=20260805b"></script>
+    <script src="/scripts/media.js?v=20260808a"></script>
+    <script src="/scripts/main.js?v=20260805c"></script>
+  </body>
+</html>

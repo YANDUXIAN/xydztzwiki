@@ -1,0 +1,800 @@
+{
+  "schemaVersion": 1,
+  "book": "myth-characters",
+  "policy": {
+    "objectImage": "curated WebP, injected only on matching static page",
+    "pageLoading": "manifest on active book only, images lazy",
+    "sourceMastersPublished": false
+  },
+  "objects": [
+    {
+      "id": "character-sun-wukong",
+      "name": "孙悟空",
+      "section": "孙悟空",
+      "layout": "portrait",
+      "caption": false,
+      "image": "images/wiki/myth-characters/monkey-king/portrait.webp"
+    },
+    {
+      "id": "character-nezha",
+      "name": "哪吒",
+      "section": "哪吒",
+      "layout": "portrait",
+      "caption": false,
+      "image": "images/wiki/myth-characters/neza/portrait.webp"
+    },
+    {
+      "id": "character-white-bone",
+      "name": "白骨夫人",
+      "section": "白骨夫人",
+      "layout": "portrait",
+      "caption": false,
+      "image": "images/wiki/myth-characters/white-bone/portrait.webp"
+    },
+    {
+      "id": "character-pigsy",
+      "name": "猪八戒",
+      "section": "猪八戒",
+      "layout": "portrait",
+      "caption": false,
+      "image": "images/wiki/myth-characters/pigsy/portrait.webp"
+    },
+    {
+      "id": "character-yangjian",
+      "name": "杨戬",
+      "section": "杨戬",
+      "layout": "portrait",
+      "caption": false,
+      "image": "images/wiki/myth-characters/yangjian/portrait.webp"
+    },
+    {
+      "id": "character-yutu",
+      "name": "玉兔",
+      "section": "玉兔",
+      "layout": "portrait",
+      "caption": false,
+      "image": "images/wiki/myth-characters/myth-yutu/portrait.webp"
+    },
+    {
+      "id": "character-yama",
+      "name": "黑白无常",
+      "section": "黑白无常",
+      "layout": "portrait",
+      "caption": false,
+      "image": "images/wiki/myth-characters/yama-commissioners/portrait.webp"
+    },
+    {
+      "id": "character-madameweb",
+      "name": "盘丝娘娘",
+      "section": "盘丝娘娘",
+      "layout": "portrait",
+      "caption": false,
+      "image": "images/wiki/myth-characters/madameweb/portrait.webp"
+    },
+    {
+      "id": "character-wukong-staff",
+      "name": "金箍棒",
+      "section": "金箍棒",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-characters/items/mk_jgb.webp"
+    },
+    {
+      "id": "character-wukong-shrine-disguise",
+      "name": "土地庙伪装",
+      "section": "变化：土地庙伪装",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-characters/monkey-king/monkey_king_shrine_form.webp"
+    },
+    {
+      "id": "character-wukong-hat",
+      "name": "行者帽",
+      "section": "行者帽",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-characters/items/xzhat_mk.webp"
+    },
+    {
+      "id": "character-wukong-golden-hat",
+      "name": "凤翅紫金冠",
+      "section": "凤翅紫金冠",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-theme/catalog/golden_hat_mk.webp"
+    },
+    {
+      "id": "character-wukong-golden-armor",
+      "name": "锁子黄金甲",
+      "section": "锁子黄金甲",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-theme/catalog/golden_armor_mk.webp"
+    },
+    {
+      "id": "character-pigsy-rake",
+      "name": "九齿钉耙",
+      "section": "九齿钉耙",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-characters/items/pigsy_rake.webp"
+    },
+    {
+      "id": "character-pigsy-hat",
+      "name": "墨兰帽",
+      "section": "睡床与墨兰帽",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-characters/items/pigsy_hat.webp"
+    },
+    {
+      "id": "character-yangjian-spear",
+      "name": "三尖两刃刀",
+      "section": "三尖两刃刀",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-characters/items/yj_spear.webp"
+    },
+    {
+      "id": "character-yangjian-hat",
+      "name": "三山飞凤冠",
+      "section": "三山飞凤冠",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-theme/catalog/yangjian_hair.webp"
+    },
+    {
+      "id": "character-yangjian-armor",
+      "name": "锁子清源甲",
+      "section": "锁子清源甲",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-theme/catalog/yangjian_armor.webp"
+    },
+    {
+      "id": "character-skyhound",
+      "name": "哮天犬",
+      "section": "哮天犬",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-characters/items/skyhound.webp"
+    },
+    {
+      "id": "character-skyhound-warg",
+      "name": "月石哮天犬",
+      "section": "月石哮天犬",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-characters/yangjian/skyhound_warg.webp"
+    },
+    {
+      "id": "character-yangjian-buzzard",
+      "name": "傲天鹰",
+      "section": "傲天鹰",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-characters/yangjian/yangjian_buzzard.webp"
+    },
+    {
+      "id": "character-yutu-pestle",
+      "name": "捣药杵",
+      "section": "捣药杵与技能栏“捣药”",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-characters/items/medicine_pestle_myth.webp"
+    },
+    {
+      "id": "character-yutu-guitar",
+      "name": "莹月琵琶",
+      "section": "莹月琵琶",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-characters/items/guitar_jadehare.webp"
+    },
+    {
+      "id": "character-yutu-rabbithole",
+      "name": "人工兔洞",
+      "section": "兔洞采集与人工兔洞",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-characters/items/yt_rabbithole.webp"
+    },
+    {
+      "id": "character-yutu-moonbutterfly",
+      "name": "月蛾",
+      "section": "月蛾引路",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-characters/myth-yutu/yt_moonbutterfly.webp"
+    },
+    {
+      "id": "character-yutu-basket",
+      "name": "竹药篓",
+      "section": "竹药篓",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-characters/items/myth_bamboo_basket.webp"
+    },
+    {
+      "id": "character-yama-hat",
+      "name": "无常官帽",
+      "section": "无常官帽",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-characters/items/hat_commissioner_white.webp"
+    },
+    {
+      "id": "character-yama-pennant",
+      "name": "招魂幡",
+      "section": "招魂幡",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-characters/items/pennant_commissioner.webp"
+    },
+    {
+      "id": "character-yama-bell",
+      "name": "摄魂铃",
+      "section": "摄魂铃",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-characters/items/bell_commissioner.webp"
+    },
+    {
+      "id": "character-white-bone-pet",
+      "name": "白骨喽喽",
+      "section": "白骨喽喽（骨宠）",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-characters/white-bone/bone_pet.webp"
+    },
+    {
+      "id": "character-madameweb-armor",
+      "name": "盘丝披肩",
+      "section": "盘丝披肩",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/shared/materials/madameweb_armor.webp"
+    },
+    {
+      "id": "character-madameweb-feisheng",
+      "name": "盘丝吊",
+      "section": "盘丝吊",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-characters/items/madameweb_feisheng.webp"
+    },
+    {
+      "id": "character-pigsy-bed",
+      "name": "草垛",
+      "section": "睡床与墨兰帽",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-characters/items/pigsy_sleepbed.webp"
+    },
+    {
+      "id": "character-pigsy-zhuzhu-form",
+      "name": "刚鬣形态",
+      "section": "刚鬣形态",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-characters/pigsy/pigsy_zhuzhu_form.webp"
+    },
+    {
+      "id": "character-madameweb-spider-form",
+      "name": "蛛皇本相",
+      "section": "蛛皇本相",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-characters/madameweb/madameweb_spider_form.webp"
+    },
+    {
+      "id": "character-yama-black-hat",
+      "name": "无常官帽·黑",
+      "section": "无常官帽",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-characters/items/hat_commissioner_black.webp"
+    }
+  ],
+  "galleries": [
+    {
+      "id": "character-wukong-skills",
+      "page": "sun-wukong",
+      "section": "方寸山解锁：定身法与一柱擎天",
+      "title": "方寸山技能",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "定身法",
+          "image": "images/wiki/myth-characters/items/mk_dsf.webp"
+        },
+        {
+          "name": "一柱擎天",
+          "image": "images/wiki/myth-characters/items/mk_jgb_rec.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-nezha-artifacts",
+      "page": "nezha",
+      "section": "三件初始法宝",
+      "title": "哪吒三件初始法宝",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "火尖枪",
+          "image": "images/wiki/myth-characters/items/nz_lance.webp"
+        },
+        {
+          "name": "混天绫",
+          "image": "images/wiki/myth-characters/items/nz_damask.webp"
+        },
+        {
+          "name": "乾坤圈",
+          "image": "images/wiki/myth-characters/items/nz_ring.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-white-bone-mirrors",
+      "page": "white-bone",
+      "section": "骨镜与六件骨衣",
+      "title": "白骨妖镜",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "白骨妖镜·一级",
+          "image": "images/wiki/myth-characters/items/bone_mirror_1.webp"
+        },
+        {
+          "name": "白骨妖镜·二级",
+          "image": "images/wiki/myth-characters/items/bone_mirror_2.webp"
+        },
+        {
+          "name": "白骨妖镜·三级",
+          "image": "images/wiki/myth-characters/items/bone_mirror_3.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-white-bone-wardrobe",
+      "page": "white-bone",
+      "section": "骨镜与六件骨衣",
+      "title": "六件骨衣",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "盈风绸",
+          "image": "images/wiki/myth-characters/items/wb_armorlight.webp"
+        },
+        {
+          "name": "坚骨披",
+          "image": "images/wiki/myth-characters/items/wb_armorbone.webp"
+        },
+        {
+          "name": "血色霓",
+          "image": "images/wiki/myth-characters/items/wb_armorblood.webp"
+        },
+        {
+          "name": "蕴玄袍",
+          "image": "images/wiki/myth-characters/items/wb_armorstorage.webp"
+        },
+        {
+          "name": "不餍衣",
+          "image": "images/wiki/myth-characters/items/wb_armorgreed.webp"
+        },
+        {
+          "name": "雾隐裳",
+          "image": "images/wiki/myth-characters/items/wb_armorfog.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-white-bone-consumables",
+      "page": "white-bone",
+      "section": "骨镜、骨衣与消耗品配方",
+      "title": "专属消耗品",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "阴森之心",
+          "image": "images/wiki/myth-characters/items/wb_heart.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-white-bone-weapons",
+      "page": "white-bone",
+      "section": "三件骨系武器",
+      "title": "三件骨系武器",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "骨刃",
+          "image": "images/wiki/myth-characters/items/bone_blade.webp"
+        },
+        {
+          "name": "骨鞭",
+          "image": "images/wiki/myth-characters/items/bone_whip.webp"
+        },
+        {
+          "name": "骨杖",
+          "image": "images/wiki/myth-characters/items/bone_wand.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-white-bone-rhino-hearts",
+      "page": "white-bone",
+      "section": "特殊食物与骨片治疗",
+      "title": "三犀牛心脏",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "辟暑心脏",
+          "image": "images/wiki/myth-theme/catalog/myth_rhino_redheart.webp"
+        },
+        {
+          "name": "辟寒心脏",
+          "image": "images/wiki/myth-theme/catalog/myth_rhino_blueheart.webp"
+        },
+        {
+          "name": "辟尘心脏",
+          "image": "images/wiki/myth-theme/catalog/myth_rhino_yellowheart.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-yutu-powders",
+      "page": "yutu",
+      "section": "七种药粉",
+      "title": "七种药粉",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "草参药粉",
+          "image": "images/wiki/myth-characters/items/powder_m_hypnoticherb.webp"
+        },
+        {
+          "name": "犀茸药粉",
+          "image": "images/wiki/myth-characters/items/powder_m_lifeelixir.webp"
+        },
+        {
+          "name": "惊厥药粉",
+          "image": "images/wiki/myth-characters/items/powder_m_charged.webp"
+        },
+        {
+          "name": "活血药粉",
+          "image": "images/wiki/myth-characters/items/powder_m_improvehealth.webp"
+        },
+        {
+          "name": "寒眸药粉",
+          "image": "images/wiki/myth-characters/items/powder_m_coldeye.webp"
+        },
+        {
+          "name": "夜明药粉",
+          "image": "images/wiki/myth-characters/items/powder_m_becomestar.webp"
+        },
+        {
+          "name": "排郁药粉",
+          "image": "images/wiki/myth-characters/items/powder_m_takeiteasy.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-yutu-songs-friendly",
+      "page": "yutu",
+      "section": "五首友方增益曲",
+      "title": "友方增益曲",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "田中乐",
+          "image": "images/wiki/myth-characters/items/song_m_workup.webp"
+        },
+        {
+          "name": "春光曲",
+          "image": "images/wiki/myth-characters/items/song_m_insomnia.webp"
+        },
+        {
+          "name": "浴火奏",
+          "image": "images/wiki/myth-characters/items/song_m_fireimmune.webp"
+        },
+        {
+          "name": "寒风调",
+          "image": "images/wiki/myth-characters/items/song_m_iceimmune.webp"
+        },
+        {
+          "name": "梦飞霜",
+          "image": "images/wiki/myth-characters/items/song_m_iceshield.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-yutu-songs-hostile",
+      "page": "yutu",
+      "section": "五首敌方或场域曲",
+      "title": "敌方与场域曲",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "怨缠身",
+          "image": "images/wiki/myth-characters/items/song_m_nocure.webp"
+        },
+        {
+          "name": "春风化雨",
+          "image": "images/wiki/myth-characters/items/song_m_weakattack.webp"
+        },
+        {
+          "name": "霸王卸甲",
+          "image": "images/wiki/myth-characters/items/song_m_weakdefense.webp"
+        },
+        {
+          "name": "流水无情",
+          "image": "images/wiki/myth-characters/items/song_m_nolove.webp"
+        },
+        {
+          "name": "夜阑谣",
+          "image": "images/wiki/myth-characters/items/song_m_sweetdream.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-yama-statues",
+      "page": "yama-commissioners",
+      "section": "阎罗雕像",
+      "title": "阎罗雕像四级形态",
+      "layout": "features",
+      "items": [
+        {
+          "name": "阎罗雕像·一级",
+          "image": "images/wiki/myth-characters/yama-commissioners/myth_yama_statue1.webp"
+        },
+        {
+          "name": "阎罗神像·二级",
+          "image": "images/wiki/myth-characters/yama-commissioners/myth_yama_statue2.webp"
+        },
+        {
+          "name": "阎罗神龛·三级",
+          "image": "images/wiki/myth-characters/yama-commissioners/myth_yama_statue3.webp"
+        },
+        {
+          "name": "阎王神龛·四级",
+          "image": "images/wiki/myth-characters/yama-commissioners/myth_yama_statue4.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-yama-revival-items",
+      "page": "yama-commissioners",
+      "section": "彼岸花与出窍符",
+      "title": "彼岸花与出窍符",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "彼岸花",
+          "image": "images/wiki/myth-characters/items/myth_higanbana_item.webp"
+        },
+        {
+          "name": "出窍符",
+          "image": "images/wiki/myth-characters/items/myth_cqf.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-yama-souls",
+      "page": "yama-commissioners",
+      "section": "魂魄",
+      "title": "善魂与恶魂",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "善魂",
+          "image": "images/wiki/myth-characters/items/soul_specter.webp"
+        },
+        {
+          "name": "恶魂",
+          "image": "images/wiki/myth-characters/items/soul_ghast.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-yama-underworld-system",
+      "page": "yama-commissioners",
+      "section": "酆都路引与阴司虚影",
+      "title": "路引、生死簿与孟婆汤",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "酆都路引",
+          "image": "images/wiki/myth-characters/items/pass_commissioner.webp"
+        },
+        {
+          "name": "判官笔·生死簿",
+          "image": "images/wiki/myth-characters/items/commissioner_book.webp"
+        },
+        {
+          "name": "孟婆汤",
+          "image": "images/wiki/myth-characters/items/commissioner_mpt.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-yama-underworld-phantoms",
+      "page": "yama-commissioners",
+      "section": "六种路引的实际结算",
+      "title": "六位阴司虚影",
+      "layout": "features",
+      "items": [
+        {
+          "name": "阎罗王",
+          "image": "images/wiki/myth-characters/yama-commissioners/pass_commissioner_ylw.webp"
+        },
+        {
+          "name": "魏征",
+          "image": "images/wiki/myth-characters/yama-commissioners/pass_commissioner_wz.webp"
+        },
+        {
+          "name": "钟馗",
+          "image": "images/wiki/myth-characters/yama-commissioners/pass_commissioner_zk.webp"
+        },
+        {
+          "name": "崔珏",
+          "image": "images/wiki/myth-characters/yama-commissioners/pass_commissioner_cj.webp"
+        },
+        {
+          "name": "陆之道",
+          "image": "images/wiki/myth-characters/yama-commissioners/pass_commissioner_lzd.webp"
+        },
+        {
+          "name": "孟婆",
+          "image": "images/wiki/myth-characters/yama-commissioners/pass_commissioner_mp.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-yama-black-artifacts",
+      "page": "yama-commissioners",
+      "section": "黑无常法器",
+      "title": "黑无常法器",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "勾魂索",
+          "image": "images/wiki/myth-characters/items/whip_commissioner.webp"
+        },
+        {
+          "name": "镇魂令",
+          "image": "images/wiki/myth-characters/items/token_commissioner.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-madameweb-web-items",
+      "page": "madameweb",
+      "section": "蛛网、陷阱与蜘蛛储备",
+      "title": "蛛网与陷阱",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "蛛丝罗网",
+          "image": "images/wiki/myth-characters/items/madameweb_net.webp"
+        },
+        {
+          "name": "蛛网陷阱",
+          "image": "images/wiki/myth-characters/items/madameweb_pitfall.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-madameweb-poison-bee",
+      "page": "madameweb",
+      "section": "毒蜂茧与盘丝毒蜂",
+      "title": "盘丝毒蜂",
+      "layout": "features",
+      "items": [
+        {
+          "name": "盘丝毒蜂",
+          "image": "images/wiki/myth-characters/madameweb/madameweb_bee.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-madameweb-spiders",
+      "page": "madameweb",
+      "section": "蛛巢与专属战蛛",
+      "title": "盘丝蛛巢与专属生物",
+      "layout": "features",
+      "items": [
+        {
+          "name": "盘丝蛛巢",
+          "image": "images/wiki/myth-characters/madameweb/madameweb_spiderhome.webp"
+        },
+        {
+          "name": "盘丝毒蛛",
+          "image": "images/wiki/myth-characters/madameweb/madameweb_spider_warrior.webp"
+        },
+        {
+          "name": "困顿之茧",
+          "image": "images/wiki/myth-characters/madameweb/madameweb_pitfall_cocoon.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-madameweb-items",
+      "page": "madameweb",
+      "section": "专属物品与配方",
+      "title": "盘丝专属物品",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "盘丝蜂针",
+          "image": "images/wiki/myth-characters/items/madameweb_stinger.webp"
+        },
+        {
+          "name": "盘丝毒针",
+          "image": "images/wiki/myth-characters/items/madameweb_poisonstinger.webp"
+        },
+        {
+          "name": "毒蜂茧",
+          "image": "images/wiki/myth-characters/items/madameweb_beemine.webp"
+        },
+        {
+          "name": "盘丝蛛卵",
+          "image": "images/wiki/myth-characters/items/madameweb_poisonbeemine.webp"
+        },
+        {
+          "name": "蛛丝茧袋",
+          "image": "images/wiki/myth-characters/items/madameweb_silkcocoon.webp"
+        },
+        {
+          "name": "解毒散",
+          "image": "images/wiki/myth-characters/items/madameweb_detoxify.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "character-madameweb-slide-gallery",
+      "page": "madameweb",
+      "section": "盘丝滑索、海丝滑索与步丝履",
+      "title": "盘丝滑索网络",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "盘丝滑索",
+          "image": "images/wiki/myth-characters/items/hua_internet_node_item.webp"
+        },
+        {
+          "name": "海丝滑索",
+          "image": "images/wiki/myth-characters/items/hua_internet_node_sea_item.webp"
+        },
+        {
+          "name": "步丝履",
+          "image": "images/wiki/myth-characters/items/hua_fake_spider_shoe.webp"
+        }
+      ],
+      "placement": "lead"
+    }
+  ],
+  "demos": []
+}

@@ -1,20 +1,40 @@
 // ============================================
-// 《腌笃鲜》官方维基 - Theme
+// 《腌笃鲜》维基百科 - Theme
 // ============================================
 
 window.XYDZTZ = window.XYDZTZ || {};
 window.XYDZTZ.theme = {
-  STORAGE_KEY: 'xdyztz-theme',
+  STORAGE_KEY: 'xydztz-theme',
+  LEGACY_STORAGE_KEY: 'xdyztz-theme',
+
+  readPreference() {
+    try {
+      return localStorage.getItem(this.STORAGE_KEY)
+        || localStorage.getItem(this.LEGACY_STORAGE_KEY);
+    } catch (err) {
+      console.warn('主题偏好读取失败，将跟随系统主题', err);
+      return null;
+    }
+  },
+
+  writePreference(theme) {
+    try {
+      localStorage.setItem(this.STORAGE_KEY, theme);
+      localStorage.removeItem(this.LEGACY_STORAGE_KEY);
+    } catch (err) {
+      console.warn('主题偏好保存失败', err);
+    }
+  },
 
   init() {
-    const saved = localStorage.getItem(this.STORAGE_KEY);
+    const saved = this.readPreference();
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const theme = saved || (prefersDark ? 'dark' : 'light');
     this.apply(theme);
 
     // 用户未主动选择时才跟随系统主题。
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (!localStorage.getItem(this.STORAGE_KEY)) {
+      if (!this.readPreference()) {
         this.apply(e.matches ? 'dark' : 'light');
       }
     });
@@ -36,7 +56,7 @@ window.XYDZTZ.theme = {
     const current = document.documentElement.getAttribute('data-theme') || 'light';
     const next = current === 'dark' ? 'light' : 'dark';
     this.apply(next);
-    localStorage.setItem(this.STORAGE_KEY, next);
+    this.writePreference(next);
   },
 
   updateIcon(theme) {

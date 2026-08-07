@@ -1,0 +1,528 @@
+<!doctype html>
+<!-- ============================================
+     《腌笃鲜》维基百科 - Main Page
+     ============================================ -->
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="查阅《腌笃鲜》对神话人物、主题机制、性能与操作体验的优化。" />
+    <meta name="keywords" content="腌笃鲜,饥荒,神话书说,模组,元辰劫运,盘丝娘娘,wiki,攻略" />
+    <meta name="author" content="《腌笃鲜》资料整理" />
+    <meta name="theme-color" content="#faf8f3" />
+    <script>
+      (() => {
+        let theme = 'light';
+        try {
+          const saved = localStorage.getItem('xydztz-theme') || localStorage.getItem('xdyztz-theme');
+          theme = saved === 'dark' || saved === 'light'
+            ? saved
+            : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch (err) {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', theme === 'dark' ? '#15110e' : '#faf8f3');
+      })();
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="神话优化 | 腌笃鲜 | 《腌笃鲜》" />
+    <meta property="og:description" content="查阅《腌笃鲜》对神话人物、主题机制、性能与操作体验的优化。" />
+    <meta property="og:site_name" content="《腌笃鲜》" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:url" content="https://yanduxian.cn/optimizations/" />
+    <meta property="og:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1021" />
+    <meta property="og:image:alt" content="《腌笃鲜》雪景封面" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="神话优化 | 腌笃鲜 | 《腌笃鲜》" />
+    <meta name="twitter:description" content="查阅《腌笃鲜》对神话人物、主题机制、性能与操作体验的优化。" />
+    <meta name="twitter:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+
+    <title>神话优化 | 腌笃鲜 | 《腌笃鲜》</title>
+    <link rel="canonical" href="https://yanduxian.cn/optimizations/" />
+
+    <link rel="preload" href="/images/hero-default-1200.webp" imagesrcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" imagesizes="100vw" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/fonts/MaShanZheng-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/png" href="/images/mod-icon.png?v=20260719" />
+
+    <link rel="stylesheet" href="/styles/fonts.css?v=20260804o" />
+    <link rel="stylesheet" href="/styles/variables.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/base.css?v=20260804g" />
+    <link rel="stylesheet" href="/styles/hero.css?v=20260804r" />
+    <link rel="stylesheet" href="/styles/layout.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/markdown.css?v=20260805u" />
+    <link rel="stylesheet" href="/styles/components.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/media.css?v=20260806b" />
+    <link rel="stylesheet" href="/styles/responsive.css?v=20260805m" />
+  </head>
+  <body data-book-id="xydztz" data-book-title="腌笃鲜" data-chapter-slug="optimizations" data-chapter-title="神话优化" data-search-index="/search-index.json?v=ca6182164b96">
+    <div class="read-progress" id="read-progress" aria-hidden="true"></div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2c-1.05 0-2.05.16-3 .46 1.69 1.24 2.79 3.26 2.79 5.54 0 3.87-3.13 7-7 7-.57 0-1.13-.08-1.67-.22C2.52 18.49 6.45 22 11 22c5.52 0 10-4.48 10-10S16.52 2 11 2c-.66 0-1.3.07-1.92.19C9.23 2.06 9.12 2 9 2z"/></svg>
+    </button>
+
+    <header class="hero" id="hero" role="banner">
+      <picture class="hero-bg-layer hero-bg-default" aria-hidden="true">
+        <source type="image/webp" srcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" sizes="100vw" />
+        <img src="/images/hero-default.jpg" srcset="/images/hero-default-1200.jpg 1200w, /images/hero-default.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" fetchpriority="high" />
+      </picture>
+      <picture class="hero-bg-layer hero-bg-hover" id="hero-hover-picture" aria-hidden="true">
+        <source type="image/webp" data-srcset="/images/hero-hover-1200.webp 1200w, /images/hero-hover.webp 2400w" sizes="100vw" />
+        <img data-src="/images/hero-hover.jpg" data-srcset="/images/hero-hover-1200.jpg 1200w, /images/hero-hover.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" />
+      </picture>
+      <div class="hero-sun-glow" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-gradient-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-title-row">
+          <h1 class="hero-title">《腌笃鲜》</h1>
+          <img class="hero-seal" src="/images/mod-icon.png?v=20260719" alt="《腌笃鲜》模组图标" width="68" height="68" />
+        </div>
+        <div class="hero-actions" aria-label="主要操作">
+          <a
+            class="hero-btn hero-btn-primary"
+            href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="在 Steam 创意工坊订阅《腌笃鲜》（新窗口）"
+          >订阅模组</a>
+          <button class="hero-btn hero-btn-secondary" id="hero-btn" type="button">开始查阅</button>
+        </div>
+      </div>
+
+      <div class="hero-subtitles">
+        <p class="hero-subtitle">三十五劫运交织，十二元辰下凡，灵台方寸显真心</p>
+        <p class="hero-subtitle">玉兔拨弦，黑风倒卷——人物精怪双篇登场</p>
+      </div>
+
+      <svg class="hero-torn-edge" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 48 L0 28 L36 32 L72 22 L120 30 L168 20 L216 28 L264 18 L312 30 L360 22 L408 28 L456 18 L504 26 L552 16 L600 26 L648 32 L696 22 L744 28 L792 18 L840 28 L888 22 L936 30 L984 20 L1032 28 L1080 22 L1128 30 L1176 18 L1224 26 L1272 30 L1320 22 L1368 28 L1404 24 L1440 28 L1440 48 Z" />
+      </svg>
+    </header>
+
+    <noscript>
+      <div class="noscript-warning" role="alert">
+        <strong>提示：</strong>正文仍可阅读；启用 JavaScript 后可使用目录搜索、劫运查询和媒体灯箱。
+      </div>
+    </noscript>
+
+    <nav class="chapter-nav" aria-label="腌笃鲜篇章导航">
+      <div class="chapter-nav-inner" id="chapter-nav-inner">
+        <!-- CHAPTER_NAV_START -->
+        <details class="book-switcher">
+          <summary><strong>腌笃鲜</strong></summary>
+          <div class="book-switcher-menu">
+            <a class="book-switcher-link active" href="/">腌笃鲜<span class="sr-only">（当前）</span></a>
+            <a class="book-switcher-link" href="/myth-theme/">神话主题</a>
+            <a class="book-switcher-link" href="/myth-characters/">神话人物</a>
+          </div>
+        </details>
+        <span class="chapter-nav-divider" aria-hidden="true"></span>
+        <div class="chapter-nav-pages">
+          <a class="chapter-nav-link" href="/">模组介绍</a>
+        <a class="chapter-nav-link" href="/systems/">核心系统</a>
+        <a class="chapter-nav-link" href="/characters/">人物精怪</a>
+        <a class="chapter-nav-link" href="/artifacts/">法宝装备</a>
+        <a class="chapter-nav-link active" href="/optimizations/" aria-current="page">神话优化</a>
+        <a class="chapter-nav-link" href="/compatibility/">兼容修复</a>
+        </div>
+        <!-- CHAPTER_NAV_END -->
+      </div>
+      <div class="reading-position" id="reading-position">
+        <span class="reading-position-text"><span class="rp-num"></span><span class="rp-title"></span></span>
+      </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar" aria-label="目录导航">
+        <div class="sidebar-header">
+          <h3 id="sidebar-title">神话优化目录</h3>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="toc-search" placeholder="搜索三本资料…" aria-label="搜索全部资料" />
+        </div>
+        <ul class="toc-list" id="toc-list">
+          <!-- SIDEBAR_TOC_START -->
+          <li class="toc-item toc-section has-children open">
+            <a class="toc-link" href="#%E4%BA%BA%E7%89%A9%E6%9C%BA%E5%88%B6%E4%BC%98%E5%8C%96" data-id="人物机制优化" data-num="壹">人物机制优化</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%9D%A8%E6%88%AC" data-id="杨戬">杨戬</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%AD%99%E6%82%9F%E7%A9%BA" data-id="孙悟空">孙悟空</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%8C%AA%E5%85%AB%E6%88%92" data-id="猪八戒">猪八戒</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%99%BD%E9%AA%A8%E5%A4%AB%E4%BA%BA" data-id="白骨夫人">白骨夫人</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%9B%98%E4%B8%9D%E5%A8%98%E5%A8%98" data-id="盘丝娘娘">盘丝娘娘</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%97%A0%E5%B8%B8" data-id="无常">无常</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%93%AA%E5%90%92" data-id="哪吒">哪吒</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%85%A8%E5%91%98%E8%A2%AB%E5%8A%A8" data-id="全员被动">全员被动</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E6%9C%BA%E5%88%B6%E4%BC%98%E5%8C%96" data-id="主题机制优化" data-num="贰">主题机制优化</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%86%8A%E7%8C%AB%E5%B0%8F%E9%95%87%E7%84%95%E6%96%B0" data-id="熊猫小镇焕新">熊猫小镇焕新</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%81%9A%E5%AE%9D%E7%9B%86%E9%9D%A9%E6%96%B0" data-id="聚宝盆革新">聚宝盆革新</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%99%BA%E8%83%BD%E8%B0%B7%E4%BB%93" data-id="智能谷仓">智能谷仓</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%99%BE%E5%AE%9D%E5%9B%8A" data-id="百宝囊">百宝囊</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%82%89%E7%82%BC%E4%B8%B9-%E5%85%AB%E5%8D%A6%E7%82%89" data-id="炉炼丹-八卦炉">炉炼丹（八卦炉）</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%A4%AA%E4%B8%8A%E8%80%81%E5%90%9B%E4%BA%A4%E6%98%93" data-id="太上老君交易">太上老君交易</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E4%BA%BA%E5%8F%82%E6%9E%9C%E6%A0%91%E4%BC%98%E5%8C%96" data-id="人参果树优化">人参果树优化</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%9C%88%E9%A5%BC%E5%A0%86%E5%8F%A0" data-id="月饼堆叠">月饼堆叠</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%A0%86%E5%8F%A0%E8%A1%A5%E5%85%85" data-id="堆叠补充">堆叠补充</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%A6%96%E7%8E%8B%E6%92%AD%E6%8A%A5" data-id="妖王播报">妖王播报</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%9C%9F%E5%9C%B0%E9%97%AE%E8%B7%AF" data-id="土地问路">土地问路</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%A6%8F%E6%B3%BD%E5%BA%87%E4%BD%91" data-id="福泽庇佑">福泽庇佑</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%AB%B9%E6%9E%97%E7%AE%97%E5%8A%9B%E4%BC%98%E5%8C%96" data-id="竹林算力优化">竹林算力优化</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%AB%B9%E6%9E%97%E8%9C%A1%E5%B0%81" data-id="竹林蜡封">竹林蜡封</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%85%BE%E4%BA%91%E9%98%B2%E6%8A%96" data-id="腾云防抖">腾云防抖</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E9%94%AE%E4%BD%8D%E5%85%A8%E8%87%AA%E5%AE%9A%E4%B9%89" data-id="键位全自定义">键位全自定义</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#ui%E5%A4%8D%E4%BD%8D%E9%94%AE" data-id="ui复位键">UI复位键</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%9D%90%E9%AA%91%E8%A1%80%E9%87%8Fhud" data-id="坐骑血量hud">坐骑血量HUD</a></li>
+            </ul>
+          </li>
+          <!-- SIDEBAR_TOC_END -->
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <article class="content-card">
+          <div class="md-body" id="main-content" data-static-snapshot="ready" data-content-hash="ca6182164b96" data-chapter="optimizations">
+            <!-- STATIC_CONTENT_START -->
+<h2 id="神话优化" data-legacy-id="sec-神话优化-fvyd19" data-eyebrow="第伍篇">神话优化</h2><h3 id="人物机制优化" data-legacy-id="sec-人物机制优化-c9dizb" data-num="壹">人物机制优化</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：角色优化] [核心关联：杨戬, 孙悟空, 猪八戒, 白骨夫人, 盘丝娘娘, 无常, 哪吒]</p>
+</blockquote><p>以下功能均可在设置中自由开关，默认状态见各条目。</p>
+<h4 id="杨戬" data-legacy-id="sec-杨戬-i4lg">杨戬</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：角色优化] [核心关联：天眼, 魔法制作栏, 驱雷掣电]</p>
+</blockquote><ul>
+<li><strong>魔法制作栏</strong> ：默认开启<ul>
+<li>默认解锁魔法制作栏</li></ul>
+</li><li><strong>天眼照破虚妄</strong> ：默认关闭<ul>
+<li>开启后，天眼状态下可直接看清并攻击暗影生物（疯猪、影怪等）</li></ul>
+</li><li class="term-item"><strong>驱雷掣电修复</strong>：默认仅修复神话原技能失效问题，不启用额外强化</li><li class="term-item"><strong>雷动九天</strong>：默认关闭；在设置中单独开启后，三尖两刃刀附雷后的驱雷掣电会升级为更强的雷动九天<ul>
+<li>原版驱雷掣电：落点附近造成15~25点首段雷击伤害，随后对命中目标追加30点雷击与1倍武器伤害</li><li>雷动九天：技能触发更快，首段雷击提升为35~45点；后追加45点雷击与1.2倍武器伤害</li><li>强化后以落点为中心搜索8范围内最多8个目标，追雷会短暂压制目标出手节奏</li><li>V2.4.21后，引雷与雷袭全部替换为饥荒官方电击逻辑：不会再因为树荫、避雷针影响附魔，也不会点燃身边物品，攻击落雷不会将龙蝇等怪物异常退出晕厥状态</li><li>消耗等同原技能：优先消耗杨戬头冠10点耐久，否则消耗10点饥饿</li></ul>
+</li><li class="term-item"><strong>展翅飞鹰修复</strong>：修复目标按钮显示异常无法点击，以及按钮位置与实际地图坐标不一致的问题；冰眼结晶器可作为飞行落点</li></ul>
+<h4 id="孙悟空" data-legacy-id="sec-孙悟空-dus44">孙悟空</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：角色优化] [核心关联：黄油手, 变身, 土地庙]</p>
+</blockquote><ul>
+<li><strong>拒绝黄油手</strong> ：默认开启<ul>
+<li>全兵器不再脱手</li></ul>
+</li><li><strong>变身修复</strong> ：自动修复<ul>
+<li>变身土地庙时会妥善处理头部物品，防止帽子等头部装备丢失</li></ul>
+</li></ul>
+<h4 id="猪八戒" data-legacy-id="sec-猪八戒-h9n75">猪八戒</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：角色优化] [核心关联：饱食度, 体型, 伤害倍率]</p>
+</blockquote><ul>
+<li><strong>饱食力士</strong> ：默认开启<ul>
+<li>体型和伤害倍率随饱食度动态阶梯化变化：<ul>
+<li>饱食度&gt;250：2.0倍伤害，1.2倍体型</li><li>饱食度&gt;150：1.25倍伤害，1.1倍体型</li><li>其他：正常八戒状态</li></ul>
+</li></ul>
+</li></ul>
+<h4 id="白骨夫人" data-legacy-id="sec-白骨夫人-fl3gmy">白骨夫人</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：角色优化] [核心关联：装备栏, 亮茄植物]</p>
+</blockquote><ul>
+<li><strong>装备栏全开</strong> ：默认开启<ul>
+<li>兼容5格/6格等装备栏模组</li></ul>
+</li><li class="term-item"><strong>修复掉落</strong>：修复击杀&quot;亮茄植物&quot;不掉落战利品的问题</li></ul>
+<h4 id="盘丝娘娘" data-legacy-id="sec-盘丝娘娘-fbi6f9">盘丝娘娘</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：角色优化] [核心关联：蛛丝上限, 制作栏, 三合局]</p>
+</blockquote><ul>
+<li><strong>蛛丝上限</strong> ：默认原版(100)<ul>
+<li>可选提升至200点</li></ul>
+</li><li class="term-item"><strong>制作栏归位</strong>：修复原版专属物品无法在人物制作栏显示的问题</li><li class="term-item"><strong>人物栏纯净化</strong>：盘丝娘娘保留蜘蛛亲和身份，但人物制作栏不再混入韦伯专属蜘蛛照料配方；盘丝自己的专属配方将正常显示</li><li><strong><a class="term-link" href="/systems/#%E5%9B%9B%E8%B1%A1%E4%B8%89%E5%90%88%E5%B1%80" data-term-id="pansi-bureau" data-term-kind="核心系统" data-term-summary="盘丝娘娘以十二元辰组成木、金、火、水四局的流派强化体系。">四象三合局</a></strong>：详见“核心系统”篇专属模块</li></ul>
+<h4 id="无常" data-legacy-id="sec-无常-hufs">无常</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：角色优化] [核心关联：灵魂, 勾魂索, 防爆魂]</p>
+</blockquote><ul>
+<li><strong>防爆魂系统</strong> ：默认关闭(原版暴动)<ul>
+<li>开启后溢出灵魂安静消散，不引发暴动惩罚</li></ul>
+</li><li><strong>容量自定义</strong> ：默认原版(20)<ul>
+<li>可选40/80，影响灵魂堆叠上限及无常官帽吸收上限</li></ul>
+</li><li class="term-item"><strong>彼岸还阳上限</strong>：单次最多计算并消耗20个恶魂与20个善魂；超过单次上限的魂魄会继续保留在无常官帽中</li><li><strong>勾魂索攻击距离强化</strong> ：默认关闭<ul>
+<li>开启后1/2/3阶段攻击距离延长至 2.0 / 1.75 / 1.50</li></ul>
+</li><li><strong>攻击动作优化</strong> ：默认关闭<ul>
+<li>将攻击动作替换为原版鞭子效果</li></ul>
+</li><li class="term-item"><strong>镇魂动作修复</strong>：开启延迟补偿时，持续移动中使用镇魂令不再发生位置回弹；镇魂效果与原有动作表现不变</li></ul>
+<h4 id="哪吒" data-legacy-id="sec-哪吒-ewko">哪吒</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：角色优化] [核心关联：乾坤圈, 自动回收]</p>
+</blockquote><ul>
+<li class="term-item"><strong>乾坤圈飞行修复</strong>：修复乾坤圈飞行时异常落水或落入虚空的问题</li><li><strong>乾坤圈自动巡回</strong> ：默认关闭<ul>
+<li>飞出去的乾坤圈自动飞回装备栏或背包</li><li>命中或落空时自动回收</li></ul>
+</li></ul>
+<h4 id="全员被动" data-legacy-id="sec-全员被动-amnakt">全员被动</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：全局机制] [核心关联：诅咒免疫, 芜猴, 猴诅咒]</p>
+</blockquote><ul>
+<li><strong>弹走猴诅咒</strong> ：默认开启<ul>
+<li>所有神话角色受诅咒时不会变成芜猴（但诅咒饰品依然吸附生效）</li></ul>
+</li></ul>
+<hr>
+<h3 id="主题机制优化" data-legacy-id="sec-主题机制优化-5vhb3r" data-num="贰">主题机制优化</h3><h4 id="熊猫小镇焕新" data-legacy-id="sec-熊猫小镇焕新-ich4tw">熊猫小镇焕新</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：商店系统] [核心关联：熊猫小镇, 镇票, 立契]</p>
+</blockquote><ul>
+<li class="term-item"><strong>正式归属</strong>：熊猫小镇经营层已经结束壶天百戏实验，现由《腌笃鲜》主模组独立提供；旧模组开关不会转移，需在本模组设置中确认“熊猫小镇焕新”</li><li class="term-item"><strong>配置开关</strong>：默认开启，可在模组设置中关闭；关闭后回到神话原小镇经营逻辑，不会冻结当前扩展货架，重新开启时非契约库存可能随神话原逻辑刷新</li><li class="term-item"><strong>旧上新体系下线</strong>：原“青竹小店焕新”配置、独立扩展商品表和高频补货逻辑已经移除，不与新玩法并存；扩展物品统一提供，主动换货改由镇票“上点鲜货”完成</li><li class="term-item"><strong>迁镇令</strong>：<ul>
+<li>道具描述：盖有天庭官印的空间文书，可拆迁青竹小镇</li><li>合成配方：<span class="recipe-strip recipe-strip-materials" role="group" aria-label="莎草纸1加神话竹1加紫宝石1加羽毛笔1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/papyrus.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">莎草纸</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/myth_bamboo.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">神话竹</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/purplegem.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">紫宝石</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/featherpencil.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">羽毛笔</span>
+  </span></span></span></li><li>新增熊猫小镇搬迁道具，可用于封存并搬迁熊猫小镇</li></ul>
+</li><li class="term-item"><strong>八店新约</strong>：<ul>
+<li>保留神话熊猫小镇原有八家店铺、美术资源、掌柜交互和整体自然补货节奏；有镇票奖励的自然收购单采用固定批次，不会在清空前继续追加需求</li><li>补全并整理菜市、材瓦、八卦、花鸟、禾种、茶肴、珍奇、铸匠等店铺货单</li><li>更多现代资源、神话资源和高价值料理会进入对应店铺，但稀有物品仍保持低概率上新</li></ul>
+</li><li class="term-item"><strong>镇票账户</strong>：<ul>
+<li>镇票是全服务器共享的小镇账簿，不按单个玩家分开计算</li><li>玩家一次清空符合条件的自然收购单时，可按货物档位获得1～3张镇票；每条收购单只结算一次，订单存在期间不会因夜间进货提高剩余需求</li><li>有镇票奖励的收购单会在货格左上角显示“票+1～3”；显示“契”的契约订单不产镇票</li><li>契约卖出单以及未设置镇票奖励的普通收购单不给镇票</li><li>镇票不能透支，主要用于主动换货和签订契约</li></ul>
+</li><li class="term-item"><strong>掌柜菜单</strong>：<ul>
+<li>点击小镇掌柜可打开新增二级菜单</li><li class="term-item"><strong>上点鲜货</strong>：消耗15张镇票，同时刷新当前店铺买入表和卖出表；已立契商品会被保留，不会因为主动刷新额外补量</li><li class="term-item"><strong>盘账</strong>：查看当前服务器小镇账上还剩多少镇票，不消耗资源</li></ul>
+</li><li class="term-item"><strong>立契机制</strong>：<ul>
+<li>自然刷出的可买商品和可卖收购单，打开数量菜单时可以选择&quot;立契&quot;</li><li>买入立契消耗8张镇票，卖出立契消耗7张镇票，契期为5个自然日</li><li>契期内该商品会在神话原夜间自然进货后补一批数量，并受到堆叠上限限制</li><li>已立契商品在契未尽时不会重复显示续契入口，点开时掌柜会提示剩余照应天数</li></ul>
+</li><li class="term-item"><strong>动态价格</strong>：<ul>
+<li>契约商品会根据每日交易压力产生价格波动，压力最高累计8层</li><li>买入契约当天发生交易，次日价格按每层1.25倍上升，最高5倍；卖出契约当天发生交易，次日收购价按每层0.8倍下降，最低0.2倍</li><li>当天没有发生对应交易时，压力会下降1层并逐步回归原价；非契约自然商品保持神话原价格逻辑</li></ul>
+</li><li class="term-item"><strong>八卦小铺甲木签</strong>：<ul>
+<li>八卦小铺原四件药品保留神话原设定，不参与立契和动态价格</li><li>新增&quot;甲木签&quot;服务（五行里，甲木代表参天大树），固定消耗100铜钱，签效持续3个自然日</li><li>签效期间挖神话显露宝藏时，挖到人参果树根概率提升至20%、盈/残月40%</li></ul>
+</li><li class="term-item"><strong>迁镇细节</strong>：<ul>
+<li>封镇时中心雕像、八家店铺/工地和游走熊猫店家会一同消失，并在原地生成&quot;熊猫镇印&quot;</li><li>玩家只能在地表世界部署&quot;熊猫镇印&quot;；部署点需要有足够空间，不能与现有熊猫镇冲突</li><li>落镇后会在新位置生成中心雕像和八个店铺工地，新镇从待修建状态重新开始</li><li>迁镇后镇票账户保留；八店货架、立契、动态价格压力和甲木签效果会随新镇重置</li></ul>
+</li></ul>
+<h4 id="聚宝盆革新" data-legacy-id="sec-聚宝盆革新-gozbyi">聚宝盆革新</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：抽奖系统] [核心关联：聚宝盆, 元宝, 天地宝鉴, 寸心机缘]</p>
+</blockquote><ul>
+<li class="term-item"><strong>正式归属</strong>：聚宝盆革新已经结束壶天百戏实验，现由《腌笃鲜》主模组独立提供；旧模组开关不会转移，需在本模组设置中确认“聚宝盆革新”</li><li class="term-item"><strong>配置开关</strong>：默认开启，可在模组设置中关闭，关闭后回到神话原聚宝盆逻辑</li><li class="term-item"><strong>使用方式</strong>：<ul>
+<li>玩家向聚宝盆投入元宝进行抽取</li></ul>
+</li><li class="term-item"><strong>奖励层级</strong>：</li></ul>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">层级</th>
+<th align="left">概率</th>
+<th align="left">体验保护</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">普通</td>
+<td align="left">60%</td>
+<td align="left">无保护</td>
+</tr>
+<tr>
+<td align="left">精良</td>
+<td align="left">25%</td>
+<td align="left">无保护</td>
+</tr>
+<tr>
+<td align="left">稀有</td>
+<td align="left">11%</td>
+<td align="left">20抽后保护</td>
+</tr>
+<tr>
+<td align="left">史诗</td>
+<td align="left">3.5%</td>
+<td align="left">50抽后保护</td>
+</tr>
+<tr>
+<td align="left">传说</td>
+<td align="left">0.5%</td>
+<td align="left">100抽后保护</td>
+</tr>
+</tbody></table></div></div><blockquote class="bq-info"><p><strong>[机制说明]</strong>：保底保护的是奖励层级，不是指定物品。保护计数只在当前聚宝盆存续期间按玩家独立累计，不同玩家互不共享；生成新盆或服务器重新载入世界后会重新开始。它用于减少本盆连续抽取中的低层级空转，但不会把聚宝盆改成固定兑换。</p>
+</blockquote><ul>
+<li class="term-item"><strong>世界阶段解锁</strong>：</li></ul>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">阶段</th>
+<th align="left">解锁语义</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">世界开端</td>
+<td align="left">聚宝盆默认的基础奖池</td>
+</tr>
+<tr>
+<td align="left">天体风暴</td>
+<td align="left">世界经历天体风暴或天体英雄相关进度后，加入月亮时代奖励</td>
+</tr>
+<tr>
+<td align="left">裂隙后期</td>
+<td align="left">地上或洞穴任一裂隙开启后，加入裂隙时代奖励</td>
+</tr>
+</tbody></table></div></div><ul>
+<li><p><strong>低价值防疲劳</strong>：</p>
+<ul>
+<li>同一层级连续出现低价值奖励时，后续该层会优先从非低价值奖励中选择</li><li>普通与精良层尽量避免连续给出同一种物品</li><li>该机制与保底一样，只记录当前聚宝盆内该玩家的连续抽取；换盆或重新载入世界后重新开始</li><li>该机制只用于改善抽奖手感，不改变高层级基础概率</li></ul>
+</li><li><p><strong>天地宝鉴定愿</strong>：</p>
+<ul>
+<li>玩家随身携带<a class="term-link" href="/artifacts/#%E5%A4%A9%E5%9C%B0%E5%AE%9D%E9%89%B4" data-term-id="artifact-tdbj" data-term-kind="法宝" data-term-summary="以人参果激活，可建立双向门户、追寻宝藏并提供幸运的传送法宝。" data-term-image="/images/wiki/xydztz/objects/xydztz_artifact_tdbj.webp">天地宝鉴</a>时，聚宝盆会出现&quot;定愿&quot;交互</li><li>打开后可放入最多2个物品作为愿望锚点，点击&quot;定愿&quot;会关闭界面并完成仪式</li><li>定愿物品不会被抽奖消耗；聚宝盆被移除时，格内物品会像普通容器一样掉出</li><li>定愿只影响史诗/传说层级内部的候选倾向，不提高史诗或传说层级本身的命中率</li><li>只有当前奖池认可的史诗/传说物品会参与定愿计算；放入无效物品不会生效</li><li>两格放入同一种物品不会叠加；史诗和传说目标可以混合放入</li><li>达到当前聚宝盆内个人上限的奖励不会继续吃定愿加成，避免愿望卡在本盆已经不该重复获得的物品上</li></ul>
+</li><li><p><strong>幸运收益</strong>：</p>
+<ul>
+<li>天地宝鉴提供的幸运值走官方幸运体系，聚宝盆会读取人物当前幸运值参与定愿计算</li><li>一个天地宝鉴带来的5点幸运已经能获得明显收益</li><li>继续堆叠幸运仍然有效，但收益会逐步变平，避免无脑堆幸运导致奖池失控</li></ul>
+</li><li><p><strong>寸心机缘包</strong>：</p>
+<ul>
+<li><a class="term-link" href="/artifacts/#%E5%AF%B8%E5%BF%83%E7%B2%BE%E9%AD%84" data-term-id="cunxin-jingpo" data-term-kind="灵材" data-term-summary="凝结寸心时概率获得，用于多件专属法宝与装备炼制的核心灵材。" data-term-image="/images/wiki/xydztz/objects/xydztz_cunxin_jingpo.webp">寸心精魄</a>不会进入普通单抽池，只会以特殊机缘包形式出现</li><li>只有命中传说层级后，才会额外判定是否转化为&quot;寸心机缘包&quot;</li><li>未携带天地宝鉴时，传说层命中后有0.5%机缘；携带天地宝鉴时，传说层命中后提高到3.5%机缘</li><li>这是&quot;命中传说层后的二次判定&quot;，不是每抽直接3.5%</li></ul>
+</li></ul>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">机缘包内容</th>
+<th align="left">数量</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">寸心精魄</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">火猿石心</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">龙皮绸缎</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">彩虹宝石</td>
+<td align="left">1</td>
+</tr>
+</tbody></table></div></div><ul>
+<li class="term-item"><strong>当前聚宝盆内的个人上限与补偿</strong>：<ul>
+<li>酒葫芦、坎普斯背包、紫金葫芦、羊脂玉净瓶、如意、避尘丹、避寒丹、避暑丹等高边际递减奖励，在当前聚宝盆存续期间设置个人上限</li><li>该上限不跨聚宝盆、不跨服务器重新载入，也不是世界级永久唯一；同一只盆内不同玩家分别计算</li><li>如果在本盆内抽到自己已经达到上限的奖励，会按当前世界阶段转为补偿奖励</li><li>初期阶段偏向出逃腿靴；天体风暴后加入启迪碎片；裂隙开启后加入天体珠宝</li><li>如果遇到奖励缺失、生成失败或特殊环境异常，系统会转为宝石等安全补偿，避免空抽和坏奖励</li></ul>
+</li></ul>
+<section class="prize-pool-overview" aria-labelledby="prize-pool-title">
+  <header class="prize-pool-heading">
+    <h5 id="prize-pool-title">当前奖池概览</h5>
+  </header>
+  <div class="prize-pool-grid">
+    <article class="prize-tier prize-tier-common">
+      <header class="prize-tier-heading">
+        <h6>普通层</h6>
+        <div class="prize-tier-meta"><span class="prize-tier-rate">60%</span><span>无保护</span></div>
+      </header>
+      <p class="prize-tier-items">金块、沙之石、猪皮、牛毛、硝石、铜钱、莲花、莲叶、竹子、莲藕、莲子、兔绒、啜食者皮、齿轮、骨片、活木、竹笋、月岩、月蛾翅膀。</p>
+    </article>
+    <article class="prize-tier prize-tier-fine">
+      <header class="prize-tier-heading">
+        <h6>精良层</h6>
+        <div class="prize-tier-meta"><span class="prize-tier-rate">25%</span><span>无保护</span></div>
+      </header>
+      <p class="prize-tier-items">牛角、蜜脾、麋鹿鹅羽毛、伏特羊角、蓝宝石、红宝石、岩浆虫卵、高脚鸟蛋、月亮碎片、月树花、鼹鼠、龙虾、尖刺灌木、食人花球、猴尾草植株、香蕉丛、月树苗、种壳、化石碎片，以及各类巨型作物。</p>
+    </article>
+    <article class="prize-tier prize-tier-rare prize-tier-wide">
+      <header class="prize-tier-heading">
+        <h6>稀有层</h6>
+        <div class="prize-tier-meta"><span class="prize-tier-rate">11%</span><span>20 抽后保护</span></div>
+      </header>
+      <p class="prize-tier-items">葫芦、竹子、海象牙、步行手杖、黄油、紫宝石、橙宝石、黄宝石、绿宝石、五仁月饼、莲蓉月饼、冰皮月饼、瓶中信、战桨、钢丝棉枕头、石果种子、格罗姆黏液、树果酱、邪天翁羽毛、绝望石、恐惧燃料、废料、酒葫芦、子圭石、钢丝棉、鼻涕黏液、腾云丹、蜗牛护甲、暗夜剑、暗夜甲、荆棘丹、一角鲸的角、龙鳞。</p>
+      <div class="prize-tier-unlocks">
+        <p><span>天体风暴</span>注能月亮碎片</p>
+        <p><span>裂隙开启</span>纯粹辉煌、亮茄外壳</p>
+      </div>
+    </article>
+    <article class="prize-tier prize-tier-epic prize-tier-wide">
+      <header class="prize-tier-heading">
+        <h6>史诗层</h6>
+        <div class="prize-tier-meta"><span class="prize-tier-rate">3.5%</span><span>50 抽后保护</span></div>
+      </header>
+      <p class="prize-tier-items">宫灯、曼德拉草、铥矿棒、铥矿皇冠、铥矿甲、还魂丹、铜钱串、暗影心房、小金蟾、坎普斯背包、古董船套装、出逃腿靴、火猿石心、龙皮绸缎、月饼盒、超级红包(年BUFF)、子圭青金、避寒心、避暑心、避尘心、园艺学简编、丹药葫芦、疙瘩树种、蜂王冠、邪天翁喙。</p>
+      <div class="prize-tier-unlocks">
+        <p><span>天体风暴</span>惊喜种子、龙蝇船套装</p>
+        <p><span>裂隙开启</span>火花柜、附身暗影心房、暗影碎步</p>
+      </div>
+    </article>
+    <article class="prize-tier prize-tier-legendary prize-tier-wide">
+      <header class="prize-tier-heading">
+        <h6>传说层</h6>
+        <div class="prize-tier-meta"><span class="prize-tier-rate">0.5%</span><span>100 抽后保护</span></div>
+      </header>
+      <p class="prize-tier-items">彩虹宝石、巨鹿眼球、蘑菇皮、熊皮、远古守护者角、桃木手杖、大蟠桃、子圭战盔、子圭战甲。</p>
+      <div class="prize-tier-unlocks">
+        <p><span>天体风暴</span>启迪碎片、紫金葫芦、羊脂玉净瓶、如意、避尘丹、避寒丹、避暑丹</p>
+        <p><span>裂隙开启</span>天体珠宝</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<h4 id="智能谷仓" data-legacy-id="sec-智能谷仓-dgvhj3">智能谷仓</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：建筑优化] [核心关联：谷仓, 保鲜, 堆叠]</p>
+</blockquote><ul>
+<li><strong>永久保鲜</strong> ：默认开启，谷仓内物品永不腐烂</li><li><strong>全面储藏</strong> ：默认开启，支持存放肉蛋果蔬等全类型食物（原版仅限农作物）</li><li><strong>智能木牌</strong> ：默认关闭，兼容沙坑自动分拣系统</li><li><strong>弹性空间</strong> ：默认开启，支持使用&quot;弹性空间制造器&quot;或棱镜&quot;月石角撑&quot;升级无限堆叠，升级后拆除返还升级道具</li></ul>
+<h4 id="百宝囊" data-legacy-id="sec-百宝囊-hsv63">百宝囊</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：物品优化] [核心关联：百宝囊, 保鲜, 掉落]</p>
+</blockquote><ul>
+<li><strong>修复UI漂移</strong> ：默认开启，解决4K显示下百宝囊UI拖拽漂移问题</li><li><strong>持续时间</strong> ：默认1天(原版)，可选15天/30天/永不掉落，无限模式下不再消耗玻璃碎片</li><li><strong>保鲜倍率</strong> ：默认50%(原版)，可选10%(半极地效果)/25%(盐箱效果)</li></ul>
+<h4 id="炉炼丹-八卦炉" data-legacy-id="sec-炉炼丹-八卦炉-oug9tp">炉炼丹（八卦炉）</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：炼丹优化] [核心关联：八卦炉, 批量炼丹]</p>
+</blockquote><ul>
+<li><strong>多倍炼丹</strong> ：默认开启<ul>
+<li>支持按材料比例一键批量炼制所有丹药</li><li>新增支持急急如律令多倍炼制</li><li>上限：单次最多40个</li><li>限制：仅限丹药与急急如律令，其他物品（如装备）无法批量</li><li>收获时若批量成功，玩家会说出：&quot;炉火旺盛，老君来了都说好&quot;</li></ul>
+</li></ul>
+<h4 id="太上老君交易" data-legacy-id="sec-太上老君交易-mpkfg7">太上老君交易</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：NPC优化] [核心关联：太上老君, 交易]</p>
+</blockquote><ul>
+<li><strong>交易限制</strong> ：默认2次，可选原版/2次/5次/无限</li><li>达到设定总次数后老君才会离开</li><li>每人独立计数</li></ul>
+<h4 id="人参果树优化" data-legacy-id="sec-人参果树优化-a36ubf">人参果树优化</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：机制优化] [核心关联：人参果树, 产果, 保护]</p>
+</blockquote><ul>
+<li class="term-item"><strong>产果周期</strong>：默认5天，可选原版49天/15天/5天/2天</li><li class="term-item"><strong>寻宝概率配置已下线</strong>：原10%/30%/50%自定义档位已经移除；未启用甲木签时沿用神话原树根掉落规则，需要主动提高概率时改用八卦小铺甲木签</li><li class="term-item"><strong>Insight兼容</strong>：全面支持Insight模组信息显示</li><li class="term-item"><strong>土壤扩展</strong>：人参果树成长时会将周围地块转化为可耕作土壤（防止被地皮覆盖）</li><li class="term-item"><strong>本地透明度设置</strong>：可在“暂停界面 → 设置 → 腌笃鲜”中调整成熟人参果树显示透明度，选项包含原版、轻度、明显、通透；仅影响本地画面，不改变碰撞、树荫、避雷或果子生成</li><li class="term-item"><strong>地毯清理</strong>：人参果地毯可用草叉右键叉除，方便后期整理地面</li></ul>
+<h4 id="月饼堆叠" data-legacy-id="sec-月饼堆叠-dmqh3i">月饼堆叠</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：物品优化] [核心关联：月饼, 堆叠]</p>
+</blockquote><ul>
+<li class="term-item"><strong>配置开关</strong>：默认40个</li><li>可选原版/10个/40个</li><li>适用于：五仁月饼、莲蓉月饼、冰皮月饼</li></ul>
+<h4 id="堆叠补充" data-legacy-id="sec-堆叠补充-bgmffe">堆叠补充</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：物品优化] [核心关联：避寒, 避暑, 避尘心, 堆叠]</p>
+</blockquote><ul>
+<li>避寒心、避暑心、避尘心、人参果增加大件物品堆叠属性</li></ul>
+<h4 id="妖王播报" data-legacy-id="sec-妖王播报-bs6ubx">妖王播报</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：Boss优化] [核心关联：妖王, 刷新, 播报]</p>
+</blockquote><ul>
+<li class="term-item"><strong>配置开关</strong>：默认开启</li><li class="term-item"><strong>刷新前提醒</strong>：3天/2天/1天自动全服播报，刷新前5秒倒计时播报</li><li class="term-item"><strong>刷新周期自定义</strong>：<ul>
+<li>黑熊精 ：默认原版(20天)，可选5天/10天</li><li>金蟾 ：默认原版(20天)，可选5天/10天</li><li>犀牛 ：默认原版(50天)，可选5天/20天</li></ul>
+</li></ul>
+<h4 id="土地问路" data-legacy-id="sec-土地问路-bd314i">土地问路</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：寻路优化] [核心关联：土地公公, 灵台方寸山]</p>
+</blockquote><ul>
+<li>玩家可召唤土地公公</li><li>右键与土地公公交互，可精准打探灵台方寸山的具体方位</li><li>寻仙问路不再需要在桃岛无目标跑图</li></ul>
+<h4 id="福泽庇佑" data-legacy-id="sec-福泽庇佑-fsdg8o">福泽庇佑</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：机制优化] [核心关联：土地公公, 亮茄]</p>
+</blockquote><ul>
+<li>土地公公照顾的农田范围内若存在亮茄，会主动替玩家清理并留下亮茄战利品</li></ul>
+<h4 id="竹林算力优化" data-legacy-id="sec-竹林算力优化-g9zx40">竹林算力优化</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：性能优化] [核心关联：竹林, 卡顿, 算法]</p>
+</blockquote><ul>
+<li class="term-item"><strong>配置开关</strong>：默认均衡模式</li><li>进一步提升青竹洲竹林生成与生长管理的优化算法</li><li>缓解大后期竹林堆积导致的服务器卡顿</li></ul>
+<h4 id="竹林蜡封" data-legacy-id="sec-竹林蜡封-fy73um">竹林蜡封</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：环境交互] [核心关联：竹子, 防腐喷雾, 蜡封]</p>
+</blockquote><ul>
+<li>三种生长形态的竹子均可使用官方防腐喷雾进行蜡封</li><li>蜡封后会保留施用时的外观与生长形态，不再继续自然生长</li></ul>
+<h4 id="腾云防抖" data-legacy-id="sec-腾云防抖-go7gdz">腾云防抖</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：飞行优化] [核心关联：腾云, 延迟补偿, 卡顿]</p>
+</blockquote><ul>
+<li class="term-item"><strong>静默修复</strong>：修复延迟补偿开启时的腾云顿挫；修复会自动生效，无需额外配置</li><li class="term-item"><strong>冰面修复</strong>：修复腾云状态下仍会被冰面滑倒打断的问题</li><li class="term-item"><strong>本地按键</strong>：未设置时保留神话原制作入口与右键落云；设置后用同一按键起云、落云，并取消本地右键落云入口</li><li class="term-item"><strong>骑乘门禁</strong>：骑乘中不能起云，不会强制下牛，也不会消耗腾云材料；玉兔腾云同样遵守该规则</li></ul>
+<h4 id="键位全自定义" data-legacy-id="sec-键位全自定义-5tzkgg">键位全自定义</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：UI优化] [核心关联：官方按键设置, 神话技能, UI复位]</p>
+</blockquote><ul>
+<li>神话专属技能（原H键）、午马冲锋、酉鸡弹反主动技能，以及UI复位键，均已接入官方按键设置系统</li><li>修改位置：暂停界面 → 选项 → 腌笃鲜</li><li>可按个人习惯自由改键，减少与其他模组或系统快捷键冲突</li><li>神话天书与元辰劫运图打开期间均支持服务器暂停键；默认情况下按P可暂停游戏，若玩家改过官方暂停键，则跟随官方设置</li></ul>
+<h4 id="ui复位键" data-legacy-id="sec-ui复位键-1pgzsq">UI复位键</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：UI优化] [核心关联：快捷键, UI复位]</p>
+</blockquote><ul>
+<li>百宝囊或技能UI找不到时，可使用UI复位键一键复位所有神话UI</li><li>默认键位沿用F11，实际按键可在官方按键设置中自定义</li></ul>
+<h4 id="坐骑血量hud" data-legacy-id="sec-坐骑血量hud-kke05j">坐骑血量HUD</h4><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：UI优化] [核心关联：青牛, 年兽, 血量HUD]</p>
+</blockquote><ul>
+<li>新增青牛、年兽血量显示HUD，骑乘时自动弹出更容易判断当前血量状态</li></ul>
+<hr>
+            <!-- STATIC_CONTENT_END -->
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <footer class="footer" id="site-footer" role="contentinfo">
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-message">
+        <p class="footer-message-text">感谢每一位订阅玩家的支持和鼓励，祝各位在《腌笃鲜》的努力下游戏愉快，武运昌隆，尽享神话之旅！</p>
+        <p class="footer-signature">——咸鱼 &amp; 大猪蹄子 敬上</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357" target="_blank" rel="noopener noreferrer">Steam 创意工坊</a>
+        <a href="https://qm.qq.com/q/iFeDTMf6Io" target="_blank" rel="noopener noreferrer">反馈交流群</a>
+      </div>
+      <p>&copy; 2026 《腌笃鲜》</p>
+      <p>反馈交流 QQ 群：1046023996</p>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <script src="/scripts/utils.js?v=20260804h"></script>
+    <script src="/scripts/renderer.js?v=20260805c"></script>
+    <script src="/scripts/toc.js?v=20260805b"></script>
+    <script src="/scripts/scroll.js?v=20260805a"></script>
+    <script src="/scripts/theme.js?v=20260804f"></script>
+    <script src="/scripts/ui.js?v=20260805b"></script>
+    <script src="/scripts/media.js?v=20260808a"></script>
+    <script src="/scripts/main.js?v=20260805c"></script>
+  </body>
+</html>

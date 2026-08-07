@@ -1,0 +1,381 @@
+<!doctype html>
+<!-- ============================================
+     《腌笃鲜》维基百科 - Main Page
+     ============================================ -->
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="查阅《腌笃鲜》的兼容修复、轮盘技能适配与常见问题排错。" />
+    <meta name="keywords" content="腌笃鲜,饥荒,神话书说,模组,元辰劫运,盘丝娘娘,wiki,攻略" />
+    <meta name="author" content="《腌笃鲜》资料整理" />
+    <meta name="theme-color" content="#faf8f3" />
+    <script>
+      (() => {
+        let theme = 'light';
+        try {
+          const saved = localStorage.getItem('xydztz-theme') || localStorage.getItem('xdyztz-theme');
+          theme = saved === 'dark' || saved === 'light'
+            ? saved
+            : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch (err) {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', theme === 'dark' ? '#15110e' : '#faf8f3');
+      })();
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="兼容修复 | 腌笃鲜 | 《腌笃鲜》" />
+    <meta property="og:description" content="查阅《腌笃鲜》的兼容修复、轮盘技能适配与常见问题排错。" />
+    <meta property="og:site_name" content="《腌笃鲜》" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:url" content="https://yanduxian.cn/compatibility/" />
+    <meta property="og:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1021" />
+    <meta property="og:image:alt" content="《腌笃鲜》雪景封面" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="兼容修复 | 腌笃鲜 | 《腌笃鲜》" />
+    <meta name="twitter:description" content="查阅《腌笃鲜》的兼容修复、轮盘技能适配与常见问题排错。" />
+    <meta name="twitter:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+
+    <title>兼容修复 | 腌笃鲜 | 《腌笃鲜》</title>
+    <link rel="canonical" href="https://yanduxian.cn/compatibility/" />
+
+    <link rel="preload" href="/images/hero-default-1200.webp" imagesrcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" imagesizes="100vw" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/fonts/MaShanZheng-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/png" href="/images/mod-icon.png?v=20260719" />
+
+    <link rel="stylesheet" href="/styles/fonts.css?v=20260804o" />
+    <link rel="stylesheet" href="/styles/variables.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/base.css?v=20260804g" />
+    <link rel="stylesheet" href="/styles/hero.css?v=20260804r" />
+    <link rel="stylesheet" href="/styles/layout.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/markdown.css?v=20260805u" />
+    <link rel="stylesheet" href="/styles/components.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/media.css?v=20260806b" />
+    <link rel="stylesheet" href="/styles/responsive.css?v=20260805m" />
+  </head>
+  <body data-book-id="xydztz" data-book-title="腌笃鲜" data-chapter-slug="compatibility" data-chapter-title="兼容修复" data-search-index="/search-index.json?v=ca6182164b96">
+    <div class="read-progress" id="read-progress" aria-hidden="true"></div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2c-1.05 0-2.05.16-3 .46 1.69 1.24 2.79 3.26 2.79 5.54 0 3.87-3.13 7-7 7-.57 0-1.13-.08-1.67-.22C2.52 18.49 6.45 22 11 22c5.52 0 10-4.48 10-10S16.52 2 11 2c-.66 0-1.3.07-1.92.19C9.23 2.06 9.12 2 9 2z"/></svg>
+    </button>
+
+    <header class="hero" id="hero" role="banner">
+      <picture class="hero-bg-layer hero-bg-default" aria-hidden="true">
+        <source type="image/webp" srcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" sizes="100vw" />
+        <img src="/images/hero-default.jpg" srcset="/images/hero-default-1200.jpg 1200w, /images/hero-default.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" fetchpriority="high" />
+      </picture>
+      <picture class="hero-bg-layer hero-bg-hover" id="hero-hover-picture" aria-hidden="true">
+        <source type="image/webp" data-srcset="/images/hero-hover-1200.webp 1200w, /images/hero-hover.webp 2400w" sizes="100vw" />
+        <img data-src="/images/hero-hover.jpg" data-srcset="/images/hero-hover-1200.jpg 1200w, /images/hero-hover.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" />
+      </picture>
+      <div class="hero-sun-glow" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-gradient-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-title-row">
+          <h1 class="hero-title">《腌笃鲜》</h1>
+          <img class="hero-seal" src="/images/mod-icon.png?v=20260719" alt="《腌笃鲜》模组图标" width="68" height="68" />
+        </div>
+        <div class="hero-actions" aria-label="主要操作">
+          <a
+            class="hero-btn hero-btn-primary"
+            href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="在 Steam 创意工坊订阅《腌笃鲜》（新窗口）"
+          >订阅模组</a>
+          <button class="hero-btn hero-btn-secondary" id="hero-btn" type="button">开始查阅</button>
+        </div>
+      </div>
+
+      <div class="hero-subtitles">
+        <p class="hero-subtitle">三十五劫运交织，十二元辰下凡，灵台方寸显真心</p>
+        <p class="hero-subtitle">玉兔拨弦，黑风倒卷——人物精怪双篇登场</p>
+      </div>
+
+      <svg class="hero-torn-edge" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 48 L0 28 L36 32 L72 22 L120 30 L168 20 L216 28 L264 18 L312 30 L360 22 L408 28 L456 18 L504 26 L552 16 L600 26 L648 32 L696 22 L744 28 L792 18 L840 28 L888 22 L936 30 L984 20 L1032 28 L1080 22 L1128 30 L1176 18 L1224 26 L1272 30 L1320 22 L1368 28 L1404 24 L1440 28 L1440 48 Z" />
+      </svg>
+    </header>
+
+    <noscript>
+      <div class="noscript-warning" role="alert">
+        <strong>提示：</strong>正文仍可阅读；启用 JavaScript 后可使用目录搜索、劫运查询和媒体灯箱。
+      </div>
+    </noscript>
+
+    <nav class="chapter-nav" aria-label="腌笃鲜篇章导航">
+      <div class="chapter-nav-inner" id="chapter-nav-inner">
+        <!-- CHAPTER_NAV_START -->
+        <details class="book-switcher">
+          <summary><strong>腌笃鲜</strong></summary>
+          <div class="book-switcher-menu">
+            <a class="book-switcher-link active" href="/">腌笃鲜<span class="sr-only">（当前）</span></a>
+            <a class="book-switcher-link" href="/myth-theme/">神话主题</a>
+            <a class="book-switcher-link" href="/myth-characters/">神话人物</a>
+          </div>
+        </details>
+        <span class="chapter-nav-divider" aria-hidden="true"></span>
+        <div class="chapter-nav-pages">
+          <a class="chapter-nav-link" href="/">模组介绍</a>
+        <a class="chapter-nav-link" href="/systems/">核心系统</a>
+        <a class="chapter-nav-link" href="/characters/">人物精怪</a>
+        <a class="chapter-nav-link" href="/artifacts/">法宝装备</a>
+        <a class="chapter-nav-link" href="/optimizations/">神话优化</a>
+        <a class="chapter-nav-link active" href="/compatibility/" aria-current="page">兼容修复</a>
+        </div>
+        <!-- CHAPTER_NAV_END -->
+      </div>
+      <div class="reading-position" id="reading-position">
+        <span class="reading-position-text"><span class="rp-num"></span><span class="rp-title"></span></span>
+      </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar" aria-label="目录导航">
+        <div class="sidebar-header">
+          <h3 id="sidebar-title">兼容修复目录</h3>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="toc-search" placeholder="搜索三本资料…" aria-label="搜索全部资料" />
+        </div>
+        <ul class="toc-list" id="toc-list">
+          <!-- SIDEBAR_TOC_START -->
+          <li class="toc-item toc-section open">
+            <a class="toc-link" href="#%E7%94%9F%E7%89%A9%E5%B4%A9%E6%BA%83%E4%BF%AE%E5%A4%8D" data-id="生物崩溃修复" data-num="壹">生物崩溃修复</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E7%89%A9%E5%93%81%E5%8A%9F%E8%83%BD%E4%BF%AE%E5%A4%8D" data-id="物品功能修复" data-num="贰">物品功能修复</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#ui%E4%B8%8E%E6%98%BE%E7%A4%BA%E4%BF%AE%E5%A4%8D" data-id="ui与显示修复" data-num="叁">UI与显示修复</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E5%AD%98%E6%A1%A3%E4%B8%8E%E5%8A%A0%E8%BD%BD%E4%BF%AE%E5%A4%8D" data-id="存档与加载修复" data-num="肆">存档与加载修复</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%86%B2%E7%AA%81%E4%BF%AE%E5%A4%8D" data-id="其他冲突修复" data-num="伍">其他冲突修复</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E8%BD%AE%E7%9B%98%E6%8A%80%E8%83%BD%E5%85%BC%E5%AE%B9" data-id="轮盘技能兼容" data-num="陆">轮盘技能兼容</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%8E%92%E9%94%99" data-id="常见问题与排错" data-num="柒">常见问题与排错</a>
+          </li>
+          <!-- SIDEBAR_TOC_END -->
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <article class="content-card">
+          <div class="md-body" id="main-content" data-static-snapshot="ready" data-content-hash="ca6182164b96" data-chapter="compatibility">
+            <!-- STATIC_CONTENT_START -->
+<h2 id="兼容修复" data-legacy-id="sec-兼容修复-antcv0" data-eyebrow="第陆篇">兼容修复</h2><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：兼容性] [核心关联：崩溃修复, 操作兼容, 模组适配]</p>
+</blockquote><h3 id="生物崩溃修复" data-legacy-id="sec-生物崩溃修复-ncm3gj" data-num="壹">生物崩溃修复</h3><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th>问题</th>
+<th>修复内容</th>
+</tr>
+</thead><tbody><tr>
+<td>青牛坐骑</td>
+<td>修复骑行崩溃与无法骑行问题</td>
+</tr>
+<tr>
+<td>青牛牛铃</td>
+<td>修复被食人花、猴子拾取后的炸服崩溃，非玩家拾取时会强制掉落，若坐骑正被其他玩家骑乘，拾取时也会强制掉落</td>
+</tr>
+<tr>
+<td>牛铃接口</td>
+<td>修复青牛铃铛检测原版牛铃旧接口时引发的崩溃</td>
+</tr>
+<tr>
+<td>月石哮天犬</td>
+<td>修复攻击青年座狼时的崩溃</td>
+</tr>
+<tr>
+<td>双子魔眼</td>
+<td>修复战斗脱离后玩家目标丢失/无法选定的逻辑死锁</td>
+</tr>
+<tr>
+<td>定身术</td>
+<td>修复孙悟空定身术触发马年骑士状态异常崩溃</td>
+</tr>
+</tbody></table></div></div><h3 id="物品功能修复" data-legacy-id="sec-物品功能修复-3qhdlh" data-num="贰">物品功能修复</h3><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th>问题</th>
+<th>修复内容</th>
+</tr>
+</thead><tbody><tr>
+<td>扫把换肤</td>
+<td>修复因科雷更新导致的服务器崩溃，恢复神话人物专属物品换肤功能</td>
+</tr>
+<tr>
+<td>锦襕袈裟</td>
+<td>修复防影怪功能失效</td>
+</tr>
+<tr>
+<td>白骨夫人</td>
+<td>修复击杀&quot;亮茄植物&quot;不掉落战利品的问题</td>
+</tr>
+<tr>
+<td>芭蕉树</td>
+<td>修复暗影收割者收获神话芭蕉树时无法获得芭蕉叶的问题</td>
+</tr>
+</tbody></table></div></div><h3 id="ui与显示修复" data-legacy-id="sec-ui与显示修复-wy9raj" data-num="叁">UI与显示修复</h3><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th>问题</th>
+<th>修复内容</th>
+</tr>
+</thead><tbody><tr>
+<td>天书UI</td>
+<td>修复开启Insight等模组时贴图丢失、显示空白的问题</td>
+</tr>
+<tr>
+<td>天书暂停</td>
+<td>修复神话天书打开时无法使用服务器暂停键的问题</td>
+</tr>
+<tr>
+<td>人参果树</td>
+<td>全面支持Insight模组的信息显示</td>
+</tr>
+<tr>
+<td>天地宝鉴</td>
+<td>Insight模组可显示宝鉴激活与神游传送门剩余时间</td>
+</tr>
+<tr>
+<td>制作栏</td>
+<td>修复玉兔、盘丝娘娘等人物专属物品制作栏分类</td>
+</tr>
+<tr>
+<td>百宝囊</td>
+<td>增加百宝囊剩余激活时间显示</td>
+</tr>
+</tbody></table></div></div><h3 id="存档与加载修复" data-legacy-id="sec-存档与加载修复-s32owx" data-num="肆">存档与加载修复</h3><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th>问题</th>
+<th>修复内容</th>
+</tr>
+</thead><tbody><tr>
+<td>旧存档加载</td>
+<td>加固加载逻辑，修复因缺失某些参数导致的服务器读档崩溃</td>
+</tr>
+</tbody></table></div></div><h3 id="其他冲突修复" data-legacy-id="sec-其他冲突修复-zgoklq" data-num="伍">其他冲突修复</h3><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th>问题</th>
+<th>修复内容</th>
+</tr>
+</thead><tbody><tr>
+<td>极地熊獾桶</td>
+<td>修复打开时若同时释放一柱擎天会导致的崩溃</td>
+</tr>
+<tr>
+<td>素斋</td>
+<td>调整素斋料理优先级，避免与其他模组冲突</td>
+</tr>
+<tr>
+<td>棱镜兼容</td>
+<td>修复神话物品放入【棱镜模组-白木展示柜】贴图丢失</td>
+</tr>
+<tr>
+<td>青竹小屋</td>
+<td>修复小屋内部被月雹侵扰的问题</td>
+</tr>
+<tr>
+<td>高尔夫球杆</td>
+<td>修复同时启用《神话人物》且关闭延迟补偿时，高尔夫蓄力引发的崩溃</td>
+</tr>
+</tbody></table></div></div><h3 id="轮盘技能兼容" data-legacy-id="sec-轮盘技能兼容-xw1a1w" data-num="陆">轮盘技能兼容</h3><section class="wheel-compat" aria-label="轮盘技能兼容范围">
+  <p class="wheel-compat-lead">技能轮盘会根据当前人物、技能物品与已启用模组动态识别可用入口。以下为目前已验证的代表性适配范围。</p>
+  <div class="wheel-compat-grid">
+    <article class="wheel-compat-card wheel-compat-official">
+      <h5>官方人物技能</h5>
+      <p>已适配麦斯威尔的书、薇洛的打火机与灰烬、薇诺娜的遥控器、温蒂的花等官方人物技能物品。</p>
+    </article>
+    <article class="wheel-compat-card wheel-compat-mods">
+      <h5>模组人物与拓展内容</h5>
+      <p>已适配玛露西尔法杖、自然亲和塔、扶光植物、白的雷达等模组内容的特殊交互，并增加荔只只物语、龙魂、驾！龙蝇、诡秘之主、登仙、永恒新界、古树繁花、沃姆伍德：月裔萌芽等模组的动态适配。</p>
+    </article>
+  </div>
+</section>
+<hr>
+<h3 id="常见问题与排错" data-legacy-id="sec-常见问题与排错-kvvfi6" data-num="柒">常见问题与排错</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：常见问题] [核心关联：FAQ, 问题解答]</p>
+</blockquote><p><strong>Q1：为什么我在家砍树/打怪，理智和饥饿值突然狂掉？</strong>
+A：查查你的星盘！你肯定激活了【子鼠】（双倍掉落扣理智）或者【亥猪】（多倍战利品扣饥饿）。天之道，不白嫖。</p>
+<p><strong>Q2：我点错了，点【散去修为】为什么没反应？</strong>
+A：这可是逆天改命的后悔药！冷却时间长达40分钟（5个游戏天数），请三思！</p>
+<p><strong>Q3：为什么极阴/极阳之夜，我的伤害数字突然爆炸了？</strong>
+A：恭喜触发&quot;极致共振&quot;！凑齐6阴或6阳，并在新月/满月之夜，能力获得2.5倍独立乘区加成！</p>
+<p><strong>Q4：我是盘丝娘娘，为什么我突然空蓝（没蛛丝值）了？</strong>
+A：你大概率激活了金局！金局拥有&quot;绝对霸体&quot;，每次受到硬控自动扣除5点蛛丝。被连续多段攻击时蛛丝会快速抽干，请注意拉扯！</p>
+<p><strong>Q5：我有12点寸心，能把四个&quot;三合局&quot;全点亮吗？</strong>
+A：可以点亮四局基础，但如果想激活成局需要6点（3外圈+3内圈）。12点上限意味着最多只能捏出两个成局。</p>
+<p><strong>Q6：为什么订阅启用后进不去游戏/直接崩溃了？</strong>
+A：最常见原因是没有订阅原版《神话书说》模组！本模组必须依赖原模组运行。</p>
+<p><strong>Q7：玩着玩着突然报错/崩档了，怎么办？</strong>
+A：不要慌！先在模组设置中关闭该功能模块，即可恢复原版逻辑。同时恳请带上崩溃日志加群反馈。</p>
+<p><strong>Q8：神话人物引发技能崩溃？</strong>
+A：神话人物相关功能需要同时适配官方更新、原有人物机制和其他人物模组。若仍发生技能崩溃，请记录所用人物、物品或动作、同时启用的模组，并携带崩溃日志加群反馈。</p>
+<p><strong>Q9：有些新增的功能我觉得太超模了怎么办？</strong>
+A：丰俭由人！本模组为几乎所有新增功能都配置了独立设置开关，觉得不合适直接关掉即可。</p>
+<p><strong>Q10：寸心精魄的获取概率是多少？</strong>
+A：<a class="term-link" href="/artifacts/#%E5%AF%B8%E5%BF%83%E7%B2%BE%E9%AD%84" data-term-id="cunxin-jingpo" data-term-kind="灵材" data-term-summary="凝结寸心时概率获得，用于多件专属法宝与装备炼制的核心灵材。" data-term-image="/images/wiki/xydztz/objects/xydztz_cunxin_jingpo.webp">寸心精魄</a>在凝结寸心时的获取概率约从5.4%递增至58%。如果到第7点寸心仍从未获得过精魄，会触发首次保底获得1枚。</p>
+<p><strong>Q11：骨刃的淬炼和其他武器有什么不同？</strong>
+A：<a class="term-link" href="/systems/#%E7%81%AB%E5%85%83%E6%B7%AC%E7%82%BC" data-term-id="fire-tempering" data-term-kind="核心系统" data-term-summary="使用专属耗材提升神话武器位面伤害和护甲位面防御的强化系统。">火元淬炼</a>中，骨刃每次淬炼只增加6点位面伤害（其他武器10点），但耐久上限会提升（最高400），且满阶后0耐久不碎裂，进入&quot;枯竭态&quot;保留位面伤害和吸血。</p>
+<p><strong>Q12：《腌笃鲜》玉兔会覆盖《神话书说》原玉兔吗？</strong>
+A：不会。<a class="term-link" href="/characters/#%E7%8E%89%E5%85%94%E4%BB%99%E5%AD%90" data-term-id="yutu" data-term-kind="人物" data-term-summary="以莹月琵琶、捣药玉杵和月宫守卫协同作战的重置人物。" data-term-image="/images/wiki/xydztz/objects/xydztz_yutu_winter.webp">玉兔仙子</a>是独立制作的重置人物，与《神话书说》原玉兔同时存在，角色身份、出生物品、曲谱、药效和人物进度互不覆盖。</p>
+<p><strong>Q13：为什么玉兔开局只有《田中乐》，也不能召唤月宫守卫？</strong>
+A：其余九曲需要向嫦娥展示指定物品请教。学会第一首非初始曲目后解锁1名守卫；掌握曲目总数达到9首后，守卫上限直接提升到3名。</p>
+<p><strong>Q14：为什么我在黑风大王死亡后释放吞天，没有出现熊罴真身？</strong>
+A：顺序反了。必须先完成<a class="term-link" href="/artifacts/#%E5%90%9E%E5%A4%A9%E7%B4%AB%E9%87%91%E8%91%AB%E8%8A%A6" data-term-id="artifact-ttzjhl" data-term-kind="法宝" data-term-summary="兼具十四格收纳、范围采收、吞天控场与吞月能力的空间法宝。" data-term-image="/images/wiki/xydztz/objects/xydztz_artifact_ttzjhl.webp">吞天</a>施法，让活动场覆盖黑风大王的死亡位置，再在场内真正击杀他。死亡后才补放、蓄力尚未完成、或只让遁风后来飘入范围，都不能触发<a class="term-link" href="/characters/#%E9%BB%91%E9%A3%8E%E5%A4%A7%E7%8E%8B-%E7%86%8A%E7%BD%B4%E7%9C%9F%E8%BA%AB" data-term-id="blackbear-trueform" data-term-kind="精怪首领" data-term-summary="通过吞天截住黑风大王战败遁风后触发的多阶段精怪首领。" data-term-image="/images/wiki/xydztz/objects/xydztz_blackbear_trueform.webp">熊罴真身</a>。</p>
+<p><strong>Q15：熊罴真身挑战失败后为什么下次生命反而降低了？</strong>
+A：<a class="term-link" href="/characters/#%E9%BB%91%E9%A3%8E%E5%A4%A7%E7%8E%8B-%E7%86%8A%E7%BD%B4%E7%9C%9F%E8%BA%AB" data-term-id="blackbear-trueform" data-term-kind="精怪首领" data-term-summary="通过吞天截住黑风大王战败遁风后触发的多阶段精怪首领。" data-term-image="/images/wiki/xydztz/objects/xydztz_blackbear_trueform.webp">熊罴真身</a>的动态生命读取本轮原黑风大王的真实击败次数。计数在原黑风死亡时就已经增加，即使当次没有成功截住遁风也不会撤销；失败返风同样不会清零。你必须重新击杀一次原黑风才能再次触发，所以生命会按24000、21000、18000、15000、12000逐级降低。真正击杀熊罴真身后才会归零。</p>
+<p><strong>Q16：辟火罩为什么没有把范围内所有火直接扑灭？</strong>
+A：<a class="term-link" href="/artifacts/#%E8%BE%9F%E7%81%AB%E7%BD%A9" data-term-id="artifact-bhz" data-term-kind="法宝" data-term-summary="击败熊罴真身固定掉落，可展开束焰领域约束燃烧并保护玩家。" data-term-image="/images/wiki/xydztz/objects/xydztz_artifact_bhz.webp">辟火罩</a>的定位是“束焰”而不是全屏灭火。它让领域内玩家免受火焰伤害，暂停受控燃烧物的烧毁进程并阻止火势外传；每处受束火焰仍会独立灼伤近处目标，并在罩心附近更为强烈。领域收起或目标离开后，原燃烧会从剩余时间继续。</p>
+            <!-- STATIC_CONTENT_END -->
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <footer class="footer" id="site-footer" role="contentinfo">
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-message">
+        <p class="footer-message-text">感谢每一位订阅玩家的支持和鼓励，祝各位在《腌笃鲜》的努力下游戏愉快，武运昌隆，尽享神话之旅！</p>
+        <p class="footer-signature">——咸鱼 &amp; 大猪蹄子 敬上</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357" target="_blank" rel="noopener noreferrer">Steam 创意工坊</a>
+        <a href="https://qm.qq.com/q/iFeDTMf6Io" target="_blank" rel="noopener noreferrer">反馈交流群</a>
+      </div>
+      <p>&copy; 2026 《腌笃鲜》</p>
+      <p>反馈交流 QQ 群：1046023996</p>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <script src="/scripts/utils.js?v=20260804h"></script>
+    <script src="/scripts/renderer.js?v=20260805c"></script>
+    <script src="/scripts/toc.js?v=20260805b"></script>
+    <script src="/scripts/scroll.js?v=20260805a"></script>
+    <script src="/scripts/theme.js?v=20260804f"></script>
+    <script src="/scripts/ui.js?v=20260805b"></script>
+    <script src="/scripts/media.js?v=20260808a"></script>
+    <script src="/scripts/main.js?v=20260805c"></script>
+  </body>
+</html>

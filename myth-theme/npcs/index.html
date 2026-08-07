@@ -1,0 +1,528 @@
+<!doctype html>
+<!-- ============================================
+     《腌笃鲜》维基百科 - Main Page
+     ============================================ -->
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="查阅《神话书说》太上老君、嫦娥、土地庙及共享交互规则。" />
+    <meta name="keywords" content="腌笃鲜,饥荒,神话书说,模组,元辰劫运,盘丝娘娘,wiki,攻略" />
+    <meta name="author" content="《腌笃鲜》资料整理" />
+    <meta name="theme-color" content="#faf8f3" />
+    <script>
+      (() => {
+        let theme = 'light';
+        try {
+          const saved = localStorage.getItem('xydztz-theme') || localStorage.getItem('xdyztz-theme');
+          theme = saved === 'dark' || saved === 'light'
+            ? saved
+            : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch (err) {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', theme === 'dark' ? '#15110e' : '#faf8f3');
+      })();
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NPC 与交互 | 神话主题 | 《腌笃鲜》" />
+    <meta property="og:description" content="查阅《神话书说》太上老君、嫦娥、土地庙及共享交互规则。" />
+    <meta property="og:site_name" content="《腌笃鲜》" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:url" content="https://yanduxian.cn/myth-theme/npcs/" />
+    <meta property="og:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1021" />
+    <meta property="og:image:alt" content="《腌笃鲜》雪景封面" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NPC 与交互 | 神话主题 | 《腌笃鲜》" />
+    <meta name="twitter:description" content="查阅《神话书说》太上老君、嫦娥、土地庙及共享交互规则。" />
+    <meta name="twitter:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+
+    <title>NPC 与交互 | 神话主题 | 《腌笃鲜》</title>
+    <link rel="canonical" href="https://yanduxian.cn/myth-theme/npcs/" />
+
+    <link rel="preload" href="/images/hero-default-1200.webp" imagesrcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" imagesizes="100vw" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/fonts/MaShanZheng-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/png" href="/images/mod-icon.png?v=20260719" />
+
+    <link rel="stylesheet" href="/styles/fonts.css?v=20260804o" />
+    <link rel="stylesheet" href="/styles/variables.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/base.css?v=20260804g" />
+    <link rel="stylesheet" href="/styles/hero.css?v=20260804r" />
+    <link rel="stylesheet" href="/styles/layout.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/markdown.css?v=20260805u" />
+    <link rel="stylesheet" href="/styles/components.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/media.css?v=20260806b" />
+    <link rel="stylesheet" href="/styles/responsive.css?v=20260805m" />
+  </head>
+  <body data-book-id="myth-theme" data-book-title="神话主题" data-chapter-slug="myth-theme-npcs" data-chapter-title="NPC 与交互" data-search-index="/search-index.json?v=ca6182164b96">
+    <div class="read-progress" id="read-progress" aria-hidden="true"></div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2c-1.05 0-2.05.16-3 .46 1.69 1.24 2.79 3.26 2.79 5.54 0 3.87-3.13 7-7 7-.57 0-1.13-.08-1.67-.22C2.52 18.49 6.45 22 11 22c5.52 0 10-4.48 10-10S16.52 2 11 2c-.66 0-1.3.07-1.92.19C9.23 2.06 9.12 2 9 2z"/></svg>
+    </button>
+
+    <header class="hero" id="hero" role="banner">
+      <picture class="hero-bg-layer hero-bg-default" aria-hidden="true">
+        <source type="image/webp" srcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" sizes="100vw" />
+        <img src="/images/hero-default.jpg" srcset="/images/hero-default-1200.jpg 1200w, /images/hero-default.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" fetchpriority="high" />
+      </picture>
+      <picture class="hero-bg-layer hero-bg-hover" id="hero-hover-picture" aria-hidden="true">
+        <source type="image/webp" data-srcset="/images/hero-hover-1200.webp 1200w, /images/hero-hover.webp 2400w" sizes="100vw" />
+        <img data-src="/images/hero-hover.jpg" data-srcset="/images/hero-hover-1200.jpg 1200w, /images/hero-hover.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" />
+      </picture>
+      <div class="hero-sun-glow" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-gradient-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-title-row">
+          <h1 class="hero-title">《腌笃鲜》</h1>
+          <img class="hero-seal" src="/images/mod-icon.png?v=20260719" alt="《腌笃鲜》模组图标" width="68" height="68" />
+        </div>
+        <div class="hero-actions" aria-label="主要操作">
+          <a
+            class="hero-btn hero-btn-primary"
+            href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="在 Steam 创意工坊订阅《腌笃鲜》（新窗口）"
+          >订阅模组</a>
+          <button class="hero-btn hero-btn-secondary" id="hero-btn" type="button">开始查阅</button>
+        </div>
+      </div>
+
+      <div class="hero-subtitles">
+        <p class="hero-subtitle">三十五劫运交织，十二元辰下凡，灵台方寸显真心</p>
+        <p class="hero-subtitle">玉兔拨弦，黑风倒卷——人物精怪双篇登场</p>
+      </div>
+
+      <svg class="hero-torn-edge" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 48 L0 28 L36 32 L72 22 L120 30 L168 20 L216 28 L264 18 L312 30 L360 22 L408 28 L456 18 L504 26 L552 16 L600 26 L648 32 L696 22 L744 28 L792 18 L840 28 L888 22 L936 30 L984 20 L1032 28 L1080 22 L1128 30 L1176 18 L1224 26 L1272 30 L1320 22 L1368 28 L1404 24 L1440 28 L1440 48 Z" />
+      </svg>
+    </header>
+
+    <noscript>
+      <div class="noscript-warning" role="alert">
+        <strong>提示：</strong>正文仍可阅读；启用 JavaScript 后可使用目录搜索、劫运查询和媒体灯箱。
+      </div>
+    </noscript>
+
+    <nav class="chapter-nav" aria-label="神话主题篇章导航">
+      <div class="chapter-nav-inner" id="chapter-nav-inner">
+        <!-- CHAPTER_NAV_START -->
+        <details class="book-switcher">
+          <summary><strong>神话主题</strong></summary>
+          <div class="book-switcher-menu">
+            <a class="book-switcher-link" href="/">腌笃鲜</a>
+            <a class="book-switcher-link active" href="/myth-theme/">神话主题<span class="sr-only">（当前）</span></a>
+            <a class="book-switcher-link" href="/myth-characters/">神话人物</a>
+          </div>
+        </details>
+        <span class="chapter-nav-divider" aria-hidden="true"></span>
+        <div class="chapter-nav-pages">
+          <a class="chapter-nav-link" href="/myth-theme/">主题总览</a>
+        <a class="chapter-nav-link" href="/myth-theme/world/">世界地点</a>
+        <a class="chapter-nav-link active" href="/myth-theme/npcs/" aria-current="page">NPC 与交互</a>
+        <a class="chapter-nav-link" href="/myth-theme/creatures/">首领与怪物</a>
+        <a class="chapter-nav-link" href="/myth-theme/artifacts/">炼丹与法宝</a>
+        <a class="chapter-nav-link" href="/myth-theme/agriculture/">农业与料理</a>
+        <a class="chapter-nav-link" href="/myth-theme/buildings/">建筑与生态</a>
+        <a class="chapter-nav-link" href="/myth-theme/flight/">腾云与技能</a>
+        </div>
+        <!-- CHAPTER_NAV_END -->
+      </div>
+      <div class="reading-position" id="reading-position">
+        <span class="reading-position-text"><span class="rp-num"></span><span class="rp-title"></span></span>
+      </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar" aria-label="目录导航">
+        <div class="sidebar-header">
+          <h3 id="sidebar-title">NPC 与交互目录</h3>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="toc-search" placeholder="搜索三本资料…" aria-label="搜索全部资料" />
+        </div>
+        <ul class="toc-list" id="toc-list">
+          <!-- SIDEBAR_TOC_START -->
+          <li class="toc-item toc-section has-children open">
+            <a class="toc-link" href="#%E5%A4%AA%E4%B8%8A%E8%80%81%E5%90%9B" data-id="太上老君" data-num="壹">太上老君</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E4%BA%A4%E6%98%93%E8%B5%84%E6%A0%BC%E4%B8%8E%E7%BB%93%E7%AE%97%E6%96%B9%E5%BC%8F" data-id="交易资格与结算方式">交易资格与结算方式</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%9B%BA%E5%AE%9A%E5%9B%9E%E7%A4%BC" data-id="固定回礼">固定回礼</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E9%A6%96%E9%A2%86%E6%9D%90%E6%96%99%E4%B8%8E%E9%9A%8F%E6%9C%BA%E4%B8%B9%E8%8D%AF" data-id="首领材料与随机丹药">首领材料与随机丹药</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%8C%87%E5%AE%9A%E8%A3%85%E5%A4%87%E7%BB%B4%E4%BF%AE%E4%B8%8E%E7%BF%BB%E6%96%B0" data-id="指定装备维修与翻新">指定装备维修与翻新</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%85%9C%E7%8E%87%E7%89%9B%E9%93%83%E4%B8%8E%E9%9D%92%E7%89%9B%E9%87%8D%E7%BB%91" data-id="兜率牛铃与青牛重绑">兜率牛铃与青牛重绑</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%8B%92%E6%94%B6%E4%B8%8E%E6%94%BB%E5%87%BB%E5%90%8E%E6%9E%9C" data-id="拒收与攻击后果">拒收与攻击后果</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E5%AB%A6%E5%A8%A5" data-id="嫦娥" data-num="贰">嫦娥</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%A5%BD%E6%84%9F%E7%A7%91%E6%8A%80%E4%B8%8E%E8%93%9D%E5%9B%BE" data-id="好感科技与蓝图">好感科技与蓝图</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%9C%88%E9%A5%BC%E5%A5%96%E5%8A%B1" data-id="月饼奖励">月饼奖励</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%9C%88%E5%AE%AB%E7%89%A9%E5%93%81" data-id="月宫物品">月宫物品</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%8D%AF%E7%B2%89%E5%AD%A6%E4%B9%A0" data-id="药粉学习">药粉学习</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%9B%B2%E8%B0%B1%E5%AD%A6%E4%B9%A0" data-id="曲谱学习">曲谱学习</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E5%9C%9F%E5%9C%B0%E5%BA%99%E4%B8%8E%E5%9C%9F%E5%9C%B0%E5%85%AC" data-id="土地庙与土地公" data-num="叁">土地庙与土地公</a>
+          </li>
+          <!-- SIDEBAR_TOC_END -->
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <article class="content-card">
+          <div class="md-body" id="main-content" data-static-snapshot="ready" data-content-hash="ca6182164b96" data-chapter="myth-theme-npcs">
+            <!-- STATIC_CONTENT_START -->
+<h2 id="npc-与交互" data-legacy-id="sec-npc-与交互-nf4zc3" data-eyebrow="第叁篇">NPC 与交互</h2><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：NPC总览] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：太上老君、嫦娥、土地公、交易、好感、共享奖励]</p>
+</blockquote><hr>
+<h3 id="太上老君" data-legacy-id="sec-太上老君-bkwoyi" data-num="壹">太上老君</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：重要NPC] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：急急如律令、三人交易上限、通天敕令、固定回礼、随机丹药、装备维修、兜率牛铃、雷击惩罚]</p>
+</blockquote><p><strong>急急如律令</strong>用于召唤太上老君；一次炼制会得到 3 个。老君每次停留 480 秒，离场后世界还要等待 1440 秒才能再次召唤。每轮交易还有两道硬限制：每位玩家只能交易一次，最多只有三名不同玩家能完成交易；第三笔成功后老君立即离场。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：老君交易限制默认改为每名玩家 2 次，并按玩家独立计数；数值档为本轮总成交上限是个人上限的 2 倍，因此默认共成交 4 笔后离场。也可选择原生、每人 5 次或不限次数。详见<a href="/optimizations/">神话优化</a>。</p>
+</blockquote><h4 id="交易资格与结算方式" data-legacy-id="sec-交易资格与结算方式-y5ug0v">交易资格与结算方式</h4><p>白骨夫人、WX-78、沃拓克斯、沃姆伍德、沃特和盘丝娘娘默认不能与老君交易；随身持有<strong>通天敕令</strong>后可解除限制，敕令只作为资格凭证，不会在交易中消耗。其他角色不需要敕令。</p>
+<p>每次成功交付只计算 <strong>1 笔交易</strong>，与老君一次返还几件物品无关。普通回礼会生成在老君附近的随机位置，横纵坐标相对老君各偏移不超过 4 格，不会直接放入交付者物品栏；只有兜率牛铃的特殊服务会把新牛铃直接交回玩家。</p>
+<h4 id="固定回礼" data-legacy-id="sec-固定回礼-bcru9q">固定回礼</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">交给太上老君</th>
+<th align="left">获得</th>
+<th align="left">说明</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">生命护符</td>
+<td align="left">壮骨丹×3</td>
+<td align="left">固定回礼，不从随机丹药池抽取</td>
+</tr>
+<tr>
+<td align="left">寒冰护符</td>
+<td align="left">腾云丹×3</td>
+<td align="left">固定回礼</td>
+</tr>
+<tr>
+<td align="left">梦魇护符</td>
+<td align="left">嗜血丹×3</td>
+<td align="left">固定回礼</td>
+</tr>
+<tr>
+<td align="left">告密的心</td>
+<td align="left">还魂丹×1</td>
+<td align="left">固定回礼</td>
+</tr>
+</tbody></table></div></div><h4 id="首领材料与随机丹药" data-legacy-id="sec-首领材料与随机丹药-3js2lm">首领材料与随机丹药</h4><p>“随机丹药”每次都从<strong>腾云丹、嗜血丹、凝味丹、壮骨丹</strong>四种中独立等概率抽取。一次返还多颗时，每颗分别抽取，因此可能得到重复丹药。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">交付物</th>
+<th align="center">随机丹药数量</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">巨鹿眼球</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">熊皮</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">邪天翁喙</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">暗影心房</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="left">龙鳞</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="left">蘑菇皮</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="left">蜂王冠</td>
+<td align="center">3</td>
+</tr>
+</tbody></table></div></div><h4 id="指定装备维修与翻新" data-legacy-id="sec-指定装备维修与翻新-8s5184">指定装备维修与翻新</h4><p>老君没有通用的“修理任意物品”功能。下表物品实际交付后会被<strong>整件收走并生成一件满状态新品</strong>，相当于回收换新；不是按缺失耐久比例补充。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">可维修物品</th>
+<th align="left">交付后的结果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">铥矿皇冠、铥矿甲、铥矿棒</td>
+<td align="left">各自换回满耐久装备</td>
+</tr>
+<tr>
+<td align="left">凤翅紫金冠、锁子黄金甲</td>
+<td align="left">各自换回满耐久装备</td>
+</tr>
+<tr>
+<td align="left">三山飞凤冠、锁子清源甲</td>
+<td align="left">各自换回满耐久装备</td>
+</tr>
+<tr>
+<td align="left">子圭战盔、子圭战甲</td>
+<td align="left">各自换回满耐久装备</td>
+</tr>
+</tbody></table></div></div><p>装备若带有皮肤，换新的装备会延续该皮肤。维修判定<strong>不检查当前耐久是否受损</strong>：满耐久物品也会被接受、换新并占用一次交易资格。表外武器、防具、衣物和工具即使具有耐久，也不会被老君接收。</p>
+<h4 id="兜率牛铃与青牛重绑" data-legacy-id="sec-兜率牛铃与青牛重绑-qtxf6g">兜率牛铃与青牛重绑</h4><p>把<strong>兜率牛铃</strong>交给老君会触发交互：原牛铃被收走，老君在附近重新唤出一头板角青牛，并把一枚与新青牛完成绑定的牛铃直接交回玩家，该操作同样计入本轮交易次数。</p>
+<h4 id="拒收与攻击后果" data-legacy-id="sec-拒收与攻击后果-jvpk88">拒收与攻击后果</h4><ul>
+<li>已经完成过本轮交易的玩家再次交付，会被拒绝；原生规则下全轮已成交三笔时也会拒绝。</li><li>受限角色没有通天敕令时，任何交易物都不会被接受。</li><li>攻击老君不会伤到他。玩家攻击会在自身位置引雷，受到 30 点伤害并掉落手持物；随从攻击会被直接击杀，其他攻击者通常会被移除。</li></ul>
+<hr>
+<h3 id="嫦娥" data-legacy-id="sec-嫦娥-fyf3" data-num="贰">嫦娥</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：重要NPC] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：广寒宫、好感、月宫科技、蓝图、屏风、香炉、宫灯、莹月轮盘、月饼、玉兔药粉、玉兔曲谱]</p>
+</blockquote><p>嫦娥接受各种宝石，以及大蟠桃。好感度：普通宝石每颗 +1，彩虹宝石 +20，大蟠桃 +50；猪八戒交付时上述数值向下取半，玉兔则在基础值上再 +1。好感属于玩家自己，但<strong>同一位嫦娥的莹月轮盘首达奖励只有一次</strong>：谁先达到 150，谁得到轮盘与 3 个冰皮月饼、3 个五仁月饼；之后其他玩家即使满 150，也不会从嫦娥再拿到第二个轮盘。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">交付者与物品</th>
+<th align="left">实得好感</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">非猪八戒的普通宝石</td>
+<td align="left">+1</td>
+</tr>
+<tr>
+<td align="left">非猪八戒的彩虹宝石</td>
+<td align="left">+20</td>
+</tr>
+<tr>
+<td align="left">非猪八戒的大蟠桃</td>
+<td align="left">+50</td>
+</tr>
+<tr>
+<td align="left">猪八戒交付任一上述物品</td>
+<td align="left">基础值 ÷ 2，向下取整</td>
+</tr>
+<tr>
+<td align="left">玉兔交付任一上述物品</td>
+<td align="left">基础值 +1</td>
+</tr>
+</tbody></table></div></div><p>好感达到 20 / 50 / 100 / 150 时，嫦娥附近可用的月宫制作权限分别提升到第 2 / 4 / 6 / 7 档；后续档位会保留此前已经开放的内容。</p>
+<h4 id="好感科技与蓝图" data-legacy-id="sec-好感科技与蓝图-ykjdwe">好感科技与蓝图</h4><p>好感科技必须在嫦娥附近使用她的月宫制作站。八件建筑或陈设并不是达到门槛后直接学会：玩家要先用 <strong>1 张莎草纸</strong>制作对应蓝图，再阅读蓝图，才会永久学会该成品的普通配方。八张蓝图彼此独立，同一档有多张时也要分别制作、分别阅读。莹月如意和莹月百宝囊则属于嫦娥站内的直接制作物，没有对应蓝图。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="center">玩家好感</th>
+<th align="left">新开放内容</th>
+<th align="left">解锁方式</th>
+</tr>
+</thead><tbody><tr>
+<td align="center">20</td>
+<td align="left">屏风、月枝盆景、香炉</td>
+<td align="left">分别制作并阅读三张对应蓝图</td>
+</tr>
+<tr>
+<td align="center">50</td>
+<td align="left">灯笼架、仙鹤·左、仙鹤·右</td>
+<td align="left">分别制作并阅读三张对应蓝图；两只仙鹤外形方向不同，配方也分别学习</td>
+</tr>
+<tr>
+<td align="center">100</td>
+<td align="left">灯笼、宫灯；莹月如意</td>
+<td align="left">灯笼与宫灯通过蓝图学习；莹月如意直接在嫦娥站内制作</td>
+</tr>
+<tr>
+<td align="center">150</td>
+<td align="left">莹月百宝囊</td>
+<td align="left">直接在嫦娥站内制作；首次嫦娥满好感时，另行结算莹月轮盘与月饼奖励</td>
+</tr>
+</tbody></table></div></div><h5 id="蓝图成品一览" data-legacy-id="sec-蓝图成品一览-m1kux2">蓝图成品一览</h5><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="center">门槛</th>
+<th align="left">成品与普通配方</th>
+<th align="left">实际用途与特性</th>
+</tr>
+</thead><tbody><tr>
+<td align="center">20</td>
+<td align="left"><strong>屏风</strong>：木板×3、蜘蛛丝×3、莎草纸×3；一次制作得到 3 个</td>
+<td align="left">以墙体方式逐段部署，会阻挡通行并自动衔接相邻屏风；敲除掉落 1 个竹子</td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td align="left"><strong>月枝盆景</strong>：树枝×3、月蛾×1、月亮玻璃×4</td>
+<td align="left">月宫装饰建筑，可被敲除；本身没有额外功能</td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td align="left"><strong>香炉</strong>：花瓣×6、月岩×2、木炭×1</td>
+<td align="left">常驻烟雾的装饰建筑，同时是热度为 20 的热源，不需要添加燃料</td>
+</tr>
+<tr>
+<td align="center">50</td>
+<td align="left"><strong>灯笼架</strong>：木板×2、木炭×1</td>
+<td align="left">最多悬挂 2 盏灯笼，灯笼可逐盏取回；拆除灯笼架时，已挂灯笼会一并返还</td>
+</tr>
+<tr>
+<td align="center">50</td>
+<td align="left"><strong>仙鹤·左 / 仙鹤·右</strong>：每件均需月岩×4、邪天翁羽毛×1</td>
+<td align="left">两张独立蓝图、两项独立配方；功能相同，区别是相互镜像的摆放朝向</td>
+</tr>
+<tr>
+<td align="center">100</td>
+<td align="left"><strong>灯笼</strong>：蜂蜡×1、树枝×3、莎草纸×2</td>
+<td align="left">手持或丢在地上时照明，放入物品栏后熄灭；白天与黄昏照明半径 1.5，夜晚为 3，照明不消耗耐久或燃料</td>
+</tr>
+<tr>
+<td align="center">100</td>
+<td align="left"><strong>宫灯</strong>：灯笼×1、木板×1</td>
+<td align="left">固定建筑，常亮半径为 3，不需要燃料；敲除后不返还材料</td>
+</tr>
+</tbody></table></div></div><blockquote class="bq-info"><p><strong>配方核对说明</strong>：月枝盆景的当前实际配方是树枝×3、月亮玻璃×4。</p>
+</blockquote><h4 id="月饼奖励" data-legacy-id="sec-月饼奖励-dmqowf">月饼奖励</h4><p>除玉兔教学物外，交大蟠桃会额外给 2 个随机月饼，交彩虹宝石会给 1 个随机月饼；其他接受的宝石只有 10% 概率给 1 个随机月饼。玉兔在上述基础上还有额外 10% 概率再得到一个随机月饼。月饼为冰皮、莲蓉、五仁三种之一。</p>
+<p>三种月饼食用时都提供 <strong>15 生命 / 15 饥饿 / 15 理智</strong>，并获得持续 **480 秒（1 个游戏日）**的独立效果：</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">月饼</th>
+<th align="left">持续效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">冰皮月饼</td>
+<td align="left">理智值不再通过通常的理智增减结算变化；杨戬天眼切换除外</td>
+</tr>
+<tr>
+<td align="left">五仁月饼</td>
+<td align="left">饥饿值不再通过通常的饥饿增减结算变化</td>
+</tr>
+<tr>
+<td align="left">莲蓉月饼</td>
+<td align="left">食物本身为负数的生命、饥饿或理智效果按 0 结算；不会把其他来源的负面变化一并免除</td>
+</tr>
+</tbody></table></div></div><p>重复食用同一种月饼会把对应持续时间刷新为 480 秒，不会叠出多层同名效果；三种效果彼此独立。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：三种月饼的堆叠上限默认调整为 40，也可在设置中选择原生或 10；获取方式与嫦娥奖励概率不变。详见<a href="/optimizations/">神话优化</a>。</p>
+</blockquote><h4 id="月宫物品" data-legacy-id="sec-月宫物品-ddt0ez">月宫物品</h4><p>好感门槛、制作权限与首次满好感奖励都由嫦娥结算。</p>
+<h5 id="莹月轮盘" data-legacy-id="sec-莹月轮盘-h1w0k9">莹月轮盘</h5><p>任意玩家嫦娥好感最高档时，若尚未结算过轮盘奖励，会一次给出 <strong>莹月轮盘、冰皮月饼×3、五仁月饼×3</strong>。这不是每位玩家都能重复领取的个人奖励。</p>
+<p>莹月轮盘放在地面后提供完整月岛祭坛科技，并在地图迷雾中显示图标。光照随月相变化：新月和残月几乎不照明，半月约 0.7，盈凸月约 1.5，满月约 5 格。</p>
+<h5 id="莹月如意" data-legacy-id="sec-莹月如意-h1mq2k">莹月如意</h5><p>莹月如意在嫦娥 <strong>100 好感</strong>开放的第三档月宫科技中直接制作，材料为<strong>彩虹宝石、月亮玻璃×3</strong>。装备时每分钟回复约 3.3 理智，可快速采摘桃树；但攻击伤害只有 5，而且一旦拿它命中目标，法宝会直接损坏消失。莹月如意也是金击子的配方材料。</p>
+<h5 id="莹月百宝囊" data-legacy-id="sec-莹月百宝囊-vb0g70">莹月百宝囊</h5><p>百宝囊在嫦娥 <strong>150 好感</strong>开放的第四档月宫科技中直接制作，材料为<strong>蜘蛛丝×7、月树花×16、彩虹宝石</strong>。新制成的空囊不能直接展开：必须在满月时丢在地上约 6 秒完成充能。使用后会展开为跟随持有者的 <strong>9 格隐形储物仓</strong>，基础持续 <strong>480 秒即 1 个游戏日</strong>。</p>
+<ul>
+<li>每次入夜时，囊中若有月亮玻璃，会消耗 1 个并把剩余时间增加 480 秒。</li><li>时间结束后，内容物会全部掉落，百宝囊本体回到持有者物品栏并保持可再次使用状态。</li><li>它的原生保鲜倍率为 <strong>50%</strong>，即囊内物品以通常一半的速度腐败；没有制冷能力。</li></ul>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：4K 分辨率下的百宝囊 UI 拖拽漂移会默认修复；百宝囊剩余持续时间会有显示，持续时间默认仍为 1 天，可选 15 天、30 天或永久，保鲜倍率默认仍为原生 50%，也可调整为 25% 或 10%。详见<a href="/optimizations/">神话优化</a>。</p>
+</blockquote><h4 id="药粉学习" data-legacy-id="sec-药粉学习-h3h2yc">药粉学习</h4><p>只有玉兔能用下表材料向嫦娥学习。首次成功后材料会<strong>原样归还</strong>，并只增加 1 点好感；已经学会时嫦娥会拒收，所以不会重复吞材料。具体药粉效果与捣药规则见<a href="/myth-characters/yutu/#%E4%B8%83%E7%A7%8D%E8%8D%AF%E7%B2%89">玉兔·七种药粉</a>。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">交给嫦娥</th>
+<th align="left">解锁</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">曼德拉草或熟曼德拉草</td>
+<td align="left">草参药粉</td>
+</tr>
+<tr>
+<td align="left">守护者之角</td>
+<td align="left">犀茸药粉</td>
+</tr>
+<tr>
+<td align="left">电羊角</td>
+<td align="left">惊厥药粉</td>
+</tr>
+<tr>
+<td align="left">蜂王浆</td>
+<td align="left">活血药粉</td>
+</tr>
+<tr>
+<td align="left">巨鹿眼球或克劳斯钥匙</td>
+<td align="left">寒眸药粉</td>
+</tr>
+<tr>
+<td align="left">发光浆果或拿破仑千层酥</td>
+<td align="left">夜明药粉</td>
+</tr>
+<tr>
+<td align="left">舒缓茶</td>
+<td align="left">排郁药粉</td>
+</tr>
+</tbody></table></div></div><h4 id="曲谱学习" data-legacy-id="sec-曲谱学习-dkevll">曲谱学习</h4><p>下表教学物在成功学习后会被消耗，并增加 3 点好感；首次成功时有 20% 概率额外获得随机月饼。《寒风调》接受滚烫的暖石或冰石，普通温度暖石会被拒绝。具体演奏、资源消耗与曲谱效果见<a href="/myth-characters/yutu/#%E8%8E%B9%E6%9C%88%E7%90%B5%E7%90%B6">玉兔·莹月琵琶</a>。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">交给嫦娥</th>
+<th align="left">解锁曲谱</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">蜂王帽</td>
+<td align="left">《田中乐》</td>
+</tr>
+<tr>
+<td align="left">独奏乐器</td>
+<td align="left">《春光曲》</td>
+</tr>
+<tr>
+<td align="left">龙鳞</td>
+<td align="left">《浴火奏》</td>
+</tr>
+<tr>
+<td align="left">滚烫的暖石或冰石</td>
+<td align="left">《寒风调》</td>
+</tr>
+<tr>
+<td align="left">冰鲷鱼</td>
+<td align="left">《梦飞霜》</td>
+</tr>
+<tr>
+<td align="left">蜘蛛巢</td>
+<td align="left">《怨缠身》</td>
+</tr>
+<tr>
+<td align="left">羽毛扇</td>
+<td align="left">《春风化雨》</td>
+</tr>
+<tr>
+<td align="left">熊獾毛</td>
+<td align="left">《霸王卸甲》</td>
+</tr>
+<tr>
+<td align="left">牛角帽</td>
+<td align="left">《流水无情》</td>
+</tr>
+<tr>
+<td align="left">排箫</td>
+<td align="left">《夜阑谣》</td>
+</tr>
+</tbody></table></div></div><hr>
+<h3 id="土地庙与土地公" data-legacy-id="sec-土地庙与土地公-fpe73f" data-num="叁">土地庙与土地公</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：重要NPC与建筑系统] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：土地庙、三类熟食、五天契约、农务照料、主题铜钱]</p>
+</blockquote><p>土地庙：<strong>同一世界同时只能有一座</strong>。制作需要 3 块石砖、4 块木板、1 只鼹鼠，并在二级科学下制作。</p>
+<p>要请出土地公公，必须依次供奉三份<strong>料理</strong>，并且三份的食物类别不能重复：一份肉食、一份素食、一份零食。生食、不能算作料理物品、或第二份同类别料理都会被拒绝。第三份放入后，若不是夜晚，土地公便会出现；供奉的效力从最后一次交付起算 5 个游戏日，到期后三份贡品一并清空，需要重新供奉。</p>
+<p>铜钱交易的回礼为五种主题玩具之一，随机获得：<strong>毽子、布老虎、土地不倒翁、拨浪鼓、中国结</strong>。每件玩具都能与猪王换取 2 枚神话铜钱；在春季红包结算时，玩家身边的玩具还会计入年味度。土地公也会主动对付附近果蝇。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：可右键询问土地公灵台方寸山的具体方位；土地公照料的农田范围内若出现亮茄，也会主动清理并留下战利品。详见<a href="/optimizations/">神话优化</a>。</p>
+</blockquote>
+            <!-- STATIC_CONTENT_END -->
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <footer class="footer" id="site-footer" role="contentinfo">
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-message">
+        <p class="footer-message-text">感谢每一位订阅玩家的支持和鼓励，祝各位在《腌笃鲜》的努力下游戏愉快，武运昌隆，尽享神话之旅！</p>
+        <p class="footer-signature">——咸鱼 &amp; 大猪蹄子 敬上</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357" target="_blank" rel="noopener noreferrer">Steam 创意工坊</a>
+        <a href="https://qm.qq.com/q/iFeDTMf6Io" target="_blank" rel="noopener noreferrer">反馈交流群</a>
+      </div>
+      <p>&copy; 2026 《腌笃鲜》</p>
+      <p>反馈交流 QQ 群：1046023996</p>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <script src="/scripts/utils.js?v=20260804h"></script>
+    <script src="/scripts/renderer.js?v=20260805c"></script>
+    <script src="/scripts/toc.js?v=20260805b"></script>
+    <script src="/scripts/scroll.js?v=20260805a"></script>
+    <script src="/scripts/theme.js?v=20260804f"></script>
+    <script src="/scripts/ui.js?v=20260805b"></script>
+    <script src="/scripts/media.js?v=20260808a"></script>
+    <script src="/scripts/main.js?v=20260805c"></script>
+  </body>
+</html>

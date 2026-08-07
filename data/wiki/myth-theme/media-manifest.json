@@ -1,0 +1,1408 @@
+{
+  "schemaVersion": 1,
+  "book": "myth-theme",
+  "policy": {
+    "objectImage": "curated WebP, injected only on matching static page",
+    "pageLoading": "manifest on active book only, images lazy",
+    "sourceMastersPublished": false
+  },
+  "objects": [
+    {
+      "id": "theme-peachtree",
+      "name": "蟠桃树",
+      "section": "桃岛",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-theme/structures/myth_peachtree-mature-idle-000.webp"
+    },
+    {
+      "id": "theme-fangcunhill",
+      "name": "灵台方寸山",
+      "section": "灵台方寸山",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-theme/structures/fangcunhill-anim-000.webp"
+    },
+    {
+      "id": "theme-guanghan-palace",
+      "name": "广寒宫",
+      "section": "广寒宫",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-theme/structures/myth_ghg-idle-000.webp"
+    },
+    {
+      "id": "theme-rhino-desk",
+      "name": "破旧的供桌",
+      "section": "青竹洲",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-theme/structures/myth_rhino_desk-idle-000.webp"
+    },
+    {
+      "id": "theme-laozi",
+      "name": "太上老君",
+      "section": "太上老君",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-theme/entities/laozi-idle-000.webp"
+    },
+    {
+      "id": "theme-chang-e",
+      "name": "嫦娥",
+      "section": "嫦娥",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-theme/entities/myth_chang_e.webp"
+    },
+    {
+      "id": "creature-blackbear",
+      "name": "黑风大王",
+      "section": "黑风大王",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-theme/entities/blackbear-idle-000.webp"
+    },
+    {
+      "id": "creature-siving",
+      "name": "子圭玄鸟",
+      "section": "子圭玄鸟",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-theme/entities/myth_siving_boss-idle-000.webp"
+    },
+    {
+      "id": "creature-nian",
+      "name": "年兽",
+      "section": "年兽",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-theme/entities/myth_nian-idle-000.webp"
+    },
+    {
+      "id": "theme-mooncake-box",
+      "name": "月饼盒",
+      "section": "月饼奖励",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-theme/catalog/myth_mooncake_box.webp"
+    },
+    {
+      "id": "theme-urgent-order",
+      "name": "急急如律令",
+      "section": "急急如律令",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-theme/catalog/laozi_sp.webp"
+    },
+    {
+      "id": "theme-book-myth",
+      "name": "无字天书",
+      "section": "解锁与建造",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-theme/catalog/book_myth.webp"
+    },
+    {
+      "id": "theme-alchemy-furnace",
+      "name": "八卦炉",
+      "section": "八卦炉解锁与制作",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-theme/structures/alchmy_fur.webp"
+    },
+    {
+      "id": "theme-purple-gourd",
+      "name": "紫金红葫芦",
+      "section": "紫金红葫芦",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-theme/catalog/purple_gourd.webp"
+    },
+    {
+      "id": "theme-banana-fan",
+      "name": "芭蕉宝扇",
+      "section": "芭蕉宝扇",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-theme/catalog/bananafan_big.webp"
+    },
+    {
+      "id": "theme-yangzhi-bottle",
+      "name": "羊脂玉净瓶",
+      "section": "羊脂玉净瓶",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-theme/structures/myth_yjp-idle-000.webp"
+    },
+    {
+      "id": "theme-pill-bottle",
+      "name": "丹药葫芦",
+      "section": "丹药葫芦",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-theme/catalog/pill_bottle_gourd.webp"
+    },
+    {
+      "id": "theme-qingniu-saddle",
+      "name": "兜率牛鞍",
+      "section": "兜率牛铃与兜率牛鞍",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-theme/catalog/saddle_qingniu.webp"
+    },
+    {
+      "id": "theme-bamboo-house",
+      "name": "苍竹瓦屋",
+      "section": "主题容器与苍竹瓦屋",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-theme/catalog/myth_house_bamboo.webp"
+    },
+    {
+      "id": "theme-coin",
+      "name": "主题钱币",
+      "section": "铜钱、轮换与折扣",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-theme/catalog/myth_coin.webp"
+    },
+    {
+      "id": "theme-nianhat",
+      "name": "年兽面具",
+      "section": "年兽面具",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/myth-theme/catalog/myth_nianhat.webp"
+    },
+    {
+      "id": "theme-infantree-fruit",
+      "name": "人参果",
+      "section": "采收、保存与食用",
+      "layout": "item",
+      "caption": false,
+      "image": "images/wiki/shared/materials/myth_infant_fruit.webp"
+    },
+    {
+      "id": "theme-battle-flag",
+      "name": "战旗",
+      "section": "战旗",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-theme/structures/mk_battle_flag.webp"
+    },
+    {
+      "id": "theme-dining-building",
+      "name": "红木餐桌",
+      "section": "基础建筑",
+      "layout": "feature",
+      "caption": false,
+      "image": "images/wiki/myth-theme/structures/myth_food_table.webp"
+    }
+  ],
+  "galleries": [
+    {
+      "id": "theme-laozi-trade-materials-gallery",
+      "page": "myth-theme-npcs",
+      "section": "首领材料与随机丹药",
+      "title": "老君交易首领材料",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "巨鹿眼球",
+          "image": "images/wiki/shared/materials/deerclops_eyeball.webp"
+        },
+        {
+          "name": "熊皮",
+          "image": "images/wiki/shared/materials/bearger_fur.webp"
+        },
+        {
+          "name": "暗影心房",
+          "image": "images/wiki/shared/materials/shadowheart.webp"
+        },
+        {
+          "name": "龙鳞",
+          "image": "images/wiki/shared/materials/dragon_scales.webp"
+        },
+        {
+          "name": "蘑菇皮",
+          "image": "images/wiki/shared/materials/shroom_skin.webp"
+        },
+        {
+          "name": "蜂王冠",
+          "image": "images/wiki/shared/materials/hivehat.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-yutu-powder-materials-gallery",
+      "page": "myth-theme-npcs",
+      "section": "药粉学习",
+      "title": "药粉教学材料",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "曼德拉草",
+          "image": "images/wiki/shared/materials/mandrake.webp"
+        },
+        {
+          "name": "守护者之角",
+          "image": "images/wiki/shared/materials/minotaurhorn.webp"
+        },
+        {
+          "name": "伏特羊角",
+          "image": "images/wiki/shared/materials/lightninggoathorn.webp"
+        },
+        {
+          "name": "蜂王浆",
+          "image": "images/wiki/shared/materials/royal_jelly.webp"
+        },
+        {
+          "name": "发光浆果",
+          "image": "images/wiki/shared/materials/wormlight.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-yutu-score-materials-gallery",
+      "page": "myth-theme-npcs",
+      "section": "曲谱学习",
+      "title": "曲谱教学材料",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "独奏乐器",
+          "image": "images/wiki/shared/materials/onemanband.webp"
+        },
+        {
+          "name": "滚烫的暖石",
+          "image": "images/wiki/shared/materials/heatrock_hot.webp"
+        },
+        {
+          "name": "冰鲷鱼",
+          "image": "images/wiki/shared/materials/oceanfish_medium_8_inv.webp"
+        },
+        {
+          "name": "羽毛扇",
+          "image": "images/wiki/shared/materials/featherfan.webp"
+        },
+        {
+          "name": "牛角帽",
+          "image": "images/wiki/shared/materials/beefalohat.webp"
+        },
+        {
+          "name": "排箫",
+          "image": "images/wiki/shared/materials/panflute.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-change-tech-gallery",
+      "page": "myth-theme-npcs",
+      "section": "好感科技与蓝图",
+      "title": "嫦娥好感蓝图成品",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "屏风",
+          "image": "images/wiki/myth-theme/structures/myth_fence.webp"
+        },
+        {
+          "name": "月枝盆景",
+          "image": "images/wiki/myth-theme/structures/myth_interiors_ghg_flower.webp"
+        },
+        {
+          "name": "香炉",
+          "image": "images/wiki/myth-theme/structures/myth_interiors_ghg_lu.webp"
+        },
+        {
+          "name": "灯笼架",
+          "image": "images/wiki/myth-theme/structures/myth_redlantern_ground.webp"
+        },
+        {
+          "name": "仙鹤·左",
+          "image": "images/wiki/myth-theme/structures/myth_interiors_ghg_he_left.webp"
+        },
+        {
+          "name": "仙鹤·右",
+          "image": "images/wiki/myth-theme/structures/myth_interiors_ghg_he_right.webp"
+        },
+        {
+          "name": "灯笼",
+          "image": "images/wiki/myth-theme/catalog/redlantern_myth_a.webp"
+        },
+        {
+          "name": "宫灯",
+          "image": "images/wiki/myth-theme/structures/myth_interiors_ghg_groundlight.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-mooncake-reward-gallery",
+      "page": "myth-theme-npcs",
+      "section": "月饼奖励",
+      "title": "月饼奖励",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "冰皮月饼",
+          "image": "images/wiki/myth-theme/catalog/myth_mooncake_ice.webp"
+        },
+        {
+          "name": "莲蓉月饼",
+          "image": "images/wiki/myth-theme/catalog/myth_mooncake_lotus.webp"
+        },
+        {
+          "name": "五仁月饼",
+          "image": "images/wiki/myth-theme/catalog/myth_mooncake_nuts.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-tudi-gallery",
+      "page": "myth-theme-npcs",
+      "section": "土地庙与土地公",
+      "title": "土地庙与土地公",
+      "layout": "aside",
+      "items": [
+        {
+          "name": "土地庙",
+          "image": "images/wiki/myth-theme/structures/myth_tudi_shrines-idle-000.webp"
+        },
+        {
+          "name": "土地公",
+          "image": "images/wiki/myth-theme/entities/myth_tudi.webp"
+        }
+      ],
+      "placement": "aside"
+    },
+    {
+      "id": "theme-tudi-toy-gallery",
+      "page": "myth-theme-npcs",
+      "section": "土地庙与土地公",
+      "title": "土地公玩具",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "毽子",
+          "image": "images/wiki/myth-theme/catalog/myth_toy_featherbundle.webp"
+        },
+        {
+          "name": "布老虎",
+          "image": "images/wiki/myth-theme/catalog/myth_toy_tigerdoll.webp"
+        },
+        {
+          "name": "土地不倒翁",
+          "image": "images/wiki/myth-theme/catalog/myth_toy_tumbler.webp"
+        },
+        {
+          "name": "拨浪鼓",
+          "image": "images/wiki/myth-theme/catalog/myth_toy_twirldrum.webp"
+        },
+        {
+          "name": "中国结",
+          "image": "images/wiki/myth-theme/catalog/myth_toy_chineseknot.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-pill-gallery",
+      "page": "myth-theme-artifacts",
+      "section": "常规丹药",
+      "title": "六类常规丹药",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "荆棘丹",
+          "image": "images/wiki/myth-theme/catalog/thorns_pill.webp"
+        },
+        {
+          "name": "嗜血丹",
+          "image": "images/wiki/myth-theme/catalog/bloodthirsty_pill.webp"
+        },
+        {
+          "name": "凝味丹",
+          "image": "images/wiki/myth-theme/catalog/condensed_pill.webp"
+        },
+        {
+          "name": "壮骨丹",
+          "image": "images/wiki/myth-theme/catalog/armor_pill.webp"
+        },
+        {
+          "name": "移山丹",
+          "image": "images/wiki/myth-theme/catalog/movemountain_pill.webp"
+        },
+        {
+          "name": "腾云丹",
+          "image": "images/wiki/myth-theme/catalog/fly_pill.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-pill-materials-gallery",
+      "page": "myth-theme-artifacts",
+      "section": "常规丹药",
+      "title": "常见丹材",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "仙人掌花",
+          "image": "images/wiki/shared/materials/cactus_flower.webp"
+        },
+        {
+          "name": "噩梦燃料",
+          "image": "images/wiki/shared/materials/nightmarefuel.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-urgent-order-materials-gallery",
+      "page": "myth-theme-artifacts",
+      "section": "急急如律令",
+      "title": "急急如律令材料",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "莎草纸",
+          "image": "images/wiki/shared/materials/papyrus.webp"
+        },
+        {
+          "name": "羽毛笔",
+          "image": "images/wiki/shared/materials/featherpencil.webp"
+        },
+        {
+          "name": "花瓣",
+          "image": "images/wiki/shared/materials/petals.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-yangzhi-materials-gallery",
+      "page": "myth-theme-artifacts",
+      "section": "羊脂玉净瓶",
+      "title": "玉净瓶核心材料",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "月亮玻璃",
+          "image": "images/wiki/shared/materials/moonglass.webp"
+        },
+        {
+          "name": "月蛾",
+          "image": "images/wiki/myth-characters/myth-yutu/yt_moonbutterfly.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-moon-gallery",
+      "page": "myth-theme-npcs",
+      "section": "月宫物品",
+      "title": "月宫器物",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "莹月轮盘",
+          "image": "images/wiki/myth-theme/structures/myth_yylp-idle-000.webp"
+        },
+        {
+          "name": "莹月如意",
+          "image": "images/wiki/myth-theme/catalog/myth_ruyi.webp"
+        },
+        {
+          "name": "莹月百宝囊",
+          "image": "images/wiki/myth-theme/catalog/myth_bbn.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-purple-gourd-companion-gallery",
+      "page": "myth-theme-artifacts",
+      "section": "紫金红葫芦",
+      "title": "葫芦材料与可收取生物",
+      "layout": "showcase",
+      "items": [
+        {
+          "name": "封印的坎普斯背包",
+          "image": "images/wiki/myth-theme/catalog/krampussack_sealed.webp"
+        },
+        {
+          "name": "小金蟾",
+          "image": "images/wiki/myth-theme/entities/myth_small_goldfrog.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-qingniu-gallery",
+      "page": "myth-theme-artifacts",
+      "section": "兜率牛铃与兜率牛鞍",
+      "title": "板角青牛与牛铃",
+      "layout": "showcase",
+      "items": [
+        {
+          "name": "板角青牛",
+          "image": "images/wiki/myth-theme/entities/laozi_qingniu.webp"
+        },
+        {
+          "name": "兜率宫牛铃",
+          "image": "images/wiki/myth-theme/structures/laozi_bell-idle-000.webp"
+        },
+        {
+          "name": "破碎的牛铃",
+          "image": "images/wiki/myth-theme/catalog/laozi_bell_broken.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-qingniu-materials-gallery",
+      "page": "myth-theme-artifacts",
+      "section": "兜率牛铃与兜率牛鞍",
+      "title": "牛鞍与牛铃材料",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "多肉植物",
+          "image": "images/wiki/shared/materials/succulent_picked.webp"
+        },
+        {
+          "name": "红宝石",
+          "image": "images/wiki/shared/materials/redgem.webp"
+        },
+        {
+          "name": "紫宝石",
+          "image": "images/wiki/shared/materials/purplegem.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-taoist-gallery",
+      "page": "myth-theme-artifacts",
+      "section": "通天敕令、拂尘与金击子",
+      "title": "敕令与法器",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "通天敕令",
+          "image": "images/wiki/myth-theme/catalog/myth_passcard_jie.webp"
+        },
+        {
+          "name": "拂尘",
+          "image": "images/wiki/myth-theme/catalog/myth_fuchen.webp"
+        },
+        {
+          "name": "金击子",
+          "image": "images/wiki/myth-theme/catalog/myth_gold_staff.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "creature-blackbear-drops",
+      "page": "myth-theme-creatures",
+      "section": "黑风大王",
+      "title": "黑风召唤物与掉落",
+      "layout": "aside",
+      "items": [
+        {
+          "name": "蜜罐",
+          "image": "images/wiki/myth-theme/structures/myth_honeypot.webp"
+        },
+        {
+          "name": "铜钱串",
+          "image": "images/wiki/myth-theme/catalog/myth_coin_box.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "creature-rhino-gallery",
+      "page": "myth-theme-creatures",
+      "section": "犀牛三大王",
+      "title": "犀牛三大王",
+      "layout": "showcase",
+      "items": [
+        {
+          "name": "辟寒大王",
+          "image": "images/wiki/myth-theme/entities/myth_rhino_blue-attack-downside-000.webp"
+        },
+        {
+          "name": "辟暑大王",
+          "image": "images/wiki/myth-theme/entities/myth_rhino_red-attack-downside-000.webp"
+        },
+        {
+          "name": "辟尘大王",
+          "image": "images/wiki/myth-theme/entities/myth_rhino_yellow-attack-downside-000.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-rhino-pill-gallery",
+      "page": "myth-theme-creatures",
+      "section": "三心丹药",
+      "title": "三心环境丹",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "避寒丹",
+          "image": "images/wiki/myth-theme/catalog/cold_resistant_pill.webp"
+        },
+        {
+          "name": "避暑丹",
+          "image": "images/wiki/myth-theme/catalog/heat_resistant_pill.webp"
+        },
+        {
+          "name": "避尘丹",
+          "image": "images/wiki/myth-theme/catalog/dust_resistant_pill.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "creature-goldfrog-gallery",
+      "page": "myth-theme-creatures",
+      "section": "聚宝金蟾",
+      "title": "金元宝雕像与聚宝金蟾",
+      "layout": "showcase",
+      "items": [
+        {
+          "name": "金元宝雕像",
+          "image": "images/wiki/myth-theme/structures/myth_goldfrog_base-idle-000.webp"
+        },
+        {
+          "name": "聚宝金蟾",
+          "image": "images/wiki/myth-theme/entities/myth_goldfrog-idle-000.webp"
+        },
+        {
+          "name": "聚宝盆",
+          "image": "images/wiki/myth-theme/structures/myth_treasure_bowl.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-siving-gallery",
+      "page": "myth-theme-creatures",
+      "section": "子圭装备",
+      "title": "子圭装备",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "子圭战甲",
+          "image": "images/wiki/myth-theme/catalog/armorsiving.webp"
+        },
+        {
+          "name": "子圭战盔",
+          "image": "images/wiki/myth-theme/catalog/siving_hat.webp"
+        },
+        {
+          "name": "子圭青金",
+          "image": "images/wiki/myth-theme/catalog/siving_stone.webp"
+        },
+        {
+          "name": "子圭石",
+          "image": "images/wiki/myth-theme/catalog/siving_rocks.webp"
+        },
+        {
+          "name": "七星剑",
+          "image": "images/wiki/myth-theme/catalog/myth_qxj.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-three-hearts-gallery",
+      "page": "myth-theme-creatures",
+      "section": "三心武器",
+      "title": "三色心脏与武器",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "辟寒心脏",
+          "image": "images/wiki/myth-theme/catalog/myth_rhino_blueheart.webp"
+        },
+        {
+          "name": "辟暑心脏",
+          "image": "images/wiki/myth-theme/catalog/myth_rhino_redheart.webp"
+        },
+        {
+          "name": "辟尘心脏",
+          "image": "images/wiki/myth-theme/catalog/myth_rhino_yellowheart.webp"
+        },
+        {
+          "name": "霜钺斧",
+          "image": "images/wiki/myth-theme/catalog/myth_weapon_syf.webp"
+        },
+        {
+          "name": "暑熤刀",
+          "image": "images/wiki/myth-theme/catalog/myth_weapon_syd.webp"
+        },
+        {
+          "name": "扢挞藤",
+          "image": "images/wiki/myth-theme/catalog/myth_weapon_gtt.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-cassock-gallery",
+      "page": "myth-theme-creatures",
+      "section": "袈裟与锦襕袈裟",
+      "title": "袈裟",
+      "layout": "aside",
+      "items": [
+        {
+          "name": "袈裟",
+          "image": "images/wiki/myth-theme/catalog/cassock.webp"
+        },
+        {
+          "name": "锦襕袈裟",
+          "image": "images/wiki/myth-theme/catalog/kam_lan_cassock.webp"
+        }
+      ],
+      "placement": "aside"
+    },
+    {
+      "id": "creature-nian-drops",
+      "page": "myth-theme-creatures",
+      "section": "年兽",
+      "title": "年兽掉落",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "年兽铃铛",
+          "image": "images/wiki/myth-theme/catalog/nian_bell.webp"
+        },
+        {
+          "name": "年兽鬃毛",
+          "image": "images/wiki/myth-theme/catalog/myth_nian_fur.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-nianweidu-gallery",
+      "page": "myth-theme-creatures",
+      "section": "年味度与春季红包",
+      "title": "年味活动物品",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "爆竹",
+          "image": "images/wiki/myth-theme/catalog/firecrackers_myth.webp"
+        },
+        {
+          "name": "烟花",
+          "image": "images/wiki/myth-theme/catalog/miniflare_myth.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-peach-produce-gallery",
+      "page": "myth-theme-agriculture",
+      "section": "蟠桃",
+      "title": "桃系物产与料理",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "蟠桃",
+          "image": "images/wiki/myth-theme/catalog/peach.webp"
+        },
+        {
+          "name": "烤蟠桃",
+          "image": "images/wiki/myth-theme/catalog/peach_cooked.webp"
+        },
+        {
+          "name": "大蟠桃",
+          "image": "images/wiki/shared/materials/bigpeach.webp"
+        },
+        {
+          "name": "蟠桃素酒",
+          "image": "images/wiki/myth-theme/food/peach_wine.webp"
+        },
+        {
+          "name": "蟠桃大会",
+          "image": "images/wiki/myth-theme/food/peach_banquet.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-gourd-produce-gallery",
+      "page": "myth-theme-agriculture",
+      "section": "葫芦",
+      "title": "葫芦物产与料理",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "葫芦",
+          "image": "images/wiki/myth-theme/catalog/gourd.webp"
+        },
+        {
+          "name": "烤葫芦",
+          "image": "images/wiki/myth-theme/catalog/gourd_cooked.webp"
+        },
+        {
+          "name": "葫芦种子",
+          "image": "images/wiki/myth-theme/catalog/gourd_seeds.webp"
+        },
+        {
+          "name": "巨型葫芦",
+          "image": "images/wiki/myth-theme/catalog/gourd_oversized.webp"
+        },
+        {
+          "name": "葫芦汤",
+          "image": "images/wiki/myth-theme/food/gourd_soup.webp"
+        },
+        {
+          "name": "葫芦鸡蛋饼",
+          "image": "images/wiki/myth-theme/food/gourd_omelet.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-lotus-produce-gallery",
+      "page": "myth-theme-agriculture",
+      "section": "莲",
+      "title": "莲系物产与装备",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "莲花植株",
+          "image": "images/wiki/myth-theme/structures/myth_plant_lotus-mature-000.webp"
+        },
+        {
+          "name": "莲花",
+          "image": "images/wiki/myth-theme/catalog/myth_lotus_flower.webp"
+        },
+        {
+          "name": "莲叶",
+          "image": "images/wiki/myth-theme/catalog/myth_lotusleaf.webp"
+        },
+        {
+          "name": "莲叶帽",
+          "image": "images/wiki/myth-theme/catalog/myth_lotusleaf_hat.webp"
+        },
+        {
+          "name": "莲藕",
+          "image": "images/wiki/myth-theme/catalog/lotus_root.webp"
+        },
+        {
+          "name": "莲子",
+          "image": "images/wiki/myth-theme/catalog/lotus_seeds.webp"
+        }
+      ],
+      "placement": "aside"
+    },
+    {
+      "id": "theme-lotus-food-gallery",
+      "page": "myth-theme-agriculture",
+      "section": "莲",
+      "title": "莲系食物与料理",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "烤莲藕",
+          "image": "images/wiki/myth-theme/catalog/lotus_root_cooked.webp"
+        },
+        {
+          "name": "烤莲子",
+          "image": "images/wiki/myth-theme/catalog/lotus_seeds_cooked.webp"
+        },
+        {
+          "name": "冰糖莲子羹",
+          "image": "images/wiki/myth-theme/food/myth_food_lzg.webp"
+        },
+        {
+          "name": "折月藕盒",
+          "image": "images/wiki/myth-theme/food/myth_food_zyoh.webp"
+        },
+        {
+          "name": "莲藕排骨汤",
+          "image": "images/wiki/myth-theme/food/myth_food_pgt.webp"
+        },
+        {
+          "name": "荷包鸡",
+          "image": "images/wiki/myth-theme/food/myth_food_hbj.webp"
+        },
+        {
+          "name": "覆海宴",
+          "image": "images/wiki/myth-theme/food/myth_food_fhy.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-bamboo-produce-gallery",
+      "page": "myth-theme-agriculture",
+      "section": "竹林",
+      "title": "竹林物产",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "竹子",
+          "image": "images/wiki/shared/materials/myth_bamboo.webp"
+        },
+        {
+          "name": "苍竹",
+          "image": "images/wiki/myth-theme/catalog/myth_greenbamboo.webp"
+        },
+        {
+          "name": "竹笋",
+          "image": "images/wiki/myth-theme/catalog/myth_bamboo_shoots.webp"
+        },
+        {
+          "name": "烤笋",
+          "image": "images/wiki/myth-theme/catalog/myth_bamboo_shoots_cooked.webp"
+        },
+        {
+          "name": "竹笋炒肉",
+          "image": "images/wiki/myth-theme/food/myth_food_zscr.webp"
+        },
+        {
+          "name": "竹筒饭",
+          "image": "images/wiki/myth-theme/food/myth_food_ztf.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-banana-produce-gallery",
+      "page": "myth-theme-agriculture",
+      "section": "芭蕉树",
+      "title": "芭蕉树与蕉叶物产",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "芭蕉树",
+          "image": "images/wiki/myth-theme/structures/myth_banana_tree.webp"
+        },
+        {
+          "name": "芭蕉叶",
+          "image": "images/wiki/myth-theme/catalog/myth_banana_leaf.webp"
+        },
+        {
+          "name": "蕉叶包装",
+          "image": "images/wiki/myth-theme/catalog/myth_bundlewrap.webp"
+        },
+        {
+          "name": "蕉叶包裹",
+          "image": "images/wiki/myth-theme/catalog/myth_bundle.webp"
+        },
+        {
+          "name": "蕉叶龙虾球",
+          "image": "images/wiki/myth-theme/food/myth_food_lxq.webp"
+        },
+        {
+          "name": "香蕉奶昔",
+          "image": "images/wiki/myth-theme/food/myth_food_nx.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-infantree-stage-gallery",
+      "page": "myth-theme-agriculture",
+      "section": "生长阶段",
+      "title": "人参果树生长对象",
+      "layout": "features",
+      "items": [
+        {
+          "name": "人参果树",
+          "image": "images/wiki/myth-theme/structures/myth_plant_infantree.webp"
+        },
+        {
+          "name": "被推倒的树根",
+          "image": "images/wiki/myth-theme/catalog/myth_plant_infantree_trunk.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-infantree-essence-gallery",
+      "page": "myth-theme-agriculture",
+      "section": "日之精华与月之精华",
+      "title": "日月精华",
+      "layout": "aside",
+      "items": [
+        {
+          "name": "日之精华",
+          "image": "images/wiki/myth-theme/catalog/myth_fireessense.webp"
+        },
+        {
+          "name": "月之精华",
+          "image": "images/wiki/myth-theme/catalog/myth_coldessense.webp"
+        }
+      ],
+      "placement": "aside"
+    },
+    {
+      "id": "theme-daily-food-gallery",
+      "page": "myth-theme-agriculture",
+      "section": "日常素食与年味锅菜",
+      "title": "日常素食",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "蜂蜜素饼",
+          "image": "images/wiki/myth-theme/food/honey_pie.webp"
+        },
+        {
+          "name": "素斋",
+          "image": "images/wiki/myth-theme/food/vegetarian_food.webp"
+        }
+      ],
+      "placement": "aside"
+    },
+    {
+      "id": "theme-festival-food-gallery",
+      "page": "myth-theme-agriculture",
+      "section": "日常素食与年味锅菜",
+      "title": "年味锅菜",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "水饺",
+          "image": "images/wiki/myth-theme/food/myth_food_sj.webp"
+        },
+        {
+          "name": "大肉包子",
+          "image": "images/wiki/myth-theme/food/myth_food_bz.webp"
+        },
+        {
+          "name": "小鸡炖蘑菇",
+          "image": "images/wiki/myth-theme/food/myth_food_xjdmg.webp"
+        },
+        {
+          "name": "麻辣红烧鱼",
+          "image": "images/wiki/myth-theme/food/myth_food_hsy.webp"
+        },
+        {
+          "name": "八宝饭",
+          "image": "images/wiki/myth-theme/food/myth_food_bbf.webp"
+        },
+        {
+          "name": "腊味合蒸",
+          "image": "images/wiki/myth-theme/food/myth_food_lwhz.webp"
+        },
+        {
+          "name": "折月春卷儿",
+          "image": "images/wiki/myth-theme/food/myth_food_cj.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-festival-snack-gallery",
+      "page": "myth-theme-agriculture",
+      "section": "日常素食与年味锅菜",
+      "title": "年味小食与饮品",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "胡萝卜汁",
+          "image": "images/wiki/myth-theme/food/myth_food_hlbz.webp"
+        },
+        {
+          "name": "屠苏酒",
+          "image": "images/wiki/myth-theme/food/myth_food_tsj.webp"
+        },
+        {
+          "name": "猪皮冻",
+          "image": "images/wiki/myth-theme/food/myth_food_zpd.webp"
+        },
+        {
+          "name": "糖人",
+          "image": "images/wiki/myth-theme/food/myth_food_tr.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-zongzi-gallery",
+      "page": "myth-theme-agriculture",
+      "section": "甜粽子与咸粽子",
+      "title": "粽子",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "甜粽子",
+          "image": "images/wiki/myth-theme/food/myth_zongzi1.webp"
+        },
+        {
+          "name": "咸粽子",
+          "image": "images/wiki/myth-theme/food/myth_zongzi2.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-shop-food-gallery",
+      "page": "myth-theme-agriculture",
+      "section": "小店食品",
+      "title": "青竹小店食品",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "糖葫芦",
+          "image": "images/wiki/myth-theme/food/myth_food_thl.webp"
+        },
+        {
+          "name": "牛肉拉面",
+          "image": "images/wiki/myth-theme/food/myth_food_nrlm.webp"
+        },
+        {
+          "name": "豆浆油条",
+          "image": "images/wiki/myth-theme/food/myth_food_djyt.webp"
+        },
+        {
+          "name": "臭豆腐",
+          "image": "images/wiki/myth-theme/food/myth_food_cdf.webp"
+        },
+        {
+          "name": "驴肉火烧",
+          "image": "images/wiki/myth-theme/food/myth_food_lrhs.webp"
+        },
+        {
+          "name": "莲花血鸭",
+          "image": "images/wiki/myth-theme/food/myth_food_lhyx.webp"
+        },
+        {
+          "name": "过桥米线",
+          "image": "images/wiki/myth-theme/food/myth_food_gqmx.webp"
+        },
+        {
+          "name": "咸菜馒头",
+          "image": "images/wiki/myth-theme/food/myth_food_xcmt.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-basic-buildings-gallery",
+      "page": "myth-theme-buildings",
+      "section": "基础建筑",
+      "title": "基础建筑",
+      "layout": "features",
+      "items": [
+        {
+          "name": "水井",
+          "image": "images/wiki/myth-theme/structures/myth_well.webp"
+        },
+        {
+          "name": "谷仓",
+          "image": "images/wiki/myth-theme/structures/myth_granary.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-gourd-container-gallery",
+      "page": "myth-theme-buildings",
+      "section": "主题容器与苍竹瓦屋",
+      "title": "葫芦容器",
+      "layout": "aside",
+      "items": [
+        {
+          "name": "酒葫芦·默认外观",
+          "image": "images/wiki/myth-theme/catalog/wine_bottle_gourd.webp"
+        },
+        {
+          "name": "酒葫芦·桃酒外观",
+          "image": "images/wiki/myth-theme/catalog/wine_bottle_gourd_wine.webp"
+        }
+      ],
+      "placement": "aside"
+    },
+    {
+      "id": "theme-cash-tree-gallery",
+      "page": "myth-theme-buildings",
+      "section": "摇钱树",
+      "title": "摇钱树",
+      "layout": "features",
+      "items": [
+        {
+          "name": "摇钱树苗",
+          "image": "images/wiki/myth-theme/catalog/myth_cash_tree.webp"
+        },
+        {
+          "name": "摇钱树",
+          "image": "images/wiki/myth-theme/structures/myth_cash_tree_ground.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-shop-building-gallery",
+      "page": "myth-theme-buildings",
+      "section": "青竹小店",
+      "title": "青竹小店",
+      "layout": "features",
+      "items": [
+        {
+          "name": "未完成的小店",
+          "image": "images/wiki/myth-theme/structures/myth_store_construction.webp"
+        },
+        {
+          "name": "神秘英雄的雕像",
+          "image": "images/wiki/myth-theme/structures/myth_statue_pandaman.webp"
+        },
+        {
+          "name": "青竹小店",
+          "image": "images/wiki/myth-theme/structures/myth_shop.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-shop-blueprint-gallery",
+      "page": "myth-theme-buildings",
+      "section": "商品与服务价格",
+      "title": "建造类商品",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "黑瓦白墙",
+          "image": "images/wiki/myth-theme/catalog/wall_dwelling_item.webp"
+        },
+        {
+          "name": "竹栅栏",
+          "image": "images/wiki/myth-theme/catalog/fence_bamboo_item.webp"
+        },
+        {
+          "name": "竹门",
+          "image": "images/wiki/myth-theme/catalog/fence_gate_bamboo_item.webp"
+        },
+        {
+          "name": "木凳子",
+          "image": "images/wiki/myth-theme/catalog/myth_stool.webp"
+        },
+        {
+          "name": "鹅卵石",
+          "image": "images/wiki/myth-theme/catalog/myth_rocktips.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-decor-gallery",
+      "page": "myth-theme-buildings",
+      "section": "精制与装饰建造",
+      "title": "地皮与装饰",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "人参果树地毯",
+          "image": "images/wiki/myth-theme/catalog/infantree_carpet.webp"
+        },
+        {
+          "name": "竹林地皮",
+          "image": "images/wiki/myth-theme/catalog/turf_myth_zhu.webp"
+        },
+        {
+          "name": "桃园地皮",
+          "image": "images/wiki/myth-theme/catalog/turf_quagmire_parkfield.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-shop-iron-gallery",
+      "page": "myth-theme-buildings",
+      "section": "商品与服务价格",
+      "title": "铸铁装备",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "铸铁大刀",
+          "image": "images/wiki/myth-theme/catalog/myth_iron_broadsword.webp"
+        },
+        {
+          "name": "铸铁头盔",
+          "image": "images/wiki/myth-theme/catalog/myth_iron_helmet.webp"
+        },
+        {
+          "name": "铸铁战甲",
+          "image": "images/wiki/myth-theme/catalog/myth_iron_battlegear.webp"
+        }
+      ],
+      "placement": "lead"
+    },
+    {
+      "id": "theme-shop-treasure-gallery",
+      "page": "myth-theme-buildings",
+      "section": "藏宝占卜",
+      "title": "藏宝线索与显形宝藏",
+      "layout": "aside",
+      "items": [
+        {
+          "name": "线索纸",
+          "image": "images/wiki/myth-theme/catalog/treasure_paper_myth.webp"
+        },
+        {
+          "name": "很正常的土堆",
+          "image": "images/wiki/myth-theme/structures/treasure_show_myth.webp"
+        }
+      ],
+      "placement": "aside"
+    },
+    {
+      "id": "theme-flight-cloud-gallery",
+      "page": "myth-theme-flight",
+      "section": "角色专属飞行",
+      "title": "腾云形态",
+      "layout": "catalog",
+      "items": [
+        {
+          "name": "通用腾云",
+          "image": "images/wiki/myth-theme/flight/myth_cloud_common.webp"
+        },
+        {
+          "name": "筋斗云",
+          "image": "images/wiki/myth-theme/flight/myth_cloud_wukong.webp"
+        },
+        {
+          "name": "阴风",
+          "image": "images/wiki/myth-theme/flight/myth_cloud_white_bone.webp"
+        },
+        {
+          "name": "棉花云",
+          "image": "images/wiki/myth-theme/flight/myth_cloud_pigsy.webp"
+        },
+        {
+          "name": "雷云",
+          "image": "images/wiki/myth-theme/flight/myth_cloud_yangjian.webp"
+        },
+        {
+          "name": "霜玉云",
+          "image": "images/wiki/myth-theme/flight/myth_cloud_yutu.webp"
+        },
+        {
+          "name": "白无常·幽冥飞行",
+          "image": "images/wiki/myth-theme/flight/myth_cloud_yama_white.webp"
+        },
+        {
+          "name": "黑无常·幽冥飞行",
+          "image": "images/wiki/myth-theme/flight/myth_cloud_yama_black.webp"
+        }
+      ],
+      "placement": "lead"
+    }
+  ],
+  "demos": []
+}

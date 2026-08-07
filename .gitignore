@@ -13,3 +13,9 @@ logs/
 # Dependency/build folders if the site is later tooled up
 node_modules/
 dist/
+
+# Local-only asset production records and one-off conversion tools
+data/wiki/shared/myth-asset-map.json
+fonts/NotoSerifSC-Bold-subset.woff2
+tools/convert-ktex-dxt5.cjs
+tools/migrate-gallery-placement.py

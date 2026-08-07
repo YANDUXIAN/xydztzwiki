@@ -1,5 +1,5 @@
 // ============================================
-// 《腌笃鲜》官方维基 - Main Entry
+// 《腌笃鲜》维基百科 - Main Entry
 // ============================================
 
 window.XYDZTZ = window.XYDZTZ || {};
@@ -7,77 +7,87 @@ window.XYDZTZ = window.XYDZTZ || {};
 (function () {
   'use strict';
 
-  const MD_URL = './content.md';
-  const CACHE_KEY = 'xydztz_content_v3';
-  const CACHE_TIME_KEY = 'xydztz_content_time_v3';
-
-  async function fetchContent() {
-    const cached = localStorage.getItem(CACHE_KEY);
-
+  function readHash() {
+    const value = location.hash.slice(1);
     try {
-      const headers = {};
-      const cachedTime = cached ? localStorage.getItem(CACHE_TIME_KEY) : null;
-      if (cachedTime) headers['If-Modified-Since'] = cachedTime;
-
-      const resp = await fetch(MD_URL, { headers });
-
-      if (resp.status === 304 && cached) {
-        return cached;
-      }
-
-      if (resp.ok) {
-        const text = await resp.text();
-        localStorage.setItem(CACHE_KEY, text);
-        localStorage.setItem(CACHE_TIME_KEY, new Date().toUTCString());
-        return text;
-      }
-
-      throw new Error(`HTTP ${resp.status}`);
+      return decodeURIComponent(value);
     } catch (err) {
-      if (cached) {
-        console.warn('《腌笃鲜》网络请求失败，使用缓存内容', err);
-        return cached;
-      }
-      throw err;
+      return value;
     }
+  }
+
+  function findLocalTarget(hash) {
+    if (!hash) return null;
+    const direct = document.getElementById(hash);
+    if (direct) return direct;
+    return Array.from(document.querySelectorAll('[data-legacy-id]'))
+      .find((element) => element.dataset.legacyId === hash) || null;
+  }
+
+  async function resolveInitialAnchor() {
+    const hash = readHash();
+    if (!hash) return;
+
+    const target = findLocalTarget(hash);
+    if (target) {
+      if (target.id && target.id !== hash) {
+        history.replaceState(null, '', `#${encodeURIComponent(target.id)}`);
+      }
+      requestAnimationFrame(() => {
+        target.scrollIntoView({ block: 'start' });
+      });
+      return;
+    }
+
+    const crossPageUrl = await window.XYDZTZ.toc?.resolveAnchor(hash);
+    if (crossPageUrl) location.replace(crossPageUrl);
+  }
+
+  function restoreHistoryAnchor() {
+    const target = findLocalTarget(readHash());
+    if (target) target.scrollIntoView({ block: 'start' });
+  }
+
+  async function stabilizeHistoryAnchor() {
+    const hash = readHash();
+    if (!hash) return;
+
+    await new Promise((resolve) => {
+      requestAnimationFrame(() => requestAnimationFrame(resolve));
+    });
+    if (readHash() !== hash) return;
+    restoreHistoryAnchor();
+
+    if (document.fonts?.ready) {
+      await document.fonts.ready;
+      if (readHash() === hash) restoreHistoryAnchor();
+    }
+  }
+
+  function waitForWindowLoad() {
+    if (document.readyState === 'complete') return Promise.resolve();
+    return new Promise((resolve) => {
+      window.addEventListener('load', resolve, { once: true });
+    });
   }
 
   async function init() {
     const main = document.getElementById('main-content');
+    if (!main) return;
 
-    try {
-      const mdText = await fetchContent();
+    window.XYDZTZ.theme?.init();
+    window.XYDZTZ.ui?.init();
+    window.XYDZTZ.renderer?.enhance(main);
 
-      window.XYDZTZ.renderer?.render(mdText);
+    window.XYDZTZ.toc?.generate();
+    window.XYDZTZ.toc?.setupSearch();
+    window.XYDZTZ.scroll?.init();
 
-      window.XYDZTZ.toc?.generate();
-      window.XYDZTZ.toc?.setupSearch();
-
-      window.XYDZTZ.scroll?.init();
-
-      window.XYDZTZ.ui?.init();
-
-      window.XYDZTZ.theme?.init();
-
-      if (location.hash) {
-        const target = document.getElementById(location.hash.slice(1));
-        if (target) {
-          setTimeout(() => {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, 100);
-        }
-      }
-    } catch (err) {
-      console.error('《腌笃鲜》初始化失败:', err);
-      if (main) {
-        main.innerHTML = `
-          <div class="loading">
-            <p style="color:var(--text-secondary)">文档加载失败，请刷新页面重试</p>
-            <p style="color:var(--color-danger);font-size:13px;margin-top:8px">${err.message}</p>
-          </div>
-        `;
-      }
-    }
+    // 媒体清单不阻塞目录、搜索和深链；注入完成后再校正一次锚点位置。
+    const mediaReady = Promise.resolve(window.XYDZTZ.media?.init());
+    const windowReady = waitForWindowLoad();
+    await resolveInitialAnchor();
+    Promise.all([mediaReady, windowReady]).then(stabilizeHistoryAnchor).catch(() => {});
   }
 
   if (document.readyState === 'loading') {
@@ -85,4 +95,5 @@ window.XYDZTZ = window.XYDZTZ || {};
   } else {
     init();
   }
+  window.addEventListener('popstate', restoreHistoryAnchor);
 })();

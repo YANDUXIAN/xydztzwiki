@@ -1,0 +1,621 @@
+<!doctype html>
+<!-- ============================================
+     《腌笃鲜》维基百科 - Main Page
+     ============================================ -->
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="查阅《神话书说》的主题植物、人参果树、农业与料理资料。" />
+    <meta name="keywords" content="腌笃鲜,饥荒,神话书说,模组,元辰劫运,盘丝娘娘,wiki,攻略" />
+    <meta name="author" content="《腌笃鲜》资料整理" />
+    <meta name="theme-color" content="#faf8f3" />
+    <script>
+      (() => {
+        let theme = 'light';
+        try {
+          const saved = localStorage.getItem('xydztz-theme') || localStorage.getItem('xdyztz-theme');
+          theme = saved === 'dark' || saved === 'light'
+            ? saved
+            : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch (err) {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', theme === 'dark' ? '#15110e' : '#faf8f3');
+      })();
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="农业与料理 | 神话主题 | 《腌笃鲜》" />
+    <meta property="og:description" content="查阅《神话书说》的主题植物、人参果树、农业与料理资料。" />
+    <meta property="og:site_name" content="《腌笃鲜》" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:url" content="https://yanduxian.cn/myth-theme/agriculture/" />
+    <meta property="og:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1021" />
+    <meta property="og:image:alt" content="《腌笃鲜》雪景封面" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="农业与料理 | 神话主题 | 《腌笃鲜》" />
+    <meta name="twitter:description" content="查阅《神话书说》的主题植物、人参果树、农业与料理资料。" />
+    <meta name="twitter:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+
+    <title>农业与料理 | 神话主题 | 《腌笃鲜》</title>
+    <link rel="canonical" href="https://yanduxian.cn/myth-theme/agriculture/" />
+
+    <link rel="preload" href="/images/hero-default-1200.webp" imagesrcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" imagesizes="100vw" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/fonts/MaShanZheng-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/png" href="/images/mod-icon.png?v=20260719" />
+
+    <link rel="stylesheet" href="/styles/fonts.css?v=20260804o" />
+    <link rel="stylesheet" href="/styles/variables.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/base.css?v=20260804g" />
+    <link rel="stylesheet" href="/styles/hero.css?v=20260804r" />
+    <link rel="stylesheet" href="/styles/layout.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/markdown.css?v=20260805u" />
+    <link rel="stylesheet" href="/styles/components.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/media.css?v=20260806b" />
+    <link rel="stylesheet" href="/styles/responsive.css?v=20260805m" />
+  </head>
+  <body data-book-id="myth-theme" data-book-title="神话主题" data-chapter-slug="myth-theme-agriculture" data-chapter-title="农业与料理" data-search-index="/search-index.json?v=ca6182164b96">
+    <div class="read-progress" id="read-progress" aria-hidden="true"></div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2c-1.05 0-2.05.16-3 .46 1.69 1.24 2.79 3.26 2.79 5.54 0 3.87-3.13 7-7 7-.57 0-1.13-.08-1.67-.22C2.52 18.49 6.45 22 11 22c5.52 0 10-4.48 10-10S16.52 2 11 2c-.66 0-1.3.07-1.92.19C9.23 2.06 9.12 2 9 2z"/></svg>
+    </button>
+
+    <header class="hero" id="hero" role="banner">
+      <picture class="hero-bg-layer hero-bg-default" aria-hidden="true">
+        <source type="image/webp" srcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" sizes="100vw" />
+        <img src="/images/hero-default.jpg" srcset="/images/hero-default-1200.jpg 1200w, /images/hero-default.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" fetchpriority="high" />
+      </picture>
+      <picture class="hero-bg-layer hero-bg-hover" id="hero-hover-picture" aria-hidden="true">
+        <source type="image/webp" data-srcset="/images/hero-hover-1200.webp 1200w, /images/hero-hover.webp 2400w" sizes="100vw" />
+        <img data-src="/images/hero-hover.jpg" data-srcset="/images/hero-hover-1200.jpg 1200w, /images/hero-hover.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" />
+      </picture>
+      <div class="hero-sun-glow" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-gradient-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-title-row">
+          <h1 class="hero-title">《腌笃鲜》</h1>
+          <img class="hero-seal" src="/images/mod-icon.png?v=20260719" alt="《腌笃鲜》模组图标" width="68" height="68" />
+        </div>
+        <div class="hero-actions" aria-label="主要操作">
+          <a
+            class="hero-btn hero-btn-primary"
+            href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="在 Steam 创意工坊订阅《腌笃鲜》（新窗口）"
+          >订阅模组</a>
+          <button class="hero-btn hero-btn-secondary" id="hero-btn" type="button">开始查阅</button>
+        </div>
+      </div>
+
+      <div class="hero-subtitles">
+        <p class="hero-subtitle">三十五劫运交织，十二元辰下凡，灵台方寸显真心</p>
+        <p class="hero-subtitle">玉兔拨弦，黑风倒卷——人物精怪双篇登场</p>
+      </div>
+
+      <svg class="hero-torn-edge" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 48 L0 28 L36 32 L72 22 L120 30 L168 20 L216 28 L264 18 L312 30 L360 22 L408 28 L456 18 L504 26 L552 16 L600 26 L648 32 L696 22 L744 28 L792 18 L840 28 L888 22 L936 30 L984 20 L1032 28 L1080 22 L1128 30 L1176 18 L1224 26 L1272 30 L1320 22 L1368 28 L1404 24 L1440 28 L1440 48 Z" />
+      </svg>
+    </header>
+
+    <noscript>
+      <div class="noscript-warning" role="alert">
+        <strong>提示：</strong>正文仍可阅读；启用 JavaScript 后可使用目录搜索、劫运查询和媒体灯箱。
+      </div>
+    </noscript>
+
+    <nav class="chapter-nav" aria-label="神话主题篇章导航">
+      <div class="chapter-nav-inner" id="chapter-nav-inner">
+        <!-- CHAPTER_NAV_START -->
+        <details class="book-switcher">
+          <summary><strong>神话主题</strong></summary>
+          <div class="book-switcher-menu">
+            <a class="book-switcher-link" href="/">腌笃鲜</a>
+            <a class="book-switcher-link active" href="/myth-theme/">神话主题<span class="sr-only">（当前）</span></a>
+            <a class="book-switcher-link" href="/myth-characters/">神话人物</a>
+          </div>
+        </details>
+        <span class="chapter-nav-divider" aria-hidden="true"></span>
+        <div class="chapter-nav-pages">
+          <a class="chapter-nav-link" href="/myth-theme/">主题总览</a>
+        <a class="chapter-nav-link" href="/myth-theme/world/">世界地点</a>
+        <a class="chapter-nav-link" href="/myth-theme/npcs/">NPC 与交互</a>
+        <a class="chapter-nav-link" href="/myth-theme/creatures/">首领与怪物</a>
+        <a class="chapter-nav-link" href="/myth-theme/artifacts/">炼丹与法宝</a>
+        <a class="chapter-nav-link active" href="/myth-theme/agriculture/" aria-current="page">农业与料理</a>
+        <a class="chapter-nav-link" href="/myth-theme/buildings/">建筑与生态</a>
+        <a class="chapter-nav-link" href="/myth-theme/flight/">腾云与技能</a>
+        </div>
+        <!-- CHAPTER_NAV_END -->
+      </div>
+      <div class="reading-position" id="reading-position">
+        <span class="reading-position-text"><span class="rp-num"></span><span class="rp-title"></span></span>
+      </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar" aria-label="目录导航">
+        <div class="sidebar-header">
+          <h3 id="sidebar-title">农业与料理目录</h3>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="toc-search" placeholder="搜索三本资料…" aria-label="搜索全部资料" />
+        </div>
+        <ul class="toc-list" id="toc-list">
+          <!-- SIDEBAR_TOC_START -->
+          <li class="toc-item toc-section has-children open">
+            <a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E8%B5%84%E6%BA%90" data-id="主题资源" data-num="壹">主题资源</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%9F%A0%E6%A1%83" data-id="蟠桃">蟠桃</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%91%AB%E8%8A%A6" data-id="葫芦">葫芦</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%8E%B2" data-id="莲">莲</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%AB%B9%E6%9E%97" data-id="竹林">竹林</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%8A%AD%E8%95%89%E6%A0%91" data-id="芭蕉树">芭蕉树</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E4%BA%BA%E5%8F%82%E6%9E%9C%E6%A0%91" data-id="人参果树" data-num="贰">人参果树</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%94%9F%E9%95%BF%E9%98%B6%E6%AE%B5" data-id="生长阶段">生长阶段</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%9C%89%E6%95%88%E7%94%9F%E9%95%BF%E6%9D%A1%E4%BB%B6" data-id="有效生长条件">有效生长条件</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%97%A5%E4%B9%8B%E7%B2%BE%E5%8D%8E%E4%B8%8E%E6%9C%88%E4%B9%8B%E7%B2%BE%E5%8D%8E" data-id="日之精华与月之精华">日之精华与月之精华</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%88%90%E7%86%9F%E6%A0%91%E5%86%A0" data-id="成熟树冠">成熟树冠</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E9%87%87%E6%94%B6-%E4%BF%9D%E5%AD%98%E4%B8%8E%E9%A3%9F%E7%94%A8" data-id="采收-保存与食用">采收、保存与食用</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%A4%B1%E8%B4%A5%E4%B8%8E%E6%81%A2%E5%A4%8D" data-id="失败与恢复">失败与恢复</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E6%96%99%E7%90%86" data-id="主题料理" data-num="叁">主题料理</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%97%A5%E5%B8%B8%E7%B4%A0%E9%A3%9F%E4%B8%8E%E5%B9%B4%E5%91%B3%E9%94%85%E8%8F%9C" data-id="日常素食与年味锅菜">日常素食与年味锅菜</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%94%9C%E7%B2%BD%E5%AD%90%E4%B8%8E%E5%92%B8%E7%B2%BD%E5%AD%90" data-id="甜粽子与咸粽子">甜粽子与咸粽子</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%B0%8F%E5%BA%97%E9%A3%9F%E5%93%81" data-id="小店食品">小店食品</a></li>
+            </ul>
+          </li>
+          <!-- SIDEBAR_TOC_END -->
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <article class="content-card">
+          <div class="md-body" id="main-content" data-static-snapshot="ready" data-content-hash="ca6182164b96" data-chapter="myth-theme-agriculture">
+            <!-- STATIC_CONTENT_START -->
+<h2 id="农业与料理" data-legacy-id="sec-农业与料理-pvqfmr" data-eyebrow="第陆篇">农业与料理</h2><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：资源与农业总览] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：蟠桃、竹子、莲花、葫芦、芭蕉、人参果、主题料理]</p>
+</blockquote><p class="lede">蟠桃、莲花、竹子和葫芦同时参与料理、NPC 交互、炼制与建筑配方。</p>
+<h3 id="主题资源" data-legacy-id="sec-主题资源-ai8zm1" data-num="壹">主题资源</h3><h4 id="蟠桃" data-legacy-id="sec-蟠桃-nomb">蟠桃</h4><p>普通蟠桃可直接食用或用于桃系料理；大蟠桃可种植或交付NPC。大蟠桃种下后依次经过桃树芽、桃树苗两段生长，每段约 <strong>6–10 个游戏日</strong>，随后成为成熟桃树。</p>
+<p>成熟桃树被砍伐后转为一次性木材与桃子掉落，并可能增加淘气值。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">桃系物品</th>
+<th align="left">用途与效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">普通蟠桃</td>
+<td align="left">6 生命 / 10.5 饥饿 / 5 理智；也用于蟠桃素酒、蟠桃大会与嫦娥好感</td>
+</tr>
+<tr>
+<td align="left">烤蟠桃</td>
+<td align="left">3 生命 / 10.5 饥饿 / 0 理智；普通蟠桃或大蟠桃烤制后都会得到它</td>
+</tr>
+<tr>
+<td align="left">大蟠桃</td>
+<td align="left">可直接食用，1024 生命 / 2048 饥饿 / 4096 理智；也可种树、一次交嫦娥 +50 好感，并参与她的随机月饼奖励判定</td>
+</tr>
+<tr>
+<td align="left">蟠桃素酒</td>
+<td align="left">蟠桃×3加冰；3 生命 / 12.5 饥饿 / 60 理智，并提供短时降温</td>
+</tr>
+<tr>
+<td align="left">蟠桃大会</td>
+<td align="left">蟠桃×2、蝴蝶翅膀、浆果；50 生命 / 37.5 饥饿 / 10 理智</td>
+</tr>
+</tbody></table></div></div><h4 id="葫芦" data-legacy-id="sec-葫芦-n8nv">葫芦</h4><p>葫芦偏好秋季；从种子到收获通常约 <strong>4–7 个游戏日</strong>，需要中等湿度，主要消耗第三类养分。葫芦在普通种子池中的权重为 0.5；按当前原版作物池加葫芦后的总权重 17.5 计算，普通种子长成葫芦的概率为 <strong>1/35，约 2.86%</strong>。其他模组若向普通种子池加入作物或调整权重，实际概率会随之变化。</p>
+<p>农田中的作物收获物为葫芦。生葫芦提供 3 生命 / 37.5 饥饿，烤制品名称“烤葫芦”，食用获得 8 生命 / 37.5 饥饿；生葫芦保存期更长。葫芦同时用于料理、炼丹和葫芦类容器或工具。</p>
+<p>葫芦种子可在禾种小铺随机上架，基础价 <strong>20 枚铜钱</strong>。葫芦也能按农作物规则培育成巨型葫芦；巨型葫芦出现在收购单时，基础收购价为 <strong>10 枚</strong>。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">料理</th>
+<th align="left">严格条件</th>
+<th align="left">数值与效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">葫芦汤</td>
+<td align="left">葫芦度至少 2，不能有肉</td>
+<td align="left">20 生命 / 37.5 饥饿 / 15 理智</td>
+</tr>
+<tr>
+<td align="left">葫芦鸡蛋饼</td>
+<td align="left">葫芦度至少 2、蛋度至少 2，不能有肉</td>
+<td align="left">40 生命 / 75 饥饿 / 10 理智</td>
+</tr>
+</tbody></table></div></div><h4 id="莲" data-legacy-id="sec-莲-q0i">莲</h4><p>莲花株不是一次性植物。前 3 个阶段各约 2 天，后 2 个阶段各约 3.5 天，存在少量随机浮动；夏季成长更快。开花阶段可剃取 <strong>1–2 朵莲花</strong>和 <strong>0–1 片莲叶</strong>；成熟结实时可取得 <strong>1–2 个莲藕</strong>与 <strong>2–3 粒莲子</strong>。无论哪种采集，植株都会回到初始阶段重新生长。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">莲系基础物</th>
+<th align="left">数值与用途</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">莲藕</td>
+<td align="left">8 生命 / 25 饥饿 / 0 理智；可烤制</td>
+</tr>
+<tr>
+<td align="left">烤藕片</td>
+<td align="left">20 生命 / 25 饥饿 / 15 理智</td>
+</tr>
+<tr>
+<td align="left">莲子</td>
+<td align="left">0 生命 / 5 饥饿 / 0 理智；可种植或烤制</td>
+</tr>
+<tr>
+<td align="left">烤莲子</td>
+<td align="left">1 生命 / 5 饥饿 / 0 理智</td>
+</tr>
+<tr>
+<td align="left">莲叶帽</td>
+<td align="left">莲叶×1、绳子×1，无科技；70% 防水、绝缘，10 天后腐坏消失</td>
+</tr>
+</tbody></table></div></div><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">莲系料理</th>
+<th align="left">严格条件</th>
+<th align="left">数值与效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">冰糖莲子羹</td>
+<td align="left">冰、蜂蜜、莲子×2</td>
+<td align="left">8 生命 / 12.5 饥饿 / 15 理智</td>
+</tr>
+<tr>
+<td align="left">折月藕盒</td>
+<td align="left">菜度至少 2、树枝、莲藕、月树花，不能有肉</td>
+<td align="left">20 生命 / 25 饥饿 / 15 理智，可叠 3</td>
+</tr>
+<tr>
+<td align="left">莲藕排骨汤</td>
+<td align="left">肉度至少 2、莲藕；不能有树枝，怪物度低于 1.1</td>
+<td align="left">40 生命 / 75 饥饿 / 5 理智</td>
+</tr>
+<tr>
+<td align="left">荷包鸡</td>
+<td align="left">莲叶、鸡腿×2、浆果</td>
+<td align="left">40 生命 / 75 饥饿 / 33 理智</td>
+</tr>
+<tr>
+<td align="left">覆海宴</td>
+<td align="left">龙虾、石果、莲花与<strong>恰好 1 肉度</strong></td>
+<td align="left">40 生命 / 75 饥饿 / 33 理智，并给予避水状态</td>
+</tr>
+</tbody></table></div></div><h4 id="竹林" data-legacy-id="sec-竹林-lhha">竹林</h4><p>竹林在雨中更容易推进群体生长并出现竹笋；成熟竹提供竹材，最成熟阶段还会产出苍竹。竹笋生吃为 8 生命 / 12.5 饥饿，烤笋为 20 生命 / 12.5 饥饿 / 5 理智；烤笋腐败更快。</p>
+<h4 id="芭蕉树" data-legacy-id="sec-芭蕉树-jsaj9">芭蕉树</h4><p>芭蕉树可在农耕栏制作，需要<strong>洞穴香蕉×1、活木×1、便便桶×1</strong>与炼金引擎科技。成品只能放在可种植地面上，刚建成时没有果实；非冬季经过约 <strong>4 个游戏日</strong>才会长出下一根香蕉，冬季会暂停重新结果。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">操作</th>
+<th align="left">产物与后续状态</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">正常采摘成熟芭蕉树</td>
+<td align="left">香蕉×1、芭蕉叶×1，并有 50% 概率再得芭蕉叶×1；采后进入约 4 天再生</td>
+</tr>
+<tr>
+<td align="left">砍倒有果实的树</td>
+<td align="left">木头×1、树枝×2、香蕉×1、芭蕉叶×2，留下树桩</td>
+</tr>
+<tr>
+<td align="left">砍倒空树</td>
+<td align="left">木头×1、树枝×2，留下树桩；不会补发本轮香蕉或芭蕉叶</td>
+</tr>
+<tr>
+<td align="left">铲除树桩</td>
+<td align="left">木头×1</td>
+</tr>
+<tr>
+<td align="left">树木烧毁后再砍</td>
+<td align="left">木炭×1，不再保留正常采摘与砍树产物</td>
+</tr>
+</tbody></table></div></div><p>芭蕉叶既是蕉叶龙虾球的配料，也可用 2 片在炼金引擎下制作一份<strong>蕉叶包装</strong>。它使用普通捆绑包装界面，可封装最多 4 格物品；封好后的成品显示为<strong>蕉叶包裹</strong>，拆包后返还 1 片芭蕉叶。芭蕉叶本身还能作为中型燃料和海钓浮标使用。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：竹林管理默认采用均衡性能模式，以缓解后期竹林堆积带来的服务器压力；三种神话竹均可用防腐喷雾蜡封并固定生长形态。暗影收割者采收芭蕉树不掉芭蕉叶的问题也会自动修复。详见<a href="/optimizations/">神话优化</a>与<a href="/compatibility/">兼容修复</a>。</p>
+</blockquote><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">料理</th>
+<th align="left">严格条件</th>
+<th align="left">数值与效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">竹笋炒肉</td>
+<td align="left">生/熟竹笋、肉度至少 1.5、菜度至少 1.5，怪物度不高于 1</td>
+<td align="left">30 生命 / 75 饥饿 / 15 理智</td>
+</tr>
+<tr>
+<td align="left">竹筒饭</td>
+<td align="left">莲子、竹子、菜度至少 2，不能有肉</td>
+<td align="left">20 生命 / 75 饥饿 / 5 理智</td>
+</tr>
+<tr>
+<td align="left">蕉叶龙虾球</td>
+<td align="left">龙虾、甜味剂、芭蕉叶与<strong>恰好 1 肉度</strong></td>
+<td align="left">60 生命 / 37.5 饥饿 / 33 理智</td>
+</tr>
+<tr>
+<td align="left">香蕉奶昔</td>
+<td align="left">冰、乳制品、洞穴香蕉；不能有肉、菜、不可食物或蛋</td>
+<td align="left">20 生命 / 12.5 饥饿 / 60 理智，长时降温</td>
+</tr>
+</tbody></table></div></div><hr>
+<h3 id="人参果树" data-legacy-id="sec-人参果树-aa8o59" data-num="贰">人参果树</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：重要植物与基地工程] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：算命小铺、藏宝线索、水井、羊脂玉净瓶、日月精华、金击子]</p>
+</blockquote><p>人参果树不是找到树根、浇几次水就会自然长成的普通作物。它同时消耗一口水井、一整瓶玉净瓶甘露、日月两种精华、至少九次有效日进度和约四十九天结果时间；任何一步遗漏，都会让果树停在当前阶段。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：成熟后的产果周期默认调整为 5 天，可选原生 49 天、15 天或 2 天；同时提供 Insight 信息、周边可耕土壤生成保护、本地树冠透明度和地毯叉除。详见<a href="/optimizations/">神话优化</a>。</p>
+</blockquote><h4 id="生长阶段" data-legacy-id="sec-生长阶段-fefb7j">生长阶段</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">阶段</th>
+<th align="left">必须完成的操作</th>
+<th align="left">限制与结果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">1. 取得枯根</td>
+<td align="left">在算命小铺购买藏宝线索，完成藏宝条件；显现的宝藏有机会掉落“被推倒的树根”</td>
+<td align="left">枯根是不可放进容器的重物，会降低搬运速度，而且能被火烧掉</td>
+</tr>
+<tr>
+<td align="left">2. 井中栽根</td>
+<td align="left">装备枯根，在<strong>水井</strong>上执行种植</td>
+<td align="left">枯根会投入水井，水井整体变成幼株；这口井不再继续具备接水和灭闷烧功能</td>
+</tr>
+<tr>
+<td align="left">3. 甘露复苏</td>
+<td align="left">羊脂玉净瓶必须达到 <strong>100 水量</strong>，一次性对幼株使用；会消耗全部 100 水量</td>
+<td align="left">20—99 水量都不能推进此阶段，不能靠五次 20 水量的普通施放逐步灌满</td>
+</tr>
+<tr>
+<td align="left">4. 日月养树</td>
+<td align="left">给复苏仙树分别加入日之精华、月之精华，并连续完成至少 <strong>9 次有效日进度</strong></td>
+<td align="left">两种精华必须不同；只投精华不照料、只照料但地块不合格，都不会完成成树</td>
+</tr>
+<tr>
+<td align="left">5. 成树结果</td>
+<td align="left">成熟后每隔 <strong>49 个游戏日</strong>生成一个树上人参果，未采果可逐步积累，上限 20 个</td>
+<td align="left">普通采摘会让果实落地，并在约 0.3 秒后消失</td>
+</tr>
+</tbody></table></div></div><h4 id="有效生长条件" data-legacy-id="sec-有效生长条件-rek1t8">有效生长条件</h4><p>复苏仙树每天换日时会结算上一日是否同时满足“已取得地块供养”和“玩家当天照料过一次”。满足才把成长计数加 1，然后清空当日状态，重新检查下一日环境。也就是说，照料特效亮起并不代表地块一定合格；它只完成两项条件中的一项。</p>
+<p>规则会检查树中心及四周间隔约 4 格的 <strong>3×3 共 9 个地块点</strong>。每一个点都必须满足：</p>
+<ol>
+<li>是耕地地皮；</li><li>地块上没有其他可生长/可采集植物，也没有占地的可工作建筑或物件；</li><li>三类养分都至少为 1，检查通过后每块各消耗 1 点三类养分；</li><li>土壤已经湿润，检查通过后每块消耗 2 点湿度；</li><li>不在洞穴，也不位于其他大树冠或小树冠的遮蔽范围内。</li></ol>
+<p>一次成功检查等价于从九块地合计消耗 <strong>9 点生长配方、9 点堆肥、9 点粪肥和 18 点湿度</strong>。</p>
+<h4 id="日之精华与月之精华" data-legacy-id="sec-日之精华与月之精华-694bm3">日之精华与月之精华</h4><p>日之精华来自矮星，月之精华来自极光。角色需要<strong>装备紫金红葫芦</strong>，对对应光源执行吸取；光源会被收走，精华直接进入葫芦内部。随后把两种精华分别用于复苏仙树即可，重复投入同一种无效。</p>
+<p>日月精华落地后会立刻逸散；放入没有精华容器资格的普通背包或容器时也会消失，并造成周围温度变化。紫金红葫芦和八卦炉可以安全容纳精华。</p>
+<h4 id="成熟树冠" data-legacy-id="sec-成熟树冠-cuesfy">成熟树冠</h4><p>成熟人参果树的树冠范围约为 <strong>28 格</strong>，同时承担基地气候设施、避雷设施和专属科技站三种职责：</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">功能</th>
+<th align="left">规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">树冠遮蔽</td>
+<td align="left">树下角色获得 60% 防水修正和正向理智修正，并使用大树冠的遮阳、挡雨逻辑</td>
+</tr>
+<tr>
+<td align="left">避雷与回馈</td>
+<td align="left">28 格内阻挡雷击；每次承接雷击会在周围抛出 10—14 个树枝、草或蕨叶</td>
+</tr>
+<tr>
+<td align="left">萤火虫生态</td>
+<td align="left">白天切换时，树冠内萤火虫少于 10 只，有 70% 概率补生 1 只</td>
+</tr>
+<tr>
+<td align="left">人参果科技</td>
+<td align="left">靠近树可获得人参果树科技；当前直接使用该科技的配方是人参果地毯：树枝×4、蕨叶×4</td>
+</tr>
+</tbody></table></div></div><h4 id="采收-保存与食用" data-legacy-id="sec-采收-保存与食用-gyizyu">采收、保存与食用</h4><p>树上人参果只有在采摘者<strong>装备金击子</strong>时才会直接进入物品栏。空手或使用普通工具采摘时，果实会先落地；约 0.3 秒后便会消失。</p>
+<p>人参果保鲜期为 <strong>1 个游戏日</strong>；沾湿会迅速腐败，燃烧后变成木炭，掉在陆地上会直接消失。</p>
+<p>食用时会把生命、饥饿和理智全部补到上限，并附加“长生不死”状态：</p>
+<ul>
+<li>角色生命比例保持在 <strong>1/3 或以上</strong>时，每 20 秒恢复 5 生命；</li><li>一旦生命跌到 1/3 以下、角色死亡或变成鬼魂，状态立即结束；它不是低血量自动救命；</li><li>旺达在状态持续时停止自然衰老，状态结束后恢复正常衰老速度；</li><li>再吃一枚只会重置同一个状态的周期，不会叠加多层回复。</li></ul>
+<h4 id="失败与恢复" data-legacy-id="sec-失败与恢复-bpqc4l">失败与恢复</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">事故</th>
+<th align="left">结果</th>
+<th align="left">恢复办法</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">幼株被锤毁</td>
+<td align="left">掉落 3 木头、2 石砖，过程中止</td>
+<td align="left">需要重新取得枯根并再消耗一口水井</td>
+</tr>
+<tr>
+<td align="left">复苏仙树着火烧毁</td>
+<td align="left">退回一口<strong>干涸水井</strong></td>
+<td align="left">下雨后约 5 秒水井会重新蓄水，但枯根、满瓶甘露、已投精华和培育进度均不会自动返还</td>
+</tr>
+<tr>
+<td align="left">精华掉地或放错容器</td>
+<td align="left">精华逸散并造成局部升温/降温</td>
+<td align="left">重新准备矮星或极光，再用装备中的紫金红葫芦吸取</td>
+</tr>
+<tr>
+<td align="left">使用普通工具采摘</td>
+<td align="left">果实落地，约 0.3 秒后消失</td>
+<td align="left">下一批果实需等待 49 天；装备金击子采摘时会直接进入物品栏。</td>
+</tr>
+<tr>
+<td align="left">拆除或燃烧成熟树</td>
+<td align="left">成熟树不能被锤击、采掘，也不能点燃</td>
+<td align="left">成熟人参果树不能通过常规锤击、采掘或点燃方式迁移。</td>
+</tr>
+</tbody></table></div></div><hr>
+<h3 id="主题料理" data-legacy-id="sec-主题料理-ai29sa" data-num="叁">主题料理</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：料理系统] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：烹饪锅、严格配方、小店食品、年味状态、温度、保鲜]</p>
+</blockquote><p>主题食物分为烹饪锅配方与青竹小店商品；小店商品没有烹饪锅配方。</p>
+<h4 id="日常素食与年味锅菜" data-legacy-id="sec-日常素食与年味锅菜-s8pwuq">日常素食与年味锅菜</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">料理</th>
+<th align="left">严格条件</th>
+<th align="left">收益与效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">蜂蜜素饼</td>
+<td align="left">菜度至少 1.5、甜味剂至少 2；不能有肉或蜂王浆</td>
+<td align="left">20 生命 / 37.5 饥饿 / 5 理智</td>
+</tr>
+<tr>
+<td align="left">素斋</td>
+<td align="left">菜度至少 3.5；禁肉、水果、怪物度、甜味剂、蜂王浆、洋葱、蒜、辣椒、羊奶、黄油、曼德拉草</td>
+<td align="left">75 饥饿</td>
+</tr>
+<tr>
+<td align="left">水饺</td>
+<td align="left">有肉、玉米、蒜，且菜度至少 2.5</td>
+<td align="left">40 生命 / 37.5 饥饿 / 5 理智，并附带年味状态</td>
+</tr>
+<tr>
+<td align="left">大肉包子</td>
+<td align="left">玉米、肉度至少 1.5；无蒜、无不可食物，怪物度低于 2</td>
+<td align="left">20 生命 / 112.5 饥饿 / 5 理智</td>
+</tr>
+<tr>
+<td align="left">小鸡炖蘑菇</td>
+<td align="left">鸡腿恰好 2、任意蘑菇、冰</td>
+<td align="left">20 生命 / 75 饥饿 / 5 理智，并升温</td>
+</tr>
+<tr>
+<td align="left">麻辣红烧鱼</td>
+<td align="left">蒜、辣椒、鱼度至少 1；不能有不可食物</td>
+<td align="left">20 生命 / 62.5 饥饿 / 5 理智，并升温</td>
+</tr>
+<tr>
+<td align="left">八宝饭</td>
+<td align="left">菜度至少 2、水果度至少 1，并有熟橡果或莲子；不能有洋葱、蒜、辣椒</td>
+<td align="left">3 生命 / 112.5 饥饿 / 5 理智，长时升温</td>
+</tr>
+<tr>
+<td align="left">腊味合蒸</td>
+<td align="left">大肉干、怪物肉干、蜂蜜、南瓜</td>
+<td align="left">40 生命 / 112.5 饥饿 / 15 理智，保存期极长</td>
+</tr>
+<tr>
+<td align="left">折月春卷儿</td>
+<td align="left">南瓜、月树花、树枝、菜度至少 2，不能有肉</td>
+<td align="left">3 生命 / 37.5 饥饿 / 15 理智，可叠 3</td>
+</tr>
+<tr>
+<td align="left">胡萝卜汁</td>
+<td align="left">胡萝卜恰好 2、冰度至少 2，不能有肉</td>
+<td align="left">3 生命 / 12.5 饥饿 / 33 理智，并降温</td>
+</tr>
+<tr>
+<td align="left">屠苏酒</td>
+<td align="left">菜度至少 1、水果度至少 1、火荨麻、冰，不能有肉</td>
+<td align="left">-3 生命 / -10 饥饿 / 15 理智，并升温和附带特殊状态</td>
+</tr>
+<tr>
+<td align="left">猪皮冻</td>
+<td align="left">钢羊黏液、蜗牛黏液、格罗姆黏液、猪皮各 1</td>
+<td align="left">0 生命 / 0 饥饿 / -100 理智；首次食用后 120 秒内生命不会低于 1。效果仍在时再次食用会立即致死，效果结束时若仍存活则生命固定为 1；不可堆叠</td>
+</tr>
+<tr>
+<td align="left">糖人</td>
+<td align="left">蜂蜜恰好 2、树枝恰好 2</td>
+<td align="left">不是可食用料理。装备后每 2 秒消耗 1 点耐久并回复 1 理智，共 100 点耐久；作为武器只有 1 点伤害，命中后立即消失。茶肴小铺也可按基础价 4 铜钱购买</td>
+</tr>
+</tbody></table></div></div><h4 id="甜粽子与咸粽子" data-legacy-id="sec-甜粽子与咸粽子-2kd0q4">甜粽子与咸粽子</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">粽子</th>
+<th align="left">制作材料</th>
+<th align="left">拆包后的食物数值</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">甜粽子</td>
+<td align="left">素斋×1、芭蕉叶×1、绳子×1；神话科技</td>
+<td align="left">0 生命 / 75 饥饿 / 0 理智</td>
+</tr>
+<tr>
+<td align="left">咸粽子</td>
+<td align="left">肉丸×1、芭蕉叶×1、绳子×1；神话科技</td>
+<td align="left">3 生命 / 62.5 饥饿 / 5 理智</td>
+</tr>
+</tbody></table></div></div><p>制作得到的是可手持、可拆开的包裹态粽子。把它瞄准海面投掷，会生成诱鱼效果并消耗粽子；咸粽子还会分别进行 <strong>40%</strong> 的龙虾与 <strong>10%</strong> 的一角鲸生成判定，两项彼此独立。已经拆开的食物若直接掉入海里，也会转化为诱鱼效果并消失。</p>
+<h4 id="小店食品" data-legacy-id="sec-小店食品-c0lcfe">小店食品</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">商品</th>
+<th align="left">基础收益</th>
+<th align="left">特殊用途</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">糖葫芦</td>
+<td align="left">-3 生命 / 12.5 饥饿 / 33 理智</td>
+<td align="left">沃利食用后会清除食物记忆。</td>
+</tr>
+<tr>
+<td align="left">牛肉拉面</td>
+<td align="left">20 生命 / 75 饥饿 / 2 理智</td>
+<td align="left">480 秒内野牛不会主动锁定食用者；食用者受击时可召集 30 格内最多 5 头野牛攻击来犯者；刷牛时驯化度与服从度收益额外再结算一次</td>
+</tr>
+<tr>
+<td align="left">豆浆油条</td>
+<td align="left">5 生命 / 25 饥饿 / 10 理智</td>
+<td align="left">无额外状态</td>
+</tr>
+<tr>
+<td align="left">臭豆腐</td>
+<td align="left">5 生命 / 18.5 饥饿 / 5 理智</td>
+<td align="left">获得避免被目标锁定的状态。</td>
+</tr>
+<tr>
+<td align="left">驴肉火烧</td>
+<td align="left">20 生命 / 75 饥饿 / 5 理智</td>
+<td align="left">获得保暖状态。</td>
+</tr>
+<tr>
+<td align="left">莲花血鸭</td>
+<td align="left">-3 生命 / 70 饥饿 / 10 理智</td>
+<td align="left">长时升温并获得避寒状态。</td>
+</tr>
+<tr>
+<td align="left">过桥米线</td>
+<td align="left">20 生命 / 62.5 饥饿 / 5 理智</td>
+<td align="left">240 秒内，之后食用的食物若提供正理智，理智收益提高到 1.5 倍；零或负理智食物不受益</td>
+</tr>
+<tr>
+<td align="left">咸菜馒头</td>
+<td align="left">5 生命 / 75 饥饿 / 5 理智</td>
+<td align="left">获得开胃状态</td>
+</tr>
+</tbody></table></div></div>
+            <!-- STATIC_CONTENT_END -->
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <footer class="footer" id="site-footer" role="contentinfo">
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-message">
+        <p class="footer-message-text">感谢每一位订阅玩家的支持和鼓励，祝各位在《腌笃鲜》的努力下游戏愉快，武运昌隆，尽享神话之旅！</p>
+        <p class="footer-signature">——咸鱼 &amp; 大猪蹄子 敬上</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357" target="_blank" rel="noopener noreferrer">Steam 创意工坊</a>
+        <a href="https://qm.qq.com/q/iFeDTMf6Io" target="_blank" rel="noopener noreferrer">反馈交流群</a>
+      </div>
+      <p>&copy; 2026 《腌笃鲜》</p>
+      <p>反馈交流 QQ 群：1046023996</p>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <script src="/scripts/utils.js?v=20260804h"></script>
+    <script src="/scripts/renderer.js?v=20260805c"></script>
+    <script src="/scripts/toc.js?v=20260805b"></script>
+    <script src="/scripts/scroll.js?v=20260805a"></script>
+    <script src="/scripts/theme.js?v=20260804f"></script>
+    <script src="/scripts/ui.js?v=20260805b"></script>
+    <script src="/scripts/media.js?v=20260808a"></script>
+    <script src="/scripts/main.js?v=20260805c"></script>
+  </body>
+</html>

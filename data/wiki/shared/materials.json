@@ -1,0 +1,844 @@
+{
+  "schemaVersion": 1,
+  "library": "shared-materials",
+  "generatedDate": "2026-08-07",
+  "policy": {
+    "oneVisualOneFile": true,
+    "canvas": [
+      256,
+      256
+    ],
+    "format": "transparent lossless WebP",
+    "sourcePriority": [
+      "existing canonical website image",
+      "Myth Words bookinfo art",
+      "official item animation frame 0"
+    ],
+    "dynamicFruitAndVegetableRule": "not expanded into a finite image whitelist"
+  },
+  "materials": [
+    {
+      "id": "myth_bamboo",
+      "name": "神话竹",
+      "category": "神话材料",
+      "prefabOrResource": "myth_bamboo",
+      "image": "images/wiki/shared/materials/myth_bamboo.webp",
+      "contexts": [
+        "蒲团",
+        "竹篓",
+        "迁镇令"
+      ],
+      "aliases": [
+        "竹子"
+      ],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "rope",
+      "name": "绳子",
+      "category": "原版材料",
+      "prefabOrResource": "rope",
+      "image": "images/wiki/shared/materials/rope.webp",
+      "contexts": [
+        "蒲团",
+        "竹篓"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "shadowheart",
+      "name": "暗影心房",
+      "category": "原版材料",
+      "prefabOrResource": "shadowheart",
+      "image": "images/wiki/shared/materials/shadowheart.webp",
+      "contexts": [
+        "火猿石心"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "bigpeach",
+      "name": "大蟠桃",
+      "category": "神话材料",
+      "prefabOrResource": "bigpeach",
+      "image": "images/wiki/shared/materials/bigpeach.webp",
+      "contexts": [
+        "火猿石心"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "redgem",
+      "name": "红宝石",
+      "category": "原版材料",
+      "prefabOrResource": "gems",
+      "image": "images/wiki/shared/materials/redgem.webp",
+      "contexts": [
+        "火猿石心",
+        "辟火罩补充"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "dragon_scales",
+      "name": "龙鳞",
+      "category": "原版材料",
+      "prefabOrResource": "dragon_scales",
+      "image": "images/wiki/shared/materials/dragon_scales.webp",
+      "contexts": [
+        "龙皮绸缎",
+        "曲谱《浴火奏》"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "bearger_fur",
+      "name": "熊皮",
+      "category": "原版材料",
+      "prefabOrResource": "bearger_fur",
+      "image": "images/wiki/shared/materials/bearger_fur.webp",
+      "contexts": [
+        "龙皮绸缎"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "shroom_skin",
+      "name": "蛤蟆皮",
+      "category": "原版材料",
+      "prefabOrResource": "shroom_skin",
+      "image": "images/wiki/shared/materials/shroom_skin.webp",
+      "contexts": [
+        "龙皮绸缎"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "mk_huoyuan",
+      "name": "火猿石心",
+      "category": "腌笃鲜材料",
+      "prefabOrResource": "mk_huoyuan",
+      "image": "images/wiki/shared/materials/mk_huoyuan.webp",
+      "contexts": [
+        "武器火元淬炼"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": "沿用神话主题既有美术，只生成一份共享网页资源。"
+    },
+    {
+      "id": "mk_longpi",
+      "name": "龙皮绸缎",
+      "category": "腌笃鲜材料",
+      "prefabOrResource": "mk_longpi",
+      "image": "images/wiki/shared/materials/mk_longpi.webp",
+      "contexts": [
+        "护甲火元淬炼"
+      ],
+      "aliases": [
+        "龙鳞绸皮"
+      ],
+      "reuse": false,
+      "note": "沿用神话主题既有美术，只生成一份共享网页资源。"
+    },
+    {
+      "id": "onemanband",
+      "name": "独奏乐器",
+      "category": "原版材料",
+      "prefabOrResource": "onemanband",
+      "image": "images/wiki/shared/materials/onemanband.webp",
+      "contexts": [
+        "曲谱《春光曲》"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "heatrock_hot",
+      "name": "滚烫热石",
+      "category": "原版材料",
+      "prefabOrResource": "heat_rock",
+      "image": "images/wiki/shared/materials/heatrock_hot.webp",
+      "contexts": [
+        "曲谱《寒风调》"
+      ],
+      "aliases": [
+        "滚烫热能石"
+      ],
+      "reuse": false,
+      "note": "固定采用热能石第 5 档滚烫状态。"
+    },
+    {
+      "id": "oceanfish_medium_8_inv",
+      "name": "冰鲷鱼",
+      "category": "原版材料",
+      "prefabOrResource": "oceanfish_medium",
+      "image": "images/wiki/shared/materials/oceanfish_medium_8_inv.webp",
+      "contexts": [
+        "曲谱《梦飞霜》"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "hivehat",
+      "name": "蜂王冠",
+      "category": "原版材料",
+      "prefabOrResource": "hivehat",
+      "image": "images/wiki/shared/materials/hivehat.webp",
+      "contexts": [
+        "曲谱《怨缠身》"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "featherfan",
+      "name": "鹅毛扇",
+      "category": "原版材料",
+      "prefabOrResource": "fan",
+      "image": "images/wiki/shared/materials/featherfan.webp",
+      "contexts": [
+        "曲谱《春风化雨》"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "dreadstone",
+      "name": "绝望石",
+      "category": "原版材料",
+      "prefabOrResource": "dreadstone",
+      "image": "images/wiki/shared/materials/dreadstone.webp",
+      "contexts": [
+        "曲谱《霸王卸甲》"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "beefalohat",
+      "name": "牛角帽",
+      "category": "原版材料",
+      "prefabOrResource": "beefalohat",
+      "image": "images/wiki/shared/materials/beefalohat.webp",
+      "contexts": [
+        "曲谱《流水无情》"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "panflute",
+      "name": "排箫",
+      "category": "原版材料",
+      "prefabOrResource": "pan_flute",
+      "image": "images/wiki/shared/materials/panflute.webp",
+      "contexts": [
+        "曲谱《夜阑谣》"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "forgetmelots",
+      "name": "勿忘我",
+      "category": "原版材料",
+      "prefabOrResource": "forgetmelots",
+      "image": "images/wiki/shared/materials/forgetmelots.webp",
+      "contexts": [
+        "排郁"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "cactus_meat",
+      "name": "仙人掌肉",
+      "category": "原版材料",
+      "prefabOrResource": "cactus_meat",
+      "image": "images/wiki/shared/materials/cactus_meat.webp",
+      "contexts": [
+        "排郁",
+        "基础捣药"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "wormlight",
+      "name": "发光浆果",
+      "category": "原版材料",
+      "prefabOrResource": "worm_light",
+      "image": "images/wiki/shared/materials/wormlight.webp",
+      "contexts": [
+        "夜明"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "lightbulb",
+      "name": "荧光果",
+      "category": "原版材料",
+      "prefabOrResource": "bulb",
+      "image": "images/wiki/shared/materials/lightbulb.webp",
+      "contexts": [
+        "夜明",
+        "基础捣药"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "lightninggoathorn",
+      "name": "伏特羊角",
+      "category": "原版材料",
+      "prefabOrResource": "lightning_goat_horn",
+      "image": "images/wiki/shared/materials/lightninggoathorn.webp",
+      "contexts": [
+        "惊厥"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "feather_canary",
+      "name": "金丝雀羽毛",
+      "category": "原版材料",
+      "prefabOrResource": "feather_canary",
+      "image": "images/wiki/shared/materials/feather_canary.webp",
+      "contexts": [
+        "惊厥"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "royal_jelly",
+      "name": "蜂王浆",
+      "category": "原版材料",
+      "prefabOrResource": "royal_jelly",
+      "image": "images/wiki/shared/materials/royal_jelly.webp",
+      "contexts": [
+        "活血"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "spidergland",
+      "name": "蜘蛛腺体",
+      "category": "原版材料",
+      "prefabOrResource": "spider_gland",
+      "image": "images/wiki/shared/materials/spidergland.webp",
+      "contexts": [
+        "活血",
+        "基础捣药"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "minotaurhorn",
+      "name": "远古守护者角",
+      "category": "原版材料",
+      "prefabOrResource": "horn_rhino",
+      "image": "images/wiki/shared/materials/minotaurhorn.webp",
+      "contexts": [
+        "犀茸"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "reviver",
+      "name": "救赎之心",
+      "category": "原版材料",
+      "prefabOrResource": "bloodpump",
+      "image": "images/wiki/shared/materials/reviver.webp",
+      "contexts": [
+        "犀茸"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "deerclops_eyeball",
+      "name": "独眼巨鹿眼球",
+      "category": "原版材料",
+      "prefabOrResource": "deerclops_eyeball",
+      "image": "images/wiki/shared/materials/deerclops_eyeball.webp",
+      "contexts": [
+        "寒眸"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "deer_antler",
+      "name": "任意鹿角",
+      "category": "原版材料",
+      "prefabOrResource": "deer_antler",
+      "image": "images/wiki/shared/materials/deer_antler.webp",
+      "contexts": [
+        "寒眸"
+      ],
+      "aliases": [
+        "鹿角",
+        "普通鹿角"
+      ],
+      "reuse": false,
+      "note": "寒眸可使用三种普通鹿角，百科仅以第一种普通鹿角作为代表图，不展示真钥匙。"
+    },
+    {
+      "id": "mandrake",
+      "name": "曼德拉草",
+      "category": "原版材料",
+      "prefabOrResource": "mandrake",
+      "image": "images/wiki/shared/materials/mandrake.webp",
+      "contexts": [
+        "草参"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "petals",
+      "name": "花瓣",
+      "category": "原版材料",
+      "prefabOrResource": "petals",
+      "image": "images/wiki/shared/materials/petals.webp",
+      "contexts": [
+        "草参",
+        "月蛾引路",
+        "基础捣药"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "moonbutterfly",
+      "name": "月蛾",
+      "category": "原版材料",
+      "prefabOrResource": "moonbutterfly",
+      "image": "images/wiki/myth-characters/myth-yutu/yt_moonbutterfly.webp",
+      "contexts": [
+        "羊脂玉净瓶",
+        "月枝盆景"
+      ],
+      "aliases": [],
+      "reuse": true,
+      "note": "复用神话人物篇的活月蛾图片；与月蛾翅膀是两个不同物品"
+    },
+    {
+      "id": "moonbutterflywings",
+      "name": "月蛾翅膀",
+      "category": "原版材料",
+      "prefabOrResource": "moonbutterfly_wings",
+      "image": "images/wiki/shared/materials/moonbutterflywings.webp",
+      "contexts": [
+        "基础捣药"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "cactus_flower",
+      "name": "仙人掌花",
+      "category": "原版材料",
+      "prefabOrResource": "cactusflower",
+      "image": "images/wiki/shared/materials/cactus_flower.webp",
+      "contexts": [
+        "基础捣药"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "foliage",
+      "name": "蕨叶",
+      "category": "原版材料",
+      "prefabOrResource": "foliage",
+      "image": "images/wiki/shared/materials/foliage.webp",
+      "contexts": [
+        "基础捣药"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "butterflywings",
+      "name": "蝴蝶翅膀",
+      "category": "原版材料",
+      "prefabOrResource": "butterfly_wings",
+      "image": "images/wiki/shared/materials/butterflywings.webp",
+      "contexts": [
+        "基础捣药"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "succulent_picked",
+      "name": "多肉植物",
+      "category": "原版材料",
+      "prefabOrResource": "succulent_picked",
+      "image": "images/wiki/shared/materials/succulent_picked.webp",
+      "contexts": [
+        "基础捣药"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "moon_tree_blossom",
+      "name": "月树花",
+      "category": "原版材料",
+      "prefabOrResource": "moon_tree_petal",
+      "image": "images/wiki/shared/materials/moon_tree_blossom.webp",
+      "contexts": [
+        "基础捣药"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "plantmeat",
+      "name": "叶肉",
+      "category": "原版材料",
+      "prefabOrResource": "plant_meat",
+      "image": "images/wiki/shared/materials/plantmeat.webp",
+      "contexts": [
+        "基础捣药"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "purple_gourd",
+      "name": "紫金红葫芦",
+      "category": "神话材料",
+      "prefabOrResource": "purple_gourd",
+      "image": "images/wiki/myth-theme/catalog/purple_gourd.webp",
+      "contexts": [
+        "吞天紫金葫芦"
+      ],
+      "aliases": [],
+      "reuse": true,
+      "note": ""
+    },
+    {
+      "id": "xydztz_cunxin_jingpo",
+      "name": "寸心精魄",
+      "category": "腌笃鲜材料",
+      "prefabOrResource": "xydztz_cunxin_jingpo",
+      "image": "images/wiki/xydztz/objects/xydztz_cunxin_jingpo.webp",
+      "contexts": [
+        "吞天紫金葫芦",
+        "天地宝鉴",
+        "须弥玉净瓶",
+        "喜蛛天罗衣"
+      ],
+      "aliases": [],
+      "reuse": true,
+      "note": ""
+    },
+    {
+      "id": "purplegem",
+      "name": "紫宝石",
+      "category": "原版材料",
+      "prefabOrResource": "gems",
+      "image": "images/wiki/shared/materials/purplegem.webp",
+      "contexts": [
+        "吞天紫金葫芦",
+        "迁镇令"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "nightmarefuel",
+      "name": "噩梦燃料",
+      "category": "原版材料",
+      "prefabOrResource": "nightmarefuel",
+      "image": "images/wiki/shared/materials/nightmarefuel.webp",
+      "contexts": [
+        "常规丹药"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": "使用原版噩梦燃料自身动画，不与纯粹恐惧共用图片。"
+    },
+    {
+      "id": "horrorfuel",
+      "name": "纯粹恐惧",
+      "category": "原版材料",
+      "prefabOrResource": "horrorfuel",
+      "image": "images/wiki/shared/materials/horrorfuel.webp",
+      "contexts": [
+        "吞天紫金葫芦"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": "按人工复核固定采用 scrapbook 第 75 帧。"
+    },
+    {
+      "id": "siving_stone",
+      "name": "子圭青金",
+      "category": "神话材料",
+      "prefabOrResource": "siving_stone",
+      "image": "images/wiki/myth-theme/catalog/siving_stone.webp",
+      "contexts": [
+        "天地宝鉴"
+      ],
+      "aliases": [],
+      "reuse": true,
+      "note": ""
+    },
+    {
+      "id": "townportaltalisman",
+      "name": "沙之石",
+      "category": "原版材料",
+      "prefabOrResource": "townportaltalisman",
+      "image": "images/wiki/shared/materials/townportaltalisman.webp",
+      "contexts": [
+        "天地宝鉴"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "orangegem",
+      "name": "橙宝石",
+      "category": "原版材料",
+      "prefabOrResource": "gems",
+      "image": "images/wiki/shared/materials/orangegem.webp",
+      "contexts": [
+        "天地宝鉴"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "myth_infant_fruit",
+      "name": "人参果",
+      "category": "神话材料",
+      "prefabOrResource": "myth_infant_fruit",
+      "image": "images/wiki/shared/materials/myth_infant_fruit.webp",
+      "contexts": [
+        "天地宝鉴激活"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "myth_yjp",
+      "name": "羊脂玉净瓶",
+      "category": "神话材料",
+      "prefabOrResource": "myth_yjp",
+      "image": "images/wiki/myth-theme/structures/myth_yjp-idle-000.webp",
+      "contexts": [
+        "须弥玉净瓶"
+      ],
+      "aliases": [],
+      "reuse": true,
+      "note": ""
+    },
+    {
+      "id": "moonglass",
+      "name": "月亮碎片",
+      "category": "原版材料",
+      "prefabOrResource": "moonglass",
+      "image": "images/wiki/shared/materials/moonglass.webp",
+      "contexts": [
+        "须弥玉净瓶",
+        "百宝囊续期"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "greengem",
+      "name": "绿宝石",
+      "category": "原版材料",
+      "prefabOrResource": "gems",
+      "image": "images/wiki/shared/materials/greengem.webp",
+      "contexts": [
+        "须弥玉净瓶"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "madameweb_armor",
+      "name": "盘丝披肩",
+      "category": "神话材料",
+      "prefabOrResource": "madameweb_armor",
+      "image": "images/wiki/shared/materials/madameweb_armor.webp",
+      "contexts": [
+        "喜蛛天罗衣"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "butterfly",
+      "name": "活蝴蝶",
+      "category": "原版材料",
+      "prefabOrResource": "butterfly",
+      "image": "images/wiki/shared/materials/butterfly.webp",
+      "contexts": [
+        "喜蛛天罗衣"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": "配方要求活蝴蝶，不与蝴蝶翅膀合并。"
+    },
+    {
+      "id": "silk",
+      "name": "蜘蛛丝",
+      "category": "原版材料",
+      "prefabOrResource": "silk",
+      "image": "images/wiki/shared/materials/silk.webp",
+      "contexts": [
+        "喜蛛天罗衣",
+        "天罗衣自动修复"
+      ],
+      "aliases": [
+        "蜘蛛网"
+      ],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "papyrus",
+      "name": "莎草纸",
+      "category": "原版材料",
+      "prefabOrResource": "papyrus",
+      "image": "images/wiki/shared/materials/papyrus.webp",
+      "contexts": [
+        "迁镇令"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    },
+    {
+      "id": "featherpencil",
+      "name": "羽毛笔",
+      "category": "原版材料",
+      "prefabOrResource": "feather_pencil",
+      "image": "images/wiki/shared/materials/featherpencil.webp",
+      "contexts": [
+        "迁镇令"
+      ],
+      "aliases": [],
+      "reuse": false,
+      "note": ""
+    }
+  ],
+  "generatedFiles": [
+    "images/wiki/shared/materials/bearger_fur.webp",
+    "images/wiki/shared/materials/beefalohat.webp",
+    "images/wiki/shared/materials/bigpeach.webp",
+    "images/wiki/shared/materials/butterfly.webp",
+    "images/wiki/shared/materials/butterflywings.webp",
+    "images/wiki/shared/materials/cactus_flower.webp",
+    "images/wiki/shared/materials/cactus_meat.webp",
+    "images/wiki/shared/materials/deer_antler.webp",
+    "images/wiki/shared/materials/deerclops_eyeball.webp",
+    "images/wiki/shared/materials/dragon_scales.webp",
+    "images/wiki/shared/materials/dreadstone.webp",
+    "images/wiki/shared/materials/feather_canary.webp",
+    "images/wiki/shared/materials/featherfan.webp",
+    "images/wiki/shared/materials/featherpencil.webp",
+    "images/wiki/shared/materials/foliage.webp",
+    "images/wiki/shared/materials/forgetmelots.webp",
+    "images/wiki/shared/materials/greengem.webp",
+    "images/wiki/shared/materials/heatrock_hot.webp",
+    "images/wiki/shared/materials/hivehat.webp",
+    "images/wiki/shared/materials/horrorfuel.webp",
+    "images/wiki/shared/materials/lightbulb.webp",
+    "images/wiki/shared/materials/lightninggoathorn.webp",
+    "images/wiki/shared/materials/madameweb_armor.webp",
+    "images/wiki/shared/materials/mandrake.webp",
+    "images/wiki/shared/materials/minotaurhorn.webp",
+    "images/wiki/shared/materials/mk_huoyuan.webp",
+    "images/wiki/shared/materials/mk_longpi.webp",
+    "images/wiki/shared/materials/moon_tree_blossom.webp",
+    "images/wiki/shared/materials/moonbutterflywings.webp",
+    "images/wiki/shared/materials/moonglass.webp",
+    "images/wiki/shared/materials/myth_bamboo.webp",
+    "images/wiki/shared/materials/myth_infant_fruit.webp",
+    "images/wiki/shared/materials/nightmarefuel.webp",
+    "images/wiki/shared/materials/oceanfish_medium_8_inv.webp",
+    "images/wiki/shared/materials/onemanband.webp",
+    "images/wiki/shared/materials/orangegem.webp",
+    "images/wiki/shared/materials/panflute.webp",
+    "images/wiki/shared/materials/papyrus.webp",
+    "images/wiki/shared/materials/petals.webp",
+    "images/wiki/shared/materials/plantmeat.webp",
+    "images/wiki/shared/materials/purplegem.webp",
+    "images/wiki/shared/materials/redgem.webp",
+    "images/wiki/shared/materials/reviver.webp",
+    "images/wiki/shared/materials/rope.webp",
+    "images/wiki/shared/materials/royal_jelly.webp",
+    "images/wiki/shared/materials/shadowheart.webp",
+    "images/wiki/shared/materials/shroom_skin.webp",
+    "images/wiki/shared/materials/silk.webp",
+    "images/wiki/shared/materials/spidergland.webp",
+    "images/wiki/shared/materials/succulent_picked.webp",
+    "images/wiki/shared/materials/townportaltalisman.webp",
+    "images/wiki/shared/materials/wormlight.webp"
+  ]
+}

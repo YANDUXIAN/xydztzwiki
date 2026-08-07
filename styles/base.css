@@ -1,5 +1,5 @@
 /* ============================================
-   《腌笃鲜》官方维基 - Base Styles
+   《腌笃鲜》维基百科 - Base Styles
    ============================================ */
 
 *,
@@ -11,7 +11,7 @@
 }
 
 html {
-  scroll-padding-top: 80px;
+  scroll-padding-top: 106px;
   scroll-behavior: smooth;
 }
 
@@ -37,6 +37,16 @@ a {
 
 a:hover {
   color: var(--accent-gold-hover);
+}
+
+::selection {
+  background: var(--accent-fire);
+  color: #fff;
+}
+
+html[data-theme="dark"] ::selection {
+  background: #c05048;
+  color: #fff;
 }
 
 @media (prefers-reduced-motion: reduce) {

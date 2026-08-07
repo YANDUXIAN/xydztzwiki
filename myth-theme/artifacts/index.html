@@ -1,0 +1,389 @@
+<!doctype html>
+<!-- ============================================
+     《腌笃鲜》维基百科 - Main Page
+     ============================================ -->
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="查阅《神话书说》的八卦炉、常规丹药与通用法宝。" />
+    <meta name="keywords" content="腌笃鲜,饥荒,神话书说,模组,元辰劫运,盘丝娘娘,wiki,攻略" />
+    <meta name="author" content="《腌笃鲜》资料整理" />
+    <meta name="theme-color" content="#faf8f3" />
+    <script>
+      (() => {
+        let theme = 'light';
+        try {
+          const saved = localStorage.getItem('xydztz-theme') || localStorage.getItem('xdyztz-theme');
+          theme = saved === 'dark' || saved === 'light'
+            ? saved
+            : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch (err) {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', theme === 'dark' ? '#15110e' : '#faf8f3');
+      })();
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="炼丹与法宝 | 神话主题 | 《腌笃鲜》" />
+    <meta property="og:description" content="查阅《神话书说》的八卦炉、常规丹药与通用法宝。" />
+    <meta property="og:site_name" content="《腌笃鲜》" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:url" content="https://yanduxian.cn/myth-theme/artifacts/" />
+    <meta property="og:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1021" />
+    <meta property="og:image:alt" content="《腌笃鲜》雪景封面" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="炼丹与法宝 | 神话主题 | 《腌笃鲜》" />
+    <meta name="twitter:description" content="查阅《神话书说》的八卦炉、常规丹药与通用法宝。" />
+    <meta name="twitter:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+
+    <title>炼丹与法宝 | 神话主题 | 《腌笃鲜》</title>
+    <link rel="canonical" href="https://yanduxian.cn/myth-theme/artifacts/" />
+
+    <link rel="preload" href="/images/hero-default-1200.webp" imagesrcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" imagesizes="100vw" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/fonts/MaShanZheng-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/png" href="/images/mod-icon.png?v=20260719" />
+
+    <link rel="stylesheet" href="/styles/fonts.css?v=20260804o" />
+    <link rel="stylesheet" href="/styles/variables.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/base.css?v=20260804g" />
+    <link rel="stylesheet" href="/styles/hero.css?v=20260804r" />
+    <link rel="stylesheet" href="/styles/layout.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/markdown.css?v=20260805u" />
+    <link rel="stylesheet" href="/styles/components.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/media.css?v=20260806b" />
+    <link rel="stylesheet" href="/styles/responsive.css?v=20260805m" />
+  </head>
+  <body data-book-id="myth-theme" data-book-title="神话主题" data-chapter-slug="myth-theme-artifacts" data-chapter-title="炼丹与法宝" data-search-index="/search-index.json?v=ca6182164b96">
+    <div class="read-progress" id="read-progress" aria-hidden="true"></div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2c-1.05 0-2.05.16-3 .46 1.69 1.24 2.79 3.26 2.79 5.54 0 3.87-3.13 7-7 7-.57 0-1.13-.08-1.67-.22C2.52 18.49 6.45 22 11 22c5.52 0 10-4.48 10-10S16.52 2 11 2c-.66 0-1.3.07-1.92.19C9.23 2.06 9.12 2 9 2z"/></svg>
+    </button>
+
+    <header class="hero" id="hero" role="banner">
+      <picture class="hero-bg-layer hero-bg-default" aria-hidden="true">
+        <source type="image/webp" srcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" sizes="100vw" />
+        <img src="/images/hero-default.jpg" srcset="/images/hero-default-1200.jpg 1200w, /images/hero-default.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" fetchpriority="high" />
+      </picture>
+      <picture class="hero-bg-layer hero-bg-hover" id="hero-hover-picture" aria-hidden="true">
+        <source type="image/webp" data-srcset="/images/hero-hover-1200.webp 1200w, /images/hero-hover.webp 2400w" sizes="100vw" />
+        <img data-src="/images/hero-hover.jpg" data-srcset="/images/hero-hover-1200.jpg 1200w, /images/hero-hover.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" />
+      </picture>
+      <div class="hero-sun-glow" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-gradient-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-title-row">
+          <h1 class="hero-title">《腌笃鲜》</h1>
+          <img class="hero-seal" src="/images/mod-icon.png?v=20260719" alt="《腌笃鲜》模组图标" width="68" height="68" />
+        </div>
+        <div class="hero-actions" aria-label="主要操作">
+          <a
+            class="hero-btn hero-btn-primary"
+            href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="在 Steam 创意工坊订阅《腌笃鲜》（新窗口）"
+          >订阅模组</a>
+          <button class="hero-btn hero-btn-secondary" id="hero-btn" type="button">开始查阅</button>
+        </div>
+      </div>
+
+      <div class="hero-subtitles">
+        <p class="hero-subtitle">三十五劫运交织，十二元辰下凡，灵台方寸显真心</p>
+        <p class="hero-subtitle">玉兔拨弦，黑风倒卷——人物精怪双篇登场</p>
+      </div>
+
+      <svg class="hero-torn-edge" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 48 L0 28 L36 32 L72 22 L120 30 L168 20 L216 28 L264 18 L312 30 L360 22 L408 28 L456 18 L504 26 L552 16 L600 26 L648 32 L696 22 L744 28 L792 18 L840 28 L888 22 L936 30 L984 20 L1032 28 L1080 22 L1128 30 L1176 18 L1224 26 L1272 30 L1320 22 L1368 28 L1404 24 L1440 28 L1440 48 Z" />
+      </svg>
+    </header>
+
+    <noscript>
+      <div class="noscript-warning" role="alert">
+        <strong>提示：</strong>正文仍可阅读；启用 JavaScript 后可使用目录搜索、劫运查询和媒体灯箱。
+      </div>
+    </noscript>
+
+    <nav class="chapter-nav" aria-label="神话主题篇章导航">
+      <div class="chapter-nav-inner" id="chapter-nav-inner">
+        <!-- CHAPTER_NAV_START -->
+        <details class="book-switcher">
+          <summary><strong>神话主题</strong></summary>
+          <div class="book-switcher-menu">
+            <a class="book-switcher-link" href="/">腌笃鲜</a>
+            <a class="book-switcher-link active" href="/myth-theme/">神话主题<span class="sr-only">（当前）</span></a>
+            <a class="book-switcher-link" href="/myth-characters/">神话人物</a>
+          </div>
+        </details>
+        <span class="chapter-nav-divider" aria-hidden="true"></span>
+        <div class="chapter-nav-pages">
+          <a class="chapter-nav-link" href="/myth-theme/">主题总览</a>
+        <a class="chapter-nav-link" href="/myth-theme/world/">世界地点</a>
+        <a class="chapter-nav-link" href="/myth-theme/npcs/">NPC 与交互</a>
+        <a class="chapter-nav-link" href="/myth-theme/creatures/">首领与怪物</a>
+        <a class="chapter-nav-link active" href="/myth-theme/artifacts/" aria-current="page">炼丹与法宝</a>
+        <a class="chapter-nav-link" href="/myth-theme/agriculture/">农业与料理</a>
+        <a class="chapter-nav-link" href="/myth-theme/buildings/">建筑与生态</a>
+        <a class="chapter-nav-link" href="/myth-theme/flight/">腾云与技能</a>
+        </div>
+        <!-- CHAPTER_NAV_END -->
+      </div>
+      <div class="reading-position" id="reading-position">
+        <span class="reading-position-text"><span class="rp-num"></span><span class="rp-title"></span></span>
+      </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar" aria-label="目录导航">
+        <div class="sidebar-header">
+          <h3 id="sidebar-title">炼丹与法宝目录</h3>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="toc-search" placeholder="搜索三本资料…" aria-label="搜索全部资料" />
+        </div>
+        <ul class="toc-list" id="toc-list">
+          <!-- SIDEBAR_TOC_START -->
+          <li class="toc-item toc-section has-children open">
+            <a class="toc-link" href="#%E5%85%AB%E5%8D%A6%E7%82%89%E8%A7%A3%E9%94%81%E4%B8%8E%E5%88%B6%E4%BD%9C" data-id="八卦炉解锁与制作" data-num="壹">八卦炉解锁与制作</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%A7%A3%E9%94%81%E4%B8%8E%E5%BB%BA%E9%80%A0" data-id="解锁与建造">解锁与建造</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%9D%90%E6%96%99%E4%B8%8E%E7%BB%93%E7%AE%97" data-id="材料与结算">材料与结算</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E5%B8%B8%E8%A7%84%E4%B8%B9%E8%8D%AF" data-id="常规丹药" data-num="贰">常规丹药</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%8D%86%E6%A3%98%E4%B8%B9" data-id="荆棘丹">荆棘丹</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E4%BA%94%E7%A7%8D%E7%8A%B6%E6%80%81%E4%B8%B9" data-id="五种状态丹">五种状态丹</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E6%80%A5%E6%80%A5%E5%A6%82%E5%BE%8B%E4%BB%A4" data-id="急急如律令" data-num="叁">急急如律令</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E4%B8%B9%E8%8D%AF%E8%91%AB%E8%8A%A6" data-id="丹药葫芦" data-num="肆">丹药葫芦</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E7%B4%AB%E9%87%91%E7%BA%A2%E8%91%AB%E8%8A%A6" data-id="紫金红葫芦" data-num="伍">紫金红葫芦</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E8%8A%AD%E8%95%89%E5%AE%9D%E6%89%87" data-id="芭蕉宝扇" data-num="陆">芭蕉宝扇</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E7%BE%8A%E8%84%82%E7%8E%89%E5%87%80%E7%93%B6" data-id="羊脂玉净瓶" data-num="柒">羊脂玉净瓶</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E5%85%9C%E7%8E%87%E7%89%9B%E9%93%83%E4%B8%8E%E5%85%9C%E7%8E%87%E7%89%9B%E9%9E%8D" data-id="兜率牛铃与兜率牛鞍" data-num="捌">兜率牛铃与兜率牛鞍</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E9%80%9A%E5%A4%A9%E6%95%95%E4%BB%A4-%E6%8B%82%E5%B0%98%E4%B8%8E%E9%87%91%E5%87%BB%E5%AD%90" data-id="通天敕令-拂尘与金击子" data-num="玖">通天敕令、拂尘与金击子</a>
+          </li>
+          <!-- SIDEBAR_TOC_END -->
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <article class="content-card">
+          <div class="md-body" id="main-content" data-static-snapshot="ready" data-content-hash="ca6182164b96" data-chapter="myth-theme-artifacts">
+            <!-- STATIC_CONTENT_START -->
+<h2 id="炼丹与法宝" data-legacy-id="sec-炼丹与法宝-osv2e1" data-eyebrow="第伍篇">炼丹与法宝</h2><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：核心制作系统] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：八卦炉、常规丹药、急急如律令、通用法宝]</p>
+</blockquote><p class="lede">本篇只收录八卦炉的共通规则、常规丹药和不专属于神话人物或 Boss 的法宝。三犀牛的环境丹与三心武器见<a href="/myth-theme/creatures/#%E7%8A%80%E7%89%9B%E4%B8%89%E5%A4%A7%E7%8E%8B">犀牛三大王</a>，月宫器物见<a href="/myth-theme/npcs/#%E5%AB%A6%E5%A8%A5">嫦娥</a>，人物专属装备见<a href="/myth-characters/">神话人物</a>对应人物页。</p>
+<h3 id="八卦炉解锁与制作" data-legacy-id="sec-八卦炉解锁与制作-jx7o14" data-num="壹">八卦炉解锁与制作</h3><h4 id="解锁与建造" data-legacy-id="sec-解锁与建造-9zlt1m">解锁与建造</h4><p><strong>无字天书</strong>使用莎草纸×2制作，是可携带、可放置的神话科技站；靠近它即可取得神话科技制作权限。无字天书可以被点燃，烧尽后会转化为可阅读的“天书”：转化后仍提供神话科技，同时可以打开模组图鉴。它与灵台方寸山密室中用于解锁人物技能的“遗留的天书”是两个不同实体，不能互相替代。</p>
+<p>八卦炉需要<strong>铥矿×6、子圭石×1、龙鳞×2</strong>，建成后是固定的四格炼制设施。</p>
+<h4 id="材料与结算" data-legacy-id="sec-材料与结算-934it3">材料与结算</h4><p>八卦炉有 4 个材料格。关闭容器后才能开始炼制；炉子有效配方只消耗配方要求的部分，<strong>多放的材料会在开炉时被吐回地面</strong>，不会提高品质或额外增加产量。炼制时间由配方决定，短配方约 60 秒，常见装备为 120—240 秒，紫金红葫芦、芭蕉宝扇、羊脂玉净瓶和金击子等高阶法宝需要 <strong>960 秒，也就是 2 个游戏日</strong>。</p>
+<p>如果炉内没有任何有效配方，约 1.5 秒后会失败：全部投料被抛出，能燃烧的投料会被点燃，炉子周围约 <strong>6 格</strong>内其他可燃物也会被引燃。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：多倍炼丹默认开启，可按材料比例批量炼制；普通丹药单次最多 40 批，急急如律令最多 13 批（共 39 个）。装备及其他物品仍只能按原生方式炼制。详见<a href="/optimizations/">神话优化</a>。</p>
+</blockquote><h3 id="常规丹药" data-legacy-id="sec-常规丹药-cgdo82" data-num="贰">常规丹药</h3><ul>
+<li><strong>荆棘丹</strong>不需要吃，带在角色物品栏中就会生效并持续消耗自身时效；放进丹药葫芦可暂停时效，但取出来之前也不会生效。</li><li><strong>五种状态丹</strong>需要食用后生效。腾云、嗜血、凝味、壮骨属于同一互斥组；移山丹为非对称式覆盖设计。</li><li>避暑、避寒、避尘三种环境丹由三犀牛心脏衍生，配方、颜色反转与武器统一在<a href="/myth-theme/creatures/#%E4%B8%89%E5%BF%83%E4%B8%B9%E8%8D%AF">犀牛三大王</a>。</li></ul>
+<h4 id="荆棘丹" data-legacy-id="sec-荆棘丹-jqgpz">荆棘丹</h4><p>荆棘丹需要<strong>仙人掌花、水草炸弹、活木、食人花种子</strong>。携带时可抵抗尖刺植物伤害；受攻击时触发的荆棘反击带有短冷却。</p>
+<h4 id="五种状态丹" data-legacy-id="sec-五种状态丹-w2nh6z">五种状态丹</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">丹药</th>
+<th align="left">持续与实际效果</th>
+<th align="left">材料</th>
+</tr>
+</thead><tbody><tr>
+<td align="left"><strong>腾云丹</strong></td>
+<td align="left">8 分钟，移速 ×1.5，并开启通用飞行所需的腾云状态</td>
+<td align="left">硝石、火龙果、蜂蜜、噩梦燃料</td>
+</tr>
+<tr>
+<td align="left"><strong>嗜血丹</strong></td>
+<td align="left">8 分钟；每次正常命中敌人随机回复 5–10 生命</td>
+<td align="left">紫宝石、活木、蝙蝠翅膀、噩梦燃料</td>
+</tr>
+<tr>
+<td align="left"><strong>凝味丹</strong></td>
+<td align="left">8 分钟；常规角色的伤害倍率变为 2 倍</td>
+<td align="left">火药、蜂刺、榴莲、噩梦燃料</td>
+</tr>
+<tr>
+<td align="left"><strong>壮骨丹</strong></td>
+<td align="left">4 分钟；额外 50% 吸收，并会维持沃尔夫冈的力量</td>
+<td align="left">大蒜、岩石、骨片、噩梦燃料</td>
+</tr>
+<tr>
+<td align="left"><strong>移山丹</strong></td>
+<td align="left">8 分钟；背负重物不再减速、装备不再给出低于正常的移速、沃尔夫冈不会掉力量</td>
+<td align="left">狗牙、沙之石、芦笋、噩梦燃料</td>
+</tr>
+</tbody></table></div></div><h5 id="状态丹覆盖与共存规则" data-legacy-id="sec-状态丹覆盖与共存规则-ynjefg">状态丹覆盖与共存规则</h5><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">后吃的状态</th>
+<th align="left">会移除的已有状态</th>
+<th align="left">结算后可共存状态</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">腾云丹 / 嗜血丹 / 凝味丹 / 壮骨丹</td>
+<td align="left">腾云、嗜血、凝味、壮骨四种状态全部清除，再施加新状态</td>
+<td align="left">已有移山丹不会被移除，可与新状态共存</td>
+</tr>
+<tr>
+<td align="left">移山丹</td>
+<td align="left">已有的腾云、嗜血、凝味、壮骨状态</td>
+<td align="left">移山丹保留；四种主状态不保留</td>
+</tr>
+<tr>
+<td align="left">原生环境：辣椒面调味料理增伤</td>
+<td align="left">已有凝味丹状态</td>
+<td align="left">辣椒面料理增伤</td>
+</tr>
+<tr>
+<td align="left">原生环境：凝味丹</td>
+<td align="left">已有辣椒面料理增伤</td>
+<td align="left">凝味丹</td>
+</tr>
+<tr>
+<td align="left">蒜粉料理减伤</td>
+<td align="left">已有壮骨丹状态</td>
+<td align="left">蒜粉料理减伤</td>
+</tr>
+<tr>
+<td align="left">壮骨丹</td>
+<td align="left">已有蒜粉料理减伤</td>
+<td align="left">壮骨丹</td>
+</tr>
+</tbody></table></div></div><p>移山丹与四种主状态的共存结果取决于食用顺序：<strong>移山丹 → 主状态丹</strong>时两者共存；<strong>主状态丹 → 移山丹</strong>时只保留移山丹。重复食用同一种状态丹会重新施加该状态并重置持续时间。</p>
+<blockquote class="bq-info"><p><strong>兼容提示</strong>：多模组环境下，部分状态丹与调味增益可能出现不同的结算关系，请以实际游戏结果为准。</p>
+</blockquote><h3 id="急急如律令" data-legacy-id="sec-急急如律令-x9sie3" data-num="叁">急急如律令</h3><p>配方为莎草纸 ×3、羽毛笔、花瓣 ×3，一次炼制产出 <strong>3 个</strong>。急急如律令既是太上老君召唤物，也是芭蕉宝扇、羊脂玉净瓶、兜率牛铃、七星剑等高阶炼制材料。</p>
+<h3 id="丹药葫芦" data-legacy-id="sec-丹药葫芦-af2qnl" data-num="肆">丹药葫芦</h3><p>丹药葫芦需要<strong>葫芦、绳子×2、蜂蜡</strong>，只接受丹药，容量为 <strong>8 格</strong>。四种环境丹放在普通物品栏中会持续消耗时效并提供效果；放入丹药葫芦后，时效暂停，但玩家也不再获得对应保护。</p>
+<p>黑风大王固定掉落的丹药葫芦会预装腾云、嗜血、凝味、壮骨四种状态丹，每种随机 <strong>1—2 颗</strong>。</p>
+<h3 id="紫金红葫芦" data-legacy-id="sec-紫金红葫芦-b41jp3" data-num="伍">紫金红葫芦</h3><p>炼制耗时 960 秒，材料为<strong>封印的坎普斯背包、金块、橙宝石、丹药葫芦</strong>。它自身有 <strong>14 格</strong>容量，但不能装入其他容器或打包物，因而不能套娃扩容。</p>
+<p>“封印的坎普斯背包”不是自然掉落物：把<strong>急急如律令</strong>用于坎普斯背包时，背包内物品会先全部掉出，空背包再被封装为炼制材料，同时消耗 1 张急急如律令。封印物也可以拆开取回原背包；要炼制紫金红葫芦时则直接把封印物投入八卦炉。</p>
+<p>手持紫金红葫芦可在 16 格内指定位置，吸取落点约 8 格内的散落物品与非史诗生物；每次消耗 <strong>10 饥饿、10 理智</strong>，冷却 5 秒。首领、生物首领级目标和普通玩家不属于常规可收取对象。小金蟾被吸取后会消失，并有 50% 概率转化为神话铜钱或幸运金块。</p>
+<h3 id="芭蕉宝扇" data-legacy-id="sec-芭蕉宝扇-h1bhqe" data-num="陆">芭蕉宝扇</h3><p>炼制耗时 960 秒，材料为<strong>急急如律令、羽毛扇、岩浆虫卵、芭蕉叶×6</strong>。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">用法</th>
+<th align="left">消耗与冷却</th>
+<th align="left">实际效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">普通挥扇</td>
+<td align="left">15 饥饿；通常进入 15 秒冷却</td>
+<td align="left">作用约 32 格：未下雨时会引雨，熄灭火焰与闷烧、给目标降温；冬季还会额外施加寒冷。正在运作的八卦炉会被直接催熟完成</td>
+</tr>
+<tr>
+<td align="left">指向目标释放龙卷</td>
+<td align="left">5 饥饿、5 理智；随后进入冷却</td>
+<td align="left">在目标处形成约 5 秒龙卷，每 0.5 秒造成 1 点伤害，并把合资格目标定住约 3 秒；还会对可采集、可砍伐等对象执行一次对应工作</td>
+</tr>
+</tbody></table></div></div><p>物品栏中带有有效避尘丹时，普通挥扇会消耗该丹 <strong>480 秒时效</strong>，并绕过通常的 15 秒冷却。</p>
+<h3 id="羊脂玉净瓶" data-legacy-id="sec-羊脂玉净瓶-i7lvpj" data-num="柒">羊脂玉净瓶</h3><p>炼制耗时 960 秒，材料为<strong>彩虹宝石、急急如律令、月亮玻璃×6、月蛾</strong>。新瓶水量为 0，上限 100；把它丢在雨中，每 5 秒增加 1 点水量。</p>
+<ul>
+<li>水量不足 20 时在雨中使用，会把水量直接补到 100 并停止降雨；该次不会再施放范围效果。</li><li>水量至少 20 时使用，消耗 20 水量和 10 理智，冷却 5 秒。</li><li>范围约 28 格：熄灭火焰和闷烧、保护植物免于枯萎、给生物降温并增加湿度。</li><li>对范围内农田按网格补充：每个有效地块增加 100 水分，并同时增加三类养分。</li></ul>
+<h3 id="兜率牛铃与兜率牛鞍" data-legacy-id="sec-兜率牛铃与兜率牛鞍-zdjmig" data-num="捌">兜率牛铃与兜率牛鞍</h3><p>兜率牛铃炼制耗时 240 秒，材料为<strong>一角鲸的角、牛角、急急如律令、幸运金块</strong>。同一世界已有有效兜率牛铃时，再次炼制只会产出普通牛铃。</p>
+<p>牛铃损坏后可用<strong>破碎的牛铃、红宝石、蓝宝石、紫宝石</strong>炼制修复，耗时 120 秒。青牛死亡时，与它绑定的兜率牛铃会变为“破碎的牛铃”。</p>
+<p>青牛基础为 <strong>1000 生命、51 伤害、9 跑速</strong>。只有当前牛铃主人能骑乘，而且青牛饥饿必须大于 0。专用兜率牛鞍需要<strong>竞速鞍、多肉植物、急急如律令、幸运金块</strong>，耗时 240 秒；它有 <strong>8 次耐久</strong>，骑乘速度乘数为 <strong>1.55</strong>，本身不提供额外攻击伤害。装备兜率牛鞍后，青牛才可接受凝味、壮骨、腾云三类丹药增益；嗜血丹不在可用范围内。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">丹药</th>
+<th align="left">对青牛的实际效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">凝味丹</td>
+<td align="left">持续 480 秒，基础伤害由 51 提高到 102</td>
+</tr>
+<tr>
+<td align="left">壮骨丹</td>
+<td align="left">持续 240 秒，获得 50% 额外减伤</td>
+</tr>
+<tr>
+<td align="left">腾云丹</td>
+<td align="left">持续 480 秒，进入飞行状态，可跨越海面</td>
+</tr>
+<tr>
+<td align="left">嗜血丹</td>
+<td align="left">青牛不接受</td>
+</tr>
+</tbody></table></div></div><blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：青牛骑乘、牛铃旧接口以及牛铃被非玩家单位拾取时的崩溃会自动修复；骑乘青牛或年兽时还会显示坐骑血量 HUD。详见<a href="/compatibility/">兼容修复</a>与<a href="/optimizations/">神话优化</a>。</p>
+</blockquote><h3 id="通天敕令-拂尘与金击子" data-legacy-id="sec-通天敕令-拂尘与金击子-7rkrhr" data-num="玖">通天敕令、拂尘与金击子</h3><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">物品</th>
+<th align="left">配方与时间</th>
+<th align="left">用途</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">通天敕令</td>
+<td align="left">子圭岩、幸运金块、海象牙、神话莲花；240 秒</td>
+<td align="left">让白骨夫人、WX-78、沃拓克斯、沃姆伍德、沃特、盘丝娘娘取得与太上老君交易的资格，不是全角色增益物</td>
+</tr>
+<tr>
+<td align="left">拂尘</td>
+<td align="left">步行手杖、兔人尾巴×3；60 秒</td>
+<td align="left">0 伤害、无耐久，装备移速×1.25；普通命中会迫使目标丢下手中物。主动能力冷却 10 秒，可隔空收取物品、收获陷阱或驱退生物；猪人、兔人和猴类还会被迫丢下装备</td>
+</tr>
+<tr>
+<td align="left">金击子</td>
+<td align="left">莹月如意、幸运金块×4；960 秒</td>
+<td align="left">伤害只有 5，但不会像莹月如意那样因攻击破碎；可快速采摘蟠桃和人参果，是工具而非战斗武器</td>
+</tr>
+</tbody></table></div></div>
+            <!-- STATIC_CONTENT_END -->
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <footer class="footer" id="site-footer" role="contentinfo">
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-message">
+        <p class="footer-message-text">感谢每一位订阅玩家的支持和鼓励，祝各位在《腌笃鲜》的努力下游戏愉快，武运昌隆，尽享神话之旅！</p>
+        <p class="footer-signature">——咸鱼 &amp; 大猪蹄子 敬上</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357" target="_blank" rel="noopener noreferrer">Steam 创意工坊</a>
+        <a href="https://qm.qq.com/q/iFeDTMf6Io" target="_blank" rel="noopener noreferrer">反馈交流群</a>
+      </div>
+      <p>&copy; 2026 《腌笃鲜》</p>
+      <p>反馈交流 QQ 群：1046023996</p>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <script src="/scripts/utils.js?v=20260804h"></script>
+    <script src="/scripts/renderer.js?v=20260805c"></script>
+    <script src="/scripts/toc.js?v=20260805b"></script>
+    <script src="/scripts/scroll.js?v=20260805a"></script>
+    <script src="/scripts/theme.js?v=20260804f"></script>
+    <script src="/scripts/ui.js?v=20260805b"></script>
+    <script src="/scripts/media.js?v=20260808a"></script>
+    <script src="/scripts/main.js?v=20260805c"></script>
+  </body>
+</html>

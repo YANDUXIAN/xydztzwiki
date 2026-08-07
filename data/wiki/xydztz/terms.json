@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "terms": [
+    {
+      "id": "yuanchen-system",
+      "name": "元辰劫运",
+      "kind": "核心系统",
+      "summary": "以三十五重劫运凝结寸心，并在星盘中激活元辰与重楼的核心成长系统。",
+      "target": { "chapter": "systems", "heading": "元辰劫运" }
+    },
+    {
+      "id": "yuanchen-powers",
+      "name": "十二元辰神通",
+      "kind": "核心系统",
+      "summary": "十二生肖对应的被动与主动神通，会受到寸心配置、地支天时与共振倍率影响。",
+      "target": { "chapter": "systems", "heading": "十二元辰神通" }
+    },
+    {
+      "id": "pansi-bureau",
+      "name": "四象三合局",
+      "kind": "核心系统",
+      "summary": "盘丝娘娘以十二元辰组成木、金、火、水四局的流派强化体系。",
+      "target": { "chapter": "systems", "heading": "四象三合局" }
+    },
+    {
+      "id": "fire-tempering",
+      "name": "火元淬炼",
+      "kind": "核心系统",
+      "summary": "使用专属耗材提升神话武器位面伤害和护甲位面防御的强化系统。",
+      "target": { "chapter": "systems", "heading": "火元淬炼" }
+    },
+    {
+      "id": "yutu",
+      "name": "玉兔仙子",
+      "kind": "人物",
+      "summary": "以莹月琵琶、捣药玉杵和月宫守卫协同作战的重置人物。",
+      "image": "images/wiki/xydztz/objects/xydztz_yutu_winter.webp",
+      "target": { "chapter": "characters", "heading": "玉兔仙子" }
+    },
+    {
+      "id": "blackbear-trueform",
+      "name": "熊罴真身",
+      "kind": "精怪首领",
+      "summary": "通过吞天截住黑风大王战败遁风后触发的多阶段精怪首领。",
+      "image": "images/wiki/xydztz/objects/xydztz_blackbear_trueform.webp",
+      "target": { "chapter": "characters", "heading": "黑风大王·熊罴真身" }
+    },
+    {
+      "id": "futon",
+      "name": "蒲团",
+      "kind": "法器",
+      "summary": "用于打坐展开元辰劫运图，也是进入元辰系统的必备法器。",
+      "image": "images/wiki/xydztz/objects/xydztz_futon.webp",
+      "target": { "chapter": "artifacts", "heading": "蒲团" }
+    },
+    {
+      "id": "cunxin-jingpo",
+      "name": "寸心精魄",
+      "kind": "灵材",
+      "summary": "凝结寸心时概率获得，用于多件专属法宝与装备炼制的核心灵材。",
+      "image": "images/wiki/xydztz/objects/xydztz_cunxin_jingpo.webp",
+      "target": { "chapter": "artifacts", "heading": "寸心精魄" }
+    },
+    {
+      "id": "artifact-ttzjhl",
+      "name": "吞天紫金葫芦",
+      "kind": "法宝",
+      "summary": "兼具十四格收纳、范围采收、吞天控场与吞月能力的空间法宝。",
+      "image": "images/wiki/xydztz/objects/xydztz_artifact_ttzjhl.webp",
+      "target": { "chapter": "artifacts", "heading": "吞天紫金葫芦" }
+    },
+    {
+      "id": "artifact-tdbj",
+      "name": "天地宝鉴",
+      "kind": "法宝",
+      "summary": "以人参果激活，可建立双向门户、追寻宝藏并提供幸运的传送法宝。",
+      "image": "images/wiki/xydztz/objects/xydztz_artifact_tdbj.webp",
+      "target": { "chapter": "artifacts", "heading": "天地宝鉴" }
+    },
+    {
+      "id": "artifact-xmyjp",
+      "name": "须弥玉净瓶",
+      "kind": "法宝",
+      "summary": "可收摄天象、润泽农作、净化毒障并点化植物的造化法宝。",
+      "image": "images/wiki/xydztz/objects/xydztz_artifact_xmyjp.webp",
+      "target": { "chapter": "artifacts", "heading": "须弥玉净瓶" }
+    },
+    {
+      "id": "artifact-bhz",
+      "name": "辟火罩",
+      "kind": "法宝",
+      "summary": "击败熊罴真身固定掉落，可展开束焰领域约束燃烧并保护玩家。",
+      "image": "images/wiki/xydztz/objects/xydztz_artifact_bhz.webp",
+      "target": { "chapter": "artifacts", "heading": "辟火罩" }
+    },
+    {
+      "id": "armor-madameweb",
+      "name": "喜蛛天罗衣",
+      "kind": "专属装备",
+      "summary": "盘丝娘娘专属装备，拥有须弥暗格、自动织补、蜘蛛收编与飞针能力。",
+      "image": "images/wiki/xydztz/objects/xydztz_armor_madameweb.webp",
+      "target": { "chapter": "artifacts", "heading": "喜蛛天罗衣" }
+    },
+    {
+      "id": "panda-town",
+      "name": "熊猫小镇焕新",
+      "kind": "主题机制",
+      "summary": "以镇票、上鲜、盘账、立契与动态价格扩展熊猫小镇经营。",
+      "target": { "chapter": "optimizations", "heading": "熊猫小镇焕新" }
+    },
+    {
+      "id": "treasure-bowl",
+      "name": "聚宝盆革新",
+      "kind": "主题机制",
+      "summary": "为聚宝盆加入阶段奖池、分层保底、定愿气运与寸心机缘包。",
+      "target": { "chapter": "optimizations", "heading": "聚宝盆革新" }
+    }
+  ]
+}

@@ -1,16 +1,36 @@
 // ============================================
-// 《腌笃鲜》官方维基 - Scroll Features
+// 《腌笃鲜》维基百科 - Scroll Features
 // ============================================
 
 window.XYDZTZ = window.XYDZTZ || {};
 window.XYDZTZ.scroll = {
   _currentActiveId: null,
+  _headings: [],
+  _lastHash: '',
+  _scrollTicking: false,
+  _hero: null,
+  _backToTop: null,
+  _progressBar: null,
+  _baseTitle: '',
 
   init() {
+    this._hero = document.getElementById('hero');
+    this._backToTop = document.getElementById('back-to-top');
+    this._progressBar = document.getElementById('read-progress');
+    this._positionBar = document.getElementById('reading-position');
+    this._positionNum = this._positionBar?.querySelector('.rp-num') || null;
+    this._positionTitle = this._positionBar?.querySelector('.rp-title') || null;
+    this._baseTitle = document.title;
+    try {
+      this._lastHash = decodeURIComponent(location.hash.slice(1));
+    } catch (err) {
+      this._lastHash = location.hash.slice(1);
+    }
+
     this.setupScrollSpy();
     this.setupBackToTop();
-    this.setupReadProgress();
     this.setupReveal();
+    this.setupViewportLoop();
   },
 
   setupReveal() {
@@ -20,44 +40,38 @@ window.XYDZTZ.scroll = {
     const main = document.getElementById('main-content');
     if (!main) return;
 
-    const children = Array.from(main.children);
+    const children = Array.from(main.children).slice(0, 18);
     if (children.length === 0) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
-          }
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
         });
       },
       { rootMargin: '0px 0px -8% 0px', threshold: 0.01 }
     );
 
-    children.forEach((el) => {
-      el.classList.add('reveal');
-      observer.observe(el);
+    children.forEach((element) => {
+      element.classList.add('reveal');
+      observer.observe(element);
     });
   },
 
   setupScrollSpy() {
     const tocLinks = document.querySelectorAll('.toc-link');
-    if (tocLinks.length === 0) return;
+    if (tocLinks.length === 0 || !('IntersectionObserver' in window)) return;
 
     const visible = new Set();
-    const headings = [];
+    this._headings = Array.from(tocLinks).map((link) => {
+      const id = link.dataset.id;
+      const element = document.getElementById(id);
+      return element ? { id, el: element, link } : null;
+    }).filter(Boolean);
 
-    tocLinks.forEach((link) => {
-      const id = link.getAttribute('data-id');
-      const el = document.getElementById(id);
-      if (el) headings.push({ id, el, link });
-    });
-
-    if (headings.length === 0) return;
-
-    let lastHash = location.hash.slice(1);
-    const hero = document.getElementById('hero');
+    if (this._headings.length === 0) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -66,95 +80,106 @@ window.XYDZTZ.scroll = {
           else visible.delete(entry.target.id);
         });
 
-        let activeId = null;
-        for (const h of headings) {
-          if (visible.has(h.id)) {
-            activeId = h.id;
-            break;
-          }
-        }
+        const active = this._headings.find((heading) => visible.has(heading.id));
+        if (!active) return;
 
-        if (!activeId) return;
-        this.setActive(activeId, headings);
-
-        // Hero 可见时保留首页地址，避免首次加载立即写入锚点。
-        const syncStart = Math.max(0, (hero?.offsetHeight || 0) - 80);
-        if (window.scrollY >= syncStart && activeId !== lastHash) {
-          lastHash = activeId;
-          history.replaceState(null, '', `#${activeId}`);
+        this.setActive(active.id);
+        const syncStart = Math.max(0, (this._hero?.offsetHeight || 0) - 80);
+        if (window.scrollY >= syncStart && active.id !== this._lastHash) {
+          this._lastHash = active.id;
+          history.replaceState(null, '', `#${encodeURIComponent(active.id)}`);
         }
       },
-      { rootMargin: '0px 0px -55% 0px', threshold: 0.05 }
+      { rootMargin: '-72px 0px -55% 0px', threshold: 0.05 }
     );
 
-    headings.forEach((h) => observer.observe(h.el));
-
-    const resetAtTop = window.XYDZTZ.utils.throttle(() => {
-      if (!hero || window.scrollY >= hero.offsetHeight * 0.45) return;
-
-      const active = document.querySelector('.toc-link.active');
-      if (active) active.classList.remove('active');
-      this._currentActiveId = null;
-      document.title = '《腌笃鲜》官方维基';
-
-      if (location.hash) {
-        lastHash = '';
-        history.replaceState(null, '', `${location.pathname}${location.search}`);
-      }
-    });
-
-    window.addEventListener('scroll', resetAtTop, { passive: true });
+    this._headings.forEach((heading) => observer.observe(heading.el));
   },
 
-  setActive(activeId, headings) {
+  setActive(activeId) {
     if (activeId === this._currentActiveId) return;
     this._currentActiveId = activeId;
 
-    const oldLink = document.querySelector('.toc-link.active');
-    if (oldLink) oldLink.classList.remove('active');
+    document.querySelector('.toc-link.active')?.classList.remove('active');
+    const active = this._headings.find((heading) => heading.id === activeId);
+    if (!active) return;
 
-    const newHeading = headings.find((h) => h.id === activeId);
-    if (newHeading) {
-      newHeading.link.classList.add('active');
-      window.XYDZTZ.toc?.openForLink(newHeading.link);
+    active.link.classList.add('active');
+    window.XYDZTZ.toc?.openForLink(active.link);
 
-      const sectionTitle = newHeading.el.textContent.trim();
-      const baseTitle = '《腌笃鲜》官方维基';
-      if (sectionTitle) {
-        const newTitle = `${sectionTitle} | ${baseTitle}`;
-        if (document.title !== newTitle) {
-          document.title = newTitle;
-        }
+    const sectionTitle = window.XYDZTZ.utils.headingText(active.el);
+    const chapterTitle = document.body.dataset.chapterTitle || '';
+    const bookTitle = document.body.dataset.bookTitle || '';
+    const siteTitle = '《腌笃鲜》';
+    const nextTitle = [sectionTitle, chapterTitle, bookTitle, siteTitle]
+      .filter((part, index, list) => part && list.indexOf(part) === index)
+      .join(' | ');
+    if (document.title !== nextTitle) document.title = nextTitle;
+    this.updateReadingPosition(active.el);
+  },
+
+  // 当前位置指示：H3 直接显示；H4 回溯所属章并附小节名；null（回到页首）时隐藏
+  updateReadingPosition(headingEl) {
+    if (!this._positionBar) return;
+    let chapterEl = headingEl || null;
+    if (chapterEl && chapterEl.tagName !== 'H3') {
+      let node = chapterEl.previousElementSibling;
+      while (node && node.tagName !== 'H3' && node.tagName !== 'H2') {
+        node = node.previousElementSibling;
       }
+      chapterEl = node && node.tagName === 'H3' ? node : null;
     }
+    if (!chapterEl) {
+      this._positionBar.classList.remove('visible');
+      return;
+    }
+    const num = chapterEl.dataset.num || '';
+    const chapterTitle = window.XYDZTZ.utils.headingText(chapterEl);
+    const isSub = headingEl !== chapterEl;
+    if (this._positionNum) this._positionNum.textContent = num ? `第${num}章` : '';
+    if (this._positionTitle) {
+      this._positionTitle.textContent = isSub
+        ? `${chapterTitle} › ${window.XYDZTZ.utils.headingText(headingEl)}`
+        : chapterTitle;
+    }
+    this._positionBar.classList.add('visible');
   },
 
   setupBackToTop() {
-    const btn = document.getElementById('back-to-top');
-    if (!btn) return;
-
-    const onScroll = window.XYDZTZ.utils.throttle(() => {
-      btn.classList.toggle('visible', window.scrollY > 400);
-    });
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-
-    btn.addEventListener('click', () => {
+    this._backToTop?.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   },
 
-  setupReadProgress() {
-    const bar = document.getElementById('read-progress');
-    if (!bar) return;
+  setupViewportLoop() {
+    const requestUpdate = () => {
+      if (this._scrollTicking) return;
+      this._scrollTicking = true;
+      requestAnimationFrame(() => {
+        this.updateViewport();
+        this._scrollTicking = false;
+      });
+    };
 
-    const onScroll = window.XYDZTZ.utils.throttle(() => {
-      const scrollTop = window.scrollY;
+    window.addEventListener('scroll', requestUpdate, { passive: true });
+    window.addEventListener('resize', requestUpdate, { passive: true });
+    requestUpdate();
+  },
+
+  updateViewport() {
+    const scrollTop = window.scrollY;
+    this._backToTop?.classList.toggle('visible', scrollTop > 480);
+
+    if (this._progressBar) {
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      bar.style.width = `${Math.min(progress, 100)}%`;
-    });
+      this._progressBar.style.width = `${Math.min(Math.max(progress, 0), 100)}%`;
+    }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
+    if (!this._hero || scrollTop >= this._hero.offsetHeight * 0.45) return;
+    document.querySelector('.toc-link.active')?.classList.remove('active');
+    this._currentActiveId = null;
+    document.title = this._baseTitle;
+    this.updateReadingPosition(null);
+  },
 };

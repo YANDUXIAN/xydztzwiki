@@ -1,0 +1,682 @@
+<!doctype html>
+<!-- ============================================
+     《腌笃鲜》维基百科 - Main Page
+     ============================================ -->
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="查阅《神话书说》黑风大王、犀牛三大王、聚宝金蟾、子圭玄鸟与年兽资料。" />
+    <meta name="keywords" content="腌笃鲜,饥荒,神话书说,模组,元辰劫运,盘丝娘娘,wiki,攻略" />
+    <meta name="author" content="《腌笃鲜》资料整理" />
+    <meta name="theme-color" content="#faf8f3" />
+    <script>
+      (() => {
+        let theme = 'light';
+        try {
+          const saved = localStorage.getItem('xydztz-theme') || localStorage.getItem('xdyztz-theme');
+          theme = saved === 'dark' || saved === 'light'
+            ? saved
+            : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch (err) {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', theme === 'dark' ? '#15110e' : '#faf8f3');
+      })();
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="首领与怪物 | 神话主题 | 《腌笃鲜》" />
+    <meta property="og:description" content="查阅《神话书说》黑风大王、犀牛三大王、聚宝金蟾、子圭玄鸟与年兽资料。" />
+    <meta property="og:site_name" content="《腌笃鲜》" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:url" content="https://yanduxian.cn/myth-theme/creatures/" />
+    <meta property="og:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1021" />
+    <meta property="og:image:alt" content="《腌笃鲜》雪景封面" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="首领与怪物 | 神话主题 | 《腌笃鲜》" />
+    <meta name="twitter:description" content="查阅《神话书说》黑风大王、犀牛三大王、聚宝金蟾、子圭玄鸟与年兽资料。" />
+    <meta name="twitter:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+
+    <title>首领与怪物 | 神话主题 | 《腌笃鲜》</title>
+    <link rel="canonical" href="https://yanduxian.cn/myth-theme/creatures/" />
+
+    <link rel="preload" href="/images/hero-default-1200.webp" imagesrcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" imagesizes="100vw" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/fonts/MaShanZheng-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/png" href="/images/mod-icon.png?v=20260719" />
+
+    <link rel="stylesheet" href="/styles/fonts.css?v=20260804o" />
+    <link rel="stylesheet" href="/styles/variables.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/base.css?v=20260804g" />
+    <link rel="stylesheet" href="/styles/hero.css?v=20260804r" />
+    <link rel="stylesheet" href="/styles/layout.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/markdown.css?v=20260805u" />
+    <link rel="stylesheet" href="/styles/components.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/media.css?v=20260806b" />
+    <link rel="stylesheet" href="/styles/responsive.css?v=20260805m" />
+  </head>
+  <body data-book-id="myth-theme" data-book-title="神话主题" data-chapter-slug="myth-theme-creatures" data-chapter-title="首领与怪物" data-search-index="/search-index.json?v=ca6182164b96">
+    <div class="read-progress" id="read-progress" aria-hidden="true"></div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2c-1.05 0-2.05.16-3 .46 1.69 1.24 2.79 3.26 2.79 5.54 0 3.87-3.13 7-7 7-.57 0-1.13-.08-1.67-.22C2.52 18.49 6.45 22 11 22c5.52 0 10-4.48 10-10S16.52 2 11 2c-.66 0-1.3.07-1.92.19C9.23 2.06 9.12 2 9 2z"/></svg>
+    </button>
+
+    <header class="hero" id="hero" role="banner">
+      <picture class="hero-bg-layer hero-bg-default" aria-hidden="true">
+        <source type="image/webp" srcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" sizes="100vw" />
+        <img src="/images/hero-default.jpg" srcset="/images/hero-default-1200.jpg 1200w, /images/hero-default.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" fetchpriority="high" />
+      </picture>
+      <picture class="hero-bg-layer hero-bg-hover" id="hero-hover-picture" aria-hidden="true">
+        <source type="image/webp" data-srcset="/images/hero-hover-1200.webp 1200w, /images/hero-hover.webp 2400w" sizes="100vw" />
+        <img data-src="/images/hero-hover.jpg" data-srcset="/images/hero-hover-1200.jpg 1200w, /images/hero-hover.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" />
+      </picture>
+      <div class="hero-sun-glow" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-gradient-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-title-row">
+          <h1 class="hero-title">《腌笃鲜》</h1>
+          <img class="hero-seal" src="/images/mod-icon.png?v=20260719" alt="《腌笃鲜》模组图标" width="68" height="68" />
+        </div>
+        <div class="hero-actions" aria-label="主要操作">
+          <a
+            class="hero-btn hero-btn-primary"
+            href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="在 Steam 创意工坊订阅《腌笃鲜》（新窗口）"
+          >订阅模组</a>
+          <button class="hero-btn hero-btn-secondary" id="hero-btn" type="button">开始查阅</button>
+        </div>
+      </div>
+
+      <div class="hero-subtitles">
+        <p class="hero-subtitle">三十五劫运交织，十二元辰下凡，灵台方寸显真心</p>
+        <p class="hero-subtitle">玉兔拨弦，黑风倒卷——人物精怪双篇登场</p>
+      </div>
+
+      <svg class="hero-torn-edge" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 48 L0 28 L36 32 L72 22 L120 30 L168 20 L216 28 L264 18 L312 30 L360 22 L408 28 L456 18 L504 26 L552 16 L600 26 L648 32 L696 22 L744 28 L792 18 L840 28 L888 22 L936 30 L984 20 L1032 28 L1080 22 L1128 30 L1176 18 L1224 26 L1272 30 L1320 22 L1368 28 L1404 24 L1440 28 L1440 48 Z" />
+      </svg>
+    </header>
+
+    <noscript>
+      <div class="noscript-warning" role="alert">
+        <strong>提示：</strong>正文仍可阅读；启用 JavaScript 后可使用目录搜索、劫运查询和媒体灯箱。
+      </div>
+    </noscript>
+
+    <nav class="chapter-nav" aria-label="神话主题篇章导航">
+      <div class="chapter-nav-inner" id="chapter-nav-inner">
+        <!-- CHAPTER_NAV_START -->
+        <details class="book-switcher">
+          <summary><strong>神话主题</strong></summary>
+          <div class="book-switcher-menu">
+            <a class="book-switcher-link" href="/">腌笃鲜</a>
+            <a class="book-switcher-link active" href="/myth-theme/">神话主题<span class="sr-only">（当前）</span></a>
+            <a class="book-switcher-link" href="/myth-characters/">神话人物</a>
+          </div>
+        </details>
+        <span class="chapter-nav-divider" aria-hidden="true"></span>
+        <div class="chapter-nav-pages">
+          <a class="chapter-nav-link" href="/myth-theme/">主题总览</a>
+        <a class="chapter-nav-link" href="/myth-theme/world/">世界地点</a>
+        <a class="chapter-nav-link" href="/myth-theme/npcs/">NPC 与交互</a>
+        <a class="chapter-nav-link active" href="/myth-theme/creatures/" aria-current="page">首领与怪物</a>
+        <a class="chapter-nav-link" href="/myth-theme/artifacts/">炼丹与法宝</a>
+        <a class="chapter-nav-link" href="/myth-theme/agriculture/">农业与料理</a>
+        <a class="chapter-nav-link" href="/myth-theme/buildings/">建筑与生态</a>
+        <a class="chapter-nav-link" href="/myth-theme/flight/">腾云与技能</a>
+        </div>
+        <!-- CHAPTER_NAV_END -->
+      </div>
+      <div class="reading-position" id="reading-position">
+        <span class="reading-position-text"><span class="rp-num"></span><span class="rp-title"></span></span>
+      </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar" aria-label="目录导航">
+        <div class="sidebar-header">
+          <h3 id="sidebar-title">首领与怪物目录</h3>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="toc-search" placeholder="搜索三本资料…" aria-label="搜索全部资料" />
+        </div>
+        <ul class="toc-list" id="toc-list">
+          <!-- SIDEBAR_TOC_START -->
+          <li class="toc-item toc-section has-children open">
+            <a class="toc-link" href="#%E9%BB%91%E9%A3%8E%E5%A4%A7%E7%8E%8B" data-id="黑风大王" data-num="壹">黑风大王</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%88%98%E6%96%97%E6%95%B0%E6%8D%AE%E4%B8%8E%E6%8A%80%E8%83%BD" data-id="战斗数据与技能">战斗数据与技能</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%A2%88%E8%A3%9F%E4%B8%8E%E9%94%A6%E8%A5%95%E8%A2%88%E8%A3%9F" data-id="袈裟与锦襕袈裟">袈裟与锦襕袈裟</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E7%8A%80%E7%89%9B%E4%B8%89%E5%A4%A7%E7%8E%8B" data-id="犀牛三大王" data-num="贰">犀牛三大王</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E4%BA%BA%E6%95%B0%E5%87%8F%E4%BC%A4%E4%B8%8E%E6%88%98%E6%96%97%E5%A7%BF%E6%80%81" data-id="人数减伤与战斗姿态">人数减伤与战斗姿态</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%8E%89%E8%90%BD%E4%B8%8E%E6%9D%90%E6%96%99" data-id="掉落与材料">掉落与材料</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E4%B8%89%E5%BF%83%E4%B8%B9%E8%8D%AF" data-id="三心丹药">三心丹药</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E4%B8%89%E5%BF%83%E6%AD%A6%E5%99%A8" data-id="三心武器">三心武器</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E8%81%9A%E5%AE%9D%E9%87%91%E8%9F%BE" data-id="聚宝金蟾" data-num="叁">聚宝金蟾</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%81%9A%E5%AE%9D%E7%9B%86-%E5%8E%9F%E7%94%9F%E6%8A%BD%E5%8F%96" data-id="聚宝盆-原生抽取">聚宝盆（原生抽取）</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E5%AD%90%E5%9C%AD%E7%8E%84%E9%B8%9F" data-id="子圭玄鸟" data-num="肆">子圭玄鸟</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%AD%90%E5%9C%AD%E8%A3%85%E5%A4%87" data-id="子圭装备">子圭装备</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E5%B9%B4%E5%85%BD" data-id="年兽" data-num="伍">年兽</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%B9%B4%E5%91%B3%E5%BA%A6%E4%B8%8E%E6%98%A5%E5%AD%A3%E7%BA%A2%E5%8C%85" data-id="年味度与春季红包">年味度与春季红包</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%B9%B4%E5%85%BD%E6%8E%89%E8%90%BD" data-id="年兽掉落">年兽掉落</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%B9%B4%E5%85%BD%E9%9D%A2%E5%85%B7" data-id="年兽面具">年兽面具</a></li>
+            </ul>
+          </li>
+          <!-- SIDEBAR_TOC_END -->
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <article class="content-card">
+          <div class="md-body" id="main-content" data-static-snapshot="ready" data-content-hash="ca6182164b96" data-chapter="myth-theme-creatures">
+            <!-- STATIC_CONTENT_START -->
+<h2 id="首领与怪物" data-legacy-id="sec-首领与怪物-j6xdpf" data-eyebrow="第肆篇">首领与怪物</h2><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：Boss与特殊生物总览] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：黑风大王、犀牛三大王、聚宝金蟾、子圭玄鸟、年兽]</p>
+</blockquote><blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：妖王刷新播报默认开启，会在刷新前 3、2、1 天及最后 5 秒提醒全服；黑风大王、金蟾与三犀牛的刷新周期可配置，默认档仍采用各自原生周期。详见<a href="/optimizations/">神话优化</a>。</p>
+</blockquote><hr>
+<h3 id="黑风大王" data-legacy-id="sec-黑风大王-kny0wx" data-num="壹">黑风大王</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：Boss] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：蜜罐、蜂蜜、蜂王浆、袈裟、丹药葫芦]</p>
+</blockquote><p>黑风大王不是随机路过。世界中的<strong>蜜罐</strong>只收<strong>蜂蜜或蜂王浆</strong>，共有九格；把九格填满后关闭容器，黑风会在罐子约 30 格外出现并冲向蜜罐，约 5 秒后变成本体。蜜罐在等待期间会锁住，黑风大王出现后进入 <strong>20 个游戏日</strong>的冷却。</p>
+<h4 id="战斗数据与技能" data-legacy-id="sec-战斗数据与技能-fboysu">战斗数据与技能</h4><p>黑风大王有 <strong>12500 生命</strong>，基础攻击伤害 200，攻击间隔约 3 秒；主目标周围约 6.2 格还会受到相当于基础伤害 80% 的范围打击。普通命中会击飞未受保护的手持物；震地会升起半径约 13 格的环形石障；冲撞和震地会摧毁树木、岩石及其他可破坏设施。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">招式</th>
+<th align="left">前兆与范围</th>
+<th align="left">规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">普通拍击</td>
+<td align="left">抬身挥击，约 3 秒攻击周期</td>
+<td align="left">主目标承受 200 基础伤害，周围单位承受范围伤害；手持物可能被击飞</td>
+</tr>
+<tr>
+<td align="left">震地石障</td>
+<td align="left">站立重踏，约 10 秒可再次发动</td>
+<td align="left">四圈震地后，在约 13 格半径生成 32 块环形石障</td>
+</tr>
+<tr>
+<td align="left">黑风旋转</td>
+<td align="left">生命低于 50% 后可能在普通攻击中转为黑风</td>
+<td align="left">黑风约每秒对 4.5 格内目标造成 50 伤害；基础冷却 20 秒，生命低于 20% 时缩短至 15 秒</td>
+</tr>
+<tr>
+<td align="left">着火反应</td>
+<td align="left">被点燃时会直接进入黑风旋转</td>
+<td align="left">火焰不会把它固定在原地，反而会立即触发高频范围伤害</td>
+</tr>
+<tr>
+<td align="left">冲撞破坏</td>
+<td align="left">四足加速冲锋</td>
+<td align="left">路径上的树、岩石和多数可破坏设施会被摧毁，部分自然资源不会正常掉落</td>
+</tr>
+</tbody></table></div></div><p>它在战斗中对附近玩家施加很强的理智光环：有战斗目标时约每分钟 -400 理智，未开打时也约每分钟 -100。</p>
+<h5 id="掉落" data-legacy-id="sec-掉落-hnmc">掉落</h5><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">掉落</th>
+<th align="left">数量或概率</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">幸运金块</td>
+<td align="left">固定 5 个</td>
+</tr>
+<tr>
+<td align="left">神话铜钱</td>
+<td align="left">固定 5 个，另有 5 次彼此独立的 50% 额外判定，因此总量为 5—10 个</td>
+</tr>
+<tr>
+<td align="left">铜钱串</td>
+<td align="left">50% 概率 1 个</td>
+</tr>
+<tr>
+<td align="left">蜂巢</td>
+<td align="left">固定 3 个，另有 50% 概率追加 1 个</td>
+</tr>
+<tr>
+<td align="left">丹药葫芦</td>
+<td align="left">固定 1 个</td>
+</tr>
+<tr>
+<td align="left">袈裟</td>
+<td align="left">固定 1 件</td>
+</tr>
+<tr>
+<td align="left">锦襕袈裟蓝图</td>
+<td align="left">固定 1 张</td>
+</tr>
+<tr>
+<td align="left">完整锦襕袈裟</td>
+<td align="left">5% 概率额外掉落 1 件</td>
+</tr>
+</tbody></table></div></div><h4 id="袈裟与锦襕袈裟" data-legacy-id="sec-袈裟与锦襕袈裟-wejbz7">袈裟与锦襕袈裟</h4><p>普通袈裟需要<strong>蜘蛛丝×9、兔人尾巴×3、啜食者皮×3</strong>。装备在身体栏后，饥饿消耗降为 0.8 倍、每分钟约回复 6 理智；它有自身使用耐久，耗尽后会消失，但没有护甲减伤。</p>
+<p>锦襕袈裟需要<strong>普通袈裟、熊皮、龙鳞</strong>，配方蓝图由黑风大王固定掉落。它把饥饿消耗进一步降为 0.5 倍、每分钟约回复 9 理智，并让部分暗影生物不再主动敌视；同样会随使用时间耗尽，也同样不是护甲。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：锦襕袈裟对部分暗影生物的防敌视功能失效问题会自动修复；耐久、饥饿倍率和理智回复仍以本节数据为准。详见<a href="/compatibility/">兼容修复</a>。</p>
+</blockquote><blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：《腌笃鲜》另有“熊罴真身”首领战：须在原黑风大王战败前完成吞天控场，并让其在活动场内战败。原黑风仍先按本章结算死亡与掉落，随后才可能显化真身。详见<a href="/characters/">人物精怪</a>。</p>
+</blockquote><hr>
+<h3 id="犀牛三大王" data-legacy-id="sec-犀牛三大王-yrqy7i" data-num="贰">犀牛三大王</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：Boss组] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：青竹洲供桌、普通蟠桃、春季夜晚、三色心脏、犀牛角]</p>
+</blockquote><p>青竹洲破旧的供桌的准确触发条件有四个：</p>
+<ol>
+<li>当前是<strong>春季夜晚</strong>；</li><li>供桌内已放入一颗<strong>普通蟠桃</strong>，不是大蟠桃；</li><li>供桌的烛火已用任意可燃燃料点亮；</li><li>供桌没有处于 50 个游戏日的召唤冷却中。</li></ol>
+<p>蟠桃放入后最多保留 600 秒，烛火最多亮 180 秒，而且一到白天两者都会清空。</p>
+<p>三只犀牛各有 <strong>10000 生命</strong>。它们出现时会分别占据三种战斗姿态，并且约每 <strong>40 秒</strong>轮换一次；姿态不是按辟寒、辟暑、辟尘永久固定，也不是简单地“死一只、其余永久升一阶段”。</p>
+<h4 id="人数减伤与战斗姿态" data-legacy-id="sec-人数减伤与战斗姿态-k23ms">人数减伤与战斗姿态</h4><p>犀牛按<strong>供桌附近 32 格内的实际玩家数</strong>获得减伤：1 人为 0，2–3 人为 25%，4 人及以上为 50%；服务器其他区域的在线玩家不计入。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">姿态</th>
+<th align="left">基础数值（对玩家为装备减伤前）</th>
+<th align="left">招式与数值</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">近战姿态</td>
+<td align="left">攻击间隔 3 秒，攻击距离约 4；原始伤害 200，对玩家 100；不回血</td>
+<td align="left">正面挥击带扇形范围和击退。</td>
+</tr>
+<tr>
+<td align="left">法术姿态</td>
+<td align="left">攻击间隔 3 秒，索敌/施法距离大幅提高；原始伤害 400，对玩家 200；每秒回复 10 生命</td>
+<td align="left">约 12 秒可施法一次。辟寒制造冰圈并在结束时造成 100 伤害与冻结；辟暑制造火圈并在结束时造成 200 伤害；辟尘制造沙尘区，核心区移速降至 30%，结束时生成旋风。</td>
+</tr>
+<tr>
+<td align="left">冲锋姿态</td>
+<td align="left">攻击距离约 8；原始伤害 300，对玩家 150；每秒回复 10 生命</td>
+<td align="left">约 10 秒可再次冲锋，冲锋沿途持续判定伤害并摧毁可破坏物。</td>
+</tr>
+</tbody></table></div></div><h5 id="复活机制" data-legacy-id="sec-复活机制-bouf7u">复活机制</h5><p>三只犀牛刚出现时都带有一次共享的复活机会。第一次有犀牛倒下，仍活着的兄弟会进入吼叫与复活动作，施法者在这段动作中无敌，倒地者会以 <strong>25% 生命</strong>复起；同时其他存活犀牛若低于 25% 也会被抬到 25%。这次复活完成后，三只犀牛都失去再次复活的资格，之后击倒才会真正结算掉落。</p>
+<p>近战与冲锋姿态通常不会主动选择海上目标；法术姿态仍可锁定海上玩家，法术落点会对附近船只造成 200 伤害。三色法术均可击落飞行中的玩家。</p>
+<p>三只犀牛无法被常规冻结，睡眠判定也不会让它们入睡；它们还具有爆炸抗性，普通火焰伤害只按 20% 结算，辟暑不会被点燃或受到过热伤害。</p>
+<p>若供桌周围约 28 格连续约 16 秒没有存活玩家，仍存活的犀牛会全部离场；召唤时已经启动的 50 天冷却仍需遵守。</p>
+<h4 id="掉落与材料" data-legacy-id="sec-掉落与材料-jzt3st">掉落与材料</h4><p>每只犀牛固定掉落 1 个守护者的角、3 个对应颜色宝石、1 个铜钱串、1 个对应心脏、1 盏红灯笼、4 块肉与 5 个幸运金块。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">材料</th>
+<th align="left">主要用途</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">辟寒心脏（蓝心）</td>
+<td align="left">辟暑丹、霜钺斧</td>
+</tr>
+<tr>
+<td align="left">辟暑心脏（红心）</td>
+<td align="left">辟寒丹、暑熤刀</td>
+</tr>
+<tr>
+<td align="left">辟尘心脏</td>
+<td align="left">辟尘丹、扢挞藤</td>
+</tr>
+<tr>
+<td align="left">犀牛角</td>
+<td align="left">三环境丹、人物头甲等</td>
+</tr>
+</tbody></table></div></div><h4 id="三心丹药" data-legacy-id="sec-三心丹药-a8qs34">三心丹药</h4><p>三种心脏首先服务于三犀牛自己的环境丹路线。它们放在玩家普通物品栏中便会生效并持续消耗时效，放入丹药葫芦后暂停时效，同时也暂停消耗。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">丹药</th>
+<th align="left">核心效果</th>
+<th align="left">配方与续炼</th>
+</tr>
+</thead><tbody><tr>
+<td align="left"><strong>避暑丹</strong></td>
+<td align="left">免疫火焰伤害；温度不会升到过热阈值前 10 点以上</td>
+<td align="left">犀牛角、<strong>辟寒心脏（蓝）</strong>、蕨叶、硝石；用蓝宝石、蕨叶、硝石续炼</td>
+</tr>
+<tr>
+<td align="left"><strong>避寒丹</strong></td>
+<td align="left">不再增加潮湿，干燥速度提高；温度不会低于 10</td>
+<td align="left">犀牛角、<strong>辟暑心脏（红）</strong>、蕨叶、硝石；用红宝石、蕨叶、硝石续炼</td>
+</tr>
+<tr>
+<td align="left"><strong>避尘丹</strong></td>
+<td align="left">免受沙尘暴视野干扰，获得等同护目镜的视野</td>
+<td align="left">犀牛角、<strong>辟尘心脏（黄）</strong>、蕨叶、硝石；用黄宝石、蕨叶、硝石续炼</td>
+</tr>
+</tbody></table></div></div><p>避暑与避寒的名字和心脏颜色是<strong>反向对应</strong>的：蓝心做避暑，红心做避寒。重炼会把已有丹药作为材料并恢复时效，不会额外产出一枚。八卦炉投料和丹药葫芦的共通规则见<a href="/myth-theme/artifacts/">炼丹与法宝</a>。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：腌笃鲜法宝均可 + 三色心脏各一在炼丹炉中重炼回寸心精魄。</p>
+</blockquote><h4 id="三心武器" data-legacy-id="sec-三心武器-a8vhuk">三心武器</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">武器</th>
+<th align="left">配方与时间</th>
+<th align="left">普攻与主动能力</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">霜钺斧</td>
+<td align="left">月光玻璃斧、辟寒心脏（蓝）、月岩、蓝宝石；960 秒</td>
+<td align="left">51 伤害、400 次使用；命中可灭火并增加寒冷。主动消耗 5 饥饿和 1 次耐久，冷却 10 秒，对约 4 格锥形范围施加更强寒冷；同时是一级斧具，装备时提供 25 点降温</td>
+</tr>
+<tr>
+<td align="left">扢挞藤</td>
+<td align="left">铥矿棒、辟尘心脏（黄）、沙之石、黄宝石；960 秒</td>
+<td align="left">51 伤害、400 次使用；普通命中会对约 3 格内目标再造成 51 范围伤害。装备后攻击间隔变为约 0.8 秒；主动消耗 5 饥饿和 1 次耐久，冷却 20 秒，跃向目标并按距离造成约 50—200 范围伤害</td>
+</tr>
+<tr>
+<td align="left">暑熤刀</td>
+<td align="left">玻璃刀、辟暑心脏（红）、金块、红宝石；960 秒</td>
+<td align="left">600 次使用；伤害随持有者温度约在 36—72 之间变化。主动消耗 5 饥饿和 1 次耐久，冷却 10 秒，向前铺出 8 段火线，每个目标只命中一次并造成当时武器伤害的两倍；装备时提供高温热源</td>
+</tr>
+</tbody></table></div></div><p>三件武器均可用“<strong>原武器、红宝石、蓝宝石、紫宝石</strong>”重新炼制为满耐久成品，耗时 480 秒。</p>
+<hr>
+<h3 id="聚宝金蟾" data-legacy-id="sec-聚宝金蟾-gkx9g0" data-num="叁">聚宝金蟾</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：事件Boss] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：金元宝雕像、吞人、聚宝盆、摇钱树、主题铜钱]</p>
+</blockquote><p>广寒宫外围的金元宝雕像是金蟾的触发物。用矿镐开采 <strong>3 次</strong>后，雕像消失、聚宝金蟾现身；它的复生冷却为 <strong>20 个游戏日</strong>。</p>
+<p>金蟾的生命上限是 99999，并设定了最低 1 点生命：普通意义上不会被击杀。把它压到最低血量会让它遁地离场，并按“成功逼退”结算奖励。基础状态下攻击距离约 7、攻击间隔 3.5 秒、原始伤害 100，对玩家约 50。火焰伤害对它无效，它没有可冻结状态；睡眠可以生效，但有 4 点睡眠抗性，而且连续催眠会越来越难。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">生命阶段</th>
+<th align="left">阶段变化</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">100%—70%</td>
+<td align="left">红包一次选择 1 名目标，基础攻击与撒币地震</td>
+</tr>
+<tr>
+<td align="left">70%—40%</td>
+<td align="left">红包目标增至 2 人，红包冷却由 14 秒缩短到 10 秒，撒币/地震规模提高</td>
+</tr>
+<tr>
+<td align="left">40%—1点</td>
+<td align="left">红包仍为 2 人，并开始使用约 20 秒基础冷却的连续震地</td>
+</tr>
+</tbody></table></div></div><p>金蟾会周期性召唤小金蟾。场上数量为 1–4、5–7、8 只以上时，本体依次获得 10%、20%、30% 减伤；对玩家的基础伤害从 50 提高到 60、75、125，攻击间隔从 3.5 秒缩短到 3、2.5、2 秒。</p>
+<p>吞人只会在场上已有小金蟾、且金蟾周围 8 格内至少有两名存活玩家时尝试。成功吞入后，队伍有 10 秒救援窗口；累计伤害超过 500 会提前吐人，即使没达到也会在计时结束后吐出，但被吞者在此期间无法正常行动。被吐出并落地后，角色当时所有已装备、具有护甲耐久的物品都会按各自耐久上限受到一次伤害，通常会被直接耗尽；物品栏中未装备的护甲不参与这次结算。成功吞人后该招式冷却 60 秒，未吞到目标则约 30 秒后可再尝试。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：启用火元淬炼后，达到当前护甲淬炼上限的受支持护甲会获得深渊抗性，可免受金蟾吞噬落地后的这次耐久蚕食；未满级或不受淬炼系统支持的护甲仍按原生规则结算。详见<a href="/systems/#%E7%81%AB%E5%85%83%E6%B7%AC%E7%82%BC">火元淬炼系统</a>。</p>
+</blockquote><p>红包炸弹：约 3.5 秒后会解除并在脚下生成 1 个金元宝。</p>
+<p>成功逼退后掉落聚宝盆、10–20 个铜钱、33 个幸运金块、4 个随机宝石、彩虹宝石与 2 个铜钱串；世界尚未产出摇钱树时，额外掉落一棵摇钱树。</p>
+<h4 id="聚宝盆-原生抽取" data-legacy-id="sec-聚宝盆-原生抽取-9usl7v">聚宝盆（原生抽取）</h4><p>聚宝盆没有制作配方，只能由聚宝金蟾掉落。它只接受<strong>幸运金块</strong>：每次交付消耗 1 个，约 0.5 秒后完成一次独立抽取。原生逻辑没有累计抽数、保底或个人归属，产物直接落在盆旁，任何玩家都可拾取。</p>
+<p>聚宝盆也不是永久设施。下一轮金元宝雕像被挖开、金蟾重新出土时，世界中仍然存在的聚宝盆会一并被侵蚀移除；因此应把它理解为本轮金蟾事件留下的限时抽取设施。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="center">奖励档</th>
+<th align="center">档位概率</th>
+<th align="center">档内单项概率</th>
+<th align="left">等概率候选</th>
+</tr>
+</thead><tbody><tr>
+<td align="center">一档</td>
+<td align="center">50%</td>
+<td align="center">6.25%</td>
+<td align="left">金块、沙之石、莲花、猪皮、牛毛、神话铜钱、兔绒、硝石</td>
+</tr>
+<tr>
+<td align="center">二档</td>
+<td align="center">30%</td>
+<td align="center">5%</td>
+<td align="left">齿轮、骨片、活木、萤火虫、鼹鼠、牛角</td>
+</tr>
+<tr>
+<td align="center">三档</td>
+<td align="center">10%</td>
+<td align="center">约 0.526%</td>
+<td align="left">葫芦、龙虾、竹笋、尖刺灌木、钢丝绵，以及胡萝卜、玉米、南瓜、茄子、榴莲、石榴、火龙果、西瓜、番茄、土豆、芦笋、洋葱、大蒜、辣椒的巨型作物</td>
+</tr>
+<tr>
+<td align="center">四档</td>
+<td align="center">5%</td>
+<td align="center">约 0.227%</td>
+<td align="left">巨型葫芦、伏特羊角、钢羊黏液、啜食者皮、海象牙、猪鼻铸币、蜂巢、黄油、移山丹、腾云丹、嗜血丹、凝味丹、壮骨丹、硝石、子圭石、海芽炸弹、紫/蓝/红/橙/黄/绿宝石</td>
+</tr>
+<tr>
+<td align="center">五档</td>
+<td align="center">3%</td>
+<td align="center">约 0.158%</td>
+<td align="left">应用园艺学、特殊蓝图组、化石碎片、蜗壳护甲、灯笼、曼德拉草、暗夜剑、暗夜甲、步行手杖、三种月饼、荆棘丹、还魂丹、铜钱串、铥矿棒、铥矿皇冠、铥矿甲、疙瘩树果</td>
+</tr>
+<tr>
+<td align="center">六档</td>
+<td align="center">1.5%</td>
+<td align="center">约 0.079%</td>
+<td align="left">大蟠桃、彩虹宝石、龙鳞、巨鹿眼球、蛤蟆皮、熊皮、暗影心房、蜂王冠、守护者之角、一角鲸的角、邪天翁喙、坎普斯背包、小金蟾、装有丹药的丹药葫芦、月饼盒、子圭战盔、子圭战甲、苍竹、桃木手杖</td>
+</tr>
+<tr>
+<td align="center">七档</td>
+<td align="center">0.5%</td>
+<td align="center">约 0.071%</td>
+<td align="left">避尘丹、避寒丹、避暑丹、紫金红葫芦、辟暑心脏、辟寒心脏、辟尘心脏</td>
+</tr>
+</tbody></table></div></div><p>“特殊蓝图组”在被抽中后还会从 <strong>9 张蓝图</strong>中等概率选择 1 张：龙鳞火炉、红/绿/蓝蘑菇帽、菌伞灯、蘑菇灯、懒人传送塔、捆绑包装、刺耳三叉戟。该组整体概率约为 0.158%，指定一张蓝图约为 <strong>0.0175%</strong>。</p>
+<p>少数候选的实际产量不是 1：硝石为 3 个、海芽炸弹为 5 个；小金蟾为 6 只。丹药葫芦会预装腾云丹、嗜血丹、凝味丹、壮骨丹各 1–2 枚；月饼盒会预装三种月饼各 1 个。</p>
+<blockquote class="bq-info"><p><strong>[异常说明]</strong>：当前原生奖池中的巨型火龙果和腾云丹玩家实际测试无法有效抽出，两项合计约占全部抽取的 <strong>0.75%</strong>。</p>
+</blockquote><blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：金蟾本体与上述掉落仍按原生流程结算；获得聚宝盆后，默认启用《腌笃鲜》的“聚宝盆革新”，原生奖池会被分层奖池、阶段解锁与个人保护机制接管，可在设置中关闭并回到上述原生抽取逻辑。详见<a href="/optimizations/">神话优化</a>。</p>
+</blockquote><hr>
+<h3 id="子圭玄鸟" data-legacy-id="sec-子圭玄鸟-bvycag" data-num="肆">子圭玄鸟</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：特殊生物与交易访客] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：成熟莲花、子圭石、莲池、十日冷却、子圭装备]</p>
+</blockquote><p>玩家靠近处于第4阶段、正在盛开的莲花时，如果当前不是夜晚、世界中没有另一只玄鸟、且没有处于攻击惩罚冷却，本次检查有 <strong>10% 概率</strong>引来子圭玄鸟。同一时间不会同时出现两只。它落地后只停留约 <strong>30 秒</strong>：会吃附近成熟莲花，随后结算并离去。</p>
+<p>十天冷却并不是每次相遇结束后都会启动。<strong>只有玄鸟受到攻击时</strong>，才会立刻飞走、使附近 6 格内的玩家和随从掉落已装备物，并开启 10 个游戏日的世界冷却；正常交花或自然离场不会主动开启这段惩罚冷却。</p>
+<p>玩家手动给予 1 朵莲花后，本次相遇立即结算并结束；获得的子圭石数量为“玄鸟此前吃掉的成熟莲花数 + 本次交付的 1 朵”，因此此前没有吃花时也至少得到 1 枚。若不交花、等待玄鸟自然离场，则只按它此前吃掉的成熟莲花数掉落子圭石。</p>
+<h4 id="子圭装备" data-legacy-id="sec-子圭装备-bw1ksf">子圭装备</h4><p>子圭青金由<strong>子圭岩、幸运金块、铥矿碎片</strong>炼成，耗时 60 秒。玄鸟带来的子圭材料继续用于下列整套装备：</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">装备</th>
+<th align="left">配方与时间</th>
+<th align="left">当前能力</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">七星剑</td>
+<td align="left">急急如律令、子圭青金×3；960 秒</td>
+<td align="left">34 伤害、无耐久；可把约 16 格内的目标作为投掷落点，冷却 10 秒，命中后返回并重新装备。对暗影生物、梦魇生物和暗影棋子会造成近乎必杀的特殊打击，但目标同时不会留下正常战利品</td>
+</tr>
+<tr>
+<td align="left">子圭战盔</td>
+<td align="left">子圭青金×2、铸铁头盔、活木；960 秒</td>
+<td align="left">3000 耐久、90% 减伤、每分钟约 +3.3 理智，并免受负面理智光环影响</td>
+</tr>
+<tr>
+<td align="left">子圭战甲</td>
+<td align="left">子圭青金×2、铸铁战甲、活木；960 秒</td>
+<td align="left">3000 耐久、90% 减伤；对暗影、梦魇及远古织影者类伤害提高到 95% 减伤；每分钟约 +3.3 理智</td>
+</tr>
+</tbody></table></div></div><p>子圭战甲在白天、没有下雨、耐久低于 50% 但尚未损坏时，丢在地上可每 5 秒恢复 2 点耐久。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：子圭战甲每次护甲淬炼增加 5 点位面防御。1 / 2 / 3 阶时，穿在身上的恢复上限依次提高到 50% / 75% / 100%；2 / 3 阶时，落地恢复上限提高到 75% / 100%，3 阶以上维持 100%，额外恢复均为每 5 秒 2 点。达到当前配置的淬炼上限后，耐久归零不会碎裂，而是进入无基础防御的枯竭状态，重新穿戴后可继续恢复；同时获得金蟾吞噬落地蚕食免疫。详见<a href="/systems/#%E7%81%AB%E5%85%83%E6%B7%AC%E7%82%BC">火元淬炼系统</a>。</p>
+</blockquote><hr>
+<h3 id="年兽" data-legacy-id="sec-年兽-gih5" data-num="伍">年兽</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：季节事件Boss] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：青竹小店、冬季倒数第二天、供桌、五天折扣、年兽坐骑]</p>
+</blockquote><p>年兽在冬季还剩 2 天、进入黄昏且至少一间青竹小店有效时出现；且供桌不能处于游戏日冷却中。年兽会追踪约 40 格内目标，普通攻击带 3 格范围伤害和击退。</p>
+<p>它有 <strong>8888 生命、75 默认伤害、7 跑速</strong>；冲刺造成 150 伤害，孢子爆炸造成 200 伤害。孢子、冲刺、吼叫的基础间隔分别约为 12、50、30 秒。年兽受到火焰伤害时按 3 倍结算，爆竹或其他惊吓爆炸还能每 20 秒打断一次动作。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">招式</th>
+<th align="left">前兆与数值</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">孢子投掷</td>
+<td align="left">原地作投掷动作；默认抛出 3 枚，周围玩家超过3名时按人数增加，最多6枚</td>
+</tr>
+<tr>
+<td align="left">孢子云</td>
+<td align="left">云雾可持续约120秒；身处其中时移速×0.75、造成伤害×0.5、受到伤害×1.25，食物还会加速腐烂</td>
+</tr>
+<tr>
+<td align="left">吼叫引爆</td>
+<td align="left">吼叫约1秒后引爆场上尚未消散的孢子云</td>
+</tr>
+<tr>
+<td align="left">冲刺</td>
+<td align="left">约1.3秒蓄力后直线冲锋1秒，路径半径约2</td>
+</tr>
+<tr>
+<td align="left">半血护盾</td>
+<td align="left">首次降到 50% 生命时进入睡眠姿势并张开护盾；护盾完全吸收普通伤害，约 1 秒后开始每秒恢复 200 生命。火焰伤害会立即破盾，生命回满也会自行收盾</td>
+</tr>
+</tbody></table></div></div><p>年兽本身可以被睡眠和冻结控制，但半血护盾期间不会再积累睡眠，且普通伤害会被完全吸收。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">事件结局</th>
+<th align="left">结果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">春季前击败</td>
+<td align="left">结算年兽战利品；小镇会获得 5 天折扣，并在春季结束前夜晚不闭市（若三犀牛入侵会提前打断）</td>
+</tr>
+<tr>
+<td align="left">拖到春季</td>
+<td align="left">年兽离场，不等同于击杀结算；小镇会丢失货物并停止进货 5 天</td>
+</tr>
+<tr>
+<td align="left">年兽坐骑</td>
+<td align="left">年兽铃铛喂满后使用，会另外生成一只年兽坐骑；它不是被击败的年兽 Boss 转化或驯服。基础为 888 生命、68 伤害、攻击范围 4、跑速 9</td>
+</tr>
+</tbody></table></div></div><h4 id="年味度与春季红包" data-legacy-id="sec-年味度与春季红包-3vc19k">年味度与春季红包</h4><p>年味度按玩家分别记录。一个结算周期在冬季开始时清零，并在<strong>春季已经过去 3 天的换日点</strong>结算；因此同一次全服事件可以让所有玩家加分，个人食用、建造和附近物件则只影响对应玩家。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">来源</th>
+<th align="left">单次增加</th>
+<th align="left">本类累计上限</th>
+<th align="left">归属与条件</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">冬季击杀独眼巨鹿或克劳斯</td>
+<td align="left">+10</td>
+<td align="left">20</td>
+<td align="left">全服玩家；克劳斯必须处于已结算状态</td>
+</tr>
+<tr>
+<td align="left">食用年味料理</td>
+<td align="left">+4</td>
+<td align="left">20</td>
+<td align="left">食用者；包括水饺、大肉包子、小鸡炖蘑菇、麻辣红烧鱼、八宝饭、折月春卷儿、腊味合蒸、屠苏酒</td>
+</tr>
+<tr>
+<td align="left">红木餐桌相关建造或使用</td>
+<td align="left">+4</td>
+<td align="left">8</td>
+<td align="left">本次操作者</td>
+</tr>
+<tr>
+<td align="left">冬季点燃爆竹</td>
+<td align="left">+2</td>
+<td align="left">10</td>
+<td align="left">爆竹 15 格内玩家</td>
+</tr>
+<tr>
+<td align="left">冬季发射窜天猴</td>
+<td align="left">+5</td>
+<td align="left">10</td>
+<td align="left">全服玩家</td>
+</tr>
+<tr>
+<td align="left">制作灯笼、灯架或悬挂灯笼</td>
+<td align="left">+2</td>
+<td align="left">10</td>
+<td align="left">本次操作者</td>
+</tr>
+<tr>
+<td align="left">冬季击败年兽</td>
+<td align="left">+50</td>
+<td align="left">50</td>
+<td align="left">全服玩家</td>
+</tr>
+<tr>
+<td align="left">结算时身边 20 格内的主题玩具</td>
+<td align="left">每件 +2</td>
+<td align="left">每个落地堆叠最多计 12</td>
+<td align="left">只在结算瞬间读取；多堆分别计算</td>
+</tr>
+</tbody></table></div></div><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">结算年味度</th>
+<th align="left">红包内容</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">0—1</td>
+<td align="left">没有红包</td>
+</tr>
+<tr>
+<td align="left">2—20</td>
+<td align="left">神话铜钱×1</td>
+</tr>
+<tr>
+<td align="left">21—40</td>
+<td align="left">幸运金块×4—8</td>
+</tr>
+<tr>
+<td align="left">41—60</td>
+<td align="left">幸运金块×8—12</td>
+</tr>
+<tr>
+<td align="left">61—99</td>
+<td align="left">幸运金块×16—20</td>
+</tr>
+<tr>
+<td align="left">100 及以上</td>
+<td align="left">好运红包，幸运金块×20</td>
+</tr>
+</tbody></table></div></div><p>爆竹可用<strong>硝石×1、竹子×3、绳子×1</strong>在科学机器下制作，一次得到 6 个。点燃后会连续惊吓生物；燃放进度过半后，还会引燃 4 格内符合条件的鞭炮、爆竹和火药。窜天猴是青竹小店冬季限定货，发射后会短暂留下地图标记。</p>
+<h4 id="年兽掉落" data-legacy-id="sec-年兽掉落-c9av4t">年兽掉落</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">掉落</th>
+<th align="left">数量或概率</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">年兽铃铛</td>
+<td align="left">固定 1 个；这是年兽坐骑核心道具</td>
+</tr>
+<tr>
+<td align="left">年兽鬃毛</td>
+<td align="left">固定 8 个</td>
+</tr>
+<tr>
+<td align="left">幸运金块</td>
+<td align="left">固定 4 个，另有 3 次彼此独立的 50% 追加判定</td>
+</tr>
+<tr>
+<td align="left">红宝石</td>
+<td align="left">固定 2 个</td>
+</tr>
+<tr>
+<td align="left">蓝宝石</td>
+<td align="left">固定 2 个</td>
+</tr>
+<tr>
+<td align="left">紫、橙、黄、绿宝石</td>
+<td align="left">每种固定 1 个，每种再分别有 50% 概率追加 1 个</td>
+</tr>
+</tbody></table></div></div><h4 id="年兽面具" data-legacy-id="sec-年兽面具-c9jela">年兽面具</h4><p>年兽面具在神话科技下制作，需要<strong>年兽鬃毛×4、蜘蛛丝×8、犬牙×12</strong>。它有 <strong>2000 耐久、70% 减伤</strong>；佩戴者受到的火焰伤害按 <strong>2 倍</strong>结算。</p>
+<p>佩戴时每次正常进食都有 <strong>25%</strong> 概率触发特殊结算：本次进食原物品不被消耗，并把本次生命、饥饿、理智吸收倍率临时提高到 2 倍。概率没有触发时按普通进食处理。</p>
+            <!-- STATIC_CONTENT_END -->
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <footer class="footer" id="site-footer" role="contentinfo">
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-message">
+        <p class="footer-message-text">感谢每一位订阅玩家的支持和鼓励，祝各位在《腌笃鲜》的努力下游戏愉快，武运昌隆，尽享神话之旅！</p>
+        <p class="footer-signature">——咸鱼 &amp; 大猪蹄子 敬上</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357" target="_blank" rel="noopener noreferrer">Steam 创意工坊</a>
+        <a href="https://qm.qq.com/q/iFeDTMf6Io" target="_blank" rel="noopener noreferrer">反馈交流群</a>
+      </div>
+      <p>&copy; 2026 《腌笃鲜》</p>
+      <p>反馈交流 QQ 群：1046023996</p>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <script src="/scripts/utils.js?v=20260804h"></script>
+    <script src="/scripts/renderer.js?v=20260805c"></script>
+    <script src="/scripts/toc.js?v=20260805b"></script>
+    <script src="/scripts/scroll.js?v=20260805a"></script>
+    <script src="/scripts/theme.js?v=20260804f"></script>
+    <script src="/scripts/ui.js?v=20260805b"></script>
+    <script src="/scripts/media.js?v=20260808a"></script>
+    <script src="/scripts/main.js?v=20260805c"></script>
+  </body>
+</html>

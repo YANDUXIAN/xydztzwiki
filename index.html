@@ -1,53 +1,67 @@
 <!doctype html>
 <!-- ============================================
-     《腌笃鲜》官方维基 - Main Page
+     《腌笃鲜》维基百科 - Main Page
      ============================================ -->
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="《腌笃鲜》官方维基 - 饥荒联机版《神话书说》非官方扩展、优化与修复模组指南，收录玉兔仙子、熊罴真身、元辰劫运、法宝与角色机制。" />
+    <meta name="description" content="了解《腌笃鲜》模组的核心特色、近期更新与前置需求。" />
     <meta name="keywords" content="腌笃鲜,饥荒,神话书说,模组,元辰劫运,盘丝娘娘,wiki,攻略" />
-    <meta name="author" content="《腌笃鲜》" />
-    <meta name="theme-color" content="#faf8f3" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#15110e" media="(prefers-color-scheme: dark)" />
+    <meta name="author" content="《腌笃鲜》资料整理" />
+    <meta name="theme-color" content="#faf8f3" />
+    <script>
+      (() => {
+        let theme = 'light';
+        try {
+          const saved = localStorage.getItem('xydztz-theme') || localStorage.getItem('xdyztz-theme');
+          theme = saved === 'dark' || saved === 'light'
+            ? saved
+            : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch (err) {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', theme === 'dark' ? '#15110e' : '#faf8f3');
+      })();
+    </script>
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="《腌笃鲜》官方维基" />
-    <meta property="og:description" content="玉兔拨弦，黑风倒卷。查阅《腌笃鲜》人物、怪物、元辰劫运、法宝与兼容修复资料。" />
-    <meta property="og:site_name" content="《腌笃鲜》官方维基" />
+    <meta property="og:title" content="模组介绍 | 腌笃鲜 | 《腌笃鲜》" />
+    <meta property="og:description" content="了解《腌笃鲜》模组的核心特色、近期更新与前置需求。" />
+    <meta property="og:site_name" content="《腌笃鲜》" />
     <meta property="og:locale" content="zh_CN" />
     <meta property="og:url" content="https://yanduxian.cn/" />
     <meta property="og:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="2400" />
     <meta property="og:image:height" content="1021" />
-    <meta property="og:image:alt" content="《腌笃鲜》官方维基雪景封面" />
+    <meta property="og:image:alt" content="《腌笃鲜》雪景封面" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="《腌笃鲜》官方维基" />
-    <meta name="twitter:description" content="玉兔拨弦，黑风倒卷。查阅《腌笃鲜》人物、怪物、元辰劫运、法宝与兼容修复资料。" />
+    <meta name="twitter:title" content="模组介绍 | 腌笃鲜 | 《腌笃鲜》" />
+    <meta name="twitter:description" content="了解《腌笃鲜》模组的核心特色、近期更新与前置需求。" />
     <meta name="twitter:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
 
-    <title>《腌笃鲜》官方维基</title>
+    <title>模组介绍 | 腌笃鲜 | 《腌笃鲜》</title>
     <link rel="canonical" href="https://yanduxian.cn/" />
 
-    <link rel="preload" href="./images/hero-default.jpg?v=20260507" as="image" fetchpriority="high" />
-    <link rel="preload" href="./fonts/MaShanZheng-subset.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="icon" type="image/png" href="./images/mod-icon.png?v=20260719" />
+    <link rel="preload" href="/images/hero-default-1200.webp" imagesrcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" imagesizes="100vw" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/fonts/MaShanZheng-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/png" href="/images/mod-icon.png?v=20260719" />
 
-    <link rel="stylesheet" href="./styles/fonts.css?v=20260719b" />
-    <link rel="stylesheet" href="./styles/variables.css?v=20260719b" />
-    <link rel="stylesheet" href="./styles/base.css?v=20260719b" />
-    <link rel="stylesheet" href="./styles/hero.css?v=20260719g" />
-    <link rel="stylesheet" href="./styles/layout.css?v=20260719b" />
-    <link rel="stylesheet" href="./styles/markdown.css?v=20260719c" />
-    <link rel="stylesheet" href="./styles/components.css?v=20260719b" />
-    <link rel="stylesheet" href="./styles/responsive.css?v=20260719b" />
-
-    <link rel="stylesheet" href="./libs/atom-one-dark.min.css" />
+    <link rel="stylesheet" href="/styles/fonts.css?v=20260804o" />
+    <link rel="stylesheet" href="/styles/variables.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/base.css?v=20260804g" />
+    <link rel="stylesheet" href="/styles/hero.css?v=20260804r" />
+    <link rel="stylesheet" href="/styles/layout.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/markdown.css?v=20260805u" />
+    <link rel="stylesheet" href="/styles/components.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/media.css?v=20260806b" />
+    <link rel="stylesheet" href="/styles/responsive.css?v=20260805m" />
   </head>
-  <body>
+  <body data-book-id="xydztz" data-book-title="腌笃鲜" data-chapter-slug="intro" data-chapter-title="模组介绍" data-search-index="/search-index.json?v=ca6182164b96">
     <div class="read-progress" id="read-progress" aria-hidden="true"></div>
 
     <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
@@ -55,8 +69,14 @@
     </button>
 
     <header class="hero" id="hero" role="banner">
-      <div class="hero-bg-layer hero-bg-default" style="background-image: url('./images/hero-default.jpg?v=20260507')" aria-hidden="true"></div>
-      <div class="hero-bg-layer hero-bg-hover" style="background-image: url('./images/hero-hover.jpg?v=20260507')" aria-hidden="true"></div>
+      <picture class="hero-bg-layer hero-bg-default" aria-hidden="true">
+        <source type="image/webp" srcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" sizes="100vw" />
+        <img src="/images/hero-default.jpg" srcset="/images/hero-default-1200.jpg 1200w, /images/hero-default.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" fetchpriority="high" />
+      </picture>
+      <picture class="hero-bg-layer hero-bg-hover" id="hero-hover-picture" aria-hidden="true">
+        <source type="image/webp" data-srcset="/images/hero-hover-1200.webp 1200w, /images/hero-hover.webp 2400w" sizes="100vw" />
+        <img data-src="/images/hero-hover.jpg" data-srcset="/images/hero-hover-1200.jpg 1200w, /images/hero-hover.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" />
+      </picture>
       <div class="hero-sun-glow" aria-hidden="true"></div>
       <div class="hero-vignette" aria-hidden="true"></div>
       <div class="hero-gradient-overlay" aria-hidden="true"></div>
@@ -66,8 +86,8 @@
 
       <div class="hero-content">
         <div class="hero-title-row">
-          <h1 class="hero-title">《腌笃鲜》官方维基</h1>
-          <img class="hero-seal" src="./images/mod-icon.png?v=20260719" alt="《腌笃鲜》模组图标" width="68" height="68" />
+          <h1 class="hero-title">《腌笃鲜》</h1>
+          <img class="hero-seal" src="/images/mod-icon.png?v=20260719" alt="《腌笃鲜》模组图标" width="68" height="68" />
         </div>
         <div class="hero-actions" aria-label="主要操作">
           <a
@@ -83,7 +103,7 @@
 
       <div class="hero-subtitles">
         <p class="hero-subtitle">三十五劫运交织，十二元辰下凡，灵台方寸显真心</p>
-        <p class="hero-subtitle">玉兔拨弦，黑风倒卷——人物怪物双篇登场！</p>
+        <p class="hero-subtitle">玉兔拨弦，黑风倒卷——人物精怪双篇登场</p>
       </div>
 
       <svg class="hero-torn-edge" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
@@ -93,9 +113,36 @@
 
     <noscript>
       <div class="noscript-warning" role="alert">
-        <strong>提示：</strong>您的浏览器已禁用 JavaScript。本维基需要 JavaScript 来加载文档内容。请启用 JavaScript 以获得最佳体验。
+        <strong>提示：</strong>正文仍可阅读；启用 JavaScript 后可使用目录搜索、劫运查询和媒体灯箱。
       </div>
     </noscript>
+
+    <nav class="chapter-nav" aria-label="腌笃鲜篇章导航">
+      <div class="chapter-nav-inner" id="chapter-nav-inner">
+        <!-- CHAPTER_NAV_START -->
+        <details class="book-switcher">
+          <summary><strong>腌笃鲜</strong></summary>
+          <div class="book-switcher-menu">
+            <a class="book-switcher-link active" href="/">腌笃鲜<span class="sr-only">（当前）</span></a>
+            <a class="book-switcher-link" href="/myth-theme/">神话主题</a>
+            <a class="book-switcher-link" href="/myth-characters/">神话人物</a>
+          </div>
+        </details>
+        <span class="chapter-nav-divider" aria-hidden="true"></span>
+        <div class="chapter-nav-pages">
+          <a class="chapter-nav-link active" href="/" aria-current="page">模组介绍</a>
+        <a class="chapter-nav-link" href="/systems/">核心系统</a>
+        <a class="chapter-nav-link" href="/characters/">人物精怪</a>
+        <a class="chapter-nav-link" href="/artifacts/">法宝装备</a>
+        <a class="chapter-nav-link" href="/optimizations/">神话优化</a>
+        <a class="chapter-nav-link" href="/compatibility/">兼容修复</a>
+        </div>
+        <!-- CHAPTER_NAV_END -->
+      </div>
+      <div class="reading-position" id="reading-position">
+        <span class="reading-position-text"><span class="rp-num"></span><span class="rp-title"></span></span>
+      </div>
+    </nav>
 
     <button class="sidebar-toggle" id="sidebar-toggle" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
@@ -106,30 +153,175 @@
     <div class="layout">
       <nav class="sidebar" id="sidebar" aria-label="目录导航">
         <div class="sidebar-header">
-          <h3>目录导航</h3>
+          <h3 id="sidebar-title">模组介绍目录</h3>
         </div>
         <div class="sidebar-search">
-          <input type="text" id="toc-search" placeholder="搜索目录或正文…" aria-label="搜索目录或正文" />
+          <input type="text" id="toc-search" placeholder="搜索三本资料…" aria-label="搜索全部资料" />
         </div>
         <ul class="toc-list" id="toc-list">
-          <li style="padding:20px;text-align:center;color:#99a2aa;font-size:13px;">加载中…</li>
+          <!-- SIDEBAR_TOC_START -->
+          <li class="toc-item toc-section open">
+            <a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%89%B9%E6%80%A7" data-id="核心特性" data-num="壹">核心特性</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#v2-5-0%E6%96%B0%E5%A2%9E%E5%86%85%E5%AE%B9%E9%80%9F%E8%A7%88" data-id="v2-5-0新增内容速览" data-num="贰">V2.5.0新增内容速览</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E8%BF%91%E6%9C%9F%E8%B0%83%E6%95%B4" data-id="近期调整" data-num="叁">近期调整</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E9%9C%80%E6%B1%82" data-id="前置需求" data-num="肆">前置需求</a>
+          </li>
+          <!-- SIDEBAR_TOC_END -->
         </ul>
       </nav>
 
       <main class="main-content">
         <article class="content-card">
-          <div class="md-body" id="main-content">
-            <div class="loading">
-              <div class="loading-spinner" aria-hidden="true"></div>
-              <p style="color:#99a2aa;font-size:14px;margin-top:12px;">正在加载文档…</p>
-            </div>
+          <div class="md-body" id="main-content" data-static-snapshot="ready" data-content-hash="ca6182164b96" data-chapter="intro">
+            <!-- STATIC_CONTENT_START -->
+<h2 id="模组介绍" data-legacy-id="sec-模组介绍-dwulph" data-eyebrow="第壹篇">模组介绍</h2><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：模组概述] [核心关联：人物精怪, 元辰劫运, 神话书说]</p>
+</blockquote><p class="lede"><strong>腌笃鲜</strong>是以《神话书说》为前置的非官方扩展、优化与修复模组。在保留神话世界主体体验的基础上，模组现已正式尝试重置人物与怪物篇章，并继续完善<a class="term-link" href="/systems/#%E5%85%83%E8%BE%B0%E5%8A%AB%E8%BF%90" data-term-id="yuanchen-system" data-term-kind="核心系统" data-term-summary="以三十五重劫运凝结寸心，并在星盘中激活元辰与重楼的核心成长系统。">元辰劫运</a>、法宝、角色机制和联机体验。</p>
+<h3 id="核心特性" data-legacy-id="sec-核心特性-djss61" data-num="壹">核心特性</h3><ul>
+<li class="term-item"><strong>人物精怪</strong>：收录<a class="term-link" href="/characters/#%E7%8E%89%E5%85%94%E4%BB%99%E5%AD%90" data-term-id="yutu" data-term-kind="人物" data-term-summary="以莹月琵琶、捣药玉杵和月宫守卫协同作战的重置人物。" data-term-image="/images/wiki/xydztz/objects/xydztz_yutu_winter.webp">玉兔仙子</a>与<a class="term-link" href="/characters/#%E9%BB%91%E9%A3%8E%E5%A4%A7%E7%8E%8B-%E7%86%8A%E7%BD%B4%E7%9C%9F%E8%BA%AB" data-term-id="blackbear-trueform" data-term-kind="精怪首领" data-term-summary="通过吞天截住黑风大王战败遁风后触发的多阶段精怪首领。" data-term-image="/images/wiki/xydztz/objects/xydztz_blackbear_trueform.webp">黑风大王·熊罴真身</a>的完整玩法与首领遭遇</li><li><strong><a class="term-link" href="/systems/#%E5%85%83%E8%BE%B0%E5%8A%AB%E8%BF%90" data-term-id="yuanchen-system" data-term-kind="核心系统" data-term-summary="以三十五重劫运凝结寸心，并在星盘中激活元辰与重楼的核心成长系统。">元辰劫运系统</a></strong>：核心机制<a class="term-link" href="/systems/#%E5%8D%81%E4%BA%8C%E5%85%83%E8%BE%B0%E7%A5%9E%E9%80%9A" data-term-id="yuanchen-powers" data-term-kind="核心系统" data-term-summary="十二生肖对应的被动与主动神通，会受到寸心配置、地支天时与共振倍率影响。">十二元辰神通</a>觉醒</li><li><strong><a class="term-link" href="/systems/#%E5%9B%9B%E8%B1%A1%E4%B8%89%E5%90%88%E5%B1%80" data-term-id="pansi-bureau" data-term-kind="核心系统" data-term-summary="盘丝娘娘以十二元辰组成木、金、火、水四局的流派强化体系。">四象三合局</a></strong>：蛛皇形态的深度强化（第一阶段仅开放盘丝娘娘）</li><li class="term-item"><strong>物品与法宝</strong>：<a class="term-link" href="/artifacts/#%E8%92%B2%E5%9B%A2" data-term-id="futon" data-term-kind="法器" data-term-summary="用于打坐展开元辰劫运图，也是进入元辰系统的必备法器。" data-term-image="/images/wiki/xydztz/objects/xydztz_futon.webp">蒲团</a>、<a class="term-link" href="/artifacts/#%E5%AF%B8%E5%BF%83%E7%B2%BE%E9%AD%84" data-term-id="cunxin-jingpo" data-term-kind="灵材" data-term-summary="凝结寸心时概率获得，用于多件专属法宝与装备炼制的核心灵材。" data-term-image="/images/wiki/xydztz/objects/xydztz_cunxin_jingpo.webp">寸心精魄</a>、<a class="term-link" href="/artifacts/#%E5%96%9C%E8%9B%9B%E5%A4%A9%E7%BD%97%E8%A1%A3" data-term-id="armor-madameweb" data-term-kind="专属装备" data-term-summary="盘丝娘娘专属装备，拥有须弥暗格、自动织补、蜘蛛收编与飞针能力。" data-term-image="/images/wiki/xydztz/objects/xydztz_armor_madameweb.webp">喜蛛天罗衣</a>、<a class="term-link" href="/artifacts/#%E5%90%9E%E5%A4%A9%E7%B4%AB%E9%87%91%E8%91%AB%E8%8A%A6" data-term-id="artifact-ttzjhl" data-term-kind="法宝" data-term-summary="兼具十四格收纳、范围采收、吞天控场与吞月能力的空间法宝。" data-term-image="/images/wiki/xydztz/objects/xydztz_artifact_ttzjhl.webp">吞天紫金葫芦</a>、<a class="term-link" href="/artifacts/#%E5%A4%A9%E5%9C%B0%E5%AE%9D%E9%89%B4" data-term-id="artifact-tdbj" data-term-kind="法宝" data-term-summary="以人参果激活，可建立双向门户、追寻宝藏并提供幸运的传送法宝。" data-term-image="/images/wiki/xydztz/objects/xydztz_artifact_tdbj.webp">天地宝鉴</a>、<a class="term-link" href="/artifacts/#%E9%A1%BB%E5%BC%A5%E7%8E%89%E5%87%80%E7%93%B6" data-term-id="artifact-xmyjp" data-term-kind="法宝" data-term-summary="可收摄天象、润泽农作、净化毒障并点化植物的造化法宝。" data-term-image="/images/wiki/xydztz/objects/xydztz_artifact_xmyjp.webp">须弥玉净瓶</a>、<a class="term-link" href="/artifacts/#%E8%BE%9F%E7%81%AB%E7%BD%A9" data-term-id="artifact-bhz" data-term-kind="法宝" data-term-summary="击败熊罴真身固定掉落，可展开束焰领域约束燃烧并保护玩家。" data-term-image="/images/wiki/xydztz/objects/xydztz_artifact_bhz.webp">辟火罩</a>等专属物品</li><li><strong><a class="term-link" href="/systems/#%E7%81%AB%E5%85%83%E6%B7%AC%E7%82%BC" data-term-id="fire-tempering" data-term-kind="核心系统" data-term-summary="使用专属耗材提升神话武器位面伤害和护甲位面防御的强化系统。">火元淬炼系统</a></strong>：武器和护甲的位面强化玩法</li><li class="term-item"><strong>神话人物机制增强</strong>：全神话角色的专属增强</li><li class="term-item"><strong>体验优化与便利设施</strong>：智能谷仓、百宝囊、八卦炉炼丹等</li><li><strong><a class="term-link" href="/optimizations/#%E7%86%8A%E7%8C%AB%E5%B0%8F%E9%95%87%E7%84%95%E6%96%B0" data-term-id="panda-town" data-term-kind="主题机制" data-term-summary="以镇票、上鲜、盘账、立契与动态价格扩展熊猫小镇经营。">熊猫小镇焕新</a></strong>：青竹小店升级，接入镇票、上鲜、盘账、立契、动态价格与甲木签玩法</li><li><strong><a class="term-link" href="/optimizations/#%E8%81%9A%E5%AE%9D%E7%9B%86%E9%9D%A9%E6%96%B0" data-term-id="treasure-bowl" data-term-kind="主题机制" data-term-summary="为聚宝盆加入阶段奖池、分层保底、定愿气运与寸心机缘包。">聚宝盆革新</a></strong>：重构聚宝盆抽奖体验，新增阶段奖池、分层保底、定愿气运与寸心机缘包</li><li class="term-item"><strong>兼容与崩溃修复</strong>：针对神话人物、常见物品技能与联机操作提供专项修复和适配</li></ul>
+<blockquote class="bq-info"><p><strong>更新提醒</strong>：聚宝盆革新与熊猫小镇焕新现由《腌笃鲜》主模组直接提供。模组配置彼此独立，壶天百戏中的旧开关不会转移，请在主模组设置中重新确认这两项开关。原“青竹小店焕新”与“人参果树：寻宝概率”配置已经移除，不再读取旧设置。</p>
+</blockquote><h3 id="v2-5-0新增内容速览" data-legacy-id="sec-v2-5-0新增内容速览-rupg4w" data-num="贰">V2.5.0新增内容速览</h3><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">模块</th>
+<th align="left">新增内容</th>
+<th align="left">关键词</th>
+</tr>
+</thead><tbody><tr>
+<td align="left"><strong>玉兔仙子</strong></td>
+<td align="left">《腌笃鲜》制作的重置人物，与《神话书说》原玉兔并存；拥有十曲演奏、七味捣药、月宫守卫、兔族生态与腾云遁地体系</td>
+<td align="left">人物、琵琶、捣药、守卫</td>
+</tr>
+<tr>
+<td align="left"><strong>熊罴真身</strong></td>
+<td align="left">以吞天紫金葫芦截断黑风遁法后触发的BOSS遭遇，包含石障、黑旋风、倒卷冲山与万字黑风吼</td>
+<td align="left">怪物、BOSS、阶段战</td>
+</tr>
+<tr>
+<td align="left"><strong>辟火罩</strong></td>
+<td align="left">熊罴真身专属法宝奖励，可展开随身束焰领域</td>
+<td align="left">法宝、防火、束焰</td>
+</tr>
+</tbody></table></div></div><h3 id="近期调整" data-legacy-id="sec-近期调整-ikson3" data-num="叁">近期调整</h3><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th>版本</th>
+<th>模块</th>
+<th>调整内容</th>
+<th>关键词</th>
+</tr>
+</thead><tbody><tr>
+<td><strong>V2.5.17</strong></td>
+<td><strong>法宝新用</strong></td>
+<td>吞天紫金葫芦可借莹月轮盘发动“吞月”；须弥玉净瓶的“润物无声”现可净化范围内的毒障</td>
+<td>吞月、莹月轮盘、毒障净化</td>
+</tr>
+<tr>
+<td><strong>V2.5.17</strong></td>
+<td><strong>玉兔完善</strong></td>
+<td>月宫守卫可归月收回；《田中乐》满弦新增快速采摘；琵琶音量与演奏反馈音可在本地独立设置</td>
+<td>月宫守卫、田中乐、琵琶音量</td>
+</tr>
+<tr>
+<td><strong>V2.5.17</strong></td>
+<td><strong>竹林与熊猫小镇</strong></td>
+<td>竹子可使用防腐喷雾蜡封；镇票收购单改为固定批次，并新增票数与契约标识</td>
+<td>竹林蜡封、固定批次、镇票标识</td>
+</tr>
+<tr>
+<td><strong>V2.5.12</strong></td>
+<td><strong>杨戬与哪吒修复</strong></td>
+<td>修复展翅飞鹰目标按钮显示与实际地图坐标不一致的问题；修复乾坤圈飞行时异常落水或落入虚空的问题</td>
+<td>杨戬、地图目标、乾坤圈</td>
+</tr>
+<tr>
+<td><strong>V2.5.12</strong></td>
+<td><strong>无常机制完善</strong></td>
+<td>彼岸还阳增加单次魂魄使用上限；招魂幡现在可以消耗5个善魂发动火元幽冥</td>
+<td>彼岸还阳、招魂幡、火元幽冥</td>
+</tr>
+<tr>
+<td><strong>V2.5.12</strong></td>
+<td><strong>青竹洲优化</strong></td>
+<td>进一步提升青竹洲竹林优化算法</td>
+<td>青竹洲、竹林、性能优化</td>
+</tr>
+<tr>
+<td><strong>V2.5.9</strong></td>
+<td><strong>熊罴真身</strong></td>
+<td>击杀奖励新增8个熊毛；熊皮与熊毛均属于可受多倍掉落影响的普通奖励</td>
+<td>BOSS奖励、熊毛</td>
+</tr>
+<tr>
+<td><strong>V2.5.8</strong></td>
+<td><strong>玉兔仙子</strong></td>
+<td>人物开关默认开启；《夜阑谣》满弦时，鸟、兔等可睡眠小动物也会入睡</td>
+<td>人物开关、夜阑谣</td>
+</tr>
+<tr>
+<td><strong>V2.5.8</strong></td>
+<td><strong>须弥玉净瓶</strong></td>
+<td>水量高于100点时不再显示“收摄天象”，改为“润物无声”，避免误扣理智或占用本段天象次数</td>
+<td>防误操作、天象收摄</td>
+</tr>
+<tr>
+<td><strong>V2.5.0</strong></td>
+<td><strong>元辰劫运</strong></td>
+<td>完善元辰数据、技能冷却与换角后的保存稳定性</td>
+<td>元辰、冷却、换角保存</td>
+</tr>
+<tr>
+<td><strong>V2.5.0</strong></td>
+<td><strong>地图图标</strong></td>
+<td>完善天地宝鉴等地图图标显示，并补充神游与待取回宝鉴的地图动态显示</td>
+<td>地图图标、法宝定位</td>
+</tr>
+<tr>
+<td><strong>V2.5.0</strong></td>
+<td><strong>须弥玉净瓶</strong></td>
+<td>水量上限提升至200，仅可通过降雪、洞穴酸雨与月雹的“收摄天象 / 收尽天象”，并补全人参果催生和单体点化规则</td>
+<td>天象收摄、水量、点化</td>
+</tr>
+<tr>
+<td><strong>V2.5.0</strong></td>
+<td><strong>聚宝盆革新</strong></td>
+<td>结束实验阶段并正式迁入主模组，统一提供阶段奖池、分层保底、低价值保护、天地宝鉴定愿与寸心机缘包</td>
+<td>正式迁移、奖池、保底、定愿</td>
+</tr>
+<tr>
+<td><strong>V2.5.0</strong></td>
+<td><strong>熊猫小镇与镇票</strong></td>
+<td>小镇经营层正式迁入主模组并接入既有镇票账户，统一提供上鲜、盘账、立契、动态价格与甲木签</td>
+<td>正式迁移、镇票、立契、经营</td>
+</tr>
+<tr>
+<td><strong>V2.5.0</strong></td>
+<td><strong>人参果树根概率</strong></td>
+<td>移除旧“人参果树：寻宝概率”配置及10%/30%/50%自定义档位；常态沿用神话原规则，主动提升改由八卦小铺甲木签提供</td>
+<td>旧配置移除、树根、甲木签</td>
+</tr>
+<tr>
+<td><strong>V2.5.0</strong></td>
+<td><strong>青竹小店旧上新体系</strong></td>
+<td>移除旧“青竹小店焕新”的独立商品表与高频补货逻辑；扩展货单和主动换货现由熊猫小镇镇票体系统一提供</td>
+<td>旧体系移除、镇票、上点鲜货</td>
+</tr>
+</tbody></table></div></div><h3 id="前置需求" data-legacy-id="sec-前置需求-ax3a9v" data-num="肆">前置需求</h3><ul>
+<li><strong>必须订阅并启用原版《神话书说》模组</strong></li><li>反馈交流群：<a href="https://qm.qq.com/q/iFeDTMf6Io">1046023996</a></li><li>版本：2.5.17</li></ul>
+<hr>
+            <!-- STATIC_CONTENT_END -->
           </div>
         </article>
       </main>
     </div>
 
-    <footer class="footer" role="contentinfo">
+    <footer class="footer" id="site-footer" role="contentinfo">
       <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-message">
+        <p class="footer-message-text">感谢每一位订阅玩家的支持和鼓励，祝各位在《腌笃鲜》的努力下游戏愉快，武运昌隆，尽享神话之旅！</p>
+        <p class="footer-signature">——咸鱼 &amp; 大猪蹄子 敬上</p>
+      </div>
       <div class="footer-links">
         <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357" target="_blank" rel="noopener noreferrer">Steam 创意工坊</a>
         <a href="https://qm.qq.com/q/iFeDTMf6Io" target="_blank" rel="noopener noreferrer">反馈交流群</a>
@@ -142,15 +334,13 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
     </button>
 
-    <script src="./libs/marked.min.js"></script>
-    <script src="./libs/highlight.min.js"></script>
-
-    <script src="./scripts/utils.js?v=20260719b"></script>
-    <script src="./scripts/renderer.js?v=20260719c"></script>
-    <script src="./scripts/toc.js?v=20260719c"></script>
-    <script src="./scripts/scroll.js?v=20260719b"></script>
-    <script src="./scripts/theme.js?v=20260719b"></script>
-    <script src="./scripts/ui.js?v=20260719b"></script>
-    <script src="./scripts/main.js?v=20260719b"></script>
+    <script src="/scripts/utils.js?v=20260804h"></script>
+    <script src="/scripts/renderer.js?v=20260805c"></script>
+    <script src="/scripts/toc.js?v=20260805b"></script>
+    <script src="/scripts/scroll.js?v=20260805a"></script>
+    <script src="/scripts/theme.js?v=20260804f"></script>
+    <script src="/scripts/ui.js?v=20260805b"></script>
+    <script src="/scripts/media.js?v=20260808a"></script>
+    <script src="/scripts/main.js?v=20260805c"></script>
   </body>
 </html>

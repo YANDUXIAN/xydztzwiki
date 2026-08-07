@@ -1,0 +1,8 @@
+{
+  "name": "xydztz-wiki",
+  "private": true,
+  "scripts": {
+    "build": "node tools/build-static.cjs",
+    "check": "node tools/validate-static.cjs"
+  }
+}

@@ -1,0 +1,622 @@
+<!doctype html>
+<!-- ============================================
+     《腌笃鲜》维基百科 - Main Page
+     ============================================ -->
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="查阅盘丝娘娘的蛛丝值、蛛后形态、蛛网、专属物品与盘丝吊。" />
+    <meta name="keywords" content="腌笃鲜,饥荒,神话书说,模组,元辰劫运,盘丝娘娘,wiki,攻略" />
+    <meta name="author" content="《腌笃鲜》资料整理" />
+    <meta name="theme-color" content="#faf8f3" />
+    <script>
+      (() => {
+        let theme = 'light';
+        try {
+          const saved = localStorage.getItem('xydztz-theme') || localStorage.getItem('xdyztz-theme');
+          theme = saved === 'dark' || saved === 'light'
+            ? saved
+            : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch (err) {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', theme === 'dark' ? '#15110e' : '#faf8f3');
+      })();
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="盘丝娘娘 | 神话人物 | 《腌笃鲜》" />
+    <meta property="og:description" content="查阅盘丝娘娘的蛛丝值、蛛后形态、蛛网、专属物品与盘丝吊。" />
+    <meta property="og:site_name" content="《腌笃鲜》" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:url" content="https://yanduxian.cn/myth-characters/madameweb/" />
+    <meta property="og:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1021" />
+    <meta property="og:image:alt" content="《腌笃鲜》雪景封面" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="盘丝娘娘 | 神话人物 | 《腌笃鲜》" />
+    <meta name="twitter:description" content="查阅盘丝娘娘的蛛丝值、蛛后形态、蛛网、专属物品与盘丝吊。" />
+    <meta name="twitter:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+
+    <title>盘丝娘娘 | 神话人物 | 《腌笃鲜》</title>
+    <link rel="canonical" href="https://yanduxian.cn/myth-characters/madameweb/" />
+
+    <link rel="preload" href="/images/hero-default-1200.webp" imagesrcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" imagesizes="100vw" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/fonts/MaShanZheng-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/png" href="/images/mod-icon.png?v=20260719" />
+
+    <link rel="stylesheet" href="/styles/fonts.css?v=20260804o" />
+    <link rel="stylesheet" href="/styles/variables.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/base.css?v=20260804g" />
+    <link rel="stylesheet" href="/styles/hero.css?v=20260804r" />
+    <link rel="stylesheet" href="/styles/layout.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/markdown.css?v=20260805u" />
+    <link rel="stylesheet" href="/styles/components.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/media.css?v=20260806b" />
+    <link rel="stylesheet" href="/styles/responsive.css?v=20260805m" />
+  </head>
+  <body data-book-id="myth-characters" data-book-title="神话人物" data-chapter-slug="madameweb" data-chapter-title="盘丝娘娘" data-search-index="/search-index.json?v=ca6182164b96">
+    <div class="read-progress" id="read-progress" aria-hidden="true"></div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2c-1.05 0-2.05.16-3 .46 1.69 1.24 2.79 3.26 2.79 5.54 0 3.87-3.13 7-7 7-.57 0-1.13-.08-1.67-.22C2.52 18.49 6.45 22 11 22c5.52 0 10-4.48 10-10S16.52 2 11 2c-.66 0-1.3.07-1.92.19C9.23 2.06 9.12 2 9 2z"/></svg>
+    </button>
+
+    <header class="hero" id="hero" role="banner">
+      <picture class="hero-bg-layer hero-bg-default" aria-hidden="true">
+        <source type="image/webp" srcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" sizes="100vw" />
+        <img src="/images/hero-default.jpg" srcset="/images/hero-default-1200.jpg 1200w, /images/hero-default.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" fetchpriority="high" />
+      </picture>
+      <picture class="hero-bg-layer hero-bg-hover" id="hero-hover-picture" aria-hidden="true">
+        <source type="image/webp" data-srcset="/images/hero-hover-1200.webp 1200w, /images/hero-hover.webp 2400w" sizes="100vw" />
+        <img data-src="/images/hero-hover.jpg" data-srcset="/images/hero-hover-1200.jpg 1200w, /images/hero-hover.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" />
+      </picture>
+      <div class="hero-sun-glow" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-gradient-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-title-row">
+          <h1 class="hero-title">《腌笃鲜》</h1>
+          <img class="hero-seal" src="/images/mod-icon.png?v=20260719" alt="《腌笃鲜》模组图标" width="68" height="68" />
+        </div>
+        <div class="hero-actions" aria-label="主要操作">
+          <a
+            class="hero-btn hero-btn-primary"
+            href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="在 Steam 创意工坊订阅《腌笃鲜》（新窗口）"
+          >订阅模组</a>
+          <button class="hero-btn hero-btn-secondary" id="hero-btn" type="button">开始查阅</button>
+        </div>
+      </div>
+
+      <div class="hero-subtitles">
+        <p class="hero-subtitle">三十五劫运交织，十二元辰下凡，灵台方寸显真心</p>
+        <p class="hero-subtitle">玉兔拨弦，黑风倒卷——人物精怪双篇登场</p>
+      </div>
+
+      <svg class="hero-torn-edge" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 48 L0 28 L36 32 L72 22 L120 30 L168 20 L216 28 L264 18 L312 30 L360 22 L408 28 L456 18 L504 26 L552 16 L600 26 L648 32 L696 22 L744 28 L792 18 L840 28 L888 22 L936 30 L984 20 L1032 28 L1080 22 L1128 30 L1176 18 L1224 26 L1272 30 L1320 22 L1368 28 L1404 24 L1440 28 L1440 48 Z" />
+      </svg>
+    </header>
+
+    <noscript>
+      <div class="noscript-warning" role="alert">
+        <strong>提示：</strong>正文仍可阅读；启用 JavaScript 后可使用目录搜索、劫运查询和媒体灯箱。
+      </div>
+    </noscript>
+
+    <nav class="chapter-nav" aria-label="神话人物篇章导航">
+      <div class="chapter-nav-inner" id="chapter-nav-inner">
+        <!-- CHAPTER_NAV_START -->
+        <details class="book-switcher">
+          <summary><strong>神话人物</strong></summary>
+          <div class="book-switcher-menu">
+            <a class="book-switcher-link" href="/">腌笃鲜</a>
+            <a class="book-switcher-link" href="/myth-theme/">神话主题</a>
+            <a class="book-switcher-link active" href="/myth-characters/">神话人物<span class="sr-only">（当前）</span></a>
+          </div>
+        </details>
+        <span class="chapter-nav-divider" aria-hidden="true"></span>
+        <div class="chapter-nav-pages">
+          <a class="chapter-nav-link" href="/myth-characters/">人物总览</a>
+        <a class="chapter-nav-link" href="/myth-characters/sun-wukong/">孙悟空</a>
+        <a class="chapter-nav-link" href="/myth-characters/nezha/">哪吒</a>
+        <a class="chapter-nav-link" href="/myth-characters/white-bone/">白骨夫人</a>
+        <a class="chapter-nav-link" href="/myth-characters/pigsy/">猪八戒</a>
+        <a class="chapter-nav-link" href="/myth-characters/yangjian/">杨戬</a>
+        <a class="chapter-nav-link" href="/myth-characters/yutu/">玉兔</a>
+        <a class="chapter-nav-link" href="/myth-characters/yama-commissioners/">黑白无常</a>
+        <a class="chapter-nav-link active" href="/myth-characters/madameweb/" aria-current="page">盘丝娘娘</a>
+        </div>
+        <!-- CHAPTER_NAV_END -->
+      </div>
+      <div class="reading-position" id="reading-position">
+        <span class="reading-position-text"><span class="rp-num"></span><span class="rp-title"></span></span>
+      </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar" aria-label="目录导航">
+        <div class="sidebar-header">
+          <h3 id="sidebar-title">盘丝娘娘目录</h3>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="toc-search" placeholder="搜索三本资料…" aria-label="搜索全部资料" />
+        </div>
+        <ul class="toc-list" id="toc-list">
+          <!-- SIDEBAR_TOC_START -->
+          <li class="toc-item toc-section open">
+            <a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%B1%9E%E6%80%A7" data-id="基础属性" data-num="壹">基础属性</a>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E8%9B%9B%E4%B8%9D%E5%80%BC" data-id="蛛丝值" data-num="贰">蛛丝值</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%8E%B7%E5%BE%97-%E6%8D%9F%E5%A4%B1%E4%B8%8E%E8%87%AA%E7%84%B6%E5%9B%9E%E5%A4%8D" data-id="获得-损失与自然回复">获得、损失与自然回复</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%9B%98%E4%B8%9D%E6%8A%AB%E8%82%A9" data-id="盘丝披肩">盘丝披肩</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E8%9B%9B%E7%9A%87%E6%9C%AC%E7%9B%B8" data-id="蛛皇本相" data-num="叁">蛛皇本相</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%87%8F%E4%BC%A4%E7%BB%93%E7%AE%97" data-id="减伤结算">减伤结算</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E4%B8%AD%E6%AF%92%E7%BB%93%E7%AE%97" data-id="中毒结算">中毒结算</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E8%9B%9B%E7%BD%91-%E9%99%B7%E9%98%B1%E4%B8%8E%E8%9C%98%E8%9B%9B%E5%82%A8%E5%A4%87" data-id="蛛网-陷阱与蜘蛛储备" data-num="肆">蛛网、陷阱与蜘蛛储备</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%9B%9B%E4%B8%9D%E7%BD%97%E7%BD%91%E4%B8%8E%E5%9C%B0%E4%B8%9D%E8%B5%B0%E5%BB%8A" data-id="蛛丝罗网与地丝走廊">蛛丝罗网与地丝走廊</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%9B%9B%E7%BD%91%E9%99%B7%E9%98%B1" data-id="蛛网陷阱">蛛网陷阱</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%AF%92%E8%9C%82%E8%8C%A7%E4%B8%8E%E7%9B%98%E4%B8%9D%E6%AF%92%E8%9C%82" data-id="毒蜂茧与盘丝毒蜂">毒蜂茧与盘丝毒蜂</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%9B%9B%E5%B7%A2%E4%B8%8E%E4%B8%93%E5%B1%9E%E6%88%98%E8%9B%9B" data-id="蛛巢与专属战蛛">蛛巢与专属战蛛</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E4%B8%93%E5%B1%9E%E7%89%A9%E5%93%81%E4%B8%8E%E9%85%8D%E6%96%B9" data-id="专属物品与配方" data-num="伍">专属物品与配方</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%9B%9B%E4%B8%9D%E8%8C%A7%E8%A2%8B%E4%B8%8E%E7%9B%98%E4%B8%9D%E6%82%AC%E8%8C%A7" data-id="蛛丝茧袋与盘丝悬茧">蛛丝茧袋与盘丝悬茧</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E7%9B%98%E4%B8%9D%E6%BB%91%E7%B4%A2-%E6%B5%B7%E4%B8%9D%E6%BB%91%E7%B4%A2%E4%B8%8E%E6%AD%A5%E4%B8%9D%E5%B1%A5" data-id="盘丝滑索-海丝滑索与步丝履" data-num="陆">盘丝滑索、海丝滑索与步丝履</a>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E7%9B%98%E4%B8%9D%E5%90%8A%E4%B8%8E%E7%9B%98%E4%B8%9D%E5%9D%A0" data-id="盘丝吊与盘丝坠" data-num="柒">盘丝吊与盘丝坠</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%9B%98%E4%B8%9D%E5%90%8A" data-id="盘丝吊">盘丝吊</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%9B%98%E4%B8%9D%E5%9D%A0" data-id="盘丝坠">盘丝坠</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E8%96%84%E4%B8%9D%E9%A3%9E%E5%90%BB" data-id="薄丝飞吻" data-num="捌">薄丝飞吻</a>
+          </li>
+          <!-- SIDEBAR_TOC_END -->
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <article class="content-card">
+          <div class="md-body" id="main-content" data-static-snapshot="ready" data-content-hash="ca6182164b96" data-chapter="madameweb">
+            <!-- STATIC_CONTENT_START -->
+<h2 id="盘丝娘娘" data-legacy-id="sec-盘丝娘娘-fbi6f9-2" data-eyebrow="第玖篇">盘丝娘娘</h2><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话人物] [数据类型：可选人物] [内容归属：神话人物原生] [腌笃鲜状态：原生基线] [核心关联：蛛丝值、蛛皇本相、蛛巢、盘丝吊、薄丝飞吻]</p>
+</blockquote><p class="lede"><strong>机制概览</strong>：蛛丝值、蛛皇本相、蛛网陷阱、蜘蛛储备与盘丝吊。</p>
+<h3 id="基础属性" data-legacy-id="sec-基础属性-blj5vz-6" data-num="壹">基础属性</h3><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">项目</th>
+<th align="left">数值 / 规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">初始三维</td>
+<td align="left">120 / 150 / 120</td>
+</tr>
+<tr>
+<td align="left">人形伤害倍率</td>
+<td align="left">0.75 倍</td>
+</tr>
+<tr>
+<td align="left">饥饿速度</td>
+<td align="left">标准 1 倍</td>
+</tr>
+<tr>
+<td align="left">肉类</td>
+<td align="left">强胃，可吃生肉与怪物肉</td>
+</tr>
+<tr>
+<td align="left">最爱食物</td>
+<td align="left">生鸟蛋、熟鸟蛋；饥饿收益均 ×1.2</td>
+</tr>
+<tr>
+<td align="left">夜间理智</td>
+<td align="left">不受通常夜间理智流失</td>
+</tr>
+<tr>
+<td align="left">火焰</td>
+<td align="left">自身燃烧及附近燃火会额外掉理智；受火焰伤害还会损失蛛丝</td>
+</tr>
+<tr>
+<td align="left">毒素</td>
+<td align="left">对本模组中毒体系及毒孢云有免疫</td>
+</tr>
+<tr>
+<td align="left">蜘蛛关系</td>
+<td align="left">天生能与蜘蛛和平相处</td>
+</tr>
+</tbody></table></div></div><h3 id="蛛丝值" data-legacy-id="sec-蛛丝值-k4tei" data-num="贰">蛛丝值</h3><p>蛛丝值上限 <strong>100</strong>、初始 <strong>0</strong>，并随角色存档保存；专属配方、蛛皇减伤、薄丝飞吻、结地丝、飞行与悬跳会消耗蛛丝值。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：蛛丝值上限默认仍为原生 100，可在设置中提高到 200；不开启该选项时，本节全部消耗与回复规则仍按 100 上限结算。详见<a href="/optimizations/">神话优化</a>。</p>
+</blockquote><h4 id="获得-损失与自然回复" data-legacy-id="sec-获得-损失与自然回复-5vso1i">获得、损失与自然回复</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">途径</th>
+<th align="left">蛛丝值变化</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">吃提供正理智的食物</td>
+<td align="left">每次 +2</td>
+</tr>
+<tr>
+<td align="left">亲自击杀蜘蛛或飞行单位</td>
+<td align="left">每个单位 +1；叠堆目标按叠数算</td>
+</tr>
+<tr>
+<td align="left">对自己使用蜘蛛腺体</td>
+<td align="left">额外 +5</td>
+</tr>
+<tr>
+<td align="left">对二、三级蜘蛛巢进行专属整理</td>
+<td align="left">+10</td>
+</tr>
+<tr>
+<td align="left">受到火焰伤害</td>
+<td align="left">-1</td>
+</tr>
+<tr>
+<td align="left">白天人形自然回复</td>
+<td align="left">1 / 48 点每秒</td>
+</tr>
+<tr>
+<td align="left">夜晚、睡眠或穿盘丝披肩时</td>
+<td align="left">2 / 48 点每秒</td>
+</tr>
+<tr>
+<td align="left">蛛皇本相</td>
+<td align="left">2 / 48 + 0.3 点每秒</td>
+</tr>
+</tbody></table></div></div><h4 id="盘丝披肩" data-legacy-id="sec-盘丝披肩-fbjujn">盘丝披肩</h4><p>盘丝披肩是身体栏装备，<strong>没有护甲吸收属性</strong>。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">属性</th>
+<th align="left">实际效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">防水</td>
+<td align="left">100% 防水</td>
+</tr>
+<tr>
+<td align="left">保温</td>
+<td align="left">120 保温值</td>
+</tr>
+<tr>
+<td align="left">容器</td>
+<td align="left">2 格，只收纳蜘蛛或丝类专属物品</td>
+</tr>
+<tr>
+<td align="left">蛛丝值</td>
+<td align="left">所有负向蛛丝值变化减半，包括专属制作、技能、飞行、跳跃与蛛皇减伤消耗</td>
+</tr>
+<tr>
+<td align="left">蜘蛛关系</td>
+<td align="left">穿上后伪装为蜘蛛阵营，持续自动收编附近未跟随蜘蛛，最多 10 只</td>
+</tr>
+<tr>
+<td align="left">燃料</td>
+<td align="left">穿戴时消耗燃料；可用普通蜘蛛丝补充，燃料耗尽会消失</td>
+</tr>
+</tbody></table></div></div><p>盘丝披肩会把飞行、悬跳、技能、制作和蛛皇减伤等负向蛛丝值变化减半；10 点基础消耗实际扣除 5 点。</p>
+<h3 id="蛛皇本相" data-legacy-id="sec-蛛皇本相-hi6z4o" data-num="叁">蛛皇本相</h3><p>蛛皇本相需先由盘丝娘娘亲自阅读灵台方寸山的天书解锁。进入后背包会关闭、捕捉功能关闭，操作被限制为移动和攻击；它<strong>不会主动卸下你的装备</strong>，只是暂时不能按人形逻辑使用物品和制作。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">项目</th>
+<th align="left">蛛皇本相规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">基础攻击</td>
+<td align="left">100 伤害，攻击距离 6，攻击周期 1.2 秒</td>
+</tr>
+<tr>
+<td align="left">范围攻击</td>
+<td align="left">半径 4；不会攻击非 PvP 玩家、自己的跟随者和普通蜘蛛</td>
+</tr>
+<tr>
+<td align="left">中毒</td>
+<td align="left">普通攻击命中可中毒目标时施加 20 秒毒素，并刷新持续时间、提高毒素层数</td>
+</tr>
+<tr>
+<td align="left">常驻减伤</td>
+<td align="left">50% 吸收</td>
+</tr>
+<tr>
+<td align="left">蛛丝减伤</td>
+<td align="left">蛛丝值大于 1 时，额外把本次伤害压至 20%，同时按伤害消耗蛛丝值</td>
+</tr>
+<tr>
+<td align="left">移动</td>
+<td align="left">常态走/跑速 4；站在蛛网地面或蛛网蔓延地面上时获得 2.25 倍地面速度，约为 9 跑速</td>
+</tr>
+<tr>
+<td align="left">视野</td>
+<td align="left">夜视</td>
+</tr>
+<tr>
+<td align="left">饥饿</td>
+<td align="left">饥饿消耗 2 倍；饥饿归零会强制退回人形</td>
+</tr>
+<tr>
+<td align="left">理智</td>
+<td align="left">额外每分钟 -18 理智；击杀合格敌人回 5，击杀史诗目标回 10</td>
+</tr>
+<tr>
+<td align="left">蜘蛛随从</td>
+<td align="left">自动招募附近未跟随的普通蜘蛛，最多 10 只</td>
+</tr>
+</tbody></table></div></div><h4 id="减伤结算" data-legacy-id="sec-减伤结算-ano6c9">减伤结算</h4><p>蛛皇本相有两层防护，且会叠乘。忽略其他装备、外部减伤和特殊伤害时，一次原始 <strong>100 点</strong>伤害会：</p>
+<ol>
+<li>消耗 <strong>8 点蛛丝值</strong>；</li><li>先被蛛丝机制压到 20 点；</li><li>再被形态本身的 50% 吸收压到 <strong>10 点生命伤害</strong>。</li></ol>
+<p>当蛛丝值降到 1 或更低时，蛛丝减伤层失效，只保留形态的 50% 吸收。</p>
+<h4 id="中毒结算" data-legacy-id="sec-中毒结算-abdkq1">中毒结算</h4><p>蛛皇本体、盘丝毒针、盘丝毒蛛和盘丝毒蜂共用同一套毒素。首次命中为 1 层，持续期间再次命中会逐层提高，最高 <strong>5 层</strong>，每次都把剩余时间刷新为 <strong>20 秒</strong>；超过 10 秒没有再次叠毒时，层数每 10 秒下降 1 层。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">目标</th>
+<th align="left">毒伤结算</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">普通生物</td>
+<td align="left">每 2 秒受到 <code>2×当前层数</code> 伤害，即每跳 2—10 点</td>
+</tr>
+<tr>
+<td align="left">史诗生物</td>
+<td align="left">每跳伤害为最大生命的 1%，单跳不超过 500；间隔为 <code>12-2×层数</code> 秒，即 10 / 8 / 6 / 4 / 2 秒</td>
+</tr>
+</tbody></table></div></div><p>WX-78 不会中毒；植物类、建筑、墙、气球、机械棋子、暗影生物等排除对象也不进入毒素结算。解毒散只解除使用者当前的这类毒素。</p>
+<h3 id="蛛网-陷阱与蜘蛛储备" data-legacy-id="sec-蛛网-陷阱与蜘蛛储备-gu9ebv" data-num="肆">蛛网、陷阱与蜘蛛储备</h3><h4 id="蛛丝罗网与地丝走廊" data-legacy-id="sec-蛛丝罗网与地丝走廊-46jk9z">蛛丝罗网与地丝走廊</h4><p>盘丝可以把蜘蛛巢袋制作成<strong>蛛丝罗网</strong>并部署。它会形成可挖除、可燃烧的蛛网蔓延地面，既能让蛛皇获得 2.25 倍地面速度，也能作为悬跳的落点网络。</p>
+<p>此外，盘丝有结地丝动作：在地表可消耗 <strong>5 蛛丝值</strong>临时生成一片地丝，单片持续 <strong>120 秒</strong>；附近已有地丝时会把彼此的剩余时间一并刷新为 120 秒。</p>
+<h4 id="蛛网陷阱" data-legacy-id="sec-蛛网陷阱-hjpjao">蛛网陷阱</h4><p>蛛网陷阱配方为 <strong>3 蜘蛛丝 + 1 蜘蛛腺体</strong>。部署后每 <strong>0.75 秒</strong>检查半径 <strong>3</strong> 内目标：</p>
+<ul>
+<li>可被陷阱捕捉的目标会被装入陷阱；</li><li>其他符合条件的非首领战斗目标会被困进名为“困顿之茧”的实体；</li><li>玩家、首领、飞行目标、幽灵以及自己的玩家随从不会触发。</li></ul>
+<p>困顿之茧有 <strong>200 生命</strong>。被困目标会按自身原本的攻击间隔与基础伤害从内部攻击茧；玩家从外部造成的伤害还会累计扣到目标获释时的剩余生命。茧被打破后目标重新出现并进入中毒状态；若茧当时正在燃烧，放出的目标还会被点燃。因此陷阱负责暂时隔离和制造后续伤害，并不是无条件消灭目标。</p>
+<h4 id="毒蜂茧与盘丝毒蜂" data-legacy-id="sec-毒蜂茧与盘丝毒蜂-xbbuwc">毒蜂茧与盘丝毒蜂</h4><p>毒蜂茧部署后成为一次性地雷。角色、动物或怪物进入半径 <strong>3</strong> 时会触发，昆虫与玩家幽灵不会触发。触发后约 <strong>0.3 秒（9 帧）</strong>，地雷放出 <strong>4 只盘丝毒蜂</strong>并消失。毒蜂优先攻击触发者；若原目标已经无效，则在地雷周围 <strong>25</strong> 范围内重新寻找符合条件的目标。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">盘丝毒蜂属性</th>
+<th align="left">数值或规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">生命</td>
+<td align="left">100</td>
+</tr>
+<tr>
+<td align="left">单次攻击</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">攻击间隔</td>
+<td align="left">2 秒</td>
+</tr>
+<tr>
+<td align="left">附加效果</td>
+<td align="left">每次命中按“中毒结算”施加或叠加盘丝毒素</td>
+</tr>
+<tr>
+<td align="left">阵营保护</td>
+<td align="left">不把盘丝娘娘及其他盘丝专属幼体作为攻击目标</td>
+</tr>
+</tbody></table></div></div><p>盘丝毒蜂不是可指挥随从，也不能存入盘丝蛛巢；生成后的基础行为与生命周期沿用普通蜜蜂。它和盘丝毒蛛用途不同：毒蜂茧负责一次性投放，盘丝蛛巢则负责长期储备和放出专属战蛛。</p>
+<h4 id="蛛巢与专属战蛛" data-legacy-id="sec-蛛巢与专属战蛛-t69dit">蛛巢与专属战蛛</h4><p>“盘丝蛛卵”部署后成为专属蛛巢。蛛巢每个白天自动补充 1 只库存战蛛，最多存 <strong>6</strong> 只；库存内受伤的战蛛每秒回 <strong>2 生命</strong>，直至恢复到普通战士蜘蛛生命上限。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">对蛛巢的操作</th>
+<th align="left">结果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">交给蛛巢一只专属战蛛</td>
+<td align="left">存入库存；会保留未满生命并在巢内慢慢治疗</td>
+</tr>
+<tr>
+<td align="left">交给蛛巢一份肉类</td>
+<td align="left">若有库存，放出 1 只专属战蛛并让它跟随你</td>
+</tr>
+<tr>
+<td align="left">蛛巢被毁</td>
+<td align="left">放出巢内全部库存战蛛，但不会自动成为你的跟随者</td>
+</tr>
+<tr>
+<td align="left">直接受击</td>
+<td align="left">蛛巢本身有 200 生命、可燃烧</td>
+</tr>
+</tbody></table></div></div><p>专属战蛛会中毒攻击，能与盘丝互不敌对；盘丝受击或攻击目标时，会把附近自己带领的专属战蛛拉入同一目标。它们是移动战线，不等同于蛛皇本相下临时收编的普通蜘蛛。</p>
+<h3 id="专属物品与配方" data-legacy-id="sec-专属物品与配方-adegk7" data-num="伍">专属物品与配方</h3><p>所有以下配方都在盘丝专属栏内完成，不需要额外科技站。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">物品</th>
+<th align="left">配方</th>
+<th align="left">效果与限制</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">普通蜘蛛丝</td>
+<td align="left">3 蛛丝值</td>
+<td align="left">将蛛丝值转为实体材料；不可反向分解</td>
+</tr>
+<tr>
+<td align="left">蜘蛛巢袋</td>
+<td align="left">12 蜘蛛丝 + 6 腺体</td>
+<td align="left">可继续制作蛛丝罗网或作为专属蛛巢材料，是扩张场地的基础</td>
+</tr>
+<tr>
+<td align="left">蛛丝罗网</td>
+<td align="left">1 蜘蛛巢袋</td>
+<td align="left">部署成可燃的蛛网地面，给蛛皇提供高速区</td>
+</tr>
+<tr>
+<td align="left">蛛网陷阱</td>
+<td align="left">3 蜘蛛丝 + 1 腺体</td>
+<td align="left">预置控小怪；挖掉可回收</td>
+</tr>
+<tr>
+<td align="left">盘丝蜂针</td>
+<td align="left">1 蜘蛛丝 + 3 蜂针</td>
+<td align="left">一次性远程针，26.67 伤害，攻击距离 8 / 投射距离 10</td>
+</tr>
+<tr>
+<td align="left">盘丝毒针</td>
+<td align="left">3 盘丝蜂针 + 1 花瓣</td>
+<td align="left">同样为一次性远程针，并在命中后中毒</td>
+</tr>
+<tr>
+<td align="left">毒蜂茧</td>
+<td align="left">3 蜘蛛丝 + 4 蜜蜂 + 1 花瓣</td>
+<td align="left">部署为半径 3 的一次性毒蜂地雷；触发后放出 4 只盘丝毒蜂攻击触发目标，地雷本体消失</td>
+</tr>
+<tr>
+<td align="left">盘丝蛛卵</td>
+<td align="left">1 蜘蛛巢袋 + 2 腺体 + 6 花瓣</td>
+<td align="left">部署为 200 生命的盘丝蛛巢；白天补充专属战蛛库存，最多 6 只，具体存取规则见“蛛巢与专属战蛛”</td>
+</tr>
+<tr>
+<td align="left">盘丝披肩</td>
+<td align="left">蜘蛛帽 + 12 蜘蛛丝 + 1 触手皮</td>
+<td align="left">资源减半、防水、保温、两格专属容器与自动招蛛；不是护甲</td>
+</tr>
+<tr>
+<td align="left">蛛丝茧袋</td>
+<td align="left">6 蜘蛛丝 + 2 花瓣</td>
+<td align="left">4 格打包容器；不能装不可替代物、其他容器、捆绑包或禁止打包物</td>
+</tr>
+<tr>
+<td align="left">解毒散</td>
+<td align="left">1 蜘蛛腺体</td>
+<td align="left">使用者已中毒时解除中毒；不是范围解毒技能</td>
+</tr>
+</tbody></table></div></div><h4 id="蛛丝茧袋与盘丝悬茧" data-legacy-id="sec-蛛丝茧袋与盘丝悬茧-tv86so">蛛丝茧袋与盘丝悬茧</h4><p>蛛丝茧袋封好后显示为“盘丝织袋”，可以像普通包裹一样拆开。织袋还能在<strong>洞穴、室内，或树荫覆盖区</strong>部署为盘丝悬茧；其他地表空地不能悬挂。悬茧不能直接打开，对其执行收取会还原为装有原内容的盘丝织袋。</p>
+<p>若封装内容中有萤火虫，悬茧会在夜间发光：按萤火虫数量 1 / 2 / 3 / 4 / 5 以上，照明半径依次约为 <strong>1.5 / 2 / 2.5 / 3 / 5</strong>。悬挂状态可被点燃；烧毁后悬茧本体直接消失，因此不要把重要物品长期挂在火源附近。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：盘丝专属配方会自动恢复到正确的人物制作分类；人物栏不会再混入韦伯专属蜘蛛照料配方，盘丝自身配方仍正常显示。详见<a href="/optimizations/">神话优化</a>。</p>
+</blockquote><h3 id="盘丝滑索-海丝滑索与步丝履" data-legacy-id="sec-盘丝滑索-海丝滑索与步丝履-r9mb9b" data-num="陆">盘丝滑索、海丝滑索与步丝履</h3><p>盘丝娘娘可以建立由陆地节点、海面节点和蛛丝连线组成的滑索网络。它是连续滑行路线，不是打开地图选择终点的传送器。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">物件</th>
+<th align="left">配方</th>
+<th align="left">当前作用</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">盘丝滑索</td>
+<td align="left">金块×1、蜂针×1、蜘蛛丝×4</td>
+<td align="left">部署为陆地“盘丝标点”</td>
+</tr>
+<tr>
+<td align="left">海丝滑索</td>
+<td align="left">盘丝滑索×1、海黾×1</td>
+<td align="left">部署为海面“海丝标点”；会形成可与船碰撞的海面节点</td>
+</tr>
+<tr>
+<td align="left">步丝履</td>
+<td align="left">花瓣×6、蜘蛛丝×12</td>
+<td align="left">放在主物品栏即可让非蜘蛛人物使用滑索，并在蛛网地面按蜘蛛的快速地面倍率移动</td>
+</tr>
+</tbody></table></div></div><p>只有盘丝娘娘能执行“连线”：依次选择两个不同节点，两点直线距离不能超过 <strong>40</strong>。连线所需蜘蛛丝为 <code>向下取整(2 + 距离×0.5)</code>，因此有效范围内通常消耗 2—22 个；同一对节点不能重复连线。</p>
+<p>盘丝娘娘与韦伯可直接使用网络；其他人物需要把步丝履放在主物品栏。使用者站在距连线不超过 <strong>1</strong> 的位置，对节点执行“滑行”后会以 <strong>20</strong> 的速度沿线前进；经过分岔时，会排除刚走过的线，并自动选择剩余连线中最短的一条。移动、攻击或点击左键可以中断滑行。</p>
+<p>步丝履当前有 300 点使用燃料：非蜘蛛人物携带它在蛛网地面持续移动时约每秒消耗 1 点，耗尽后物品消失；滑索通行本身没有额外扣除这项燃料。蛛丝连线可以剃除并返还约一半建造用丝，挖掉节点则会一并移除与它相连的所有线段。</p>
+<h3 id="盘丝吊与盘丝坠" data-legacy-id="sec-盘丝吊与盘丝坠-clnfhq" data-num="柒">盘丝吊与盘丝坠</h3><h4 id="盘丝吊" data-legacy-id="sec-盘丝吊-hsep1">盘丝吊</h4><p>盘丝吊消耗 <strong>10 蛛丝值</strong>。在地表，起飞点必须处于<strong>大树冠的阴影范围</strong>；洞穴中可直接起飞。骑乘时不能起飞。</p>
+<p>飞行中角色会隐身、不可被选中、无碰撞、无溺水并处于无敌状态，可以跨越海面；同时拥有夜视，绝大多数常规动作会被关闭，只能选择降落。代价和终止条件同样明确：</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">条件</th>
+<th align="left">结果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">吊行期间</td>
+<td align="left">饥饿消耗变为 4 倍</td>
+</tr>
+<tr>
+<td align="left">饥饿归零</td>
+<td align="left">自动降落</td>
+</tr>
+<tr>
+<td align="left">超出树冠阴影</td>
+<td align="left">自动降落</td>
+</tr>
+<tr>
+<td align="left">冰冻</td>
+<td align="left">飞行中不会累积寒冷</td>
+</tr>
+<tr>
+<td align="left">昏沉或地震</td>
+<td align="left">会被迫坠落；坠落会受到 20 点生命伤害</td>
+</tr>
+</tbody></table></div></div><h4 id="盘丝坠" data-legacy-id="sec-盘丝坠-hsfcr">盘丝坠</h4><p>蛛皇本相状态下，对已有蛛网蔓延地面使用右键技能可在最远约 <strong>36</strong> 格处落点，消耗 <strong>10 蛛丝值</strong>。落地时会在半径 <strong>6</strong> 内造成 <strong>100 伤害</strong>并附加中毒，不会伤到玩家、普通蜘蛛、自己的战蛛和友方跟随者。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：激活四象三合局的火局后，盘丝坠会在原有效果外追加一次半径 4 的位面爆发并再次施加中毒；基础态的触发概率等于当前蛛丝值占上限的比例，位面伤害为 50。火局成局且当前蛛丝值高于 30 时必定触发，位面伤害提高到 200；落地后还会获得 7 秒狂热，期间普通攻击额外附带 50 位面伤害。详见<a href="/systems/#%E5%9B%9B%E8%B1%A1%E4%B8%89%E5%90%88%E5%B1%80">四象三合局</a>。</p>
+</blockquote><h3 id="薄丝飞吻" data-legacy-id="sec-薄丝飞吻-h6f4dy" data-num="捌">薄丝飞吻</h3><p>薄丝飞吻需要<strong>空手</strong>右键，使用距离 <strong>10</strong>，每次使用后有 <strong>10 秒</strong>间隔。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">目标</th>
+<th align="left">消耗</th>
+<th align="left">效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">可被捕网工作的目标</td>
+<td align="left">1 蛛丝值</td>
+<td align="left">直接完成一次捕网工作</td>
+</tr>
+<tr>
+<td align="left">小型生物</td>
+<td align="left">1 蛛丝值</td>
+<td align="left">定身 5 秒</td>
+</tr>
+<tr>
+<td align="left">一般生物</td>
+<td align="left">1.5 蛛丝值</td>
+<td align="left">定身 5 秒</td>
+</tr>
+<tr>
+<td align="left">大型或史诗生物</td>
+<td align="left">2 蛛丝值</td>
+<td align="left">定身 5 秒</td>
+</tr>
+</tbody></table></div></div><p>非 PvP 时不能对其他玩家使用。</p>
+            <!-- STATIC_CONTENT_END -->
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <footer class="footer" id="site-footer" role="contentinfo">
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-message">
+        <p class="footer-message-text">感谢每一位订阅玩家的支持和鼓励，祝各位在《腌笃鲜》的努力下游戏愉快，武运昌隆，尽享神话之旅！</p>
+        <p class="footer-signature">——咸鱼 &amp; 大猪蹄子 敬上</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357" target="_blank" rel="noopener noreferrer">Steam 创意工坊</a>
+        <a href="https://qm.qq.com/q/iFeDTMf6Io" target="_blank" rel="noopener noreferrer">反馈交流群</a>
+      </div>
+      <p>&copy; 2026 《腌笃鲜》</p>
+      <p>反馈交流 QQ 群：1046023996</p>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <script src="/scripts/utils.js?v=20260804h"></script>
+    <script src="/scripts/renderer.js?v=20260805c"></script>
+    <script src="/scripts/toc.js?v=20260805b"></script>
+    <script src="/scripts/scroll.js?v=20260805a"></script>
+    <script src="/scripts/theme.js?v=20260804f"></script>
+    <script src="/scripts/ui.js?v=20260805b"></script>
+    <script src="/scripts/media.js?v=20260808a"></script>
+    <script src="/scripts/main.js?v=20260805c"></script>
+  </body>
+</html>

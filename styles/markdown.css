@@ -1,53 +1,77 @@
 /* ============================================
-   《腌笃鲜》官方维基 - Markdown Styles
+   《腌笃鲜》维基百科 - Markdown Styles
    ============================================ */
 
 .md-body h1 {
   font-family: var(--font-serif);
-  font-size: 28px;
+  font-size: clamp(30px, 4vw, 40px);
   font-weight: 700;
   letter-spacing: 0;
   color: var(--text-primary);
-  margin: 40px 0 20px;
-  padding-bottom: 14px;
+  margin: 0 0 12px;
+  padding: 0;
   border-bottom: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 8' preserveAspectRatio='none'%3E%3Cpath d='M2 5 C 30 2, 60 6.5, 90 4 S 150 2.5, 180 4.5 S 220 6, 238 3.5' fill='none' stroke='%23b83a3a' stroke-width='2.4' stroke-linecap='round' opacity='0.8'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  background-size: 180px 7px;
-  line-height: 1.4;
-}
-
-html[data-theme="dark"] .md-body h1 {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 8' preserveAspectRatio='none'%3E%3Cpath d='M2 5 C 30 2, 60 6.5, 90 4 S 150 2.5, 180 4.5 S 220 6, 238 3.5' fill='none' stroke='%23e06666' stroke-width='2.4' stroke-linecap='round' opacity='0.8'/%3E%3C/svg%3E");
-}
-
-.md-body h1:first-child {
-  margin-top: 0;
+  background: none;
+  line-height: 1.35;
 }
 
 .md-body h2 {
   font-family: var(--font-serif);
-  font-size: 22px;
+  font-size: 32px;
   font-weight: 700;
   letter-spacing: 0;
   color: var(--text-primary);
-  margin: 36px 0 16px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--border-light);
+  margin: 0 0 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  line-height: 1.28;
+}
+
+.md-body h2::before {
+  content: attr(data-eyebrow);
+  display: block;
+  margin-bottom: 9px;
+  color: var(--accent-fire);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   line-height: 1.4;
+}
+
+.md-body > h2:first-child {
+  margin-top: 0;
 }
 
 .md-body h3 {
   font-family: var(--font-serif);
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   letter-spacing: 0;
   color: var(--text-primary);
-  margin: 28px 0 12px;
-  padding-left: 10px;
-  border-left: 3px solid var(--accent-gold);
+  margin: 80px 0 16px;
+  padding: 0 0 10px;
+  border-bottom: none;
+  background-image: linear-gradient(to right, var(--border-strong), var(--border-light) 55%, transparent);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% 1px;
   line-height: 1.4;
+}
+
+/* 章序：构建期注入 data-num；元信息统一用黑体小标签，与眉题同一语言 */
+.md-body h3::before {
+  content: '第' attr(data-num) '章';
+  margin-right: 12px;
+  color: var(--accent-gold);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .md-body > p,
@@ -58,25 +82,436 @@ html[data-theme="dark"] .md-body h1 {
 .md-body > h2,
 .md-body > h3,
 .md-body > h4,
+.md-body > h5,
+.md-body > h6,
 .md-body > pre,
 .md-body > .update-summary,
-.md-body > .jieyun-lookup {
-  max-width: 82ch;
+.md-body > .jieyun-lookup,
+.md-body > .prize-pool-overview {
+  max-width: 72ch;
 }
 
 .md-body h4 {
+  position: relative;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  margin: 32px 0 12px;
+  padding-left: 11px;
+  border: 0;
+  line-height: 1.5;
+}
+
+.md-body h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 3px;
+  height: 0.9em;
+  background: var(--accent-gold);
+  transform: translateY(-50%);
+}
+
+/* 外部资料分篇后产生的更深层小节：不进入侧栏，只保留清晰的正文层级。 */
+.md-body > h5 {
+  display: table;
+  margin: 24px 0 9px;
+  padding: 4px 9px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.04em;
+}
+
+.md-body > h6 {
+  margin: 20px 0 8px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+}
+
+/* 显式维基词条：以浅金批注底纹提示可查阅，避免点线切碎中文排版。 */
+.md-body .term-link {
+  margin: 0 -0.02em;
+  padding: 0 0.04em;
+  border-radius: 2px;
+  color: inherit;
+  font-weight: 650;
+  text-decoration: none;
+  background-image: linear-gradient(
+    to top,
+    rgba(var(--accent-gold-rgb), 0.18) 0 30%,
+    transparent 30%
+  );
+  background-repeat: no-repeat;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: color var(--transition-fast);
+}
+
+.md-body .term-link:hover,
+.md-body .term-link:focus-visible {
+  color: var(--accent-fire);
+  background-image: linear-gradient(
+    to top,
+    rgba(var(--accent-fire-rgb), 0.16) 0 38%,
+    transparent 38%
+  );
+}
+
+/* 显式配方宏：正文只写材料与数量，构建时展开为可扫描的图标连排。
+   整条配方不再套外框气泡：分组交给 ＋/→ 与间距，图标描边承担单元感。 */
+.recipe-strip {
+  --recipe-icon-size: 52px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px 9px;
+  max-width: 100%;
+  margin: 4px 0 4px 8px;
+  padding: 2px 4px;
+  vertical-align: middle;
+}
+
+.md-body td .recipe-strip {
+  margin: 0;
+}
+
+/* 列表圆点按首行文字对齐；大图标不再把“合成配方”基线压到行框中部。 */
+.md-body li > .recipe-strip {
+  vertical-align: text-top;
+}
+
+.recipe-part {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.recipe-token {
+  --recipe-rarity: var(--rarity-common);
+  display: grid;
+  flex: 0 0 auto;
+  grid-template-rows: var(--recipe-icon-size) auto;
+  justify-items: center;
+  width: 66px;
+  min-width: 0;
+  color: var(--text-secondary);
+}
+
+.recipe-token.rarity-fine { --recipe-rarity: var(--rarity-fine); }
+.recipe-token.rarity-rare { --recipe-rarity: var(--rarity-rare); }
+.recipe-token.rarity-epic { --recipe-rarity: var(--rarity-epic); }
+.recipe-token.rarity-legendary { --recipe-rarity: var(--rarity-legendary); }
+
+.recipe-icon-frame {
+  position: relative;
+  display: grid;
+  width: var(--recipe-icon-size);
+  height: var(--recipe-icon-size);
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--recipe-rarity) 58%, var(--border-light));
+  border-radius: 10px;
+  background: var(--bg-page);
+}
+
+/* 成品唯一保留的强调：金边 + 微影，作为整条配方的视觉落点 */
+.recipe-token.is-result .recipe-icon-frame {
+  border-color: color-mix(in srgb, var(--recipe-rarity) 72%, var(--accent-gold));
+  box-shadow: 0 2px 7px rgba(var(--accent-gold-rgb), 0.14);
+}
+
+.recipe-icon-frame > img:not(.recipe-variant) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.recipe-icon-frame.has-variants {
+  overflow: hidden;
+}
+
+.recipe-variant {
+  position: absolute;
+  width: 72%;
+  height: 72%;
+  object-fit: contain;
+}
+
+.recipe-variant-1 { left: -1px; bottom: 1px; transform: rotate(-8deg); }
+.recipe-variant-2 { left: 14%; top: 0; z-index: 1; }
+.recipe-variant-3 { right: -1px; bottom: 1px; transform: rotate(8deg); }
+
+.recipe-quantity {
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+  z-index: 2;
+  min-width: 24px;
+  padding: 2px 5px;
+  border-radius: 999px;
+  color: var(--text-primary);
+  background: color-mix(in srgb, var(--recipe-rarity) 18%, var(--bg-card));
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.recipe-item-name {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  overflow: hidden;
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.recipe-token.is-result .recipe-item-name {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.recipe-operator {
+  flex: 0 0 auto;
+  color: var(--text-muted);
   font-family: var(--font-serif);
   font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0;
-  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.recipe-arrow {
+  color: var(--accent-gold);
+  font-size: 21px;
+}
+
+/* 聚宝盆奖池：把概率、候选物和阶段追加拆成稳定的扫描路径 */
+.prize-pool-overview {
   margin: 24px 0 10px;
+  padding: 22px;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, rgba(var(--accent-gold-rgb), 0.08), transparent 38%),
+    var(--bg-card);
+  box-shadow: var(--shadow-card);
+}
+
+.prize-pool-heading {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.md-body .prize-pool-heading h5 {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.prize-pool-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.prize-tier {
+  --tier-color: var(--rarity-common);
+  position: relative;
+  min-width: 0;
+  padding: 16px 16px 15px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--bg-page);
+}
+
+.prize-tier::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--tier-color);
+}
+
+.prize-tier-fine { --tier-color: var(--rarity-fine); }
+.prize-tier-rare { --tier-color: var(--rarity-rare); }
+.prize-tier-epic { --tier-color: var(--rarity-epic); }
+.prize-tier-legendary { --tier-color: var(--rarity-legendary); }
+
+.prize-tier-wide {
+  grid-column: 1 / -1;
+}
+
+.prize-tier-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.md-body .prize-tier-heading h6 {
+  margin: 0;
+  color: var(--tier-color);
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+.prize-tier-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 5px;
+  color: var(--text-secondary);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.prize-tier-meta > span {
+  padding: 3px 7px;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  background: var(--bg-card);
+  white-space: nowrap;
+}
+
+.prize-tier-meta .prize-tier-rate {
+  border-color: color-mix(in srgb, var(--tier-color) 38%, var(--border-light));
+  color: var(--tier-color);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.md-body .prize-tier-items {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 13.5px;
+  line-height: 1.85;
+}
+
+.prize-tier-unlocks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+  padding-top: 11px;
+  border-top: 1px dashed var(--border-light);
+}
+
+.md-body .prize-tier-unlocks p {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 12.5px;
+  line-height: 1.65;
+}
+
+.prize-tier-unlocks span {
+  flex: 0 0 auto;
+  color: var(--tier-color);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* 轮盘兼容：统一按内容来源分组，避免技能物品与模组名单语义交叉。 */
+.wheel-compat {
+  max-width: 88ch;
+  margin: 18px 0 8px;
+}
+
+.md-body .wheel-compat-lead {
+  margin: 0 0 14px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.wheel-compat-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.35fr);
+  gap: 12px;
+}
+
+.wheel-compat-card {
+  --wheel-accent: var(--accent-gold);
+  position: relative;
+  min-width: 0;
+  padding: 17px 18px 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--bg-page);
+}
+
+.wheel-compat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--wheel-accent);
+}
+
+.wheel-compat-mods {
+  --wheel-accent: var(--rarity-rare);
+}
+
+.md-body .wheel-compat-card h5 {
+  margin: 0 0 9px;
+  color: var(--wheel-accent);
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+}
+
+.md-body .wheel-compat-card p {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 13.5px;
+  line-height: 1.85;
 }
 
 .md-body p {
-  margin: 12px 0;
+  margin: 20px 0;
   line-height: 1.8;
-  color: var(--text-primary);
+  color: var(--text-body);
+}
+
+/* 导语：每篇 H2 后（跳过检索标签块）的首个段落，构建期注入 .lede */
+.md-body > p.lede {
+  font-size: 17px;
+  line-height: 1.9;
+  color: var(--text-secondary);
 }
 
 .md-body strong {
@@ -86,7 +521,7 @@ html[data-theme="dark"] .md-body h1 {
 
 .md-body ul,
 .md-body ol {
-  margin: 12px 0;
+  margin: 16px 0;
   padding-left: 24px;
 }
 
@@ -120,8 +555,19 @@ html[data-theme="dark"] .md-body h1 {
 }
 
 .md-body li {
-  margin: 6px 0;
+  margin: 8px 0;
   line-height: 1.8;
+  color: var(--text-body);
+}
+
+/* 术语条目：说明降灰、术语加重，扫读时形成左轨锚点 */
+.md-body li.term-item {
+  color: var(--text-secondary);
+}
+
+.md-body li.term-item > strong:first-child {
+  color: var(--text-primary);
+  font-weight: 700;
 }
 
 .md-body hr {
@@ -132,9 +578,11 @@ html[data-theme="dark"] .md-body h1 {
 
 .table-outer {
   position: relative;
+  display: flow-root;
   max-width: 100%;
-  margin: 16px 0;
-  overflow-x: auto;
+  margin: 20px 0;
+  /* clip 不创建滚动容器，表头 sticky 才能相对视口吸顶；窄屏回退横向滚动见 responsive.css */
+  overflow-x: clip;
   overflow-y: visible;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-light);
@@ -192,14 +640,15 @@ html[data-theme="dark"] .table-outer::after {
 }
 
 .md-body thead th {
-  background: #f0e0e0;
-  color: var(--accent-fire);
+  background: #f0e9db;
+  color: var(--accent-gold);
   font-weight: 600;
   padding: 10px 14px;
   text-align: left;
   white-space: nowrap;
   position: sticky;
-  top: 0;
+  /* 桌面吸顶于导航（.chapter-nav 高约 70px，与 sidebar top 同高）之下；窄屏回退见 responsive.css */
+  top: 70px;
   z-index: 1;
 }
 
@@ -237,7 +686,7 @@ html[data-theme="dark"] .md-body tbody tr:nth-child(even) {
 
 .md-body blockquote {
   position: relative;
-  margin: 16px 0;
+  margin: 20px 0;
   padding: 14px 18px 14px 20px;
   border-left: 4px solid var(--accent-fire);
   background: var(--accent-fire-bg);
@@ -253,7 +702,7 @@ html[data-theme="dark"] .md-body tbody tr:nth-child(even) {
 }
 
 .md-body blockquote strong {
-  color: var(--accent-fire-hover);
+  color: var(--text-primary);
 }
 
 /* 检索标签参与全文搜索，但不向玩家展示。 */
@@ -295,6 +744,32 @@ html[data-theme="dark"] .md-body tbody tr:nth-child(even) {
 
 .md-body blockquote.bq-danger strong {
   color: var(--color-danger);
+}
+
+/* 原生资料正文与《腌笃鲜》联动变化使用不同视觉语言。 */
+.md-body blockquote.bq-interop {
+  border-left-color: var(--accent-gold);
+  background: color-mix(in srgb, var(--accent-gold) 9%, var(--bg-card));
+}
+
+.md-body blockquote.bq-interop strong {
+  color: var(--accent-gold-hover);
+}
+
+html[data-theme="dark"] .md-body blockquote.bq-interop {
+  background: transparent;
+  border-top: 1px solid color-mix(in srgb, var(--accent-gold) 30%, transparent);
+  border-right: 1px solid color-mix(in srgb, var(--accent-gold) 30%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-gold) 30%, transparent);
+}
+
+/* 暗色：提示框改描边式——透明底 + 细描边，左侧色线继承各变体，避免浅色实底叠深棕发闷 */
+html[data-theme="dark"] .md-body blockquote {
+  background: transparent;
+  border-top: 1px solid var(--border-light);
+  border-right: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
 }
 
 .md-body blockquote.bq-info,
@@ -359,7 +834,7 @@ html[data-theme="dark"] .md-body tbody tr:nth-child(even) {
 }
 
 .md-body pre {
-  margin: 16px 0;
+  margin: 20px 0;
   border-radius: var(--radius-md);
   overflow: hidden;
   position: relative;
@@ -381,18 +856,6 @@ html[data-theme="dark"] .md-body tbody tr:nth-child(even) {
 .md-body pre {
   position: relative;
 }
-
-.md-body pre code .hljs-keyword { color: #c678dd; }
-.md-body pre code .hljs-string { color: #98c379; }
-.md-body pre code .hljs-comment { color: #5c6370; font-style: italic; }
-.md-body pre code .hljs-function { color: #61afef; }
-.md-body pre code .hljs-number { color: #d19a66; }
-.md-body pre code .hljs-built_in { color: #e5c07b; }
-.md-body pre code .hljs-variable { color: #e06c75; }
-.md-body pre code .hljs-attr { color: #d19a66; }
-.md-body pre code .hljs-literal { color: #56b6c2; }
-.md-body pre code .hljs-params { color: #abb2bf; }
-.md-body pre code .hljs-title { color: #61afef; }
 
 .md-body tbody td.rarity-common, .md-body strong.rarity-common { color: var(--rarity-common); }
 .md-body tbody td.rarity-fine, .md-body strong.rarity-fine { color: var(--rarity-fine); }
@@ -429,4 +892,11 @@ html[data-theme="dark"] .md-body tbody tr:nth-child(even) {
     transform: none;
     transition: none;
   }
+}
+
+/* V1.1: 材料筹码回归中性墨色 */
+.md-body code.mat-chip {
+  background: var(--bg-code);
+  color: var(--text-primary);
+  border-color: var(--border-light);
 }

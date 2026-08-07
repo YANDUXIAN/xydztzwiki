@@ -1,0 +1,409 @@
+<!doctype html>
+<!-- ============================================
+     《腌笃鲜》维基百科 - Main Page
+     ============================================ -->
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="查阅哪吒的属性、三件初始法宝与风火轮规则。" />
+    <meta name="keywords" content="腌笃鲜,饥荒,神话书说,模组,元辰劫运,盘丝娘娘,wiki,攻略" />
+    <meta name="author" content="《腌笃鲜》资料整理" />
+    <meta name="theme-color" content="#faf8f3" />
+    <script>
+      (() => {
+        let theme = 'light';
+        try {
+          const saved = localStorage.getItem('xydztz-theme') || localStorage.getItem('xdyztz-theme');
+          theme = saved === 'dark' || saved === 'light'
+            ? saved
+            : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch (err) {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', theme === 'dark' ? '#15110e' : '#faf8f3');
+      })();
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="哪吒 | 神话人物 | 《腌笃鲜》" />
+    <meta property="og:description" content="查阅哪吒的属性、三件初始法宝与风火轮规则。" />
+    <meta property="og:site_name" content="《腌笃鲜》" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:url" content="https://yanduxian.cn/myth-characters/nezha/" />
+    <meta property="og:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1021" />
+    <meta property="og:image:alt" content="《腌笃鲜》雪景封面" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="哪吒 | 神话人物 | 《腌笃鲜》" />
+    <meta name="twitter:description" content="查阅哪吒的属性、三件初始法宝与风火轮规则。" />
+    <meta name="twitter:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+
+    <title>哪吒 | 神话人物 | 《腌笃鲜》</title>
+    <link rel="canonical" href="https://yanduxian.cn/myth-characters/nezha/" />
+
+    <link rel="preload" href="/images/hero-default-1200.webp" imagesrcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" imagesizes="100vw" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/fonts/MaShanZheng-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/png" href="/images/mod-icon.png?v=20260719" />
+
+    <link rel="stylesheet" href="/styles/fonts.css?v=20260804o" />
+    <link rel="stylesheet" href="/styles/variables.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/base.css?v=20260804g" />
+    <link rel="stylesheet" href="/styles/hero.css?v=20260804r" />
+    <link rel="stylesheet" href="/styles/layout.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/markdown.css?v=20260805u" />
+    <link rel="stylesheet" href="/styles/components.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/media.css?v=20260806b" />
+    <link rel="stylesheet" href="/styles/responsive.css?v=20260805m" />
+  </head>
+  <body data-book-id="myth-characters" data-book-title="神话人物" data-chapter-slug="nezha" data-chapter-title="哪吒" data-search-index="/search-index.json?v=ca6182164b96">
+    <div class="read-progress" id="read-progress" aria-hidden="true"></div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2c-1.05 0-2.05.16-3 .46 1.69 1.24 2.79 3.26 2.79 5.54 0 3.87-3.13 7-7 7-.57 0-1.13-.08-1.67-.22C2.52 18.49 6.45 22 11 22c5.52 0 10-4.48 10-10S16.52 2 11 2c-.66 0-1.3.07-1.92.19C9.23 2.06 9.12 2 9 2z"/></svg>
+    </button>
+
+    <header class="hero" id="hero" role="banner">
+      <picture class="hero-bg-layer hero-bg-default" aria-hidden="true">
+        <source type="image/webp" srcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" sizes="100vw" />
+        <img src="/images/hero-default.jpg" srcset="/images/hero-default-1200.jpg 1200w, /images/hero-default.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" fetchpriority="high" />
+      </picture>
+      <picture class="hero-bg-layer hero-bg-hover" id="hero-hover-picture" aria-hidden="true">
+        <source type="image/webp" data-srcset="/images/hero-hover-1200.webp 1200w, /images/hero-hover.webp 2400w" sizes="100vw" />
+        <img data-src="/images/hero-hover.jpg" data-srcset="/images/hero-hover-1200.jpg 1200w, /images/hero-hover.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" />
+      </picture>
+      <div class="hero-sun-glow" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-gradient-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-title-row">
+          <h1 class="hero-title">《腌笃鲜》</h1>
+          <img class="hero-seal" src="/images/mod-icon.png?v=20260719" alt="《腌笃鲜》模组图标" width="68" height="68" />
+        </div>
+        <div class="hero-actions" aria-label="主要操作">
+          <a
+            class="hero-btn hero-btn-primary"
+            href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="在 Steam 创意工坊订阅《腌笃鲜》（新窗口）"
+          >订阅模组</a>
+          <button class="hero-btn hero-btn-secondary" id="hero-btn" type="button">开始查阅</button>
+        </div>
+      </div>
+
+      <div class="hero-subtitles">
+        <p class="hero-subtitle">三十五劫运交织，十二元辰下凡，灵台方寸显真心</p>
+        <p class="hero-subtitle">玉兔拨弦，黑风倒卷——人物精怪双篇登场</p>
+      </div>
+
+      <svg class="hero-torn-edge" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 48 L0 28 L36 32 L72 22 L120 30 L168 20 L216 28 L264 18 L312 30 L360 22 L408 28 L456 18 L504 26 L552 16 L600 26 L648 32 L696 22 L744 28 L792 18 L840 28 L888 22 L936 30 L984 20 L1032 28 L1080 22 L1128 30 L1176 18 L1224 26 L1272 30 L1320 22 L1368 28 L1404 24 L1440 28 L1440 48 Z" />
+      </svg>
+    </header>
+
+    <noscript>
+      <div class="noscript-warning" role="alert">
+        <strong>提示：</strong>正文仍可阅读；启用 JavaScript 后可使用目录搜索、劫运查询和媒体灯箱。
+      </div>
+    </noscript>
+
+    <nav class="chapter-nav" aria-label="神话人物篇章导航">
+      <div class="chapter-nav-inner" id="chapter-nav-inner">
+        <!-- CHAPTER_NAV_START -->
+        <details class="book-switcher">
+          <summary><strong>神话人物</strong></summary>
+          <div class="book-switcher-menu">
+            <a class="book-switcher-link" href="/">腌笃鲜</a>
+            <a class="book-switcher-link" href="/myth-theme/">神话主题</a>
+            <a class="book-switcher-link active" href="/myth-characters/">神话人物<span class="sr-only">（当前）</span></a>
+          </div>
+        </details>
+        <span class="chapter-nav-divider" aria-hidden="true"></span>
+        <div class="chapter-nav-pages">
+          <a class="chapter-nav-link" href="/myth-characters/">人物总览</a>
+        <a class="chapter-nav-link" href="/myth-characters/sun-wukong/">孙悟空</a>
+        <a class="chapter-nav-link active" href="/myth-characters/nezha/" aria-current="page">哪吒</a>
+        <a class="chapter-nav-link" href="/myth-characters/white-bone/">白骨夫人</a>
+        <a class="chapter-nav-link" href="/myth-characters/pigsy/">猪八戒</a>
+        <a class="chapter-nav-link" href="/myth-characters/yangjian/">杨戬</a>
+        <a class="chapter-nav-link" href="/myth-characters/yutu/">玉兔</a>
+        <a class="chapter-nav-link" href="/myth-characters/yama-commissioners/">黑白无常</a>
+        <a class="chapter-nav-link" href="/myth-characters/madameweb/">盘丝娘娘</a>
+        </div>
+        <!-- CHAPTER_NAV_END -->
+      </div>
+      <div class="reading-position" id="reading-position">
+        <span class="reading-position-text"><span class="rp-num"></span><span class="rp-title"></span></span>
+      </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar" aria-label="目录导航">
+        <div class="sidebar-header">
+          <h3 id="sidebar-title">哪吒目录</h3>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="toc-search" placeholder="搜索三本资料…" aria-label="搜索全部资料" />
+        </div>
+        <ul class="toc-list" id="toc-list">
+          <!-- SIDEBAR_TOC_START -->
+          <li class="toc-item toc-section has-children open">
+            <a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%B1%9E%E6%80%A7%E4%B8%8E%E4%BA%BA%E7%89%A9%E8%A2%AB%E5%8A%A8" data-id="基础属性与人物被动" data-num="壹">基础属性与人物被动</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%81%AB%E5%B0%96%E6%9E%AA%E7%9A%84%E7%81%AB%E7%B3%BB%E7%89%B9%E6%94%BB" data-id="火尖枪的火系特攻">火尖枪的火系特攻</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E4%B8%89%E4%BB%B6%E5%88%9D%E5%A7%8B%E6%B3%95%E5%AE%9D" data-id="三件初始法宝" data-num="贰">三件初始法宝</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%81%AB%E5%B0%96%E6%9E%AA" data-id="火尖枪">火尖枪</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%B7%B7%E5%A4%A9%E7%BB%AB" data-id="混天绫">混天绫</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E4%B9%BE%E5%9D%A4%E5%9C%88" data-id="乾坤圈">乾坤圈</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E8%85%BE%E4%BA%91%E6%9C%AF-%E9%A3%8E%E7%81%AB%E8%BD%AE" data-id="腾云术-风火轮" data-num="叁">腾云术：风火轮</a>
+          </li>
+          <!-- SIDEBAR_TOC_END -->
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <article class="content-card">
+          <div class="md-body" id="main-content" data-static-snapshot="ready" data-content-hash="ca6182164b96" data-chapter="nezha">
+            <!-- STATIC_CONTENT_START -->
+<h2 id="哪吒" data-legacy-id="sec-哪吒-ewko-2" data-eyebrow="第叁篇">哪吒</h2><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话人物] [数据类型：可选人物] [内容归属：神话人物原生] [腌笃鲜状态：原生基线] [核心关联：火尖枪、混天绫、乾坤圈、风火轮]</p>
+</blockquote><p class="lede"><strong>机制概览</strong>：火尖枪、混天绫、乾坤圈三件初始法宝，以及风火轮飞行。</p>
+<h3 id="基础属性与人物被动" data-legacy-id="sec-基础属性与人物被动-i0v3vv" data-num="壹">基础属性与人物被动</h3><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">项目</th>
+<th align="left">规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">三维</td>
+<td align="left"><strong>150 生命 / 150 饥饿 / 150 理智</strong>；标准饥饿消耗</td>
+</tr>
+<tr>
+<td align="left">初始物品</td>
+<td align="left">火尖枪、混天绫、乾坤圈各一件</td>
+</tr>
+<tr>
+<td align="left">最爱食物</td>
+<td align="left">鱼肉；饥饿收益 ×1.2。只对应名为“鱼肉”的食材，不泛指所有鱼类料理</td>
+</tr>
+<tr>
+<td align="left">潮湿回血</td>
+<td align="left">潮湿值达到 <strong>50 / 75 / 95</strong> 时，分别回复 <strong>15 / 30 / 60 生命/分钟</strong></td>
+</tr>
+<tr>
+<td align="left">潮湿理智</td>
+<td align="left">人物将常规的潮湿与湿装备理智项反向计算</td>
+</tr>
+<tr>
+<td align="left">负面理智光环</td>
+<td align="left">受到的负面光环理智影响 ×0.5</td>
+</tr>
+<tr>
+<td align="left">击杀反馈</td>
+<td align="left">击杀未被系统视为怪物、敌对生物或墙体的目标：<strong>-2 理智</strong>；击杀怪物有 <strong>15%</strong> 概率 <strong>+10 理智</strong>；击杀史诗目标 <strong>+30 理智</strong></td>
+</tr>
+</tbody></table></div></div><h4 id="火尖枪的火系特攻" data-legacy-id="sec-火尖枪的火系特攻-b1vn7t">火尖枪的火系特攻</h4><p>持火尖枪进行<strong>普通攻击</strong>时，若目标是龙蝇、火狗、红鹿、红犀牛、岩浆虫或目标正处于燃烧状态，会额外附加一次与该次武器伤害相等的伤害。火尖枪本体基础伤害为 51，因此在这些条件下，它的普通攻击会明显优于其他开局武器。</p>
+<p>这项加成按普通攻击的额外伤害段计算。</p>
+<h3 id="三件初始法宝" data-legacy-id="sec-三件初始法宝-o7finx" data-num="贰">三件初始法宝</h3><h4 id="火尖枪" data-legacy-id="sec-火尖枪-gx0cf">火尖枪</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">项目</th>
+<th align="left">规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">装备限制</td>
+<td align="left">仅哪吒可装备；被其他玩家捡起会自动掉落</td>
+</tr>
+<tr>
+<td align="left">普通攻击</td>
+<td align="left">51 伤害，无耐久消耗</td>
+</tr>
+<tr>
+<td align="left">主动技能</td>
+<td align="left">右键地面施展<strong>三头六臂</strong></td>
+</tr>
+<tr>
+<td align="left">技能距离</td>
+<td align="left">指定可通行落点，最大 <strong>16 格</strong></td>
+</tr>
+<tr>
+<td align="left">技能消耗</td>
+<td align="left">每次施放消耗 <strong>15 饥饿</strong>，冷却 <strong>20 秒</strong></td>
+</tr>
+<tr>
+<td align="left">跳击伤害</td>
+<td align="left">落点半径 4 内可攻击目标共受 <strong>3 段</strong> 伤害；每段 <strong>70</strong>，有凝味丹 Buff 时每段 <strong>100</strong></td>
+</tr>
+<tr>
+<td align="left">控制效果</td>
+<td align="left">前两段会尝试令可受击、未处于特殊不可打断状态的目标进入受击；第三段只造成伤害</td>
+</tr>
+<tr>
+<td align="left">无敌时段</td>
+<td align="left">起跳、飞行与落地前的短暂过程无敌；落地开始结算伤害时即取消，并非全技能无敌</td>
+</tr>
+</tbody></table></div></div><h4 id="混天绫" data-legacy-id="sec-混天绫-gjpcp">混天绫</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">项目</th>
+<th align="left">规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">装备槽</td>
+<td align="left">身体；仅哪吒可装备</td>
+</tr>
+<tr>
+<td align="left">移动</td>
+<td align="left">装备后移速 ×1.1</td>
+</tr>
+<tr>
+<td align="left">初始燃料</td>
+<td align="left">100 点</td>
+</tr>
+<tr>
+<td align="left">充能材料</td>
+<td align="left">专属类型“莲花”；每朵补 <strong>10</strong> 点燃料</td>
+</tr>
+<tr>
+<td align="left">可抵抗伤害</td>
+<td align="left">直接战斗伤害、爆炸、地震落石、洞穴坍塌落石</td>
+</tr>
+<tr>
+<td align="left">成功抵抗成本</td>
+<td align="left">每次有效抵抗消耗 <strong>10</strong> 燃料；燃料扣除有 <strong>0.55 秒</strong> 间隔</td>
+</tr>
+<tr>
+<td align="left">失效条件</td>
+<td align="left">未装备、燃料归零，或同时装备其他力场类防护装备时，抵抗不会生效</td>
+</tr>
+</tbody></table></div></div><p>混天绫在燃料充足时抵抗指定伤害类型，不改变饥饿、温度、理智或常规移动与攻击；燃料耗尽时防护失效。</p>
+<h5 id="莲花-莲藕与莲子" data-legacy-id="sec-莲花-莲藕与莲子-oyxrk7">莲花、莲藕与莲子</h5><p>哪吒可在自己的神话制作栏消耗 <strong>10 点生命</strong>制作 1 朵<strong>莲花</strong>，无需科技。这里的莲花不是食物：每朵可为混天绫补充 <strong>10 点燃料</strong>，也可拆开得到 <strong>莲子×1、花瓣×1</strong>。</p>
+<p>莲池产出的莲藕和莲子是另一组可食用物，当前数值如下：</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">食物</th>
+<th align="left">普通人物食用</th>
+<th align="left">哪吒食用</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">莲藕</td>
+<td align="left">8 生命 / 25 饥饿 / 0 理智</td>
+<td align="left">三项均为 0</td>
+</tr>
+<tr>
+<td align="left">烤藕片</td>
+<td align="left">20 生命 / 25 饥饿 / 15 理智</td>
+<td align="left">三项均为 0</td>
+</tr>
+<tr>
+<td align="left">莲子</td>
+<td align="left">0 生命 / 4.6875 饥饿 / 0 理智</td>
+<td align="left">三项均为 0</td>
+</tr>
+<tr>
+<td align="left">烤莲子</td>
+<td align="left">1 生命 / 4.6875 饥饿 / 0 理智</td>
+<td align="left">三项均为 0</td>
+</tr>
+</tbody></table></div></div><p>因此，“莲花”负责混天绫充能和拆分材料；“莲藕 / 烤藕片 / 莲子 / 烤莲子”才进入食用结算。哪吒食用这四种莲池产物都不会恢复三维。</p>
+<h4 id="乾坤圈" data-legacy-id="sec-乾坤圈-bx89u">乾坤圈</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">项目</th>
+<th align="left">规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">装备限制</td>
+<td align="left">仅哪吒可装备；其他玩家拾取会自动掉落</td>
+</tr>
+<tr>
+<td align="left">手持基础伤害</td>
+<td align="left">34</td>
+</tr>
+<tr>
+<td align="left">投掷射程</td>
+<td align="left">16 / 18；投射速度 14</td>
+</tr>
+<tr>
+<td align="left">投掷伤害序列</td>
+<td align="left">首个命中 <strong>50</strong>，之后依次为 <strong>45 / 40 / 35 / 30 / 25</strong>，后续维持 25</td>
+</tr>
+<tr>
+<td align="left">连锁规则</td>
+<td align="left">每命中一个目标后，在当前位置周围 8 格寻找未命中过的有效目标；最多命中 <strong>20</strong> 个目标</td>
+</tr>
+<tr>
+<td align="left">回收规则</td>
+<td align="left">找不到新目标或投掷落空时返回主人；哪吒处于飞行状态时会自动接住。手部空槽则自动装备，否则收入物品栏</td>
+</tr>
+</tbody></table></div></div><p>乾坤圈会排除玩家、墙、随从等对象，而且同一次投掷不会重复命中同一个目标。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：乾坤圈飞行时异常落水或落入虚空的问题会自动修复；“乾坤圈自动巡回”为独立可选项，默认关闭。详见<a href="/optimizations/">神话优化</a>。</p>
+</blockquote><h3 id="腾云术-风火轮" data-legacy-id="sec-腾云术-风火轮-ikd7gz" data-num="叁">腾云术：风火轮</h3><p>哪吒亲自阅读灵台方寸山的天书后，会永久解锁名为<strong>风火轮</strong>的腾云入口。发动时消耗 <strong>25 点理智</strong>并直接进入共用飞行状态，不会制作出可放入背包或装备栏的独立物品。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">项目</th>
+<th align="left">规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">飞行速度</td>
+<td align="left">10（高于地面基础移速；飞行时直接使用专属飞行速度）</td>
+</tr>
+<tr>
+<td align="left">火焰</td>
+<td align="left">飞行期间附带风火轮火焰效果，并将外部火焰伤害倍率设为 0</td>
+</tr>
+<tr>
+<td align="left">制作限制</td>
+<td align="left">除黑白无常外，飞行状态无法在地面选点建造；骑乘、冻结、睡眠等状态也会终止或阻止飞行</td>
+</tr>
+<tr>
+<td align="left">落地</td>
+<td align="left">对自身使用“落地”操作结束飞行</td>
+</tr>
+</tbody></table></div></div><p>飞行用于赶图、越过地面阻碍、脱离地面压力和处理火焰环境；它不是全面的无敌。</p>
+            <!-- STATIC_CONTENT_END -->
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <footer class="footer" id="site-footer" role="contentinfo">
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-message">
+        <p class="footer-message-text">感谢每一位订阅玩家的支持和鼓励，祝各位在《腌笃鲜》的努力下游戏愉快，武运昌隆，尽享神话之旅！</p>
+        <p class="footer-signature">——咸鱼 &amp; 大猪蹄子 敬上</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357" target="_blank" rel="noopener noreferrer">Steam 创意工坊</a>
+        <a href="https://qm.qq.com/q/iFeDTMf6Io" target="_blank" rel="noopener noreferrer">反馈交流群</a>
+      </div>
+      <p>&copy; 2026 《腌笃鲜》</p>
+      <p>反馈交流 QQ 群：1046023996</p>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <script src="/scripts/utils.js?v=20260804h"></script>
+    <script src="/scripts/renderer.js?v=20260805c"></script>
+    <script src="/scripts/toc.js?v=20260805b"></script>
+    <script src="/scripts/scroll.js?v=20260805a"></script>
+    <script src="/scripts/theme.js?v=20260804f"></script>
+    <script src="/scripts/ui.js?v=20260805b"></script>
+    <script src="/scripts/media.js?v=20260808a"></script>
+    <script src="/scripts/main.js?v=20260805c"></script>
+  </body>
+</html>

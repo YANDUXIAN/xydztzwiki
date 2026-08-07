@@ -1,33 +1,9 @@
 // ============================================
-// 《腌笃鲜》官方维基 - Utilities
+// 《腌笃鲜》维基百科 - Utilities
 // ============================================
 
 window.XYDZTZ = window.XYDZTZ || {};
 const _utils = {
-  slugify(text) {
-    return (
-      "sec-" +
-      text
-        .trim()
-        .toLowerCase()
-        .replace(/[^\w\u4e00-\u9fff]+/g, "-")
-        .replace(/^-+|-+$/g, "")
-        .substring(0, 60) +
-      "-" +
-      _utils.hashCode(text)
-    );
-  },
-
-  hashCode(str) {
-    let hash = 0;
-    for (let i = 0; i < str.length; i++) {
-      const char = str.charCodeAt(i);
-      hash = (hash << 5) - hash + char;
-      hash |= 0;
-    }
-    return Math.abs(hash).toString(36);
-  },
-
   debounce(fn, delay = 150) {
     let timer = null;
     return function (...args) {
@@ -49,14 +25,26 @@ const _utils = {
     };
   },
 
-  inferBlockquoteType(text) {
-    const t = text.toLowerCase();
-    if (t.includes('警告') || t.includes('危险') || t.includes('失败') || t.includes('错误')) return 'warning';
-    if (t.includes('严禁') || t.includes('禁止')) return 'danger';
-    if (t.includes('说明') || t.includes('备注') || t.includes('提示') || t.includes('提醒') || t.includes('注意') || t.includes('要点') || t.includes('当前规则')) return 'info';
-    if (t.includes('成功') || t.includes('完成') || t.includes('兼容')) return 'success';
-    return null;
+  siteAsset(path) {
+    const value = String(path || '');
+    if (/^(?:https?:)?\/\//i.test(value) || value.startsWith('/')) return value;
+    return `/${value.replace(/^\.\//, '')}`;
   }
 };
 
 window.XYDZTZ.utils = _utils;
+
+// V1: HTML 转义（供各模块安全拼接文本）
+_utils.escapeHtml = function (text) {
+  const div = document.createElement('div');
+  div.textContent = text == null ? '' : String(text);
+  return div.innerHTML;
+};
+
+// 取标题纯文本：剔除标题内嵌的交互元素（如 FAQ「展开全部」按钮），
+// 避免按钮文案污染目录、浏览器标题栏与阅读位置指示
+_utils.headingText = function (el) {
+  const clone = el.cloneNode(true);
+  clone.querySelectorAll('button').forEach((btn) => btn.remove());
+  return clone.textContent.trim();
+};

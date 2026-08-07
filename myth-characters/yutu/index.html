@@ -1,0 +1,756 @@
+<!doctype html>
+<!-- ============================================
+     《腌笃鲜》维基百科 - Main Page
+     ============================================ -->
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="查阅玉兔的捣药、药粉、莹月琵琶、兔洞与霜玉云规则。" />
+    <meta name="keywords" content="腌笃鲜,饥荒,神话书说,模组,元辰劫运,盘丝娘娘,wiki,攻略" />
+    <meta name="author" content="《腌笃鲜》资料整理" />
+    <meta name="theme-color" content="#faf8f3" />
+    <script>
+      (() => {
+        let theme = 'light';
+        try {
+          const saved = localStorage.getItem('xydztz-theme') || localStorage.getItem('xdyztz-theme');
+          theme = saved === 'dark' || saved === 'light'
+            ? saved
+            : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch (err) {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', theme === 'dark' ? '#15110e' : '#faf8f3');
+      })();
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="玉兔 | 神话人物 | 《腌笃鲜》" />
+    <meta property="og:description" content="查阅玉兔的捣药、药粉、莹月琵琶、兔洞与霜玉云规则。" />
+    <meta property="og:site_name" content="《腌笃鲜》" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:url" content="https://yanduxian.cn/myth-characters/yutu/" />
+    <meta property="og:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1021" />
+    <meta property="og:image:alt" content="《腌笃鲜》雪景封面" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="玉兔 | 神话人物 | 《腌笃鲜》" />
+    <meta name="twitter:description" content="查阅玉兔的捣药、药粉、莹月琵琶、兔洞与霜玉云规则。" />
+    <meta name="twitter:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+
+    <title>玉兔 | 神话人物 | 《腌笃鲜》</title>
+    <link rel="canonical" href="https://yanduxian.cn/myth-characters/yutu/" />
+
+    <link rel="preload" href="/images/hero-default-1200.webp" imagesrcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" imagesizes="100vw" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/fonts/MaShanZheng-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/png" href="/images/mod-icon.png?v=20260719" />
+
+    <link rel="stylesheet" href="/styles/fonts.css?v=20260804o" />
+    <link rel="stylesheet" href="/styles/variables.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/base.css?v=20260804g" />
+    <link rel="stylesheet" href="/styles/hero.css?v=20260804r" />
+    <link rel="stylesheet" href="/styles/layout.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/markdown.css?v=20260805u" />
+    <link rel="stylesheet" href="/styles/components.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/media.css?v=20260806b" />
+    <link rel="stylesheet" href="/styles/responsive.css?v=20260805m" />
+  </head>
+  <body data-book-id="myth-characters" data-book-title="神话人物" data-chapter-slug="yutu" data-chapter-title="玉兔" data-search-index="/search-index.json?v=ca6182164b96">
+    <div class="read-progress" id="read-progress" aria-hidden="true"></div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2c-1.05 0-2.05.16-3 .46 1.69 1.24 2.79 3.26 2.79 5.54 0 3.87-3.13 7-7 7-.57 0-1.13-.08-1.67-.22C2.52 18.49 6.45 22 11 22c5.52 0 10-4.48 10-10S16.52 2 11 2c-.66 0-1.3.07-1.92.19C9.23 2.06 9.12 2 9 2z"/></svg>
+    </button>
+
+    <header class="hero" id="hero" role="banner">
+      <picture class="hero-bg-layer hero-bg-default" aria-hidden="true">
+        <source type="image/webp" srcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" sizes="100vw" />
+        <img src="/images/hero-default.jpg" srcset="/images/hero-default-1200.jpg 1200w, /images/hero-default.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" fetchpriority="high" />
+      </picture>
+      <picture class="hero-bg-layer hero-bg-hover" id="hero-hover-picture" aria-hidden="true">
+        <source type="image/webp" data-srcset="/images/hero-hover-1200.webp 1200w, /images/hero-hover.webp 2400w" sizes="100vw" />
+        <img data-src="/images/hero-hover.jpg" data-srcset="/images/hero-hover-1200.jpg 1200w, /images/hero-hover.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" />
+      </picture>
+      <div class="hero-sun-glow" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-gradient-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-title-row">
+          <h1 class="hero-title">《腌笃鲜》</h1>
+          <img class="hero-seal" src="/images/mod-icon.png?v=20260719" alt="《腌笃鲜》模组图标" width="68" height="68" />
+        </div>
+        <div class="hero-actions" aria-label="主要操作">
+          <a
+            class="hero-btn hero-btn-primary"
+            href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="在 Steam 创意工坊订阅《腌笃鲜》（新窗口）"
+          >订阅模组</a>
+          <button class="hero-btn hero-btn-secondary" id="hero-btn" type="button">开始查阅</button>
+        </div>
+      </div>
+
+      <div class="hero-subtitles">
+        <p class="hero-subtitle">三十五劫运交织，十二元辰下凡，灵台方寸显真心</p>
+        <p class="hero-subtitle">玉兔拨弦，黑风倒卷——人物精怪双篇登场</p>
+      </div>
+
+      <svg class="hero-torn-edge" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 48 L0 28 L36 32 L72 22 L120 30 L168 20 L216 28 L264 18 L312 30 L360 22 L408 28 L456 18 L504 26 L552 16 L600 26 L648 32 L696 22 L744 28 L792 18 L840 28 L888 22 L936 30 L984 20 L1032 28 L1080 22 L1128 30 L1176 18 L1224 26 L1272 30 L1320 22 L1368 28 L1404 24 L1440 28 L1440 48 Z" />
+      </svg>
+    </header>
+
+    <noscript>
+      <div class="noscript-warning" role="alert">
+        <strong>提示：</strong>正文仍可阅读；启用 JavaScript 后可使用目录搜索、劫运查询和媒体灯箱。
+      </div>
+    </noscript>
+
+    <nav class="chapter-nav" aria-label="神话人物篇章导航">
+      <div class="chapter-nav-inner" id="chapter-nav-inner">
+        <!-- CHAPTER_NAV_START -->
+        <details class="book-switcher">
+          <summary><strong>神话人物</strong></summary>
+          <div class="book-switcher-menu">
+            <a class="book-switcher-link" href="/">腌笃鲜</a>
+            <a class="book-switcher-link" href="/myth-theme/">神话主题</a>
+            <a class="book-switcher-link active" href="/myth-characters/">神话人物<span class="sr-only">（当前）</span></a>
+          </div>
+        </details>
+        <span class="chapter-nav-divider" aria-hidden="true"></span>
+        <div class="chapter-nav-pages">
+          <a class="chapter-nav-link" href="/myth-characters/">人物总览</a>
+        <a class="chapter-nav-link" href="/myth-characters/sun-wukong/">孙悟空</a>
+        <a class="chapter-nav-link" href="/myth-characters/nezha/">哪吒</a>
+        <a class="chapter-nav-link" href="/myth-characters/white-bone/">白骨夫人</a>
+        <a class="chapter-nav-link" href="/myth-characters/pigsy/">猪八戒</a>
+        <a class="chapter-nav-link" href="/myth-characters/yangjian/">杨戬</a>
+        <a class="chapter-nav-link active" href="/myth-characters/yutu/" aria-current="page">玉兔</a>
+        <a class="chapter-nav-link" href="/myth-characters/yama-commissioners/">黑白无常</a>
+        <a class="chapter-nav-link" href="/myth-characters/madameweb/">盘丝娘娘</a>
+        </div>
+        <!-- CHAPTER_NAV_END -->
+      </div>
+      <div class="reading-position" id="reading-position">
+        <span class="reading-position-text"><span class="rp-num"></span><span class="rp-title"></span></span>
+      </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar" aria-label="目录导航">
+        <div class="sidebar-header">
+          <h3 id="sidebar-title">玉兔目录</h3>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="toc-search" placeholder="搜索三本资料…" aria-label="搜索全部资料" />
+        </div>
+        <ul class="toc-list" id="toc-list">
+          <!-- SIDEBAR_TOC_START -->
+          <li class="toc-item toc-section has-children open">
+            <a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%B1%9E%E6%80%A7" data-id="基础属性" data-num="壹">基础属性</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%83%A1%E8%90%9D%E5%8D%9C%E9%A2%9D%E5%A4%96%E6%95%88%E6%9E%9C" data-id="胡萝卜额外效果">胡萝卜额外效果</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%B7%A7%E6%89%8B%E7%BC%9D%E8%A1%A5" data-id="巧手缝补">巧手缝补</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E5%85%94%E6%97%8F%E4%BA%B2%E5%92%8C" data-id="兔族亲和" data-num="贰">兔族亲和</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E9%81%81%E5%9C%B0" data-id="遁地" data-num="叁">遁地</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E8%9F%BE%E5%AE%AB%E6%8A%80%E8%89%BA" data-id="蟾宫技艺" data-num="肆">蟾宫技艺</a>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E6%8D%A3%E8%8D%AF%E6%9D%B5%E4%B8%8E%E6%8A%80%E8%83%BD%E6%A0%8F-%E6%8D%A3%E8%8D%AF" data-id="捣药杵与技能栏-捣药" data-num="伍">捣药杵与技能栏“捣药”</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%8D%A3%E8%8D%AF%E6%B5%81%E7%A8%8B" data-id="捣药流程">捣药流程</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%8F%AF%E7%94%A8%E6%8D%A3%E8%8D%AF%E6%9D%90%E6%96%99" data-id="可用捣药材料">可用捣药材料</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%9F%BA%E7%A1%80%E6%9D%90%E6%96%99%E6%95%88%E6%9E%9C" data-id="基础材料效果">基础材料效果</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E4%B8%83%E7%A7%8D%E8%8D%AF%E7%B2%89" data-id="七种药粉" data-num="陆">七种药粉</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%8D%AF%E7%B2%89%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99" data-id="药粉使用规则">药粉使用规则</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E8%8E%B9%E6%9C%88%E7%90%B5%E7%90%B6" data-id="莹月琵琶" data-num="柒">莹月琵琶</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%9B%B2%E8%B0%B1%E5%AD%A6%E4%B9%A0" data-id="曲谱学习">曲谱学习</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%BC%94%E5%A5%8F%E8%A7%84%E5%88%99" data-id="演奏规则">演奏规则</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%B5%84%E6%BA%90%E6%B6%88%E8%80%97" data-id="资源消耗">资源消耗</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E4%BA%94%E9%A6%96%E5%8F%8B%E6%96%B9%E5%A2%9E%E7%9B%8A%E6%9B%B2" data-id="五首友方增益曲">五首友方增益曲</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E4%BA%94%E9%A6%96%E6%95%8C%E6%96%B9%E6%88%96%E5%9C%BA%E5%9F%9F%E6%9B%B2" data-id="五首敌方或场域曲">五首敌方或场域曲</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E5%85%94%E6%B4%9E%E9%87%87%E9%9B%86%E4%B8%8E%E4%BA%BA%E5%B7%A5%E5%85%94%E6%B4%9E" data-id="兔洞采集与人工兔洞" data-num="捌">兔洞采集与人工兔洞</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E6%9C%88%E8%9B%BE%E5%BC%95%E8%B7%AF" data-id="月蛾引路" data-num="玖">月蛾引路</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E7%AB%B9%E8%8D%AF%E7%AF%93" data-id="竹药篓" data-num="拾">竹药篓</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E9%9C%9C%E7%8E%89%E4%BA%91" data-id="霜玉云" data-num="拾壹">霜玉云</a>
+          </li>
+          <!-- SIDEBAR_TOC_END -->
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <article class="content-card">
+          <div class="md-body" id="main-content" data-static-snapshot="ready" data-content-hash="ca6182164b96" data-chapter="yutu">
+            <!-- STATIC_CONTENT_START -->
+<h2 id="玉兔" data-legacy-id="sec-玉兔-k3jf" data-eyebrow="第柒篇">玉兔</h2><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话人物] [数据类型：可选人物] [内容归属：神话人物原生] [腌笃鲜状态：存在独立重做版] [核心关联：玉兔仙子、月兔栏、蟾宫技艺、捣药杵、七种药粉、莹月琵琶、十首曲谱、竹药篓、月蛾引路、兔洞、遁地、霜玉云]</p>
+</blockquote><p class="lede"><strong>机制概览</strong>：捣药、药粉、莹月琵琶曲目、遁地、兔洞与霜玉云。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：《腌笃鲜》的“玉兔仙子”是独立重做人物，与本章的《神话书说》原玉兔并存，不会覆盖或替换原人物；两者的技能、配方与数值应分别查阅。详见<a href="/characters/">人物精怪</a>。</p>
+</blockquote><h3 id="基础属性" data-legacy-id="sec-基础属性-blj5vz-4" data-num="壹">基础属性</h3><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">项目</th>
+<th align="left">规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">生命 / 饥饿 / 理智</td>
+<td align="left">150 / 150 / 120</td>
+</tr>
+<tr>
+<td align="left">伤害倍率</td>
+<td align="left">1.0</td>
+</tr>
+<tr>
+<td align="left">饥饿速度</td>
+<td align="left">标准 1.0 倍</td>
+</tr>
+<tr>
+<td align="left">饮食</td>
+<td align="left">只吃素食</td>
+</tr>
+<tr>
+<td align="left">最爱食物</td>
+<td align="left">生胡萝卜；饥饿收益 ×1.2</td>
+</tr>
+<tr>
+<td align="left">夜晚与负面光环</td>
+<td align="left">理智损失倍率 0.75</td>
+</tr>
+<tr>
+<td align="left">启蒙</td>
+<td align="left">不进入启蒙理智模式</td>
+</tr>
+<tr>
+<td align="left">保温</td>
+<td align="left">自带 60 点冬季保温</td>
+</tr>
+<tr>
+<td align="left">月岛适应</td>
+<td align="left">月岛陨石地皮上移动速度 ×1.3</td>
+</tr>
+<tr>
+<td align="left">制作</td>
+<td align="left">制作与施工动作更快</td>
+</tr>
+<tr>
+<td align="left">出生物品</td>
+<td align="left">捣药杵、莹月琵琶</td>
+</tr>
+</tbody></table></div></div><h4 id="胡萝卜额外效果" data-legacy-id="sec-胡萝卜额外效果-5y08yb">胡萝卜额外效果</h4><ul>
+<li>生胡萝卜、烤胡萝卜和胡萝卜种子被玉兔食用时，额外恢复 5 点理智。</li><li>烤胡萝卜和胡萝卜种子不享受最爱食物的饥饿加成；胡萝卜种子的额外理智也不改变它本身很低的饱食价值。</li></ul>
+<h4 id="巧手缝补" data-legacy-id="sec-巧手缝补-c9e5nw">巧手缝补</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">工具</th>
+<th align="left">玉兔使用时</th>
+<th align="left">其他人物使用时</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">针线包</td>
+<td align="left">每次修复量为正常的 2 倍；一包可用 10 次</td>
+<td align="left">仍相当于通常的 5 次修复</td>
+</tr>
+<tr>
+<td align="left">缝纫胶带</td>
+<td align="left">单次修复量为正常的 2 倍</td>
+<td align="left">—</td>
+</tr>
+</tbody></table></div></div><p>针线包的显示耐久为 10 次；非玉兔每次消耗 2 次，玉兔每次消耗 1 次且修复量为通常的 2 倍。</p>
+<h3 id="兔族亲和" data-legacy-id="sec-兔族亲和-aokrit" data-num="贰">兔族亲和</h3><ul>
+<li>玉兔可以直接拾取活兔，不需要先用陷阱控制。</li><li>玉兔不能谋杀活兔；活兔由玉兔携带时也不能直接烹饪。</li><li>背包中至少携带 1 只活兔时，玉兔获得中等理智回复，约为每分钟 3.33 点；携带更多不会叠加。</li><li>20 格内有兔子死亡时，玉兔损失 5 点理智。</li><li>兔人不会把玉兔选作普通仇恨目标。</li></ul>
+<h3 id="遁地" data-legacy-id="sec-遁地-p0jz-2" data-num="叁">遁地</h3><p>对自己右键选择<strong>遁地</strong>即可入地，再次对自己使用同一动作即可出土。骑乘时不能入地，技能没有固定持续时间和冷却。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">地下收益</th>
+<th align="left">地下代价或限制</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">入地时让 12 格内正在攻击玉兔的敌人丢失目标</td>
+<td align="left">饥饿消耗速度提高到 1.4 倍</td>
+</tr>
+<tr>
+<td align="left">普通敌人无法选中玉兔</td>
+<td align="left">持续损失理智，每分钟 10 点</td>
+</tr>
+<tr>
+<td align="left">获得夜视和查理免疫</td>
+<td align="left">雨天每秒增加 0.5 潮湿值</td>
+</tr>
+<tr>
+<td align="left">火焰伤害倍率降为 0</td>
+<td align="left">背包与已开启容器关闭，无法整理物品</td>
+</tr>
+<tr>
+<td align="left">可以继续移动</td>
+<td align="left">捕捉和绝大多数普通交互不可用</td>
+</tr>
+</tbody></table></div></div><p>遁地会在饥饿归零、死亡或进入不兼容的动作状态时结束。它能解除目标锁定，却<strong>不是全局无敌</strong>：范围伤害、环境状态和特殊机制仍可能影响玉兔。火焰伤害免疫也不等于免疫过热、潮湿或其他元素伤害。</p>
+<h3 id="蟾宫技艺" data-legacy-id="sec-蟾宫技艺-hjefc7" data-num="肆">蟾宫技艺</h3><p>专属制作页名称为<strong>蟾宫技艺</strong>。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">内容</th>
+<th align="left">获取或开启</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">七种药粉</td>
+<td align="left">向嫦娥交付对应教学物，解锁配方后制作</td>
+</tr>
+<tr>
+<td align="left">十首曲谱</td>
+<td align="left">向嫦娥交付对应教学物，解锁后在蟾宫技艺中选曲</td>
+</tr>
+<tr>
+<td align="left">兔洞</td>
+<td align="left">2 只活兔 + 1 把铲子，科学一本</td>
+</tr>
+<tr>
+<td align="left">月蛾引路</td>
+<td align="left">1 片花瓣，无科技</td>
+</tr>
+<tr>
+<td align="left">竹药篓</td>
+<td align="left">竹子 ×3 + 绳子 ×2，科学一本</td>
+</tr>
+<tr>
+<td align="left">莹月琵琶</td>
+<td align="left">月亮碎片 ×4 + 浮木桩 ×1 + 蜘蛛丝 ×1，无科技</td>
+</tr>
+</tbody></table></div></div><p>已经学会的药粉和曲谱会随当前人物进度保存。嫦娥不会重复接收已学配方的教学物。</p>
+<h3 id="捣药杵与技能栏-捣药" data-legacy-id="sec-捣药杵与技能栏-捣药-spbywu" data-num="伍">捣药杵与技能栏“捣药”</h3><p>捣药杵只能由玉兔装备，作为武器造成 51 点基础伤害，攻击距离略短，没有耐久。当前通过人物技能栏中的<strong>捣药按钮</strong>启动。</p>
+<h4 id="捣药流程" data-legacy-id="sec-捣药流程-d32a1i">捣药流程</h4><ol>
+<li>把捣药杵放在物品栏中；点击技能按钮后，玉兔会尝试自动装备它。</li><li>骑乘时不能捣药。成功进入动作后立即消耗 5 点饥饿。</li><li>临时药钵打开，共 2 格，不接受堆叠物品。</li><li>每个格子独立计时 3 秒；结算时消耗该格 1 个材料，并再消耗 2 点饥饿。</li><li>两格不是配方合成槽。放入两种材料会各自结算一次效果和一次饥饿费用。</li><li>移走尚未完成的材料会取消该格计时；移动、切换动作或结束捣药时，未处理材料会掉回地面。</li></ol>
+<h4 id="可用捣药材料" data-legacy-id="sec-可用捣药材料-9xwcdu">可用捣药材料</h4><ul>
+<li>可放入七种药粉、蜘蛛腺体、专门标记为药材的物品，以及大部分非肉食材。</li><li>肉、鱼、成品料理、活物和可装备物不能作为普通捣药材料。</li><li>桃子、大蟠桃、烤桃子、荷花、冰、蜂王浆和格罗姆花虽然具备食物属性，但被明确排除。</li><li>七种药粉的正式制作在蟾宫技艺中完成，不是把配方材料塞进两格药钵。</li></ul>
+<h4 id="基础材料效果" data-legacy-id="sec-基础材料效果-4n4s2l">基础材料效果</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">材料</th>
+<th align="left">每次结算效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">月蛾翅膀</td>
+<td align="left">+15 生命，+20 理智</td>
+</tr>
+<tr>
+<td align="left">仙人掌肉</td>
+<td align="left">+15 理智</td>
+</tr>
+<tr>
+<td align="left">仙人掌花</td>
+<td align="left">+20 生命，+15 理智，并获得持续理智恢复</td>
+</tr>
+<tr>
+<td align="left">蜘蛛腺体</td>
+<td align="left">+20 生命；白骨夫人不获得此生命回复</td>
+</tr>
+<tr>
+<td align="left">蕨叶 / 蝴蝶翅膀</td>
+<td align="left">+8 生命；白骨夫人不获得此生命回复</td>
+</tr>
+<tr>
+<td align="left">多肉植物</td>
+<td align="left">+20 生命；白骨夫人不获得此生命回复</td>
+</tr>
+<tr>
+<td align="left">荧光果 / 花瓣 / 月树花</td>
+<td align="left">+5 理智</td>
+</tr>
+<tr>
+<td align="left">叶肉</td>
+<td align="left">-15 潮湿值</td>
+</tr>
+<tr>
+<td align="left">普通水果</td>
+<td align="left">食材价值较高时 +15 理智，否则 +5 理智</td>
+</tr>
+<tr>
+<td align="left">普通蔬菜</td>
+<td align="left">食材价值较高时 +20 生命，否则 +8 生命</td>
+</tr>
+</tbody></table></div></div><blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：本节原玉兔的基础材料效果会先结算给自己，再作用于周围 15 范围内的其他存活玩家；《腌笃鲜》重做玉兔的基础捣药只结算给玉兔本人。两者的药粉与成药另有各自的作用对象，不按这条基础规则判断。</p>
+</blockquote><p>捣药杵没有配方。若它永久遗失，当前正常制作系统无法重新获得；莹月琵琶则可以按配方重做。</p>
+<h3 id="七种药粉" data-legacy-id="sec-七种药粉-acp9k4" data-num="陆">七种药粉</h3><p>只有玉兔能向嫦娥学习这些配方。用于教学的物品会被返还；真正制作药粉时才消耗配方材料。成品每组最多堆叠 20 个，不会腐烂，也可以交给其他玩家直接使用。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">药粉</th>
+<th align="left">给嫦娥看的教学物</th>
+<th align="left">制作材料</th>
+<th align="left">产量</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">排郁药粉</td>
+<td align="left">舒缓茶</td>
+<td align="left">必忘我 ×6 + 仙人掌肉 ×3</td>
+<td align="left">6</td>
+</tr>
+<tr>
+<td align="left">夜明药粉</td>
+<td align="left">发光浆果；启用棱镜兼容时也接受真果拿破仑</td>
+<td align="left">发光浆果 ×3 + 荧光果 ×6 + 金块 ×1</td>
+<td align="left">6</td>
+</tr>
+<tr>
+<td align="left">惊厥药粉</td>
+<td align="left">伏特羊角</td>
+<td align="left">伏特羊角 ×2 + 金丝雀羽毛 ×1</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">活血药粉</td>
+<td align="left">蜂王浆</td>
+<td align="left">蜂王浆 ×2 + 蜘蛛腺体 ×6 + 海带叶 ×1</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">犀茸药粉</td>
+<td align="left">守护者之角</td>
+<td align="left">守护者之角 ×1</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">寒眸药粉</td>
+<td align="left">独眼巨鹿眼球；麋鹿茸也可以</td>
+<td align="left">独眼巨鹿眼球 ×1 + 任意普通鹿角 ×1 + 牛毛 ×1</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">草参药粉</td>
+<td align="left">曼德拉草或烤曼德拉草</td>
+<td align="left">曼德拉草 ×1 + 花瓣 ×3</td>
+<td align="left">3</td>
+</tr>
+</tbody></table></div></div><h4 id="药粉使用规则" data-legacy-id="sec-药粉使用规则-ka9yqg">药粉使用规则</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">药粉</th>
+<th align="left">从背包单独使用</th>
+<th align="left">放入药钵完成捣药</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">草参</td>
+<td align="left">自身恢复 300 生命，并催眠 25 格内可睡目标约 10～11 秒</td>
+<td align="left">自身、范围内玩家和友方随从各恢复 300 生命，同时发动同一催眠脉冲</td>
+</tr>
+<tr>
+<td align="left">犀茸</td>
+<td align="left">复活 25 格内第一名可见鬼魂并补满三维；无鬼魂时补满使用者三维</td>
+<td align="left">复活 25 格内全部可见鬼魂并补满三维；无鬼魂时补满玉兔三维</td>
+</tr>
+<tr>
+<td align="left">惊厥</td>
+<td align="left">自身攻击附带电击，持续 150 秒</td>
+<td align="left">25 格内玩家和友方随从获得同一效果，持续 150 秒</td>
+</tr>
+<tr>
+<td align="left">活血</td>
+<td align="left">立即 +60 生命，随后 120 秒内每 2 秒 +2 生命，最多再恢复 120</td>
+<td align="left">25 格内玩家和友方随从获得同一效果</td>
+</tr>
+<tr>
+<td align="left">夜明</td>
+<td align="left">自身获得高级发光效果 960 秒</td>
+<td align="left">25 格内玩家和友方随从获得同一效果</td>
+</tr>
+<tr>
+<td align="left">排郁</td>
+<td align="left">立即 +30 理智，随后 30 秒内每 2 秒 +2 理智，最多再恢复 30</td>
+<td align="left">25 格内所有可见玩家获得同一效果，不作用于随从</td>
+</tr>
+<tr>
+<td align="left">寒眸</td>
+<td align="left">自身攻击附带冰冻效果，持续 150 秒</td>
+<td align="left">25 格内玩家和友方随从获得同一效果，持续 150 秒</td>
+</tr>
+</tbody></table></div></div><p>额外规则：鬼魂可以对犀茸药粉作祟，直接复活自己并补满三维；开启 PVP 时，草参药粉的催眠脉冲也可能影响其他玩家。成品药粉一经使用就消耗 1 个。</p>
+<h3 id="莹月琵琶" data-legacy-id="sec-莹月琵琶-h1rdcg" data-num="柒">莹月琵琶</h3><p>莹月琵琶只能由玉兔拾取和使用，不能放进捆绑包装，没有耐久。玉兔出生自带 1 把；遗失后可用<strong>月亮碎片 ×4、浮木桩 ×1、蜘蛛丝 ×1</strong>无科技重做。</p>
+<h4 id="曲谱学习" data-legacy-id="sec-曲谱学习-dkevll-2">曲谱学习</h4><p>把下表教学物交给嫦娥即可永久解锁对应曲谱。与药粉不同，曲谱教学物会被嫦娥收走；没有任何曲目是自动学会的。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">曲目</th>
+<th align="left">教学物</th>
+<th align="left">类型</th>
+<th align="left">持续演奏资源</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">田中乐</td>
+<td align="left">蜂王冠</td>
+<td align="left">友方增益</td>
+<td align="left">饥饿</td>
+</tr>
+<tr>
+<td align="left">春光曲</td>
+<td align="left">独奏乐器</td>
+<td align="left">友方增益</td>
+<td align="left">饥饿</td>
+</tr>
+<tr>
+<td align="left">浴火奏</td>
+<td align="left">龙鳞</td>
+<td align="left">友方增益</td>
+<td align="left">理智</td>
+</tr>
+<tr>
+<td align="left">寒风调</td>
+<td align="left">处于滚烫状态的热能石</td>
+<td align="left">友方增益</td>
+<td align="left">理智</td>
+</tr>
+<tr>
+<td align="left">梦飞霜</td>
+<td align="left">冰鲷鱼</td>
+<td align="left">友方增益</td>
+<td align="left">理智</td>
+</tr>
+<tr>
+<td align="left">怨缠身</td>
+<td align="left">蜘蛛卵</td>
+<td align="left">敌方减益</td>
+<td align="left">饥饿</td>
+</tr>
+<tr>
+<td align="left">春风化雨</td>
+<td align="left">羽毛扇</td>
+<td align="left">敌方减益</td>
+<td align="left">理智</td>
+</tr>
+<tr>
+<td align="left">霸王卸甲</td>
+<td align="left">厚熊皮</td>
+<td align="left">敌方减益</td>
+<td align="left">理智</td>
+</tr>
+<tr>
+<td align="left">流水无情</td>
+<td align="left">牛角帽</td>
+<td align="left">牛群与农务</td>
+<td align="left">饥饿</td>
+</tr>
+<tr>
+<td align="left">夜阑谣</td>
+<td align="left">排箫</td>
+<td align="left">敌方控制</td>
+<td align="left">理智</td>
+</tr>
+</tbody></table></div></div><h4 id="演奏规则" data-legacy-id="sec-演奏规则-ee3w0g">演奏规则</h4><ol>
+<li>确认莹月琵琶在玉兔物品栏中，并先下坐骑。</li><li>在蟾宫技艺中点击已学曲目完成选曲；这一步会把曲目记录到当前琵琶上并立刻开奏。</li><li>之后可右键琵琶，或点击人物技能栏的琵琶按钮，重弹这把琵琶记录的上一首曲子。</li><li>演奏开始 2 秒后结算第一轮效果，此后每 4 秒结算一次，直到资源不足或动作被中断。</li><li>友方曲每轮在玉兔周围生成 1 枚音符，约 9～12 秒后消失；玩家必须主动触摸音符才能获得增益。</li></ol>
+<p>琵琶记录的“上一首曲子”不随物品存档保存，服务器重载或物品重新生成后需要再次选曲。另一名玉兔即使拿到已经选曲的琵琶，也必须自己学过该曲才能重弹。</p>
+<h4 id="资源消耗" data-legacy-id="sec-资源消耗-ia5xej">资源消耗</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">曲目分组</th>
+<th align="left">开始演奏</th>
+<th align="left">每 4 秒持续消耗</th>
+<th align="left">从蟾宫技艺重新选曲的额外代价</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">田中乐、春光曲</td>
+<td align="left">5 饥饿</td>
+<td align="left">4 饥饿</td>
+<td align="left">只检查 5 饥饿，不额外扣除</td>
+</tr>
+<tr>
+<td align="left">怨缠身、流水无情</td>
+<td align="left">5 饥饿</td>
+<td align="left">3 饥饿</td>
+<td align="left">只检查 5 饥饿，不额外扣除</td>
+</tr>
+<tr>
+<td align="left">浴火奏、寒风调、梦飞霜</td>
+<td align="left">5 理智</td>
+<td align="left">4 理智</td>
+<td align="left">另扣 5 理智</td>
+</tr>
+<tr>
+<td align="left">春风化雨、霸王卸甲、夜阑谣</td>
+<td align="left">5 理智</td>
+<td align="left">3 理智</td>
+<td align="left">另扣 5 理智</td>
+</tr>
+</tbody></table></div></div><p>理智曲从蟾宫技艺重新选曲时，开奏前后合计消耗 10 点理智；使用琵琶或技能按钮重弹上一首时，开奏消耗为 5 点理智。骑乘或未携带琵琶时不能开奏。</p>
+<h4 id="五首友方增益曲" data-legacy-id="sec-五首友方增益曲-rh3iyy">五首友方增益曲</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">曲目</th>
+<th align="left">触摸音符后的效果</th>
+<th align="left">持续时间</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">田中乐</td>
+<td align="left">砍伐、采矿和锤击效率 ×2</td>
+<td align="left">90 秒</td>
+</tr>
+<tr>
+<td align="left">春光曲</td>
+<td align="left">清除当前昏沉，并获得极高催眠抗性</td>
+<td align="left">480 秒</td>
+</tr>
+<tr>
+<td align="left">浴火奏</td>
+<td align="left">受到的火焰伤害倍率降为 0</td>
+<td align="left">90 秒</td>
+</tr>
+<tr>
+<td align="left">寒风调</td>
+<td align="left">阻止冰冻值继续累积</td>
+<td align="left">90 秒</td>
+</tr>
+<tr>
+<td align="left">梦飞霜</td>
+<td align="left">每次受击给攻击者增加 1.5 点冰冻值</td>
+<td align="left">90 秒</td>
+</tr>
+</tbody></table></div></div><p>友方音符只供一名玩家触摸后消失。玉兔本人也要主动碰音符，不会因为是演奏者就自动获得增益。</p>
+<h4 id="五首敌方或场域曲" data-legacy-id="sec-五首敌方或场域曲-7kui0q">五首敌方或场域曲</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">曲目</th>
+<th align="left">每轮作用范围与结果</th>
+<th align="left">离开演奏后的规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">怨缠身</td>
+<td align="left">25 格内符合条件的敌人不能获得正向生命回复</td>
+<td align="left">每轮刷新为 30 秒</td>
+</tr>
+<tr>
+<td align="left">春风化雨</td>
+<td align="left">25 格内符合条件的敌人伤害输出降为 0.75 倍</td>
+<td align="left">每轮刷新为 30 秒</td>
+</tr>
+<tr>
+<td align="left">霸王卸甲</td>
+<td align="left">从敌人的减伤率中减去 25 个百分点；不足 25% 的部分转为额外承伤</td>
+<td align="left">每轮刷新为 30 秒</td>
+</tr>
+<tr>
+<td align="left">流水无情</td>
+<td align="left">25 格内处于发情状态的皮弗娄牛群立即退出发情；同时照料 8 格内作物</td>
+<td align="left">仅按演奏轮次结算，没有通用 30 秒减益</td>
+</tr>
+<tr>
+<td align="left">夜阑谣</td>
+<td align="left">25 格内符合条件的敌人每轮增加 5 点睡意并尝试睡眠 5 秒</td>
+<td align="left">持续演奏可反复叠加，不是固定 30 秒减益</td>
+</tr>
+</tbody></table></div></div><p>敌方曲不会作用于玩家，即使服务器开启 PVP 也不例外。它们主要选择正在敌对、具有敌对身份或正在攻击玩家的生物；友方随从不会因为站在范围内就被误伤。十首曲目每一轮有效结算都会顺便照料玉兔 8 格内的农作物。</p>
+<h3 id="兔洞采集与人工兔洞" data-legacy-id="sec-兔洞采集与人工兔洞-s5hmva" data-num="捌">兔洞采集与人工兔洞</h3><p>玉兔可以对兔洞使用专属采集动作。每个兔洞在非春季时<strong>每个世界日只能被采集一次</strong>，同一兔洞的次数由世界共享，不是每名玉兔各一次。春季兔洞不可采集，下一次非春季新日开始后恢复。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">采集物</th>
+<th align="left">权重</th>
+<th align="left">单次概率</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">草</td>
+<td align="left">6</td>
+<td align="left">40%</td>
+</tr>
+<tr>
+<td align="left">胡萝卜种子</td>
+<td align="left">4</td>
+<td align="left">26.67%</td>
+</tr>
+<tr>
+<td align="left">胡萝卜</td>
+<td align="left">2</td>
+<td align="left">13.33%</td>
+</tr>
+<tr>
+<td align="left">石头</td>
+<td align="left">2</td>
+<td align="left">13.33%</td>
+</tr>
+<tr>
+<td align="left">兔绒</td>
+<td align="left">1</td>
+<td align="left">6.67%</td>
+</tr>
+</tbody></table></div></div><p>玉兔还能在蟾宫技艺中制作人工兔洞：<strong>活兔 ×2 + 铲子 ×1，科学一本</strong>。兔洞之间至少相隔 3 格；铲子作为配方材料会被消耗。</p>
+<h3 id="月蛾引路" data-legacy-id="sec-月蛾引路-dk2hgw" data-num="玖">月蛾引路</h3><p>在蟾宫技艺中消耗 1 片花瓣即可使用，无需科技站。</p>
+<ol>
+<li>月蛾生成后短暂隐藏，约 0.4 秒后出现。</li><li>世界中有有效广寒宫时，它优先朝广寒宫飞行。</li><li>没有广寒宫时，它会从可用月亮区域中随机选择一个方向。</li><li>月蛾总共只存在约 8 秒，随后淡出消失。</li></ol>
+<p>月蛾只提供方向提示，不会传送角色，也不保证在 8 秒内抵达目标；世界中没有广寒宫和有效月亮区域时不提供有效方向。引路月蛾不能捕捉，也没有资源掉落。</p>
+<h3 id="竹药篓" data-legacy-id="sec-竹药篓-ingu5" data-num="拾">竹药篓</h3><p>配方为<strong>神话竹 ×3 + 绳子 ×2，科学一本</strong>。它是玉兔专属背部装备，拥有 12 格容量和冰箱级保鲜速度，食物腐败速度为正常的 0.5 倍。</p>
+<ul>
+<li>主要接收可捣药植物、七种药粉及其核心材料，例如蜘蛛腺体、金块、伏特羊角、金丝雀羽毛、守护者之角、独眼巨鹿眼球、普通鹿角、牛毛和曼德拉草。</li><li>肉、鱼、成品料理、活物和可装备物不能按普通食材规则放入。</li><li>桃类、荷花、冰、蜂王浆和格罗姆花同样被排除；蜂王浆虽是活血药粉材料，也不能放进竹药篓。</li><li>竹药篓可以燃烧。点燃时会暂时锁住容器；烧毁后内容物掉出，并留下灰烬。</li></ul>
+<h3 id="霜玉云" data-legacy-id="sec-霜玉云-movno" data-num="拾壹">霜玉云</h3><p>在<strong>灵台方寸山</strong>阅读天书后，可解锁玉兔专属腾云入口。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">项目</th>
+<th align="left">玉兔规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">起飞代价</td>
+<td align="left">每次 25 理智</td>
+</tr>
+<tr>
+<td align="left">云上速度</td>
+<td align="left">10，约为普通玩家基础速度的 1.67 倍</td>
+</tr>
+<tr>
+<td align="left">云上恢复</td>
+<td align="left">每 3 秒恢复 1 生命</td>
+</tr>
+<tr>
+<td align="left">地形能力</td>
+<td align="left">可跨越海面，不会因落水判定溺水</td>
+</tr>
+<tr>
+<td align="left">存档</td>
+<td align="left">飞行状态会随存档恢复</td>
+</tr>
+</tbody></table></div></div><p>飞行时不能采集、拾取、睡眠、进入房屋、骑乘、跳入入口或正常建造。骑乘中和室内不能起飞；冻结、昏睡、饥饿归零、死亡或特殊变身会结束飞行。靠近远古织影者约 15 格时还会被强制击落，受到 20 点暗影伤害并损失 10 点理智。</p>
+            <!-- STATIC_CONTENT_END -->
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <footer class="footer" id="site-footer" role="contentinfo">
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-message">
+        <p class="footer-message-text">感谢每一位订阅玩家的支持和鼓励，祝各位在《腌笃鲜》的努力下游戏愉快，武运昌隆，尽享神话之旅！</p>
+        <p class="footer-signature">——咸鱼 &amp; 大猪蹄子 敬上</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357" target="_blank" rel="noopener noreferrer">Steam 创意工坊</a>
+        <a href="https://qm.qq.com/q/iFeDTMf6Io" target="_blank" rel="noopener noreferrer">反馈交流群</a>
+      </div>
+      <p>&copy; 2026 《腌笃鲜》</p>
+      <p>反馈交流 QQ 群：1046023996</p>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <script src="/scripts/utils.js?v=20260804h"></script>
+    <script src="/scripts/renderer.js?v=20260805c"></script>
+    <script src="/scripts/toc.js?v=20260805b"></script>
+    <script src="/scripts/scroll.js?v=20260805a"></script>
+    <script src="/scripts/theme.js?v=20260804f"></script>
+    <script src="/scripts/ui.js?v=20260805b"></script>
+    <script src="/scripts/media.js?v=20260808a"></script>
+    <script src="/scripts/main.js?v=20260805c"></script>
+  </body>
+</html>

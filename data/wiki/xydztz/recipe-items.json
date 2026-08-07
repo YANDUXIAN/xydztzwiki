@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "xydztz_futon",
+      "name": "蒲团",
+      "image": "images/wiki/xydztz/objects/xydztz_futon.webp"
+    },
+    {
+      "id": "xydztz_artifact_ttzjhl",
+      "name": "吞天紫金葫芦",
+      "image": "images/wiki/xydztz/objects/xydztz_artifact_ttzjhl.webp"
+    },
+    {
+      "id": "xydztz_artifact_tdbj",
+      "name": "天地宝鉴",
+      "image": "images/wiki/xydztz/objects/xydztz_artifact_tdbj.webp"
+    },
+    {
+      "id": "xydztz_artifact_xmyjp",
+      "name": "须弥玉净瓶",
+      "image": "images/wiki/xydztz/objects/xydztz_artifact_xmyjp.webp"
+    },
+    {
+      "id": "xydztz_armor_madameweb",
+      "name": "喜蛛天罗衣",
+      "image": "images/wiki/xydztz/objects/xydztz_armor_madameweb.webp"
+    }
+  ]
+}

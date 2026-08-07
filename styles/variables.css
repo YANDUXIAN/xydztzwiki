@@ -1,52 +1,61 @@
 /* ============================================
-   《腌笃鲜》官方维基 - Design Tokens
+   《腌笃鲜》维基百科 - Design Tokens
    ============================================ */
 
 :root {
-  --accent-fire: #b83a3a;
-  --accent-fire-hover: #c94a4a;
-  --accent-fire-bg: #f5e8e8;
-  --accent-fire-rgb: 184, 58, 58;
+  --accent-fire: #b23838;
+  --accent-fire-hover: #c24743;
+  --accent-fire-bg: #f7eceb;
+  --accent-fire-rgb: 178, 56, 56;
 
-  --accent-gold: #76613f;
-  --accent-gold-hover: #604c2e;
-  --accent-gold-rgb: 118, 97, 63;
+  --accent-gold: #665230;
+  --accent-gold-hover: #554226;
+  --accent-gold-rgb: 102, 82, 48;
 
-  --color-info: #76613f;
-  --color-info-bg: #f5f0e8;
+  --color-info: #665230;
+  --color-info-bg: #f4efe7;
   --color-warning: #a74f05;
   --color-warning-bg: #fef3c7;
   --color-success: #5a7a4a;
   --color-success-bg: #e8f0e0;
   --color-danger: #a63a3a;
   --color-danger-bg: #f0e0e0;
-  --color-new: #2f765f;
-  --color-new-bg: #e5f2ec;
-  --color-fix: #2f6f8f;
-  --color-fix-bg: #e5f0f5;
-  --color-adjust: #76613f;
-  --color-adjust-bg: #f0ebe3;
+  --color-new: #8f6b23;
+  --color-new-bg: #f7efdb;
+  --color-fix: #455a64;
+  --color-fix-bg: #e9edf0;
+  --color-adjust: #665230;
+  --color-adjust-bg: #efe8de;
 
-  --bg-page: #f5f0e8;
-  --bg-card: #faf8f3;
-  --bg-sidebar: #faf8f3;
-  --bg-code: #f0ebe3;
-  --bg-hover: #e8e0d4;
+  --bg-page: #f4efe7;
+  --bg-card: #fbf9f4;
+  --bg-sidebar: #fbf9f4;
+  --bg-code: #eee8de;
+  --bg-hover: #eee6da;
 
   --text-primary: #1a1a1a;
-  --text-secondary: #6f675e;
-  --text-link: #b83a3a;
+  --text-body: #37312b;
+  --text-secondary: #5f574e;
+  --text-link: #b23838;
 
-  --border-light: #e0d8cc;
-  --border-card: #e0d8cc;
+  --border-light: #ded5c8;
+  --border-card: #d9cebf;
+  --border-strong: #c5b7a2;
   --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.06);
   --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.1);
   --shadow-float: 0 8px 24px rgba(0, 0, 0, 0.14);
 
   --radius-sm: 6px;
   --radius-md: 8px;
-  --radius-lg: 8px;
+  --radius-lg: 12px;
   --radius-xl: 16px;
+
+  /* 金箔渐变：页脚分隔线与装饰点缀 */
+  --gold-foil: linear-gradient(90deg, transparent, #a8813f 25%, #e0c88f 50%, #a8813f 75%, transparent);
+
+  /* 朱砂渐变：主按钮与强调控件 */
+  --cinnabar: linear-gradient(180deg, #c4473c, #a52f28);
+  --cinnabar-hover: linear-gradient(180deg, #d05547, #aa342c);
 
   --sidebar-width: 260px;
 
@@ -62,50 +71,56 @@
   --rarity-common: #6f675e;
   --rarity-fine: #5a7a4a;
   --rarity-rare: #4a6fa5;
-  --rarity-epic: #8b5fbf;
-  --rarity-legendary: #b87f1f;
+  --rarity-epic: #7a4fa8;
+  --rarity-legendary: #8a5b10;
 
   --texture-paper: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.028'/%3E%3C/svg%3E");
 }
 
 html[data-theme="dark"] {
-  --accent-fire: #e06666;
-  --accent-fire-hover: #f27b74;
-  --accent-fire-bg: rgba(224, 102, 102, 0.16);
-  --accent-fire-rgb: 224, 102, 102;
+  --accent-fire: #e36a65;
+  --accent-fire-hover: #f07c74;
+  --accent-fire-bg: rgba(227, 106, 101, 0.14);
+  --accent-fire-rgb: 227, 106, 101;
 
-  --accent-gold: #c7aa70;
-  --accent-gold-hover: #ddbf82;
-  --accent-gold-rgb: 199, 170, 112;
+  --accent-gold: #c9ad74;
+  --accent-gold-hover: #dfc287;
+  --accent-gold-rgb: 201, 173, 116;
 
-  --color-info: #c7aa70;
+  --color-info: #c9ad74;
+  --color-info-bg: rgba(201, 173, 116, 0.13);
   --color-warning: #e3a24d;
+  --color-warning-bg: rgba(227, 162, 77, 0.13);
   --color-success: #8fb36d;
+  --color-success-bg: rgba(143, 179, 109, 0.13);
   --color-danger: #ef746a;
-  --color-new: #78b99f;
-  --color-new-bg: rgba(120, 185, 159, 0.14);
-  --color-fix: #79b4ce;
-  --color-fix-bg: rgba(121, 180, 206, 0.14);
-  --color-adjust: #c7aa70;
-  --color-adjust-bg: rgba(199, 170, 112, 0.14);
+  --color-danger-bg: rgba(239, 116, 106, 0.13);
+  --color-new: #d8b25c;
+  --color-new-bg: rgba(216, 178, 92, 0.14);
+  --color-fix: #8aa3b0;
+  --color-fix-bg: rgba(138, 163, 176, 0.14);
+  --color-adjust: #c9ad74;
+  --color-adjust-bg: rgba(201, 173, 116, 0.14);
 
-  --bg-page: #15110e;
-  --bg-card: #1f1a16;
-  --bg-sidebar: #1f1a16;
-  --bg-code: #29221d;
-  --bg-hover: #2b241f;
+  --bg-page: #14110f;
+  --bg-card: #241e19;
+  --bg-sidebar: #241e19;
+  --bg-code: #2c241f;
+  --bg-hover: #302821;
 
   --text-primary: #f0e8dc;
-  --text-secondary: #a79a8b;
-  --text-link: #e06666;
+  --text-body: #d9d0c1;
+  --text-secondary: #ada092;
+  --text-link: #e36a65;
 
-  --border-light: #3a3028;
-  --border-card: #3a3028;
+  --border-light: #40352c;
+  --border-card: #493b30;
+  --border-strong: #594a3b;
   --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.25);
   --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.35);
   --shadow-float: 0 8px 24px rgba(0, 0, 0, 0.45);
 
-  --color-info-bg: rgba(199, 170, 112, 0.14);
+  --color-info-bg: rgba(201, 173, 116, 0.14);
   --color-warning-bg: rgba(227, 162, 77, 0.15);
   --color-success-bg: rgba(143, 179, 109, 0.13);
   --color-danger-bg: rgba(239, 116, 106, 0.16);

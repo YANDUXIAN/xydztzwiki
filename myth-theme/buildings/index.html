@@ -1,0 +1,627 @@
+<!doctype html>
+<!-- ============================================
+     《腌笃鲜》维基百科 - Main Page
+     ============================================ -->
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="查阅《神话书说》的建筑、容器、摇钱树与青竹小店规则。" />
+    <meta name="keywords" content="腌笃鲜,饥荒,神话书说,模组,元辰劫运,盘丝娘娘,wiki,攻略" />
+    <meta name="author" content="《腌笃鲜》资料整理" />
+    <meta name="theme-color" content="#faf8f3" />
+    <script>
+      (() => {
+        let theme = 'light';
+        try {
+          const saved = localStorage.getItem('xydztz-theme') || localStorage.getItem('xdyztz-theme');
+          theme = saved === 'dark' || saved === 'light'
+            ? saved
+            : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch (err) {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', theme === 'dark' ? '#15110e' : '#faf8f3');
+      })();
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="建筑与生态 | 神话主题 | 《腌笃鲜》" />
+    <meta property="og:description" content="查阅《神话书说》的建筑、容器、摇钱树与青竹小店规则。" />
+    <meta property="og:site_name" content="《腌笃鲜》" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:url" content="https://yanduxian.cn/myth-theme/buildings/" />
+    <meta property="og:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1021" />
+    <meta property="og:image:alt" content="《腌笃鲜》雪景封面" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="建筑与生态 | 神话主题 | 《腌笃鲜》" />
+    <meta name="twitter:description" content="查阅《神话书说》的建筑、容器、摇钱树与青竹小店规则。" />
+    <meta name="twitter:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+
+    <title>建筑与生态 | 神话主题 | 《腌笃鲜》</title>
+    <link rel="canonical" href="https://yanduxian.cn/myth-theme/buildings/" />
+
+    <link rel="preload" href="/images/hero-default-1200.webp" imagesrcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" imagesizes="100vw" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/fonts/MaShanZheng-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/png" href="/images/mod-icon.png?v=20260719" />
+
+    <link rel="stylesheet" href="/styles/fonts.css?v=20260804o" />
+    <link rel="stylesheet" href="/styles/variables.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/base.css?v=20260804g" />
+    <link rel="stylesheet" href="/styles/hero.css?v=20260804r" />
+    <link rel="stylesheet" href="/styles/layout.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/markdown.css?v=20260805u" />
+    <link rel="stylesheet" href="/styles/components.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/media.css?v=20260806b" />
+    <link rel="stylesheet" href="/styles/responsive.css?v=20260805m" />
+  </head>
+  <body data-book-id="myth-theme" data-book-title="神话主题" data-chapter-slug="myth-theme-buildings" data-chapter-title="建筑与生态" data-search-index="/search-index.json?v=ca6182164b96">
+    <div class="read-progress" id="read-progress" aria-hidden="true"></div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2c-1.05 0-2.05.16-3 .46 1.69 1.24 2.79 3.26 2.79 5.54 0 3.87-3.13 7-7 7-.57 0-1.13-.08-1.67-.22C2.52 18.49 6.45 22 11 22c5.52 0 10-4.48 10-10S16.52 2 11 2c-.66 0-1.3.07-1.92.19C9.23 2.06 9.12 2 9 2z"/></svg>
+    </button>
+
+    <header class="hero" id="hero" role="banner">
+      <picture class="hero-bg-layer hero-bg-default" aria-hidden="true">
+        <source type="image/webp" srcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" sizes="100vw" />
+        <img src="/images/hero-default.jpg" srcset="/images/hero-default-1200.jpg 1200w, /images/hero-default.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" fetchpriority="high" />
+      </picture>
+      <picture class="hero-bg-layer hero-bg-hover" id="hero-hover-picture" aria-hidden="true">
+        <source type="image/webp" data-srcset="/images/hero-hover-1200.webp 1200w, /images/hero-hover.webp 2400w" sizes="100vw" />
+        <img data-src="/images/hero-hover.jpg" data-srcset="/images/hero-hover-1200.jpg 1200w, /images/hero-hover.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" />
+      </picture>
+      <div class="hero-sun-glow" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-gradient-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-title-row">
+          <h1 class="hero-title">《腌笃鲜》</h1>
+          <img class="hero-seal" src="/images/mod-icon.png?v=20260719" alt="《腌笃鲜》模组图标" width="68" height="68" />
+        </div>
+        <div class="hero-actions" aria-label="主要操作">
+          <a
+            class="hero-btn hero-btn-primary"
+            href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="在 Steam 创意工坊订阅《腌笃鲜》（新窗口）"
+          >订阅模组</a>
+          <button class="hero-btn hero-btn-secondary" id="hero-btn" type="button">开始查阅</button>
+        </div>
+      </div>
+
+      <div class="hero-subtitles">
+        <p class="hero-subtitle">三十五劫运交织，十二元辰下凡，灵台方寸显真心</p>
+        <p class="hero-subtitle">玉兔拨弦，黑风倒卷——人物精怪双篇登场</p>
+      </div>
+
+      <svg class="hero-torn-edge" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 48 L0 28 L36 32 L72 22 L120 30 L168 20 L216 28 L264 18 L312 30 L360 22 L408 28 L456 18 L504 26 L552 16 L600 26 L648 32 L696 22 L744 28 L792 18 L840 28 L888 22 L936 30 L984 20 L1032 28 L1080 22 L1128 30 L1176 18 L1224 26 L1272 30 L1320 22 L1368 28 L1404 24 L1440 28 L1440 48 Z" />
+      </svg>
+    </header>
+
+    <noscript>
+      <div class="noscript-warning" role="alert">
+        <strong>提示：</strong>正文仍可阅读；启用 JavaScript 后可使用目录搜索、劫运查询和媒体灯箱。
+      </div>
+    </noscript>
+
+    <nav class="chapter-nav" aria-label="神话主题篇章导航">
+      <div class="chapter-nav-inner" id="chapter-nav-inner">
+        <!-- CHAPTER_NAV_START -->
+        <details class="book-switcher">
+          <summary><strong>神话主题</strong></summary>
+          <div class="book-switcher-menu">
+            <a class="book-switcher-link" href="/">腌笃鲜</a>
+            <a class="book-switcher-link active" href="/myth-theme/">神话主题<span class="sr-only">（当前）</span></a>
+            <a class="book-switcher-link" href="/myth-characters/">神话人物</a>
+          </div>
+        </details>
+        <span class="chapter-nav-divider" aria-hidden="true"></span>
+        <div class="chapter-nav-pages">
+          <a class="chapter-nav-link" href="/myth-theme/">主题总览</a>
+        <a class="chapter-nav-link" href="/myth-theme/world/">世界地点</a>
+        <a class="chapter-nav-link" href="/myth-theme/npcs/">NPC 与交互</a>
+        <a class="chapter-nav-link" href="/myth-theme/creatures/">首领与怪物</a>
+        <a class="chapter-nav-link" href="/myth-theme/artifacts/">炼丹与法宝</a>
+        <a class="chapter-nav-link" href="/myth-theme/agriculture/">农业与料理</a>
+        <a class="chapter-nav-link active" href="/myth-theme/buildings/" aria-current="page">建筑与生态</a>
+        <a class="chapter-nav-link" href="/myth-theme/flight/">腾云与技能</a>
+        </div>
+        <!-- CHAPTER_NAV_END -->
+      </div>
+      <div class="reading-position" id="reading-position">
+        <span class="reading-position-text"><span class="rp-num"></span><span class="rp-title"></span></span>
+      </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar" aria-label="目录导航">
+        <div class="sidebar-header">
+          <h3 id="sidebar-title">建筑与生态目录</h3>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="toc-search" placeholder="搜索三本资料…" aria-label="搜索全部资料" />
+        </div>
+        <ul class="toc-list" id="toc-list">
+          <!-- SIDEBAR_TOC_START -->
+          <li class="toc-item toc-section open">
+            <a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%BB%BA%E7%AD%91" data-id="基础建筑" data-num="壹">基础建筑</a>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E7%B2%BE%E5%88%B6%E4%B8%8E%E8%A3%85%E9%A5%B0%E5%BB%BA%E9%80%A0" data-id="精制与装饰建造" data-num="贰">精制与装饰建造</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%B0%B7%E4%BB%93%E8%81%94%E5%8A%A8%E6%8F%90%E7%A4%BA" data-id="谷仓联动提示">谷仓联动提示</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E6%88%98%E6%97%97" data-id="战旗" data-num="叁">战旗</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E5%AE%B9%E5%99%A8%E4%B8%8E%E8%8B%8D%E7%AB%B9%E7%93%A6%E5%B1%8B" data-id="主题容器与苍竹瓦屋" data-num="肆">主题容器与苍竹瓦屋</a>
+          </li>
+          <li class="toc-item toc-section">
+            <a class="toc-link" href="#%E6%91%87%E9%92%B1%E6%A0%91" data-id="摇钱树" data-num="伍">摇钱树</a>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E9%9D%92%E7%AB%B9%E5%B0%8F%E5%BA%97" data-id="青竹小店" data-num="陆">青竹小店</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%B0%8F%E9%95%87%E5%A4%8D%E5%BB%BA%E4%B8%8E%E5%BA%97%E9%93%BA%E6%88%90%E5%9E%8B" data-id="小镇复建与店铺成型">小镇复建与店铺成型</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E9%93%9C%E9%92%B1-%E8%BD%AE%E6%8D%A2%E4%B8%8E%E6%8A%98%E6%89%A3" data-id="铜钱-轮换与折扣">铜钱、轮换与折扣</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%9C%8D%E5%8A%A1%E9%A1%B9%E7%9B%AE" data-id="服务项目">服务项目</a></li>
+            </ul>
+          </li>
+          <!-- SIDEBAR_TOC_END -->
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <article class="content-card">
+          <div class="md-body" id="main-content" data-static-snapshot="ready" data-content-hash="ca6182164b96" data-chapter="myth-theme-buildings">
+            <!-- STATIC_CONTENT_START -->
+<h2 id="建筑与生态" data-legacy-id="sec-建筑与生态-w36z4p" data-eyebrow="第柒篇">建筑与生态</h2><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：建筑与容器总览] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：水井、谷仓、红木餐桌、战旗、葫芦、苍竹瓦屋、摇钱树、青竹小店]</p>
+</blockquote><p class="lede">大型主题容器可被点燃，也可被锤击破坏。</p>
+<h3 id="基础建筑" data-legacy-id="sec-基础建筑-bljr8d" data-num="壹">基础建筑</h3><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">建筑</th>
+<th align="left">配方与前置</th>
+<th align="left">实际效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">水井</td>
+<td align="left">石砖×3、鹤嘴锄×1、铲子×1；炼金引擎</td>
+<td align="left">冬天不结冰，不可钓鱼；可给水壶接水，并会压灭约 16 格内的闷烧</td>
+</tr>
+<tr>
+<td align="left">谷仓</td>
+<td align="left">木板×6、莎草纸×12、绳子×3；科学机器</td>
+<td align="left">4×4 容量，食物与种子腐败速率降至普通的 10%</td>
+</tr>
+<tr>
+<td align="left">红木餐桌</td>
+<td align="left">木板×6、蜂蜡×1；失落科技</td>
+<td align="left">可摆放 8 份料理，<strong>永久保鲜</strong></td>
+</tr>
+<tr>
+<td align="left">土地庙</td>
+<td align="left">石砖×3、木板×4、鼹鼠×1；炼金引擎</td>
+<td align="left">全世界只能有一座；交肉食、素食、零食三种不同的料理后，土地公服务从最后一次上供起持续 5 天</td>
+</tr>
+<tr>
+<td align="left">木凳子</td>
+<td align="left">木板×1；先读小店蓝图</td>
+<td align="left">可供 1 名玩家坐下；坐着时获得少量持续理智回复</td>
+</tr>
+</tbody></table></div></div><h3 id="精制与装饰建造" data-legacy-id="sec-精制与装饰建造-rbs56h" data-num="贰">精制与装饰建造</h3><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">成品</th>
+<th align="left">配方与前置</th>
+<th align="left">说明</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">莎草纸×2</td>
+<td align="left">竹子×6；科学机器</td>
+<td align="left">直接产出原版莎草纸</td>
+</tr>
+<tr>
+<td align="left">草地地皮</td>
+<td align="left">竹子×3；土地夯实器</td>
+<td align="left">主题地表装饰</td>
+</tr>
+<tr>
+<td align="left">桃园地皮</td>
+<td align="left">蟠桃×3；土地夯实器</td>
+<td align="left">桃园样式地表装饰</td>
+</tr>
+<tr>
+<td align="left">鹅卵石×6</td>
+<td align="left">石头×1；先读小店蓝图</td>
+<td align="left">地面装饰物</td>
+</tr>
+<tr>
+<td align="left">人参果地毯</td>
+<td align="left">树枝×4、蕨叶×4；成熟人参果树科技</td>
+<td align="left">纯装饰、可燃</td>
+</tr>
+<tr>
+<td align="left">黑瓦白墙×12</td>
+<td align="left">大理石×12、石砖×1、木炭×4；先读小店蓝图</td>
+<td align="left">主题墙体</td>
+</tr>
+<tr>
+<td align="left">竹栅栏×6</td>
+<td align="left">竹子×6、绳子×1；先读小店蓝图</td>
+<td align="left">主题围栏</td>
+</tr>
+<tr>
+<td align="left">竹门</td>
+<td align="left">竹子×3、绳子×1；先读小店蓝图</td>
+<td align="left">与竹栅栏配套</td>
+</tr>
+<tr>
+<td align="left">苍竹瓦屋</td>
+<td align="left">石砖×6、木板×6、青竹×4；先读小店蓝图</td>
+<td align="left">可进入的独立室内空间</td>
+</tr>
+</tbody></table></div></div><h4 id="谷仓联动提示" data-legacy-id="sec-谷仓联动提示-bgmqti">谷仓联动提示</h4><blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：“智能谷仓”的永久保鲜、全类型食物储藏和弹性空间兼容默认开启；智能木牌兼容默认关闭。谷仓仍保留 16 格基础容量。详见<a href="/optimizations/">神话优化</a>。</p>
+</blockquote><h3 id="战旗" data-legacy-id="sec-战旗-h8sf" data-num="叁">战旗</h3><p>战旗是神话科技下制作的可部署物品，需要<strong>木板×2、蜘蛛丝×9、犬牙×6</strong>。它不是阵营或队伍判定器：插旗半径 <strong>15</strong> 内的玩家，范围内所有存活玩家都能获得战斗增益，不限于制作者或其随从。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">项目</th>
+<th align="left">当前规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">攻击</td>
+<td align="left">对外伤害乘数 ×1.15，即提高 15%</td>
+</tr>
+<tr>
+<td align="left">移动</td>
+<td align="left">移动速度乘数 ×1.15，即提高 15%</td>
+</tr>
+<tr>
+<td align="left">理智</td>
+<td align="left">只有本次插旗者在 15 范围内时恢复；每 0.5 秒 +0.1，约每分钟 +12</td>
+</tr>
+<tr>
+<td align="left">持续时间</td>
+<td align="left">满耐久 960 秒，即 2 个游戏日；只要插在地面上就持续消耗，附近是否有人不影响计时</td>
+</tr>
+<tr>
+<td align="left">耗尽</td>
+<td align="left">战旗留在原地但停止提供增益，不会因耐久归零自动消失</td>
+</tr>
+<tr>
+<td align="left">题字与回收</td>
+<td align="left">首次放置会打开题字界面；对已放置战旗执行收回可变回物品，并保留文字、皮肤和剩余耐久比例。</td>
+</tr>
+<tr>
+<td align="left">修补</td>
+<td align="left">地面状态不能直接补充耐久；收回物品栏后可用缝纫包或缝补胶带修补，一次即可补满两天耐久</td>
+</tr>
+<tr>
+<td align="left">多旗重叠</td>
+<td align="left">多面战旗使用同一增益标识，攻击与移速加成不会叠加成多层</td>
+</tr>
+</tbody></table></div></div><h3 id="主题容器与苍竹瓦屋" data-legacy-id="sec-主题容器与苍竹瓦屋-vvcrhv" data-num="肆">主题容器与苍竹瓦屋</h3><p>八卦炉和丹药葫芦直接服务于炼丹流程，解锁、配方与使用规则统一见<a href="/myth-theme/artifacts/">炼丹与法宝</a>，本篇不再重复。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">物件</th>
+<th align="left">配方/前置</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">酒葫芦</td>
+<td align="left">葫芦×1、蟠桃素酒×5、蜂蜡×1；神话科技。图库中的两张图是同一物品的不同外观，不是两个独立容器</td>
+</tr>
+<tr>
+<td align="left">苍竹瓦屋</td>
+<td align="left">石砖×6、木板×6、青竹×4；小店蓝图</td>
+</tr>
+</tbody></table></div></div><p>苍竹瓦屋入口被拆除后，玩家会被强制送出，室内实体与耐久会被清理；送出落点无效时可能导致角色死亡。</p>
+<hr>
+<h3 id="摇钱树" data-legacy-id="sec-摇钱树-femfb" data-num="伍">摇钱树</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：重要植物与经济设施] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：聚宝金蟾、摇钱树苗、主题铜钱、幸运金块、宝石]</p>
+</blockquote><p>摇钱树苗来自首次击退聚宝金蟾。种植需要树苗、神话铜钱×66、幸运金块×66。摇钱树约每 <strong>390–510 秒</strong>掉落一次财物：神话铜钱、幸运金块、任意一种六色宝石的概率分别为 <strong>70% / 20% / 10%</strong>。若抽中宝石，再从紫、蓝、红、橙、黄、绿六种宝石中等概率选择一种，因此指定颜色宝石的单次概率为 <strong>1/60，约 1.67%</strong>。摇钱树同时为附近提供每分钟 +25 理智的光环。</p>
+<p>摇钱树被锤毁后返还树苗、神话铜钱×33和幸运金块×33。</p>
+<hr>
+<h3 id="青竹小店" data-legacy-id="sec-青竹小店-jljrtb" data-num="陆">青竹小店</h3><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：神话主题] [数据类型：商店与经济系统] [内容归属：神话主题原生] [腌笃鲜状态：原生基线] [核心关联：八类店铺、主题铜钱、买卖、补货、修理、藏宝、命运占卜、年兽折扣]</p>
+</blockquote><p>青竹小店由青竹洲的熊猫居民经营，玩家不能用材料造出一间“自选商店”。店铺会依次从尚未出现的类别中随机成型，完整小镇最终各有一间：<strong>珍宝小铺（稀有物品）、菜市小铺（材料）、花鸟小铺（动物）、禾种小铺（植物）、茶肴小铺（食物）、铸匠小铺（武器）、占卜小铺（算命）、材瓦小铺（建造）</strong>。常规店最多同时保留 8 种上架商品和 8 种收购需求；库存按权重随机生成、补货并受季节影响，所以“今天没卖”不等于“这个店永远没有”。</p>
+<p>店铺夜间关闭，年兽存活或正在补货时也会关闭；同一间店一次只能接待一名玩家。击退年兽后的 <strong>5 天</strong>内价格按八折结算；在春、冬触发成功结算时还会启动最长 80 天的夜间营业状态，但犀牛事件或季节切换可提前结束它，不能把“八折五天”和“夜间营业”当成同一个计时器。</p>
+<blockquote class="bq-interop"><p><strong>[腌笃鲜联动提示]</strong>：“熊猫小镇焕新”默认开启，在保留八类店铺与原生自然补货节奏的基础上加入镇票、主动换货、立契、动态价格与迁镇；可在设置中关闭并回到原生经营逻辑。完整货单和契约规则见<a href="/optimizations/">神话优化</a>。</p>
+</blockquote><h4 id="小镇复建与店铺成型" data-legacy-id="sec-小镇复建与店铺成型-tzhq4n">小镇复建与店铺成型</h4><p>熊猫林随世界生成 <strong>8 个小店工地</strong>；旧存档中的“打烊的小店”载入后也会转成“未完成的小店”。每个工地都要分批投入以下材料，全部满足后才会成为一间尚未分配类别的空店：</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">材料</th>
+<th align="center">每间需求</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">竹子</td>
+<td align="center">6</td>
+</tr>
+<tr>
+<td align="left">木板</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="left">莎草纸</td>
+<td align="center">6</td>
+</tr>
+<tr>
+<td align="left">绳子</td>
+<td align="center">4</td>
+</tr>
+</tbody></table></div></div><p>神秘英雄的雕像是店铺成型流程的生成锚点。入夜时，只要雕像约 <strong>32 格</strong>内还有空店，且当前没有正在等待入住的熊猫村民，就会从“尚未开出的店铺类别”中随机选一种并生成对应村民。村民在下一个白天寻找附近空店，进入后才把它转换成对应商店；若一直没有可入住的空店，村民会在下一次入夜时消失，之后仍可重新生成。</p>
+<p>因此材料只决定工地能否完成，<strong>不能指定商店类别</strong>；但类别不会重复占用，8 个工地全部完成并顺利入住后，最终会凑齐八类商店各一间。若工地已经完工却迟迟不开店，应优先检查它与神秘英雄雕像的距离及附近是否已有等待入住的熊猫村民。</p>
+<h4 id="铜钱-轮换与折扣" data-legacy-id="sec-铜钱-轮换与折扣-8jbsd5">铜钱、轮换与折扣</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">规则</th>
+<th align="left">当前机制</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">货币</td>
+<td align="left">神话铜钱按 1 枚计价，钱串按 <strong>40 枚</strong>计价；结算会检查随身物品栏、装备栏和其中的容器</td>
+</tr>
+<tr>
+<td align="left">商品轮换</td>
+<td align="left">售罄、无效，或从初次上架/最近一次交易后累计约 4 天的货位会被清理；日常补货时再按权重新增货</td>
+</tr>
+<tr>
+<td align="left">折扣</td>
+<td align="left">多种折扣只取力度最大的一种，单价乘折扣后<strong>向上取整</strong></td>
+</tr>
+<tr>
+<td align="left">“禄”状态卖货</td>
+<td align="left">成功卖货时有 40% 概率让该笔收入额外增加 20%，向上取整</td>
+</tr>
+<tr>
+<td align="left">年兽自行离开</td>
+<td align="left">店铺 5 天停止进货；现有数量大于 1 的商品，各有 70% 概率被削减到约一半</td>
+</tr>
+<tr>
+<td align="left">冬季限定货</td>
+<td align="left">稀有店会固定占一个货位，在窜天猴与爆竹中随机上架一种，单价 2</td>
+</tr>
+</tbody></table></div></div><h5 id="商品与服务价格" data-legacy-id="sec-商品与服务价格-1eouto">商品与服务价格</h5><p>下表是当前规则中的基础价，实际付款仍要经过折扣并向上取整；“收购”只在当天收购单出现且仍有需求数量时成立。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">货物/服务</th>
+<th align="left">玩家买入</th>
+<th align="left">玩家卖出或维修</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">红/蓝宝石</td>
+<td align="left">10</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left">橙/黄/绿/紫宝石</td>
+<td align="left">40</td>
+<td align="left">20</td>
+</tr>
+<tr>
+<td align="left">彩虹宝石</td>
+<td align="left">320</td>
+<td align="left">160</td>
+</tr>
+<tr>
+<td align="left">熊皮 / 龙鳞 / 巨鹿眼球</td>
+<td align="left">120</td>
+<td align="left">40 / 40 / 80</td>
+</tr>
+<tr>
+<td align="left">红、黄、蓝犀牛心</td>
+<td align="left">不出售</td>
+<td align="left">每颗 600</td>
+</tr>
+<tr>
+<td align="left">犀牛角</td>
+<td align="left">不出售</td>
+<td align="left">300</td>
+</tr>
+<tr>
+<td align="left">子圭石</td>
+<td align="left">9</td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td align="left">铸铁大刀 / 铸铁头盔 / 铸铁战甲</td>
+<td align="left">每件 80</td>
+<td align="left">每件修满 5</td>
+</tr>
+<tr>
+<td align="left">幸运金块</td>
+<td align="left">10</td>
+<td align="left">不收购</td>
+</tr>
+<tr>
+<td align="left">苍竹瓦屋蓝图</td>
+<td align="left">100</td>
+<td align="left">不收购</td>
+</tr>
+<tr>
+<td align="left">黑瓦白墙蓝图</td>
+<td align="left">50</td>
+<td align="left">不收购</td>
+</tr>
+<tr>
+<td align="left">竹栅栏 / 竹门蓝图</td>
+<td align="left">40</td>
+<td align="left">不收购</td>
+</tr>
+<tr>
+<td align="left">木凳子 / 红木餐桌 / 鹅卵石蓝图</td>
+<td align="left">20</td>
+<td align="left">不收购</td>
+</tr>
+</tbody></table></div></div><h4 id="服务项目" data-legacy-id="sec-服务项目-dcr7bd">服务项目</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">服务</th>
+<th align="left">花费与结果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">当季种子包</td>
+<td align="left">每包 1 铜钱，开出 3 粒符合当前季节的种子</td>
+</tr>
+<tr>
+<td align="left">装备修理</td>
+<td align="left">按物品种类收取 1 / 5 / 10 / 25 铜钱，将耐久、护甲、燃料或新鲜度直接补满</td>
+</tr>
+<tr>
+<td align="left">藏宝占卜</td>
+<td align="left">基础 40 铜钱，生成一份靠近随机地标的线索</td>
+</tr>
+<tr>
+<td align="left">命运占卜</td>
+<td align="left">1 铜钱</td>
+</tr>
+</tbody></table></div></div><h5 id="装备修理" data-legacy-id="sec-装备修理-hmgbwa">装备修理</h5><p>铸匠小铺只能修理名单内、当前不满状态的物品；费用仍受年兽折扣等店铺折扣影响。服务会把该物品耐久直接补满，不能修理白名单外装备。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">基础费用</th>
+<th align="left">可修理物品</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">1</td>
+<td align="left">水壶、鸟嘴水壶</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">铸铁大刀、铸铁头盔、铸铁战甲；战斗长矛、长矛、猫尾鞭、回旋镖、犬牙陷阱、暗夜剑；战斗头盔、饼干切割机帽、橄榄球头盔；草甲、木甲、大理石甲、暗影甲；耕地机、指南针、暖石、普通与黄金斧/镐/铲/锄、锤子、草叉、取鞍器、三种鞍具、刷子、独奏乐器、两种沙漠护目镜、两种船桨</td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">晨星锤、天气风向标、三叉戟、火魔杖、冰魔杖、玻璃刀、龙鳞盔甲、月光玻璃斧</td>
+</tr>
+<tr>
+<td align="left">25</td>
+<td align="left">铥矿棒、铥矿皇冠、铥矿甲、铥矿斧</td>
+</tr>
+</tbody></table></div></div><h5 id="藏宝占卜" data-legacy-id="sec-藏宝占卜-h9edd6">藏宝占卜</h5><p>算命小铺会随机抽取一类合资格地标，在目标约 <strong>5—25 格</strong>外寻找空地，并给购买者一张“线索纸”。线索由地点暗语、时间和天气三部分组成；服务器不会直接显示宝藏。若抽中的地标在当前世界不存在，或附近连续找不到可用空地，本次占卜不会生成线索，也不会扣除铜钱。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">地点暗语</th>
+<th align="left">对应地标</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">一元初始</td>
+<td align="left">绚丽之门</td>
+</tr>
+<tr>
+<td align="left">蛮夷之王所在</td>
+<td align="left">猪王</td>
+</tr>
+<tr>
+<td align="left">烈火熔融</td>
+<td align="left">岩浆池</td>
+</tr>
+<tr>
+<td align="left">风沙掩盖</td>
+<td align="left">绿洲湖</td>
+</tr>
+<tr>
+<td align="left">承接月华</td>
+<td align="left">月台</td>
+</tr>
+<tr>
+<td align="left">精灵顽动</td>
+<td align="left">岩石巢穴</td>
+</tr>
+<tr>
+<td align="left">诸蜂守卫</td>
+<td align="left">蜂王浆巢</td>
+</tr>
+<tr>
+<td align="left">月影徘徊</td>
+<td align="left">月岛天体裂隙</td>
+</tr>
+<tr>
+<td align="left">太阴宫所居</td>
+<td align="left">广寒宫</td>
+</tr>
+<tr>
+<td align="left">隐士隐居</td>
+<td align="left">寄居蟹隐士之家</td>
+</tr>
+<tr>
+<td align="left">桃花烂漫</td>
+<td align="left">方寸山</td>
+</tr>
+<tr>
+<td align="left">竹影婆娑</td>
+<td align="left">神话竹州</td>
+</tr>
+<tr>
+<td align="left">猎牙捕兽</td>
+<td align="left">海象营地</td>
+</tr>
+</tbody></table></div></div><p>时间可能是白天、黄昏、夜晚、满月或新月；天气只分晴朗与雨雪。隐藏宝藏只有同时满足线索中的时间和天气时才会显形成“很正常的土堆”，随后需要用铲子挖 <strong>3—10 次</strong>。满月或新月线索会提高高档奖励概率：</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">奖档</th>
+<th align="center">普通时间</th>
+<th align="center">满月/新月</th>
+<th align="left">奖励</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">基础</td>
+<td align="center">50%</td>
+<td align="center">40%</td>
+<td align="left">钱串或桃酒葫芦二选一；另从幸运金块×1—3与金块×5—10中二选一</td>
+</tr>
+<tr>
+<td align="left">二档</td>
+<td align="center">30%</td>
+<td align="center">30%</td>
+<td align="left">钱串×2或幸运金块×10二选一；另从金块×10—20与六色宝石各 0—1 中二选一</td>
+</tr>
+<tr>
+<td align="left">三档</td>
+<td align="center">15%</td>
+<td align="center">20%</td>
+<td align="left">坎普斯背包；彩虹宝石或六色宝石各 1—3 二选一；再附带随机巨型作物×1</td>
+</tr>
+<tr>
+<td align="left">四档</td>
+<td align="center">5%</td>
+<td align="center">10%</td>
+<td align="left">被推倒的树根×1</td>
+</tr>
+</tbody></table></div></div><p>新线索生成或宝藏被挖完时，现存线索纸会失效并转成莎草纸；线索纸不是可长期囤积的藏宝图副本。</p>
+            <!-- STATIC_CONTENT_END -->
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <footer class="footer" id="site-footer" role="contentinfo">
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-message">
+        <p class="footer-message-text">感谢每一位订阅玩家的支持和鼓励，祝各位在《腌笃鲜》的努力下游戏愉快，武运昌隆，尽享神话之旅！</p>
+        <p class="footer-signature">——咸鱼 &amp; 大猪蹄子 敬上</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357" target="_blank" rel="noopener noreferrer">Steam 创意工坊</a>
+        <a href="https://qm.qq.com/q/iFeDTMf6Io" target="_blank" rel="noopener noreferrer">反馈交流群</a>
+      </div>
+      <p>&copy; 2026 《腌笃鲜》</p>
+      <p>反馈交流 QQ 群：1046023996</p>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <script src="/scripts/utils.js?v=20260804h"></script>
+    <script src="/scripts/renderer.js?v=20260805c"></script>
+    <script src="/scripts/toc.js?v=20260805b"></script>
+    <script src="/scripts/scroll.js?v=20260805a"></script>
+    <script src="/scripts/theme.js?v=20260804f"></script>
+    <script src="/scripts/ui.js?v=20260805b"></script>
+    <script src="/scripts/media.js?v=20260808a"></script>
+    <script src="/scripts/main.js?v=20260805c"></script>
+  </body>
+</html>

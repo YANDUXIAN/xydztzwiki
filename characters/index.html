@@ -1,0 +1,903 @@
+<!doctype html>
+<!-- ============================================
+     《腌笃鲜》维基百科 - Main Page
+     ============================================ -->
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="查阅《腌笃鲜》人物精怪资料，包括玉兔仙子与黑风大王·熊罴真身。" />
+    <meta name="keywords" content="腌笃鲜,饥荒,神话书说,模组,元辰劫运,盘丝娘娘,wiki,攻略" />
+    <meta name="author" content="《腌笃鲜》资料整理" />
+    <meta name="theme-color" content="#faf8f3" />
+    <script>
+      (() => {
+        let theme = 'light';
+        try {
+          const saved = localStorage.getItem('xydztz-theme') || localStorage.getItem('xdyztz-theme');
+          theme = saved === 'dark' || saved === 'light'
+            ? saved
+            : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        } catch (err) {
+          theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.dataset.theme = theme;
+        document.querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', theme === 'dark' ? '#15110e' : '#faf8f3');
+      })();
+    </script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="人物精怪 | 腌笃鲜 | 《腌笃鲜》" />
+    <meta property="og:description" content="查阅《腌笃鲜》人物精怪资料，包括玉兔仙子与黑风大王·熊罴真身。" />
+    <meta property="og:site_name" content="《腌笃鲜》" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:url" content="https://yanduxian.cn/characters/" />
+    <meta property="og:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="2400" />
+    <meta property="og:image:height" content="1021" />
+    <meta property="og:image:alt" content="《腌笃鲜》雪景封面" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="人物精怪 | 腌笃鲜 | 《腌笃鲜》" />
+    <meta name="twitter:description" content="查阅《腌笃鲜》人物精怪资料，包括玉兔仙子与黑风大王·熊罴真身。" />
+    <meta name="twitter:image" content="https://yanduxian.cn/images/hero-default.jpg?v=20260507" />
+
+    <title>人物精怪 | 腌笃鲜 | 《腌笃鲜》</title>
+    <link rel="canonical" href="https://yanduxian.cn/characters/" />
+
+    <link rel="preload" href="/images/hero-default-1200.webp" imagesrcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" imagesizes="100vw" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/fonts/MaShanZheng-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/png" href="/images/mod-icon.png?v=20260719" />
+
+    <link rel="stylesheet" href="/styles/fonts.css?v=20260804o" />
+    <link rel="stylesheet" href="/styles/variables.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/base.css?v=20260804g" />
+    <link rel="stylesheet" href="/styles/hero.css?v=20260804r" />
+    <link rel="stylesheet" href="/styles/layout.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/markdown.css?v=20260805u" />
+    <link rel="stylesheet" href="/styles/components.css?v=20260805b" />
+    <link rel="stylesheet" href="/styles/media.css?v=20260806b" />
+    <link rel="stylesheet" href="/styles/responsive.css?v=20260805m" />
+  </head>
+  <body data-book-id="xydztz" data-book-title="腌笃鲜" data-chapter-slug="characters" data-chapter-title="人物精怪" data-search-index="/search-index.json?v=ca6182164b96">
+    <div class="read-progress" id="read-progress" aria-hidden="true"></div>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2c-1.05 0-2.05.16-3 .46 1.69 1.24 2.79 3.26 2.79 5.54 0 3.87-3.13 7-7 7-.57 0-1.13-.08-1.67-.22C2.52 18.49 6.45 22 11 22c5.52 0 10-4.48 10-10S16.52 2 11 2c-.66 0-1.3.07-1.92.19C9.23 2.06 9.12 2 9 2z"/></svg>
+    </button>
+
+    <header class="hero" id="hero" role="banner">
+      <picture class="hero-bg-layer hero-bg-default" aria-hidden="true">
+        <source type="image/webp" srcset="/images/hero-default-1200.webp 1200w, /images/hero-default.webp 2400w" sizes="100vw" />
+        <img src="/images/hero-default.jpg" srcset="/images/hero-default-1200.jpg 1200w, /images/hero-default.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" fetchpriority="high" />
+      </picture>
+      <picture class="hero-bg-layer hero-bg-hover" id="hero-hover-picture" aria-hidden="true">
+        <source type="image/webp" data-srcset="/images/hero-hover-1200.webp 1200w, /images/hero-hover.webp 2400w" sizes="100vw" />
+        <img data-src="/images/hero-hover.jpg" data-srcset="/images/hero-hover-1200.jpg 1200w, /images/hero-hover.jpg 2400w" sizes="100vw" alt="" width="2400" height="1021" />
+      </picture>
+      <div class="hero-sun-glow" aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-gradient-overlay" aria-hidden="true"></div>
+      <div class="hero-grain" aria-hidden="true"></div>
+
+      <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-title-row">
+          <h1 class="hero-title">《腌笃鲜》</h1>
+          <img class="hero-seal" src="/images/mod-icon.png?v=20260719" alt="《腌笃鲜》模组图标" width="68" height="68" />
+        </div>
+        <div class="hero-actions" aria-label="主要操作">
+          <a
+            class="hero-btn hero-btn-primary"
+            href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="在 Steam 创意工坊订阅《腌笃鲜》（新窗口）"
+          >订阅模组</a>
+          <button class="hero-btn hero-btn-secondary" id="hero-btn" type="button">开始查阅</button>
+        </div>
+      </div>
+
+      <div class="hero-subtitles">
+        <p class="hero-subtitle">三十五劫运交织，十二元辰下凡，灵台方寸显真心</p>
+        <p class="hero-subtitle">玉兔拨弦，黑风倒卷——人物精怪双篇登场</p>
+      </div>
+
+      <svg class="hero-torn-edge" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 48 L0 28 L36 32 L72 22 L120 30 L168 20 L216 28 L264 18 L312 30 L360 22 L408 28 L456 18 L504 26 L552 16 L600 26 L648 32 L696 22 L744 28 L792 18 L840 28 L888 22 L936 30 L984 20 L1032 28 L1080 22 L1128 30 L1176 18 L1224 26 L1272 30 L1320 22 L1368 28 L1404 24 L1440 28 L1440 48 Z" />
+      </svg>
+    </header>
+
+    <noscript>
+      <div class="noscript-warning" role="alert">
+        <strong>提示：</strong>正文仍可阅读；启用 JavaScript 后可使用目录搜索、劫运查询和媒体灯箱。
+      </div>
+    </noscript>
+
+    <nav class="chapter-nav" aria-label="腌笃鲜篇章导航">
+      <div class="chapter-nav-inner" id="chapter-nav-inner">
+        <!-- CHAPTER_NAV_START -->
+        <details class="book-switcher">
+          <summary><strong>腌笃鲜</strong></summary>
+          <div class="book-switcher-menu">
+            <a class="book-switcher-link active" href="/">腌笃鲜<span class="sr-only">（当前）</span></a>
+            <a class="book-switcher-link" href="/myth-theme/">神话主题</a>
+            <a class="book-switcher-link" href="/myth-characters/">神话人物</a>
+          </div>
+        </details>
+        <span class="chapter-nav-divider" aria-hidden="true"></span>
+        <div class="chapter-nav-pages">
+          <a class="chapter-nav-link" href="/">模组介绍</a>
+        <a class="chapter-nav-link" href="/systems/">核心系统</a>
+        <a class="chapter-nav-link active" href="/characters/" aria-current="page">人物精怪</a>
+        <a class="chapter-nav-link" href="/artifacts/">法宝装备</a>
+        <a class="chapter-nav-link" href="/optimizations/">神话优化</a>
+        <a class="chapter-nav-link" href="/compatibility/">兼容修复</a>
+        </div>
+        <!-- CHAPTER_NAV_END -->
+      </div>
+      <div class="reading-position" id="reading-position">
+        <span class="reading-position-text"><span class="rp-num"></span><span class="rp-title"></span></span>
+      </div>
+    </nav>
+
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+    </button>
+
+    <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
+
+    <div class="layout">
+      <nav class="sidebar" id="sidebar" aria-label="目录导航">
+        <div class="sidebar-header">
+          <h3 id="sidebar-title">人物精怪目录</h3>
+        </div>
+        <div class="sidebar-search">
+          <input type="text" id="toc-search" placeholder="搜索三本资料…" aria-label="搜索全部资料" />
+        </div>
+        <ul class="toc-list" id="toc-list">
+          <!-- SIDEBAR_TOC_START -->
+          <li class="toc-item toc-section has-children open">
+            <a class="toc-link" href="#%E7%8E%89%E5%85%94%E4%BB%99%E5%AD%90" data-id="玉兔仙子" data-num="壹">玉兔仙子</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E4%BA%BA%E7%89%A9%E8%BA%AB%E4%BB%BD" data-id="人物身份">人物身份</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%9F%BA%E7%A1%80%E5%B1%9E%E6%80%A7" data-id="基础属性">基础属性</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%8A%80%E8%83%BD%E6%A0%8F" data-id="技能栏">技能栏</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%8E%B9%E6%9C%88%E7%90%B5%E7%90%B6-%E5%8D%81%E6%9B%B2%E9%9A%8F%E5%BF%83" data-id="莹月琵琶-十曲随心">莹月琵琶：十曲随心</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%8D%81%E9%A6%96%E6%9B%B2%E7%9B%AE" data-id="十首曲目">十首曲目</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%8D%A3%E8%8D%AF%E7%8E%89%E6%9D%B5-%E4%B8%83%E5%91%B3%E6%B5%8E%E4%BA%BA" data-id="捣药玉杵-七味济人">捣药玉杵：七味济人</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%9C%88%E5%AE%AB%E5%AE%88%E5%8D%AB" data-id="月宫守卫">月宫守卫</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%85%94%E6%97%8F%E4%BA%B2%E5%92%8C%E4%B8%8E%E7%8B%A1%E5%85%94%E4%B8%89%E7%AA%9F" data-id="兔族亲和与狡兔三窟">兔族亲和与狡兔三窟</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E9%81%81%E5%9C%B0" data-id="遁地">遁地</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%85%BE%E4%BA%91" data-id="腾云">腾云</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%B9%BF%E5%AF%92%E7%94%9F%E6%80%81%E4%B8%8E%E4%B8%93%E5%B1%9E%E5%88%B6%E4%BD%9C" data-id="广寒生态与专属制作">广寒生态与专属制作</a></li>
+            </ul>
+          </li>
+          <li class="toc-item toc-section has-children">
+            <a class="toc-link" href="#%E9%BB%91%E9%A3%8E%E5%A4%A7%E7%8E%8B-%E7%86%8A%E7%BD%B4%E7%9C%9F%E8%BA%AB" data-id="黑风大王-熊罴真身" data-num="贰">黑风大王·熊罴真身</a>
+            <ul class="toc-sublist">
+              <li class="toc-item"><a class="toc-link h4" href="#%E7%A5%9E%E8%AF%9D%E5%A4%A9%E4%B9%A6%E6%94%B6%E5%BD%95" data-id="神话天书收录">神话天书收录</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E8%A7%A6%E5%8F%91%E6%9D%A1%E4%BB%B6" data-id="触发条件">触发条件</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%8A%A8%E6%80%81%E7%94%9F%E5%91%BD%E8%A7%84%E5%88%99" data-id="动态生命规则">动态生命规则</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%9F%BA%E7%A1%80%E6%88%98%E6%96%97%E9%9D%A2%E6%9D%BF" data-id="基础战斗面板">基础战斗面板</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E9%BB%91%E9%A3%8E%E7%9F%B3%E9%9A%9C" data-id="黑风石障">黑风石障</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%8A%80%E8%83%BD%E6%80%BB%E8%A7%88" data-id="技能总览">技能总览</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%AE%9A%E7%82%B9%E9%BB%91%E6%97%8B" data-id="定点黑旋">定点黑旋</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E9%BB%91%E9%A3%8E%E5%80%92%E5%8D%B7%E4%B8%8E%E9%A3%8E%E7%8E%8B%E5%86%B2%E5%B1%B1" data-id="黑风倒卷与风王冲山">黑风倒卷与风王冲山</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E4%B8%87%E5%AD%97%E9%BB%91%E9%A3%8E%E5%90%BC" data-id="万字黑风吼">万字黑风吼</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E9%98%B6%E6%AE%B5%E6%B5%81%E7%A8%8B" data-id="阶段流程">阶段流程</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E6%8C%91%E6%88%98%E5%A4%B1%E8%B4%A5%E4%B8%8E%E8%BF%94%E9%A3%8E" data-id="挑战失败与返风">挑战失败与返风</a></li>
+              <li class="toc-item"><a class="toc-link h4" href="#%E5%87%BB%E6%9D%80%E5%A5%96%E5%8A%B1" data-id="击杀奖励">击杀奖励</a></li>
+            </ul>
+          </li>
+          <!-- SIDEBAR_TOC_END -->
+        </ul>
+      </nav>
+
+      <main class="main-content">
+        <article class="content-card">
+          <div class="md-body" id="main-content" data-static-snapshot="ready" data-content-hash="ca6182164b96" data-chapter="characters">
+            <!-- STATIC_CONTENT_START -->
+<h2 id="人物精怪" data-legacy-id="sec-人物精怪-aetumz" data-eyebrow="第叁篇">人物精怪</h2><blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：人物精怪] [核心关联：玉兔, 莹月琵琶, 捣药玉杵, 月宫守卫]</p>
+</blockquote><p class="lede">“人物精怪”栏目收录本模组人物及精怪首领的完整玩法，当前包括<a class="term-link" href="/characters/#%E7%8E%89%E5%85%94%E4%BB%99%E5%AD%90" data-term-id="yutu" data-term-kind="人物" data-term-summary="以莹月琵琶、捣药玉杵和月宫守卫协同作战的重置人物。" data-term-image="/images/wiki/xydztz/objects/xydztz_yutu_winter.webp">玉兔仙子</a>与<a class="term-link" href="/characters/#%E9%BB%91%E9%A3%8E%E5%A4%A7%E7%8E%8B-%E7%86%8A%E7%BD%B4%E7%9C%9F%E8%BA%AB" data-term-id="blackbear-trueform" data-term-kind="精怪首领" data-term-summary="通过吞天截住黑风大王战败遁风后触发的多阶段精怪首领。" data-term-image="/images/wiki/xydztz/objects/xydztz_blackbear_trueform.webp">黑风大王·熊罴真身</a>。</p>
+<h3 id="玉兔仙子" data-legacy-id="sec-玉兔仙子-ewwe6a" data-num="壹">玉兔仙子</h3><blockquote><p>轻拢慢捻，十曲随心。玉杵生香，七味济人。玲珑仙兔，狡兔三窟。月宫守卫，闻弦而行。</p>
+</blockquote><h4 id="人物身份" data-legacy-id="sec-人物身份-aewt0h">人物身份</h4><ul>
+<li>玉兔是《腌笃鲜》的重置人物，不是对《神话书说》原玉兔的覆盖补丁</li><li>新玉兔与《神话书说》原玉兔并存，两个人物拥有各自独立的角色身份、物品、进度与技能体系</li><li>新玉兔的核心定位是<strong>广寒司乐</strong>：以莹月琵琶持续塑造团队BUFF覆盖，以捣药玉杵准备群体药效，并可通过月宫守卫兑现收益</li><li class="term-item"><strong>人物开放</strong>：服务器模组设置默认开放玉兔；关闭后玉兔不进入选人及换人列表，请勿在已有玉兔角色的世界中途关闭</li></ul>
+<h4 id="基础属性" data-legacy-id="sec-基础属性-blj5vz">基础属性</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">属性</th>
+<th align="left">数值 / 效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">生命值</td>
+<td align="left">150</td>
+</tr>
+<tr>
+<td align="left">饥饿值</td>
+<td align="left">150</td>
+</tr>
+<tr>
+<td align="left">理智值</td>
+<td align="left">120</td>
+</tr>
+<tr>
+<td align="left">伤害倍率</td>
+<td align="left">1.0</td>
+</tr>
+<tr>
+<td align="left">饮食</td>
+<td align="left">素食主义</td>
+</tr>
+<tr>
+<td align="left">夜晚与负面光环</td>
+<td align="left">理智流失倍率0.75</td>
+</tr>
+<tr>
+<td align="left">保暖</td>
+<td align="left">60点冬季保温</td>
+</tr>
+<tr>
+<td align="left">月岛适应</td>
+<td align="left">在月岛陨石地皮上移动更轻快</td>
+</tr>
+<tr>
+<td align="left">月灵保护</td>
+<td align="left">仍可进入启蒙状态，但普通月灵不会主动攻击玉兔</td>
+</tr>
+<tr>
+<td align="left">巧手</td>
+<td align="left">制作动作更快，并以饥饿代偿；不包含旧版缝纫强化</td>
+</tr>
+</tbody></table></div></div><ul>
+<li class="term-item"><strong>胡萝卜亲和</strong>：生胡萝卜为最爱食物，饥饿收益约提高到15；生、熟胡萝卜额外恢复5点理智，胡萝卜种子不享受该效果</li><li class="term-item"><strong>出生物品</strong>：<code>莹月琵琶</code> ×1、<code>捣药玉杵</code> ×1</li></ul>
+<h4 id="技能栏" data-legacy-id="sec-技能栏-f1wdu">技能栏</h4><p>玉兔拥有独立技能栏，统一承载捣药、演奏模式、月宫守卫、遁地、腾云与狡兔三窟入口。</p>
+<ul>
+<li>技能栏会根据曲谱、守卫资格、腾云解锁和三窟次数动态显示按钮</li><li>可在“暂停界面 → 设置 → 腌笃鲜”中选择显示或隐藏，并切换标准、大、小三档尺寸</li><li>技能栏可拖动，位置会独立保存在本地，但不具备转换排列的功能</li><li>琵琶按钮只切换<strong>普通演奏 / 长奏</strong>，不是曲目快捷键；长奏状态会显示“∞”</li></ul>
+<h4 id="莹月琵琶-十曲随心" data-legacy-id="sec-莹月琵琶-十曲随心-f50wpd">莹月琵琶：十曲随心</h4><p>手持莹月琵琶右键打开官方样式曲目轮盘，选曲后进入节奏演奏。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">项目</th>
+<th align="left">规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">开曲消耗</td>
+<td align="left">5点饥饿</td>
+</tr>
+<tr>
+<td align="left">小节消耗</td>
+<td align="left">每个小节结算后消耗1点饥饿，完美、普通、失败三档消耗相同</td>
+</tr>
+<tr>
+<td align="left">操作</td>
+<td align="left">按提示输入方向键（默认WASD），并在月标进入判定区时按下行动键（默认空格）</td>
+</tr>
+<tr>
+<td align="left">谱面难度</td>
+<td align="left">四档依次为3键、4键、5键与困难5键</td>
+</tr>
+<tr>
+<td align="left">完美</td>
+<td align="left">方向全部正确，并命中完美窗口</td>
+</tr>
+<tr>
+<td align="left">普通</td>
+<td align="left">错1个方向，或行动键只命中普通窗口</td>
+</tr>
+<tr>
+<td align="left">失败</td>
+<td align="left">未按行动键、行动键出窗，或方向错误超过1个</td>
+</tr>
+<tr>
+<td align="left">乐势变化</td>
+<td align="left">完美 +2；普通不变；失败 -2</td>
+</tr>
+<tr>
+<td align="left">神合</td>
+<td align="left">乐势达到4后进入；掉到4以下、停奏或换曲时立刻解除</td>
+</tr>
+<tr>
+<td align="left">满弦</td>
+<td align="left">乐势达到6且本节为完美时触发</td>
+</tr>
+<tr>
+<td align="left">作用范围</td>
+<td align="left">友方曲、敌方曲及流水无情均为25格；每个有效小节照料8格内农作物</td>
+</tr>
+</tbody></table></div></div><p><strong>普通演奏与长奏：</strong></p>
+<ul>
+<li>普通演奏的乐势上限为6，触发满弦后自动收曲</li><li>长奏的乐势上限为8，第一次在6点触发满弦后继续演奏</li><li>长奏从6升到8只进入峰值，不重复奖励；已经处于8点时再次打出完美，才会再次结算满弦</li><li>长奏失误后必须重新爬回8点，再以峰值完美重发满弦</li><li>演奏开始后模式锁定，本次演奏中不能临时切换</li></ul>
+<p><strong>本地声音设置：</strong></p>
+<ul>
+<li>所有玩家均可在“暂停界面 → 选项 → 腌笃鲜”中将本机听到的玉兔琵琶音量设为正常、75%或50%；该设置不会改变其他玩家听到的音量</li><li>玉兔还可单独开启或关闭完美、良好与失误的演奏反馈音；该设置不影响琵琶曲、轮盘开关音和其他玩家</li></ul>
+<p><strong>基础效果的获得：</strong></p>
+<ul>
+<li>友方增益曲若开曲4秒仍未出现完美，会在玉兔附近生成6枚可拾取音符</li><li>本次演奏首次完美会自动把基础效果分发给有效范围内的友方，并清除尚未领取的音符</li><li>敌对减益曲与场域支援曲不掉落地面音符，效果直接作用于实际目标</li><li>已经获得的基础或满弦效果不会因玉兔停奏而回滚；神合属于演奏中的动态增强，停奏后立即消失</li></ul>
+<h4 id="十首曲目" data-legacy-id="sec-十首曲目-b50w35">十首曲目</h4><p>玉兔初始掌握《田中乐》。其余曲目需将指定物品展示给嫦娥请教；物品只作展示，会完整返还，不会被消耗。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">曲目</th>
+<th align="left">请教物品</th>
+<th align="left">基础效果</th>
+<th align="left">神合效果</th>
+<th align="left">满弦效果</th>
+<th align="left">最长时效</th>
+</tr>
+</thead><tbody><tr>
+<td align="left"><strong>田中乐</strong></td>
+<td align="left">初始掌握</td>
+<td align="left">友方砍伐、采矿、锤击效率×2</td>
+<td align="left">额外叠加一层2倍工作效率，实际约4倍</td>
+<td align="left">工作效率×10，并可快速采摘植物</td>
+<td align="left">90秒</td>
+</tr>
+<tr>
+<td align="left"><strong>春光曲</strong></td>
+<td align="left"><span class="recipe-strip recipe-strip-materials" role="group" aria-label="独奏乐器1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/onemanband.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">独奏乐器</span>
+  </span></span></span></td>
+<td align="left">不会因催眠直接倒地，但仍会困倦</td>
+<td align="left">催眠免疫并清除当前昏沉</td>
+<td align="left">持久升级为催眠免疫</td>
+<td align="left">480秒</td>
+</tr>
+<tr>
+<td align="left"><strong>浴火奏</strong></td>
+<td align="left"><span class="recipe-strip recipe-strip-materials" role="group" aria-label="龙鳞1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/dragon_scales.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">龙鳞</span>
+  </span></span></span></td>
+<td align="left">火焰伤害降至25%</td>
+<td align="left">火焰伤害降至0</td>
+<td align="left">火焰伤害降至0，并以玉兔为中心熄灭16格内全部燃烧或闷烧目标</td>
+<td align="left">90秒</td>
+</tr>
+<tr>
+<td align="left"><strong>寒风调</strong></td>
+<td align="left"><span class="recipe-strip recipe-strip-materials" role="group" aria-label="滚烫热石1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/heatrock_hot.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">滚烫热石</span>
+  </span></span></span></td>
+<td align="left">阻挡当前冰冻值防止堆积至冻结</td>
+<td align="left">冻结免疫并清理冰冻、寒冷状态</td>
+<td align="left">持久升级为冰冻免疫；已经过冷的玩家恢复至官方初始体温</td>
+<td align="left">90秒</td>
+</tr>
+<tr>
+<td align="left"><strong>梦飞霜</strong></td>
+<td align="left"><span class="recipe-strip recipe-strip-materials" role="group" aria-label="冰鲷鱼1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/oceanfish_medium_8_inv.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">冰鲷鱼</span>
+  </span></span></span></td>
+<td align="left">受击时向攻击者施加0.67冰冻度</td>
+<td align="left">反击冰冻度提高到1.5</td>
+<td align="left">反击冰冻度提高到2.0</td>
+<td align="left">90秒</td>
+</tr>
+<tr>
+<td align="left"><strong>怨缠身</strong></td>
+<td align="left"><span class="recipe-strip recipe-strip-materials" role="group" aria-label="蜂王冠1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/hivehat.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">蜂王冠</span>
+  </span></span></span></td>
+<td align="left">敌方受到的正向治疗×0.50</td>
+<td align="left">治疗×0.25；4秒内每2秒造成其最大生命0.5%的非致死怨蚀，单次6～40</td>
+<td align="left">30秒内禁止治疗；每2秒造成最大生命1%的非致死怨蚀，单次12～80</td>
+<td align="left">30秒debuff</td>
+</tr>
+<tr>
+<td align="left"><strong>春风化雨</strong></td>
+<td align="left"><span class="recipe-strip recipe-strip-materials" role="group" aria-label="鹅毛扇1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/featherfan.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">鹅毛扇</span>
+  </span></span></span></td>
+<td align="left">敌方伤害输出×0.90</td>
+<td align="left">敌方伤害输出×0.75</td>
+<td align="left">敌方10秒内伤害输出×0.60</td>
+<td align="left">30秒debuff</td>
+</tr>
+<tr>
+<td align="left"><strong>霸王卸甲</strong></td>
+<td align="left"><span class="recipe-strip recipe-strip-materials" role="group" aria-label="绝望石1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/dreadstone.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">绝望石</span>
+  </span></span></span></td>
+<td align="left">敌方承伤×1.25</td>
+<td align="left">敌方承伤×1.35</td>
+<td align="left">10秒破防窗口：玩家攻击按1.35倍真伤结算</td>
+<td align="left">30秒debuff</td>
+</tr>
+<tr>
+<td align="left"><strong>流水无情</strong></td>
+<td align="left"><span class="recipe-strip recipe-strip-materials" role="group" aria-label="牛角帽1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/beefalohat.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">牛角帽</span>
+  </span></span></span></td>
+<td align="left">25格内阻止牛群进入发情</td>
+<td align="left">每个有效非满弦小节增加0.33次刷毛等价驯化量</td>
+<td align="left">一次增加3次刷毛等价驯化量</td>
+<td align="left">演奏场域</td>
+</tr>
+<tr>
+<td align="left"><strong>夜阑谣</strong></td>
+<td align="left"><span class="recipe-strip recipe-strip-materials" role="group" aria-label="排箫1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/panflute.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">排箫</span>
+  </span></span></span></td>
+<td align="left">睡意5、睡眠5秒</td>
+<td align="left">睡意7、睡眠10秒</td>
+<td align="left">睡意10、睡眠20秒；鸟兔等可睡眠小动物，以及闪电羊、皮弗娄牛、猪人、兔人也会入睡</td>
+<td align="left">30秒debuff</td>
+</tr>
+</tbody></table></div></div><blockquote class="bq-info"><p><strong>[满弦提示]</strong>：满弦BUFF的时间为玩家获得满弦时基础BUFF的剩余时间。
+<strong>[曲谱提示]</strong>：《寒风调》要求展示真正处于滚烫状态的热能石。已经学会的曲目不会重复消耗或重复解锁。</p>
+</blockquote><ul>
+<li>敌对曲只会作用于能够正常交战的敌对生物；触手、眼球草等不能移动的敌怪仍可正常成为目标</li><li>《霸王卸甲》的目标进入明确无敌状态时，破防窗口与“破”字会立即结束</li></ul>
+<h4 id="捣药玉杵-七味济人" data-legacy-id="sec-捣药玉杵-七味济人-x8fvxe">捣药玉杵：七味济人</h4><p>玉兔可通过技能栏交互打开两格捣药界面；手持玉杵右键则打开施药轮盘。</p>
+<ul>
+<li>药效以玉杵内部库存保存，不生成可掉落、可堆叠的药粉物品</li><li>每种成药库存上限为999</li><li>基础物品捣药仅作用于玉兔自身</li><li>施药范围为25格，覆盖玉兔、友方玩家与符合条件的友方生物</li><li>月宫守卫不接受玉杵药效，避免守卫同时叠加人物药剂和演奏强化</li><li>配方捣药每次消耗10点饥饿；配方会一次性扣除表中全部材料并产出对应份数</li></ul>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">药名</th>
+<th align="left">捣药配方</th>
+<th align="left">产量</th>
+<th align="left">施药效果</th>
+</tr>
+</thead><tbody><tr>
+<td align="left"><strong>排郁</strong></td>
+<td align="left"><span class="recipe-strip recipe-strip-materials" role="group" aria-label="勿忘我6加仙人掌肉3"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/forgetmelots.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×6</span></span>
+    <span class="recipe-item-name">勿忘我</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/cactus_meat.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×3</span></span>
+    <span class="recipe-item-name">仙人掌肉</span>
+  </span></span></span></td>
+<td align="left">6</td>
+<td align="left">友方玩家立即恢复30理智，并在120秒内每2秒恢复2理智</td>
+</tr>
+<tr>
+<td align="left"><strong>夜明</strong></td>
+<td align="left"><span class="recipe-strip recipe-strip-materials" role="group" aria-label="发光浆果3加荧光果6"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/wormlight.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×3</span></span>
+    <span class="recipe-item-name">发光浆果</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/lightbulb.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×6</span></span>
+    <span class="recipe-item-name">荧光果</span>
+  </span></span></span></td>
+<td align="left">6</td>
+<td align="left">友方获得高级发光效果960秒</td>
+</tr>
+<tr>
+<td align="left"><strong>惊厥</strong></td>
+<td align="left"><span class="recipe-strip recipe-strip-materials" role="group" aria-label="伏特羊角2加金丝雀羽毛1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/lightninggoathorn.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×2</span></span>
+    <span class="recipe-item-name">伏特羊角</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/feather_canary.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">金丝雀羽毛</span>
+  </span></span></span></td>
+<td align="left">3</td>
+<td align="left">友方攻击附带电击效果150秒</td>
+</tr>
+<tr>
+<td align="left"><strong>活血</strong></td>
+<td align="left"><span class="recipe-strip recipe-strip-materials" role="group" aria-label="蜂王浆2加蜘蛛腺体6"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/royal_jelly.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×2</span></span>
+    <span class="recipe-item-name">蜂王浆</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/spidergland.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×6</span></span>
+    <span class="recipe-item-name">蜘蛛腺体</span>
+  </span></span></span></td>
+<td align="left">3</td>
+<td align="left">友方立即恢复60生命，并在120秒内每2秒恢复2生命</td>
+</tr>
+<tr>
+<td align="left"><strong>犀茸</strong></td>
+<td align="left"><span class="recipe-strip recipe-strip-materials" role="group" aria-label="远古守护者角1加救赎之心1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/minotaurhorn.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">远古守护者角</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/reviver.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">救赎之心</span>
+  </span></span></span></td>
+<td align="left">3</td>
+<td align="left">优先复活25格内幽灵；无人可复活时，将玉兔生命、饥饿、理智补满</td>
+</tr>
+<tr>
+<td align="left"><strong>寒眸</strong></td>
+<td align="left"><span class="recipe-strip recipe-strip-materials" role="group" aria-label="独眼巨鹿眼球1加任意鹿角1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/deerclops_eyeball.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">独眼巨鹿眼球</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/deer_antler.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">任意鹿角</span>
+  </span></span></span></td>
+<td align="left">3</td>
+<td align="left">友方攻击附带1点冰冻度150秒；与惊厥同属攻击附魔，不同时叠加</td>
+</tr>
+<tr>
+<td align="left"><strong>草参</strong></td>
+<td align="left"><span class="recipe-strip recipe-strip-materials" role="group" aria-label="曼德拉草1加花瓣3"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/mandrake.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">曼德拉草</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/petals.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×3</span></span>
+    <span class="recipe-item-name">花瓣</span>
+  </span></span></span></td>
+<td align="left">3</td>
+<td align="left">友方恢复300生命，并使范围内敌对目标进入约20秒睡眠</td>
+</tr>
+</tbody></table></div></div><p><strong>基础捣药：</strong></p>
+<ul>
+<li>两格材料未组成正式药方时，水果、蔬菜和指定药材可按基础捣药处理</li><li>每个有效格单次点击捣药只消耗1份材料，并对玉兔本人立即生效；每处理1格消耗3点饥饿</li><li>普通水果主要恢复5或15理智，普通蔬菜主要恢复8或20生命；月蛾翅膀、仙人掌、蜘蛛腺体、花瓣、荧光果等拥有各自固定收益</li><li>曼德拉草、独眼巨鹿眼球、伏特羊角、远古守护者角等正式药方核心材料不会被基础捣药误用</li></ul>
+<h4 id="月宫守卫" data-legacy-id="sec-月宫守卫-ddp41y">月宫守卫</h4><p>月宫守卫是玉兔的常驻护卫与演奏兑现单位。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">属性</th>
+<th align="left">数值</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">生命值</td>
+<td align="left">500</td>
+</tr>
+<tr>
+<td align="left">基础伤害</td>
+<td align="left">50</td>
+</tr>
+<tr>
+<td align="left">攻击间隔</td>
+<td align="left">2秒</td>
+</tr>
+<tr>
+<td align="left">奔跑速度</td>
+<td align="left">7</td>
+</tr>
+<tr>
+<td align="left">追击上限</td>
+<td align="left">25格</td>
+</tr>
+<tr>
+<td align="left">死亡冷却</td>
+<td align="left">120秒</td>
+</tr>
+</tbody></table></div></div><ul>
+<li>初始没有守卫资格；首次学会任意一首非初始曲目后，上限解锁为1名</li><li>掌握曲目总数达到9首后，上限直接提升为3名，没有2名阶段</li><li>召唤或补充守卫消耗5点理智；达到上限后再次使用守卫按钮会召回当前守卫，召回不消耗理智</li><li>右键守卫按钮可令全部当前守卫钻地归月，暂时停止跟随、战斗和劳作；之后左键守卫按钮可让它们一次重新出阵，归月与出阵均不消耗理智，也不会恢复生命或触发死亡冷却</li><li>守卫默认以保护玉兔为主；演奏《怨缠身》《春风化雨》《霸王卸甲》时，会主动攻击16格内受曲目影响的敌人</li><li>进入神合时，当前所有守卫立即恢复100生命</li><li>满弦触发20秒“月华共鸣”：守卫获得50%减伤，攻击间隔缩短到1秒，攻击变为50普通伤害+50位面伤害</li><li>《春光曲》《浴火奏》《寒风调》《梦飞霜》满弦时，演奏者当前已有的守卫同时获得20秒对应基础曲效；守卫不会获得玩家的满弦强化</li><li>持有对应基础曲效的守卫，可被16格内任意友方玉兔的同曲神合继续增强，不要求演奏者是守卫主人</li><li>这些临时曲效不会写入守卫存档；守卫死亡、召回、换洞或读档后会清除，新召守卫也不会追补此前的满弦奖励</li><li>演奏《田中乐》时，守卫可砍树、采矿和清理树桩，不负责拾取资源；基础、神合、满弦工作量分别为1、2、4，且满弦效果会促使守卫自主劳作20秒</li></ul>
+<h4 id="兔族亲和与狡兔三窟" data-legacy-id="sec-兔族亲和与狡兔三窟-av02ou">兔族亲和与狡兔三窟</h4><ul>
+<li>玉兔拥有兔子伪装：普通兔子不会因她靠近而逃跑，活兔可直接拾取</li><li>玉兔不能主动谋杀或直接烹饪活兔</li><li>随身携带至少1只活兔时获得中等理智回复，多只不会叠加</li><li>玉兔直接造成兔子死亡时立即损失5理智；旁观20格内兔子死亡也会按距离在5秒内持续损失最多5理智，同一窗口不会反复叠满</li><li>普通兔人与兔王不会仅因玉兔携带肉类主动仇恨她；若玉兔主动攻击、共享仇恨或带有其他敌对身份，兔族仍会正常反击</li><li>玉兔不会仅因自身低理智把兔子、普通兔人及兔系外观看成梦魇形态；官方强制梦魇仍然有效</li></ul>
+<p><strong>狡兔三窟：</strong></p>
+<ol>
+<li>将活兔给予一个未塌陷的兔洞，执行“放归”</li><li>每名玉兔每个自然日最多通过放归获得1次三窟次数</li><li>次数上限为3；达到上限或当天已经获得次数时，兔洞不会收走活兔</li><li>有次数时技能栏才显示“狡兔三窟”，并标注当前次数</li><li>使用后在合法地面打开官方兔子号角公用箱，成功生成箱子消耗1次</li></ol>
+<blockquote class="bq-info"><p><strong>[当前规则]</strong>：新版玉兔不开放旧版“采集兔洞”或“量产兔洞”路线，这两项旧设定已经由狡兔三窟替代。</p>
+</blockquote><h4 id="遁地" data-legacy-id="sec-遁地-p0jz">遁地</h4><p>玉兔可通过技能栏进入地下形态，再次使用可主动出土。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">地下收益</th>
+<th align="left">地下代价</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">敌人无法选定玉兔，遁地时让12格内正在追击她的敌人放弃目标</td>
+<td align="left">饥饿消耗倍率×1.4</td>
+</tr>
+<tr>
+<td align="left">获得夜视与查理免疫</td>
+<td align="left">理智每分钟持续损失10点</td>
+</tr>
+<tr>
+<td align="left">火焰伤害降至30%</td>
+<td align="left">雨天会持续增加潮湿</td>
+</tr>
+<tr>
+<td align="left">可持续移动</td>
+<td align="left">不能打开物品栏、背包或已开启容器</td>
+</tr>
+</tbody></table></div></div><ul>
+<li>遁地没有固定持续时间，也没有遁地瞬间的额外饥饿费用</li><li>攻击、工作、施法、演奏、睡眠等主动长动作会使玉兔解除遁地</li><li>受击、击飞、眩晕、冻结、电击等外部硬控不会强制解除遁地形态，控制结束后继续恢复地下移动</li><li>饥饿归零、死亡、变鬼、走到海面、进入船只或平台、灵魂出窍状态时会拒绝或终止遁地</li><li>遁地期间不能演奏、捣药、召唤守卫、使用狡兔三窟或腾云</li></ul>
+<h4 id="腾云" data-legacy-id="sec-腾云-mggj">腾云</h4><ul>
+<li>前往灵台方寸山阅读天书后解锁，未解锁时技能栏不显示腾云按钮</li><li>起云消耗25点理智，再次使用同一按钮按神话原腾云流程落云</li><li>骑乘中不能起云，也不会被强制下牛或消耗起云理智</li><li>若设置了腾云本地按键，可用同一按键起云与落云；技能栏仍可正常使用</li><li>云上移动倍率为10/6，约1.67倍</li><li>腾云期间每3秒恢复1点生命，并携带-10寒气效果</li><li>杏花仙子与月桂酒香外观会在腾云时使用各自对应的专属云朵、特效与光效表现</li><li>腾云与遁地互斥；云上仅保留落云能力，捣药、守卫、狡兔三窟和遁地等地面技能不可使用</li></ul>
+<h4 id="广寒生态与专属制作" data-legacy-id="sec-广寒生态与专属制作-bwm69i">广寒生态与专属制作</h4><p><strong>嫦娥与广寒宫：</strong></p>
+<ul>
+<li>玉兔向嫦娥赠送宝石或大蟠桃时，额外增加1点好感</li><li>每次成功完成基础好感赠礼后，有10%概率额外获得一枚月饼</li><li>玉兔夜间可进入广寒宫，并不会因广寒夜间规则被驱逐</li><li>向嫦娥展示曲目物品完成请教后，物品会返还；曲谱进度、守卫上限、腾云解锁与三窟次数均随人物存档保存</li></ul>
+<p><strong>月蛾引路：</strong></p>
+<ul>
+<li>玉兔个人配方：<span class="recipe-strip recipe-strip-materials" role="group" aria-label="花瓣1"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/petals.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×1</span></span>
+    <span class="recipe-item-name">花瓣</span>
+  </span></span></span></li><li>施法后生成持续8秒的月蛾引路效果，优先指向广寒宫；附近没有广寒目标时，引向可用的月亮区域</li><li>引路效果不是可捕捉生物，不掉落月蛾翅膀、月树苗或其他资源</li></ul>
+<p><strong>竹篓：</strong></p>
+<ul>
+<li>配方：<span class="recipe-strip recipe-strip-materials" role="group" aria-label="神话竹3加绳子2"><span class="recipe-part"><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/myth_bamboo.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×3</span></span>
+    <span class="recipe-item-name">神话竹</span>
+  </span></span><span class="recipe-part"><span class="recipe-operator" aria-hidden="true">＋</span><span class="recipe-token rarity-common">
+    <span class="recipe-icon-frame"><img src="/images/wiki/shared/materials/rope.webp" alt="" loading="lazy" decoding="async" width="52" height="52" /><span class="recipe-quantity">×2</span></span>
+    <span class="recipe-item-name">绳子</span>
+  </span></span></span></li><li>科技：科学一本</li><li>玉兔专属背部装备，拥有12格容量，无移动减速</li><li>不保鲜、不限制存入物品类别</li><li>莹月琵琶与竹篓均拥有独立地图图标，便于遗失寻找</li></ul>
+<hr>
+<blockquote class="bq-search-tags" aria-hidden="true"><p><strong>检索标签</strong>：[归属库：腌笃鲜] [数据类型：人物精怪] [核心关联：黑风大王, 熊罴真身, 吞天紫金葫芦, 辟火罩, 神话天书]</p>
+</blockquote><p>以下为<strong>黑风大王·熊罴真身</strong>的首领遭遇、阶段机制与专属奖励。</p>
+<h3 id="黑风大王-熊罴真身" data-legacy-id="sec-黑风大王-熊罴真身-63ubpo" data-num="贰">黑风大王·熊罴真身</h3><blockquote><p>黑风大王败而化风，本欲借遁法脱身。若以<a class="term-link" href="/artifacts/#%E5%90%9E%E5%A4%A9%E7%B4%AB%E9%87%91%E8%91%AB%E8%8A%A6" data-term-id="artifact-ttzjhl" data-term-kind="法宝" data-term-summary="兼具十四格收纳、范围采收、吞天控场与吞月能力的空间法宝。" data-term-image="/images/wiki/xydztz/objects/xydztz_artifact_ttzjhl.webp">吞天紫金葫芦</a>先一步锁住战败之地，黑风便无处可逃，妖王被迫显出熊罴真身。</p>
+</blockquote><h4 id="神话天书收录" data-legacy-id="sec-神话天书收录-2dfccl">神话天书收录</h4><ul>
+<li>神话天书“怪物”页现已收录熊罴真身，可快速查看显形条件、动态生命、主要战斗机制与击杀奖励</li><li>天书条目用于局内速查；完整触发边界、技能数值和失败规则仍以本章为准</li></ul>
+<h4 id="触发条件" data-legacy-id="sec-触发条件-hqx674">触发条件</h4><p>熊罴真身不能通过普通刷新直接出现，必须完成以下流程：</p>
+<ol>
+<li>找到并挑战《神话书说》原黑风大王</li><li>在其死亡前，提前释放吞天紫金葫芦的“吞天控场”</li><li>必须等待吞天施法真正完成、活动场已经展开</li><li>让原黑风大王在活动场覆盖范围内真正战败</li><li>原黑风大王先按神话原流程完成死亡与掉落，随后生成的战败遁风会被吞天场截住</li><li>遁风无法逃走被控制在吞天施法点，并在那里显化熊罴真身</li></ol>
+<p><strong>判定重点：</strong></p>
+<ul>
+<li>先杀死黑风大王、再补放吞天无效</li><li>吞天仍在蓄力、活动场尚未真正建立时击杀无效</li><li>战败遁风从场外飘入吞天范围无效，判定只看原黑风死亡瞬间是否被活动场覆盖</li><li>偷蜜入场风、黑风大王超时离场风均不是战败遁风，不能触发真身</li><li>多个吞天场同时覆盖死亡点时，只由最近的一处取得触发权</li><li>同一时间只会存在一场熊罴真身遭遇</li></ul>
+<h4 id="动态生命规则" data-legacy-id="sec-动态生命规则-wbvedw">动态生命规则</h4><p>熊罴真身的最大生命由<strong>本轮已经击败的黑风大王假身次数</strong>决定，不随在线人数变化。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">本轮原黑风击败次数</th>
+<th align="left">熊罴真身最大生命</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">1次</td>
+<td align="left">24000</td>
+</tr>
+<tr>
+<td align="left">2次</td>
+<td align="left">21000</td>
+</tr>
+<tr>
+<td align="left">3次</td>
+<td align="left">18000</td>
+</tr>
+<tr>
+<td align="left">4次</td>
+<td align="left">15000</td>
+</tr>
+<tr>
+<td align="left">5次及以后</td>
+<td align="left">12000</td>
+</tr>
+</tbody></table></div></div><ul>
+<li>单次必要的原黑风前置击杀不降档</li><li>计数在原黑风真正死亡时立即增加</li><li>熊罴真身生成后会锁定本次最大生命，战斗中或读档后不会重新按人数、当前次数计算</li><li>真身真正被击杀后，本轮原黑风击败计数归零；下一轮重新从24000生命开始</li><li>挑战失败、真身返风或世界重载不会清零计数；下次必须重新击杀原黑风触发，生命继续按上表下降，最低12000</li></ul>
+<h4 id="基础战斗面板" data-legacy-id="sec-基础战斗面板-5ald9a">基础战斗面板</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">属性</th>
+<th align="left">数值 / 规则</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">基础伤害</td>
+<td align="left">175；对玩家普通伤害部分使用50%角色伤害系数</td>
+</tr>
+<tr>
+<td align="left">位面伤害</td>
+<td align="left">30</td>
+</tr>
+<tr>
+<td align="left">位面防御</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">攻击间隔</td>
+<td align="left">3秒</td>
+</tr>
+<tr>
+<td align="left">攻击距离</td>
+<td align="left">6格</td>
+</tr>
+<tr>
+<td align="left">步行 / 愤怒步行 / 奔跑</td>
+<td align="left">3 / 6 / 10</td>
+</tr>
+<tr>
+<td align="left">追击与遭遇活动范围</td>
+<td align="left">60格</td>
+</tr>
+<tr>
+<td align="left">冻结抗性</td>
+<td align="left">基础抗性8；首次需累计8点有效寒冷，成功冻结后门槛依次提高为10、12……最高20，额外抗性每30秒衰减0.1</td>
+</tr>
+<tr>
+<td align="left">睡眠</td>
+<td align="left">完全不可被催眠</td>
+</tr>
+<tr>
+<td align="left">火焰</td>
+<td align="left">火焰免疫，不会燃烧或传播火势</td>
+</tr>
+<tr>
+<td align="left">阵营</td>
+<td align="left">不属于月亮或暗影阵营</td>
+</tr>
+</tbody></table></div></div><ul>
+<li>遭遇以<strong>移动中的真身本体</strong>为中心，不存在固定外围墙或区域限制</li><li>真身拥有普通挥击、前冲连击、击飞与敲地等基础攻势</li><li>战场中的黑风石障既是掩体，也是引导真身撞击、创造输出窗口的核心资源</li></ul>
+<h4 id="黑风石障" data-legacy-id="sec-黑风石障-ko3gfa">黑风石障</h4><p>真身会通过敲地重新布置石障。石障不会围成完整封闭圆环，始终留有移动与引导空间。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">当前存活玩家</th>
+<th align="left">石障数量</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">1人</td>
+<td align="left">4座</td>
+</tr>
+<tr>
+<td align="left">2人</td>
+<td align="left">5座</td>
+</tr>
+<tr>
+<td align="left">3人及以上</td>
+<td align="left">6座</td>
+</tr>
+</tbody></table></div></div><ul>
+<li>每座石障拥有3点侵蚀耐久（仅受黑旋影响）</li><li>石障升起前有0.75秒地面预警</li><li>升起命中造成45普通伤害+5位面伤害，不击飞；升起后接触石障不会持续受伤</li><li>黑旋风会侵蚀石障，部分敲地、冲击也会消耗或重排石障</li><li>真身高速冲锋撞上自有石障时，石障破碎，真身进入6秒硬直</li><li>下一轮敲地重排、真身死亡、挑战失败或遭遇卸载时，旧石障会统一清理</li></ul>
+<h4 id="技能总览" data-legacy-id="sec-技能总览-cymb6y">技能总览</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">技能</th>
+<th align="left">解锁阶段</th>
+<th align="left">冷却 / 触发</th>
+<th align="left">主要效果</th>
+<th align="left">正确应对</th>
+</tr>
+</thead><tbody><tr>
+<td align="left"><strong>敲地布障</strong></td>
+<td align="left">全程</td>
+<td align="left">约10秒</td>
+<td align="left">重排黑风石障，维持战场资源</td>
+<td align="left">观察预警，保留可用掩体</td>
+</tr>
+<tr>
+<td align="left"><strong>定点黑旋</strong></td>
+<td align="left">全程</td>
+<td align="left">约14秒</td>
+<td align="left">预警后生成追踪目标的2秒黑旋风，每次脉冲35伤害+5位面伤害，并侵蚀石障</td>
+<td align="left">离开预警点，不要把旋风带过关键石障</td>
+</tr>
+<tr>
+<td align="left"><strong>黑风倒卷</strong></td>
+<td align="left">70%生命以下</td>
+<td align="left">约32秒；至少保有2座石障，且超过10格、不超过14格处有可被牵引、未被遮挡的陆地玩家时起手</td>
+<td align="left">起手后在20格范围实时吸引符合条件的玩家；进入3格风眼后被捕获</td>
+<td align="left">看到蓄力后进入石障背风侧</td>
+</tr>
+<tr>
+<td align="left"><strong>风王冲山</strong></td>
+<td align="left">70%生命以下</td>
+<td align="left">倒卷无人被捕获后进入，独立冷却约18秒</td>
+<td align="left">奔向目标高速冲锋，命中造成110伤害+15位面伤害并击飞</td>
+<td align="left">把冲锋线引向石障，换取6秒硬直</td>
+</tr>
+<tr>
+<td align="left"><strong>万字黑风吼</strong></td>
+<td align="left">70%、35%各强制一次</td>
+<td align="left">阶段事件</td>
+<td align="left">冲击波、控制与至多两次原始普攻猎杀</td>
+<td align="left">身穿锦襕袈裟；无袈裟时利用石障减伤并诱导撞石</td>
+</tr>
+</tbody></table></div></div><h4 id="定点黑旋" data-legacy-id="sec-定点黑旋-c17cu1">定点黑旋</h4><ul>
+<li>黑旋生成前有1.25秒预警，生成后以低速追随本次锁定的目标2秒</li><li>每次伤害脉冲造成35普通伤害+5位面伤害</li><li>黑旋会绕开非法地形，不会因为轻微地形障碍立即消失</li><li>黑旋附近的石障每0.5秒被侵蚀1点耐久</li><li>单次施法的全场总量随阶段和有效玩家数提升：</li></ul>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">有效玩家</th>
+<th align="left">第一阶段</th>
+<th align="left">第二阶段</th>
+<th align="left">第三阶段</th>
+</tr>
+</thead><tbody><tr>
+<td align="left">1人</td>
+<td align="left">1</td>
+<td align="left">2</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">2人</td>
+<td align="left">2</td>
+<td align="left">3</td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td align="left">3人</td>
+<td align="left">2</td>
+<td align="left">4</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left">4人及以上</td>
+<td align="left">2</td>
+<td align="left">4</td>
+<td align="left">6</td>
+</tr>
+</tbody></table></div></div><p>表中数量是全场本次施法总数，不是每名玩家各自生成的数量。黑旋优先覆盖不同玩家，剩余数量再轮流补给；同一玩家的多个预警点会错开。合法落点不足时，实际生成数量可能少于表中数值。</p>
+<h4 id="黑风倒卷与风王冲山" data-legacy-id="sec-黑风倒卷与风王冲山-h0sefc">黑风倒卷与风王冲山</h4><p>生命低于70%后，真身会把石障从普通掩体升级为机制解题资源。</p>
+<ol>
+<li>只有场上至少保有2座有效石障、没有尚未结束的黑旋，且存在位于真身超过10格、不超过14格处、未被石障遮挡并可被牵引的陆地玩家时，真身才会选择倒卷</li><li>真身先以完整动作蓄积黑风，中心风压逐渐扩大；起手后不会因为初始目标跑位而取消整招</li><li>正式吸入开始后，每次风压都会检查20格范围符合条件的玩家才会被快速拉向真身</li><li>进入约3格风眼的玩家被捕获并暂时失去移动</li><li class="term-item"><strong>若至少捕获1人</strong>：真身锁定被捕获者，保证完成一次普通挥击；实际伤害判定结束后释放所有被捕获玩家</li><li class="term-item"><strong>若最终无人被捕获</strong>：真身随即进入风王冲山</li><li>冲锋前会显示预警，玩家需要继续走位，把真身引向石障</li><li>真身撞碎石障后进入6秒硬直；若撞中玩家，则造成110普通伤害+15位面伤害并击飞</li></ol>
+<ul>
+<li>骑乘玩家仍以玩家本体参与倒卷的起手、拉拽与捕获判定；保底挥击继续沿官方骑乘规则把伤害转移给有效坐骑，不会额外强制掉落坐骑</li></ul>
+<blockquote class="bq-info"><p><strong>[机制要点]</strong>：石障背风侧只解决“倒卷抓人”；倒卷挡住后仍要完成第二步，引导冲山撞石。提前把所有石障耗尽会让这一组合失去正解。</p>
+</blockquote><h4 id="万字黑风吼" data-legacy-id="sec-万字黑风吼-x5cmtr">万字黑风吼</h4><p>真身生命首次跨过70%与35%时，各强制进行一次万字黑风吼。若一次高伤同时跨过两个阈值，第二次会排队等待，至少间隔6秒，不会无操作地背靠背立刻爆发。</p>
+<p><strong>爆发范围与伤害：</strong></p>
+<ul>
+<li>判定范围为真身周围24格</li><li>冲击波造成15普通伤害+5位面伤害</li><li>每名玩家在爆发瞬间检查身体装备栏中的<strong>锦襕袈裟</strong></li><li>只放在物品栏里无效；爆发后才换上也无法解除已经产生的控制</li></ul>
+<p><strong>穿着锦襕袈裟：</strong></p>
+<ul>
+<li>完全免疫本次冲击波、硬控与后续普攻猎杀</li><li>获得本次技能期间的黑风拉力免疫，并显示佛光护体</li><li>结算中只要至少一名玩家成功护体，猎杀收束后真身会受到佛光反震，进入4秒输出窗口</li><li>成功破解后会短时间提高真身对袈裟玩家的仇恨权重，给团队其他成员创造空间</li></ul>
+<p><strong>未穿锦襕袈裟：</strong></p>
+<ul>
+<li>先承受冲击波，再进入失去操作的心神控制</li><li>真身只以普通挥击逐个猎杀被控制玩家，不插入黑旋、敲地、冲锋或连击</li><li>同一玩家受到第2次真实普通攻击命中后解除控制</li><li>控制最多持续12秒；玩家死亡、真身撞石硬直、真身死亡或挑战失败也会提前解除</li></ul>
+<p><strong>石障保底：</strong></p>
+<ul>
+<li>未穿袈裟但处于有效石障背风侧时，冲击波伤害降为35%，但仍会被控制</li><li>猎杀期间若真身高速追击撞上石障，会触发6秒硬直并终止本轮控制</li><li>石障不是锦襕袈裟的完全替代；无袈裟、无石障时，玩家会完整承受冲击波与至多两次普通攻击</li></ul>
+<h4 id="阶段流程" data-legacy-id="sec-阶段流程-jed0fd">阶段流程</h4><div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">阶段</th>
+<th align="left">生命区间</th>
+<th align="left">战斗变化</th>
+</tr>
+</thead><tbody><tr>
+<td align="left"><strong>第一阶段</strong></td>
+<td align="left">100%～70%</td>
+<td align="left">学习敲地布障、基础连击与定点黑旋；黑旋单人1只、多人全场最多2只，重点是保存石障</td>
+</tr>
+<tr>
+<td align="left"><strong>70%检验</strong></td>
+<td align="left">首次跨过70%</td>
+<td align="left">强制万字黑风吼；之后解锁黑风倒卷与风王冲山</td>
+</tr>
+<tr>
+<td align="left"><strong>第二阶段</strong></td>
+<td align="left">70%～35%</td>
+<td align="left">黑旋单人2只、多人全场最多4只，石障开始同时承担倒卷遮挡与冲山硬直</td>
+</tr>
+<tr>
+<td align="left"><strong>35%检验</strong></td>
+<td align="left">首次跨过35%</td>
+<td align="left">再次强制万字黑风吼</td>
+</tr>
+<tr>
+<td align="left"><strong>第三阶段</strong></td>
+<td align="left">35%以下</td>
+<td align="left">黑旋单人3只、多人全场最多6只，场地资源压力达到最高，但黑旋速度、时长与单次伤害不再继续增强</td>
+</tr>
+</tbody></table></div></div><h4 id="挑战失败与返风" data-legacy-id="sec-挑战失败与返风-7az3jh">挑战失败与返风</h4><ul>
+<li>真身以自身实时位置为中心检查60格范围内的存活玩家</li><li>连续20秒没有任何存活玩家留在范围内，挑战判定失败</li><li>宽限期间只要有存活玩家重新进入60格，失败倒计时立即取消</li><li>失败后真身不会掉落任何奖励，会清理黑旋、石障、控制与技能状态，再次化作黑风离开</li><li>下一次挑战必须重新完成偷蜜、击杀原黑风、预铺吞天场并在场内完成击杀的完整流程</li><li>冻结、丢失当前攻击目标或短暂脱战不等于挑战失败，只看真身附近是否仍有存活玩家</li></ul>
+<h4 id="击杀奖励" data-legacy-id="sec-击杀奖励-arssqo">击杀奖励</h4><p>原黑风大王会先完成自身正常掉落，熊罴真身奖励在其后独立结算，两套战利品互不覆盖。</p>
+<div class="table-outer"><div class="table-wrapper"><table><thead><tr>
+<th align="left">奖励</th>
+<th align="left">数量</th>
+<th align="left">多倍掉落</th>
+</tr>
+</thead><tbody><tr>
+<td align="left"><strong><a class="term-link" href="/artifacts/#%E8%BE%9F%E7%81%AB%E7%BD%A9" data-term-id="artifact-bhz" data-term-kind="法宝" data-term-summary="击败熊罴真身固定掉落，可展开束焰领域约束燃烧并保护玩家。" data-term-image="/images/wiki/xydztz/objects/xydztz_artifact_bhz.webp">辟火罩</a></strong></td>
+<td align="left">固定1件</td>
+<td align="left">不受任何普通或概率多倍掉落影响</td>
+</tr>
+<tr>
+<td align="left"><strong>熊皮</strong></td>
+<td align="left">1张</td>
+<td align="left">普通掉落体系，可受合法多倍掉落影响</td>
+</tr>
+<tr>
+<td align="left"><strong>熊毛</strong></td>
+<td align="left">8个</td>
+<td align="left">普通掉落体系，可受合法多倍掉落影响</td>
+</tr>
+</tbody></table></div></div><ul>
+<li>真身不额外掉落肉、宝石、寸心精魄、月亮材料、暗影材料或原黑风战利品</li><li>失败返风、异常移除或未完成真实击杀均不产生奖励</li><li><a class="term-link" href="/artifacts/#%E8%BE%9F%E7%81%AB%E7%BD%A9" data-term-id="artifact-bhz" data-term-kind="法宝" data-term-summary="击败熊罴真身固定掉落，可展开束焰领域约束燃烧并保护玩家。" data-term-image="/images/wiki/xydztz/objects/xydztz_artifact_bhz.webp">辟火罩</a>的完整效果详见“法宝装备”篇</li></ul>
+<hr>
+            <!-- STATIC_CONTENT_END -->
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <footer class="footer" id="site-footer" role="contentinfo">
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-message">
+        <p class="footer-message-text">感谢每一位订阅玩家的支持和鼓励，祝各位在《腌笃鲜》的努力下游戏愉快，武运昌隆，尽享神话之旅！</p>
+        <p class="footer-signature">——咸鱼 &amp; 大猪蹄子 敬上</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3625940357" target="_blank" rel="noopener noreferrer">Steam 创意工坊</a>
+        <a href="https://qm.qq.com/q/iFeDTMf6Io" target="_blank" rel="noopener noreferrer">反馈交流群</a>
+      </div>
+      <p>&copy; 2026 《腌笃鲜》</p>
+      <p>反馈交流 QQ 群：1046023996</p>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="回到顶部">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+    </button>
+
+    <script src="/scripts/utils.js?v=20260804h"></script>
+    <script src="/scripts/renderer.js?v=20260805c"></script>
+    <script src="/scripts/toc.js?v=20260805b"></script>
+    <script src="/scripts/scroll.js?v=20260805a"></script>
+    <script src="/scripts/theme.js?v=20260804f"></script>
+    <script src="/scripts/ui.js?v=20260805b"></script>
+    <script src="/scripts/media.js?v=20260808a"></script>
+    <script src="/scripts/main.js?v=20260805c"></script>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 // ============================================
-// 《腌笃鲜》官方维基 - UI Interactions
+// 《腌笃鲜》维基百科 - UI Interactions
 // ============================================
 
 window.XYDZTZ = window.XYDZTZ || {};
@@ -8,10 +8,42 @@ window.XYDZTZ.ui = {
 
   init() {
     this.setupMobileSidebar();
+    this.setupChapterNav();
+    this.setupBookSwitcher();
     this.setupHeroButton();
     this.initHeroParallax();
     this.initHeroParticles();
     this.setupThemeToggle();
+  },
+
+  setupChapterNav() {
+    const nav = document.getElementById('chapter-nav-inner');
+    const pages = nav?.querySelector('.chapter-nav-pages');
+    const active = nav?.querySelector('[aria-current="page"]');
+    if (!nav || !pages || !active) return;
+
+    requestAnimationFrame(() => {
+      if (pages.scrollWidth <= pages.clientWidth) return;
+      pages.scrollLeft = Math.max(0, active.offsetLeft - (pages.clientWidth - active.offsetWidth) / 2);
+    });
+  },
+
+  setupBookSwitcher() {
+    const switcher = document.querySelector('.book-switcher');
+    if (!switcher) return;
+
+    switcher.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => switcher.removeAttribute('open'));
+    });
+    document.addEventListener('click', (event) => {
+      if (switcher.open && !switcher.contains(event.target)) switcher.removeAttribute('open');
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && switcher.open) {
+        switcher.removeAttribute('open');
+        switcher.querySelector('summary')?.focus();
+      }
+    });
   },
 
   setupMobileSidebar() {
@@ -101,7 +133,7 @@ window.XYDZTZ.ui = {
 
     btn.addEventListener('click', () => {
       const main = document.getElementById('main-content');
-      const firstHeading = main?.querySelector('h1, h2, h3');
+      const firstHeading = main?.querySelector('h2, h3');
       if (firstHeading) {
         firstHeading.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } else {
@@ -112,7 +144,20 @@ window.XYDZTZ.ui = {
 
   initHeroParallax() {
     const hero = document.getElementById('hero');
-    if (!hero || window.matchMedia('(pointer: coarse)').matches) return;
+    if (!hero) return;
+
+    if (window.matchMedia('(pointer: coarse)').matches) {
+      const scheduleHoverLoad = () => {
+        if ('requestIdleCallback' in window) {
+          window.requestIdleCallback(() => this.loadHeroHover(), { timeout: 1200 });
+        } else {
+          setTimeout(() => this.loadHeroHover(), 200);
+        }
+      };
+      if (document.readyState === 'complete') scheduleHoverLoad();
+      else window.addEventListener('load', scheduleHoverLoad, { once: true });
+      return;
+    }
 
     const defaultBg = hero.querySelector('.hero-bg-default');
     const hoverBg = hero.querySelector('.hero-bg-hover');
@@ -154,6 +199,7 @@ window.XYDZTZ.ui = {
     }
 
     hero.addEventListener('mouseenter', () => {
+      this.loadHeroHover();
       isHovering = true;
       hero.classList.add('is-hover');
       startLoop();
@@ -176,6 +222,28 @@ window.XYDZTZ.ui = {
       targetY = 0;
       startLoop(); // 确保回到 0 的动画能执行完
     });
+  },
+
+  loadHeroHover() {
+    const picture = document.getElementById('hero-hover-picture');
+    if (!picture || picture.dataset.loaded === 'true') return;
+
+    const source = picture.querySelector('source[data-srcset]');
+    const image = picture.querySelector('img[data-src]');
+    if (source) {
+      source.srcset = source.dataset.srcset;
+      source.removeAttribute('data-srcset');
+    }
+    if (image) {
+      const markReady = () => document.getElementById('hero')?.classList.add('hero-hover-ready');
+      image.addEventListener('load', markReady, { once: true });
+      image.src = image.dataset.src;
+      image.srcset = image.dataset.srcset || '';
+      image.removeAttribute('data-src');
+      image.removeAttribute('data-srcset');
+      if (image.complete && image.naturalWidth) markReady();
+    }
+    picture.dataset.loaded = 'true';
   },
 
   initHeroParticles() {

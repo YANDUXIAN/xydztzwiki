@@ -1,77 +1,20 @@
 // ============================================
-// 《腌笃鲜》官方维基 - Markdown Renderer
+// 《腌笃鲜》维基百科 - Static Content Enhancements
 // ============================================
 
 window.XYDZTZ = window.XYDZTZ || {};
 window.XYDZTZ.renderer = {
-  render(text) {
-    const main = document.getElementById('main-content');
-    if (typeof marked === 'undefined') {
-      main.innerHTML = '<p>Markdown 解析器加载失败</p>';
-      return;
-    }
-
-    try {
-      const renderer = new marked.Renderer();
-      const { slugify, inferBlockquoteType } = window.XYDZTZ.utils;
-
-      renderer.heading = function (text, depth, raw) {
-        const id = slugify(text);
-        return `<h${depth} id="${id}">${text}</h${depth}>`;
-      };
-
-      renderer.table = function (header, body) {
-        let html = '<div class="table-outer"><div class="table-wrapper"><table>';
-        if (header) html += header;
-        if (body) html += body;
-        html += '</table></div></div>';
-        return html;
-      };
-
-      renderer.blockquote = function (quote) {
-        const temp = document.createElement('div');
-        temp.innerHTML = quote;
-        const plainText = temp.textContent || '';
-        if (plainText.trim().startsWith('检索标签')) {
-          return `<blockquote class="bq-search-tags" aria-hidden="true">${quote}</blockquote>`;
-        }
-
-        const type = inferBlockquoteType(plainText);
-        const cls = type ? ` bq-${type}` : '';
-        return `<blockquote class="${cls}">${quote}</blockquote>`;
-      };
-
-      marked.setOptions({
-        renderer: renderer,
-        gfm: true,
-        breaks: false,
-      });
-
-      const html = marked.parse(text);
-      main.innerHTML = html;
-      this.initUpdateSummary(main);
-      this.initJieyunLookup(main);
-      this.initFaq(main);
-      this.decorateContent(main);
-
-      if (typeof hljs !== 'undefined') {
-        main.querySelectorAll('pre code').forEach((block) => {
-          hljs.highlightElement(block);
-        });
-      }
-
-      this.initTableScrollHints();
-
-      window.XYDZTZ.ui?.initCodeBlocks();
-    } catch (err) {
-      console.error('[XYDZTZ] Markdown 渲染失败:', err);
-      main.innerHTML = `
-        <div style="padding:40px 20px;text-align:center;color:var(--text-secondary)">
-          <p>内容渲染出错，请尝试刷新页面</p>
-          <p style="font-size:12px;margin-top:8px;color:var(--color-danger)">${err.message}</p>
-        </div>
-      `;
-    }
+  enhance(main) {
+    if (!main || main.dataset.enhanced === 'true') return;
+    this.initUpdateSummary(main);
+    this.initJieyunLookup(main);
+    this.initWheelCompat(main);
+    this.initFaq(main);
+    this.decorateContent(main);
+    this.initTermTooltips(main);
+    this.initTableScrollHints();
+    window.XYDZTZ.ui?.initCodeBlocks();
+    main.dataset.enhanced = 'true';
   },
 
   initUpdateSummary(main) {
@@ -114,14 +57,15 @@ window.XYDZTZ.renderer = {
   },
 
   initJieyunLookup(main) {
-    const headings = Array.from(main.querySelectorAll('h1'));
-    const appendix = headings.find((heading) => heading.textContent.trim() === '附录：劫运解密查询');
-    if (!appendix) return;
+    const headings = Array.from(main.querySelectorAll('h1, h2, h3, h4'));
+    const lookupHeading = headings.find((heading) => heading.textContent.trim() === '劫运解密查询');
+    if (!lookupHeading) return;
 
-    let node = appendix.nextElementSibling;
+    const headingLevel = Number(lookupHeading.tagName.slice(1));
+    let node = lookupHeading.nextElementSibling;
     let tableOuter = null;
     while (node) {
-      if (node.matches?.('h1')) break;
+      if (/^H[1-6]$/.test(node.tagName) && Number(node.tagName.slice(1)) <= headingLevel) break;
       if (node.classList?.contains('table-outer')) {
         tableOuter = node;
         break;
@@ -170,7 +114,7 @@ window.XYDZTZ.renderer = {
       result.innerHTML = `
         <article class="jieyun-card">
           <div class="jieyun-card-kicker">第 ${this.escapeHtml(entry.id)} 重劫运</div>
-          <h2>${this.escapeHtml(entry.name)}</h2>
+          <h5>${this.escapeHtml(entry.name)}</h5>
           <blockquote>${this.escapeHtml(entry.verse)}</blockquote>
           <p><strong>谜题答案：</strong>${this.escapeHtml(entry.answer)}</p>
         </article>
@@ -218,13 +162,15 @@ window.XYDZTZ.renderer = {
   },
 
   initFaq(main) {
-    const heading = Array.from(main.querySelectorAll('h1'))
-      .find((item) => item.textContent.trim() === '高频Q&A');
+    const heading = Array.from(main.querySelectorAll('h1, h2, h3, h4'))
+      .find((item) => item.textContent.trim() === '常见问题与排错');
     if (!heading) return;
 
+    const headingLevel = Number(heading.tagName.slice(1));
     const questions = [];
     let node = heading.nextElementSibling;
-    while (node && !node.matches('h1')) {
+    while (node) {
+      if (/^H[1-6]$/.test(node.tagName) && Number(node.tagName.slice(1)) <= headingLevel) break;
       const strong = node.matches('p') ? node.querySelector(':scope > strong:first-child') : null;
       if (strong && /^Q\d+[：:]/i.test(strong.textContent.trim())) questions.push(node);
       node = node.nextElementSibling;
@@ -235,6 +181,21 @@ window.XYDZTZ.renderer = {
     list.className = 'faq-list';
     list.setAttribute('aria-label', '高频问题列表');
     questions[0].before(list);
+
+    // 展开全部 / 收起全部（内嵌于标题行右侧，不独占一行）
+    heading.classList.add('faq-heading');
+    const toggleAll = document.createElement('button');
+    toggleAll.type = 'button';
+    toggleAll.className = 'faq-toggle-all';
+    toggleAll.textContent = '展开全部';
+    toggleAll.addEventListener('click', (event) => {
+      event.stopPropagation();
+      const items = Array.from(list.querySelectorAll('details.faq-item'));
+      const shouldOpen = items.some((item) => !item.open);
+      items.forEach((item) => { item.open = shouldOpen; });
+      toggleAll.textContent = shouldOpen ? '收起全部' : '展开全部';
+    });
+    heading.appendChild(toggleAll);
 
     questions.forEach((questionNode) => {
       const questionStrong = questionNode.querySelector(':scope > strong:first-child');
@@ -259,7 +220,8 @@ window.XYDZTZ.renderer = {
       if (inlineAnswer.textContent.trim()) answer.appendChild(inlineAnswer);
 
       let answerNode = questionNode.nextElementSibling;
-      while (answerNode && !answerNode.matches('h1, hr')) {
+      while (answerNode && !answerNode.matches('hr')) {
+        if (/^H[1-6]$/.test(answerNode.tagName) && Number(answerNode.tagName.slice(1)) <= headingLevel) break;
         const nextQuestion = answerNode.matches('p')
           && /^Q\d+[：:]/i.test(answerNode.querySelector(':scope > strong:first-child')?.textContent.trim() || '');
         if (nextQuestion) break;
@@ -272,6 +234,58 @@ window.XYDZTZ.renderer = {
       questionNode.remove();
       list.appendChild(details);
     });
+  },
+
+  initWheelCompat(main) {
+    const heading = Array.from(main.querySelectorAll('h3'))
+      .find((item) => item.textContent.trim() === '轮盘技能兼容');
+    if (!heading || heading.nextElementSibling?.classList.contains('wheel-compat')) return;
+
+    const nodes = [];
+    let node = heading.nextElementSibling;
+    while (node && !node.matches('h1, h2, h3, hr')) {
+      nodes.push(node);
+      node = node.nextElementSibling;
+    }
+
+    const findLabel = (text) => nodes.find((item) => {
+      if (!item.matches('p') || item.children.length !== 1) return false;
+      const strong = item.querySelector(':scope > strong:only-child');
+      return strong?.textContent.trim() === text;
+    });
+
+    const officialLabel = findLabel('官方人物技能');
+    const modsLabel = findLabel('模组人物与拓展内容');
+    const lead = nodes.find((item) => item.matches('p') && item !== officialLabel && item !== modsLabel);
+    const officialBody = officialLabel?.nextElementSibling;
+    const modsBody = modsLabel?.nextElementSibling;
+    if (!lead || !officialBody?.matches('p') || !modsBody?.matches('p')) return;
+
+    const section = document.createElement('section');
+    section.className = 'wheel-compat';
+    section.setAttribute('aria-label', '轮盘技能兼容范围');
+
+    lead.classList.add('wheel-compat-lead');
+    section.appendChild(lead);
+
+    const grid = document.createElement('div');
+    grid.className = 'wheel-compat-grid';
+    section.appendChild(grid);
+
+    const appendCard = (className, title, body) => {
+      const card = document.createElement('article');
+      card.className = `wheel-compat-card ${className}`;
+      const cardTitle = document.createElement('h5');
+      cardTitle.textContent = title;
+      card.append(cardTitle, body);
+      grid.appendChild(card);
+    };
+
+    appendCard('wheel-compat-official', '官方人物技能', officialBody);
+    appendCard('wheel-compat-mods', '模组人物与拓展内容', modsBody);
+    officialLabel.remove();
+    modsLabel.remove();
+    heading.after(section);
   },
 
   decorateContent(main) {
@@ -320,12 +334,129 @@ window.XYDZTZ.renderer = {
   },
 
   renderKeywordTags(text = '') {
+    // 色彩语义只给少数类型词：战斗/BOSS 系用朱红，人物/精怪系用黛青，其余保持中性灰
+    const toneMap = new Map([
+      ['BOSS', 'fire'], ['BOSS奖励', 'fire'], ['怪物', 'fire'], ['阶段战', 'fire'],
+      ['首领', 'fire'], ['防火', 'fire'], ['束焰', 'fire'],
+      ['人物', 'info'], ['人物开关', 'info'], ['精怪', 'info'], ['守卫', 'info'],
+    ]);
     return text
       .split(/[、,，]/)
       .map((tag) => tag.trim())
       .filter(Boolean)
-      .map((tag) => `<span class="keyword-tag">${this.escapeHtml(tag)}</span>`)
+      .map((tag) => {
+        const tone = toneMap.get(tag);
+        const cls = tone ? ` keyword-tag-${tone}` : '';
+        return `<span class="keyword-tag${cls}">${this.escapeHtml(tag)}</span>`;
+      })
       .join('');
+  },
+
+  initTermTooltips(main) {
+    const links = Array.from(main.querySelectorAll('a.term-link[data-term-summary]'));
+    if (links.length === 0) return;
+
+    const tooltip = document.createElement('aside');
+    tooltip.id = 'term-tooltip';
+    tooltip.className = 'term-tooltip';
+    tooltip.setAttribute('role', 'tooltip');
+    tooltip.setAttribute('aria-hidden', 'true');
+    tooltip.hidden = true;
+
+    const icon = document.createElement('img');
+    icon.className = 'term-tooltip-icon';
+    icon.alt = '';
+    icon.loading = 'lazy';
+    icon.hidden = true;
+    const body = document.createElement('span');
+    body.className = 'term-tooltip-body';
+    const kind = document.createElement('span');
+    kind.className = 'term-tooltip-kind';
+    const title = document.createElement('strong');
+    title.className = 'term-tooltip-title';
+    const summary = document.createElement('span');
+    summary.className = 'term-tooltip-summary';
+    body.append(kind, title, summary);
+    tooltip.append(icon, body);
+    document.body.appendChild(tooltip);
+
+    let activeLink = null;
+
+    const position = () => {
+      if (!activeLink || tooltip.hidden) return;
+      const anchorRect = activeLink.getBoundingClientRect();
+      const tooltipRect = tooltip.getBoundingClientRect();
+      const viewportGap = 12;
+      const anchorGap = 10;
+      const centeredLeft = anchorRect.left + (anchorRect.width - tooltipRect.width) / 2;
+      const left = Math.min(
+        Math.max(centeredLeft, viewportGap),
+        window.innerWidth - tooltipRect.width - viewportGap
+      );
+      let top = anchorRect.bottom + anchorGap;
+      let placement = 'bottom';
+
+      if (top + tooltipRect.height > window.innerHeight - viewportGap) {
+        top = anchorRect.top - tooltipRect.height - anchorGap;
+        placement = 'top';
+      }
+
+      tooltip.style.left = `${Math.round(left)}px`;
+      tooltip.style.top = `${Math.max(viewportGap, Math.round(top))}px`;
+      tooltip.dataset.placement = placement;
+    };
+
+    const show = (link) => {
+      if (!link?.dataset.termSummary) return;
+      if (activeLink && activeLink !== link) activeLink.removeAttribute('aria-describedby');
+      activeLink = link;
+      kind.textContent = link.dataset.termKind || '相关词条';
+      title.textContent = link.textContent.trim();
+      summary.textContent = link.dataset.termSummary;
+      const image = link.dataset.termImage || '';
+      if (image) {
+        icon.src = window.XYDZTZ.utils.siteAsset(image);
+        icon.hidden = false;
+      } else {
+        icon.hidden = true;
+        icon.removeAttribute('src');
+      }
+      tooltip.classList.toggle('has-icon', Boolean(image));
+      link.setAttribute('aria-describedby', tooltip.id);
+      tooltip.hidden = false;
+      tooltip.setAttribute('aria-hidden', 'false');
+      position();
+      tooltip.classList.add('visible');
+    };
+
+    const hide = (link = activeLink) => {
+      if (link && link !== activeLink) return;
+      activeLink?.removeAttribute('aria-describedby');
+      activeLink = null;
+      tooltip.classList.remove('visible');
+      tooltip.setAttribute('aria-hidden', 'true');
+      tooltip.hidden = true;
+    };
+
+    const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)');
+    links.forEach((link) => {
+      link.addEventListener('pointerenter', () => {
+        if (supportsHover.matches) show(link);
+      });
+      link.addEventListener('pointerleave', () => hide(link));
+      link.addEventListener('focus', () => show(link));
+      link.addEventListener('blur', () => hide(link));
+      link.addEventListener('click', () => hide(link));
+      link.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          hide(link);
+          link.blur();
+        }
+      });
+    });
+
+    window.addEventListener('scroll', () => hide(), { passive: true });
+    window.addEventListener('resize', () => hide(), { passive: true });
   },
 
   escapeHtml(text) {
